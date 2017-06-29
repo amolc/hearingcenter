@@ -12,6 +12,13 @@
 
   <!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed -->
   <link rel="stylesheet" href="css/csr.css" type="text/css" />
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script type="text/javascript" src="js/angular-storage.min.js"></script>
+  <script src="js/bootstrap.js" type="text/javascript"></script>
+  <script src="js/index.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/crmCtrl.js"></script>
 
 </head>
 
@@ -25,16 +32,18 @@
           <center><img src="images/logo_1_50.png"></center>
           <!--<h1><a href="/" id="logoLink">The Hearing Centre</a></h1>-->
         </div>
-        <br><br><br><br>
+        <br><br>
         <ul>
-          <li><a href="#">Personal Particulars</a></li><br>
-          <li><a href="#">Medical History</a></li><br>
-          <li><a href="#">Miscellaneous</a></li><br>
+          <h1> Register here to get started </h1><br>
+          <h3> It should only take a couple of minitues </h3><br><br><br>
+          <li type="tick"><a href="#"><h3>Personal Particulars</h3></a></li><br>
+          <li type="tick"><a href="#"><h3>Medical History</h3></a></li><br>
+          <li type="circle"><a href="#"><h3>Miscellaneous</h3></a></li><br>
         </ul>
       </nav>
 
       <article>
-        <h1>How did you hear about us?</h1>
+        <h1>How did you hear about us?</h1><br>
 
         <form class="miscellaneous" method="get">
           <input type="checkbox" name="aboutus" value="Newspaper"> Newspaper
@@ -44,15 +53,16 @@
           <input type="checkbox" name="aboutus" value="Flyer"> Flyer
           <input type="checkbox" name="aboutus" value="Facebook"> Facebook<br>
           <input type="checkbox" name="aboutus" value="Refered by friend"> Refered by friend
-          <input type="checkbox" name="aboutus" value="Other"> Other<br><br>
-          <h1> Do you want to subscribe for our newsletter? </h1>
+          <input type="checkbox" name="aboutus" value="Other"> Other<br><br><br>
+          <h1> Do you want to subscribe for our newsletter? </h1><br>
           <label class="switch">
-  <input type="checkbox" checked>
-  <div class="slider round"></div>
-  </label><br><br>
-          <input type="submit" value="Submit">
+          <input type="checkbox" checked>
+          <div class="slider round"></div>
+          </label><br><br>
         </form>
-
+        <br><br>
+        <input type="button" class="button1" value="Cancel">
+        <input type="button" class="button2" value="Submit">
       </article>
       <div id="footer">
         <p>

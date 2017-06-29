@@ -117,7 +117,7 @@ header, footer {
 
 nav {
     float: left;
-    max-width: 160px;
+    max-width: 700px;
     margin: 40px;
     padding: 1em;
 }
@@ -132,7 +132,7 @@ nav ul a {
 }
 
 article {
-    margin-left: 300px;
+    /*margin-left: 500px;*/
     border-left: 1px solid gray;
     padding: 10em;
     overflow: hidden;
@@ -214,12 +214,12 @@ input:checked + .slider:before {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 300px;
+    margin: 1px 109px;
     cursor: pointer;
 }
 
 .button2 {
-    background-color: #4CAF50;
+    background-color: #3CB371;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -227,6 +227,6 @@ input:checked + .slider:before {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 400px;
+    margin: 5px 1px;
     cursor: pointer;
 }
