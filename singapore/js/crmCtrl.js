@@ -5,8 +5,9 @@ app.controller('crmcontroller', function ($scope, $http, $window) {
 //Verify member login
 
     $scope.authenticateMember = function(req,res){
+        console.log("method triggered");
         var ic = $scope.ic;
-        var pw = $scope.password;
+        var pw = $scope.pw;
 
         $scope.result = false;
 
@@ -14,9 +15,24 @@ app.controller('crmcontroller', function ($scope, $http, $window) {
             if (res.status == 'false') {
 
             } else {
-                //verify password
-                //if correct, redirect to member homepage
-                //$window.location = 'something.html';
+
+                if(res.length == 0){
+                    $("#error").show();
+
+                }else{
+
+                    for(var i=0; i<res.length; i++){
+                        console.log(res[i].password);
+
+                        if(pw == res[i].password){
+                            $window.location = 'memberdashboard.html';
+
+                        }else{
+                            $("#error").show();
+                        }       
+                    }
+                }
+                
             }
 
         }).error(function () {
@@ -48,5 +64,10 @@ app.controller('crmcontroller', function ($scope, $http, $window) {
         });
     }
 
+//*********************************************** */
+//Trigger default success or error message
+    $scope.init = function(){
+        $("#error").hide();
+    }
  
 });
