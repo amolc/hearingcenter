@@ -1,64 +1,68 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
-<!-- your webpage info goes here -->
+  <!-- your webpage info goes here -->
 
-    <title>The Hearing Centre</title>
-	
-	<meta name="author" content="Ama" />
-	<meta name="description" content="" />
+  <title>The Hearing Centre</title>
 
-<!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed -->	
-	<link rel="stylesheet" href="css/crm.css" type="text/css" />
-	
+  <meta name="author" content="Ama" />
+  <meta name="description" content="" />
+
+  <!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed -->
+  <link rel="stylesheet" href="css/crm.css" type="text/css" />
+
 </head>
+
 <body>
+  <div data-ng-app="crm" data-ng-controller="crmcontroller">
 
+    <div class="container">
 
-<div class="container">
-  
-<nav>
-		<div id="logo">
-            <center><img src = "images/logo_1_50.png"></center>
-			<!--<h1><a href="/" id="logoLink">The Hearing Centre</a></h1>-->
-		</div>
+      <nav>
+        <div id="logo">
+          <center><img src="images/logo_1_50.png"></center>
+          <!--<h1><a href="/" id="logoLink">The Hearing Centre</a></h1>-->
+        </div>
         <br><br><br><br>
-  <ul>
-    <li><a href="#">Personal Particulars</a></li><br>
-    <li><a href="#">Medical History</a></li><br>
-    <li><a href="#">Miscellaneous</a></li><br>
-  </ul>
-</nav>
+        <ul>
+          <li><a href="#">Personal Particulars</a></li><br>
+          <li><a href="#">Medical History</a></li><br>
+          <li><a href="#">Miscellaneous</a></li><br>
+        </ul>
+      </nav>
 
-<article>
-  <h1>How did you hear about us?</h1>
- 
-<form  class="miscellaneous" method="get">
-  <input type="checkbox" name="aboutus" value="Newspaper"> Newspaper
-  <input type="checkbox" name="aboutus" value="Google"> Google      
-  <input type="checkbox" name="aboutus" value="Workshop"> Talk/Workshop<br>
-  <input type="checkbox" name="aboutus" value="ENTS"> ENTS
-  <input type="checkbox" name="aboutus" value="Flyer"> Flyer
-  <input type="checkbox" name="aboutus" value="Facebook"> Facebook<br>
-  <input type="checkbox" name="aboutus" value="Refered by friend"> Refered by friend
-  <input type="checkbox" name="aboutus" value="Other"> Other<br><br>
-  <h1> Do you want to subscribe for our newsletter? </h1>
-  <label class="switch">
+      <article>
+        <h1>How did you hear about us?</h1>
+
+        <form class="miscellaneous" method="get">
+          <input type="checkbox" name="aboutus" value="Newspaper"> Newspaper
+          <input type="checkbox" name="aboutus" value="Google"> Google
+          <input type="checkbox" name="aboutus" value="Workshop"> Talk/Workshop<br>
+          <input type="checkbox" name="aboutus" value="ENTS"> ENTS
+          <input type="checkbox" name="aboutus" value="Flyer"> Flyer
+          <input type="checkbox" name="aboutus" value="Facebook"> Facebook<br>
+          <input type="checkbox" name="aboutus" value="Refered by friend"> Refered by friend
+          <input type="checkbox" name="aboutus" value="Other"> Other<br><br>
+          <h1> Do you want to subscribe for our newsletter? </h1>
+          <label class="switch">
   <input type="checkbox" checked>
   <div class="slider round"></div>
   </label><br><br>
-  <input type="submit" value="Submit">
-</form>
+          <input type="submit" value="Submit">
+        </form>
 
-</article>
-		<div id="footer">
-			<p>
-				Webpage made by <a href="/" target="_blank">[your name]</a>
-			</p>
-		</div>
+      </article>
+      <div id="footer">
+        <p>
+          Webpage made by <a href="/" target="_blank">[your name]</a>
+        </p>
+      </div>
 
-</div>
+    </div>
 
+  </div>
 </body>
+
 </html>
