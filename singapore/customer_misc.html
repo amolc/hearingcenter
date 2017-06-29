@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <!-- your webpage info goes here -->
+
+  <title>The Hearing Centre</title>
+
+  <meta name="author" content="Ama" />
+  <meta name="description" content="" />
+
+  <!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed -->
+  <link rel="stylesheet" href="css/csr.css" type="text/css" />
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script type="text/javascript" src="js/angular-storage.min.js"></script>
+  <script src="js/bootstrap.js" type="text/javascript"></script>
+  <script src="js/index.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/crmCtrl.js"></script>
+
+</head>
+
+<body>
+  <div data-ng-app="crm" data-ng-controller="crmcontroller">
+
+    <div class="container">
+
+      <nav>
+        <div id="logo">
+          <center><img src="images/logo_1_50.png"></center>
+          <!--<h1><a href="/" id="logoLink">The Hearing Centre</a></h1>-->
+        </div>
+        <br><br>
+        <ul>
+          <h1> Register here to get started </h1>
+          <h5> It should only take a couple of minitues </h5><br><br><br>
+          <li type="circle"><a href="customer_personal.html"><h3>Personal Particulars</h3></a></li><br>
+          <li type="circle"><a href="customer_medicalHist.html"><h3>Medical History</h3></a></li><br>
+          <li type="circle"><a href="customer_misc.html"><h3>Miscellaneous</h3></a></li><br>
+        </ul>
+        <br><br>          
+        <h5> Returning patient? Sign in <a href="login.html"> here</a> </h5>
+
+      </nav>
+
+      <article>
+        <h1>How did you hear about us?</h1><br>
+
+        <form class="miscellaneous" method="get">
+          <input type="checkbox" name="aboutus" value="Newspaper"> Newspaper
+          <input type="checkbox" name="aboutus" value="Google"> Google
+          <input type="checkbox" name="aboutus" value="Workshop"> Talk/Workshop<br>
+          <input type="checkbox" name="aboutus" value="ENTS"> ENTS
+          <input type="checkbox" name="aboutus" value="Flyer"> Flyer
+          <input type="checkbox" name="aboutus" value="Facebook"> Facebook<br>
+          <input type="checkbox" name="aboutus" value="Refered by friend"> Refered by friend
+          <input type="checkbox" name="aboutus" value="Other"> Other<br><br><br>
+          <h1> Do you want to subscribe for our newsletter? </h1><br>
+          <label class="switch">
+          <input type="checkbox" checked>
+          <div class="slider round"></div>
+          </label><br><br>
+        </form>
+        <br><br>
+        <input type="button" class="button1" value="Cancel">
+        <input type="button" class="button2" value="Submit">
+      </article>
+      <div id="footer">
+        <p>
+          Webpage made by <a href="/" target="_blank">[your name]</a>
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</body>
+
+</html>
