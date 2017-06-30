@@ -39,6 +39,7 @@ body{
 #page { 
   margin: 45px; 
   background: #efefef;
+  height:1100px;
 }
 
 /* or on different lines like below */
@@ -102,14 +103,80 @@ body{
       }
 
 
-#content{
-	 margin: 10px 0;
+#content1 {
+	  margin: 10px 0;
     background: white;
     padding: 20px;
     clear: both;
     float: left; 
     width: 325px;
     height: 175px;
+}
+
+#content2 {
+	  width: 325px;
+    height: 100px;
+    margin-top: 56px;
+    margin-left: 400px;
+    position: absolute;
+    padding: 20px;
+    color: black;
+   
+}
+
+#content3 {
+	  width: 325px;
+    height: 100px;
+    margin-top: 56px;
+    margin-left: 775px;
+    position: absolute;
+    padding: 20px;
+    color: black;
+   
+}
+
+#content4 {
+	  width: 325px;
+    height: 100px;
+    margin-top: 210px;
+    margin-left: 400px;
+    position: absolute;
+    padding: 20px;
+    color: black;
+   
+}
+
+#content5 {
+	  width: 325px;
+    height: 100px;
+    margin-top: 210px;
+    margin-left: 775px;
+    position: absolute;
+    padding: 20px;
+    color: black;
+   
+}
+
+#content6 {
+	  width: 325px;
+    height: 100px;
+    margin-top: 365px;
+    margin-left: 400px;
+    position: absolute;
+    padding: 20px;
+    color: black;
+   
+}
+
+#content7 {
+	  width: 325px;
+    height: 100px;
+    margin-top: 365px;
+    margin-left: 775px;
+    position: absolute;
+    padding: 20px;
+    color: black;
+   
 }
 
 box {
@@ -153,7 +220,7 @@ ul li a{ box-shadow: 0px 1px 1px #999; }
   position: relative;
   z-index: 1;
   background: #FFFFFF;
-  max-width: 300px;
+  width: 300px;
   margin: 0 auto 200px;
   padding: 45px;
   text-align: center;
