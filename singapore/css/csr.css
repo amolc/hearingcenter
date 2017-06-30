@@ -357,3 +357,10 @@ input:checked + .slider:before {
   padding: 6% 0 0;
   margin: auto;
 }
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
