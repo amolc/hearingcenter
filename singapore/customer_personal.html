@@ -36,49 +36,71 @@
         <ul>
           <h1> Register here to get started </h1>
           <h5> It should only take a couple of minitues </h5><br><br><br>
-          <li type="circle"><a href="customer_personal.html"><h3>Personal Particulars</h3></a></li><br>
-          <li type="circle"><a href="customer_medicalHist.html"><h3>Medical History</h3></a></li><br>
-          <li type="circle"><a href="customer_misc.html"><h3>Miscellaneous</h3></a></li><br>
+          <li type="circle">
+            <a href="customer_personal.html">
+              <h3>Personal Particulars</h3>
+            </a>
+          </li><br>
+          <li type="circle">
+            <a href="customer_medicalHist.html">
+              <h3>Medical History</h3>
+            </a>
+          </li><br>
+          <li type="circle">
+            <a href="customer_misc.html">
+              <h3>Miscellaneous</h3>
+            </a>
+          </li><br>
         </ul>
-        <br><br>          
+        <br><br>
         <h5> Returning patient? Sign in <a href="login.html"> here</a> </h5>
 
       </nav>
 
       <article>
         <h1>Personal Information </h1><br>
-                      <form class="form-style-9" ng-controller="crmcontroller" ng-submit=insertCustomer()>
-                      <ul>
-                      <li>
-                          <input type="text" name="field1" class="field-style field-split align-left" required placeholder="First Name" ng-model="firstName" />
-                          <input type="text" name="field2" class="field-style field-split align-right" required placeholder="Last Name" ng-model="lastName" />
+        <form class="form-style-9" ng-controller="crmcontroller" ng-submit=insertCustomer()>
+          <ul>
+            <li>
+              <input type="text" name="field1" class="field-style field-split align-left" required placeholder="First Name" ng-model="firstName"
+              />
+              <input type="text" name="field2" class="field-style field-split align-right" required placeholder="Last Name" ng-model="lastName"
+              />
 
-                      </li>
-                      <li>
-                          <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Email" ng-model="email"/>
-                          <input type="text" name="field4" class="field-style field-split align-right" required placeholder="NRIC" ng-model="nric"/>
-                      </li>
-                      <li>
-                          <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Mobile No." ng-model="mobile"/>
-                          <input type="text" name="field4" class="field-style field-split align-right" placeholder="Home No." ng-model="home"/>
-                      </li>
-                      <li>
-                          <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Gender" ng-model="gender"/>
-                      </li>
-                      <li>
-                      <input type="text" name="field3" class="field-style field-full align-none" required placeholder="Address" ng-model="address"/>
-                      </li>
-                      <li>
-                          <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Postal Code" ng-model="postal"/>
-                          <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Country" ng-model="country"/>
-                      </li>
-                      <li>
-                      <input type="submit" value="Submit" />
-                      </li>
-                      </ul>
-                      </form>
+            </li>
+            <li>
+              <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Email" ng-model="email"
+              />
+              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="NRIC" ng-model="nric"
+              />
+            </li>
+            <li>
+              <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Mobile No." ng-model="mobile"
+              />
+              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Home No." ng-model="home"
+              />
+            </li>
+            <li>
+              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Gender" ng-model="gender"
+              />
+            </li>
+            <li>
+              <input type="text" name="field3" class="field-style field-full align-none" required placeholder="Address" ng-model="address"
+              />
+            </li>
+            <li>
+              <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Postal Code" ng-model="postal"
+              />
+              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Country" ng-model="country"
+              />
+            </li>
+            <li>
+              <input type="submit" value="Submit" />
+            </li>
+          </ul>
+        </form>
       </article>
-      
+
       <div id="footer">
         <p>
           Webpage made by <a href="/" target="_blank">[your name]</a>

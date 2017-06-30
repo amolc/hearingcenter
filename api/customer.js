@@ -42,16 +42,14 @@ exports.insertCustomer = function(req, res){
 
 	},function (err,vals){
 		if (!err) {
-			var resdata = {
-				status: true,
-				message: 'user answer successfully added'
-			};
-		} else {
-			var resdata = {
-				status: false,
-				message: 'record not added '
-			};
-    	}
+			var resdata={status:true,
+			message:'Staff successfully added'};
+	  		res.jsonp(resdata);
+		} else{
+			var resdata={status:false,
+			message:'record not added '};
+			res.jsonp(resdata);
+		}
 	})
 }
 

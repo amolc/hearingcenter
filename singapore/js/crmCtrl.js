@@ -22,12 +22,11 @@ app.controller('crmcontroller', function ($scope, $http, $window, $location) {
             if (res.status == 'false') {
 
             } else {
-               //redirect page
+                $window.location = 'thankyou.html';
             }
         }).error(function () {
             console.log("error");
         })
-
     }
 
 //*********************************************** */
