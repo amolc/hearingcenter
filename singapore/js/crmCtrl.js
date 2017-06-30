@@ -1,5 +1,5 @@
 
-app.controller('crmcontroller', function ($scope, $http, $window) {
+app.controller('crmcontroller', function ($scope, $http, $window, $location) {
 
 
 //*********************************************** */
@@ -48,8 +48,10 @@ app.controller('crmcontroller', function ($scope, $http, $window) {
                     $("#error").show();
 
                 }else{
-
-                    $scope.result = res;
+                    for(var i=0; i<res.length; i++){
+                        $scope.result = res[i];
+                        console.log($scope.result);
+                    }
                 }
                 
             }

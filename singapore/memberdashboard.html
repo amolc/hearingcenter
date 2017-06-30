@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
-<!-- your webpage info goes here -->
+	<!-- your webpage info goes here -->
 
-    <title>The Hearing Centre</title>
-	
+	<title>The Hearing Centre</title>
+
 	<meta name="author" content="Ama" />
 	<meta name="description" content="" />
 
-<!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed -->	
+	<!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed -->
 	<link rel="stylesheet" href="css/crm.css" type="text/css" />
 
 	<script type="text/javascript" src="js/jquery.js"></script>
@@ -19,117 +20,104 @@
 	<script src="js/index.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
 	<script type="text/javascript" src="js/crmCtrl.js"></script>
-	
+
 </head>
+
 <body>
-	<header>
-		<div id="logo">
-            <img src = "images/logo_3_35.png">	
-		</div>
+	<div data-ng-app="crm" data-ng-controller="crmcontroller" ng-init="getID()">
+		<header>
+			<div id="logo">
+				<img src="images/logo_3_35.png">
+			</div>
 
-		<div id="nav">
+			<div id="nav">
+				<ul>
+					<!--<li><a href="#/contact.html">Logout</a></li>-->
+					<li><a href="index.html">Logout</a></li>
+				</ul>
+			</div>
+
+		</header>
+
+		<div id="tab">
 			<ul>
-				<!--<li><a href="#/contact.html">Logout</a></li>-->
-				<li><a href="index.html">Logout</a></li>
-			</ul>	
+				<li><a href="#/contact.html">Member's Portal</a></li>
+				<li><a href="#/contact.html">Redeem Points</a></li>
+			</ul>
 		</div>
+		<!-- webpage content goes here in the body -->
 
-	</header>
+		<div id="page">
 
-	<div id = "tab"> 
-		<ul>
-			<li><a href="#/contact.html">Member's Portal</a></li>
-			<li><a href="#/contact.html">Redeem Points</a></li>
-		</ul>		
-	</div>
-<!-- webpage content goes here in the body -->
+			<div id="content1" style="background-color: #45A77A;">
+				<h2>My Points</h2>
+				<br>
+				<img src="images/medal.png" align="right" width="110" height="110">
+				<box>
+					{{result.points}}
+				</box>
+			</div>
 
-	<div id="page">
+			<div id="content1" style="background-color: #F6A3B2;">
+				<h2>Next Appointment</h2>
+				<p>
+					{{result.nextAppointment}}
+				</p>
+			</div>
 
-		<div id="content1" style= "background-color: #45A77A;">
-			<h2>My Points</h2>
-			<br>
-			<img src = "images/medal.png" align = "right" width="110" height="110">
-			<box>
-			600
-			</box>
-		</div>
+			<div id="content2" style="background-color: white;">
+				Name
+				<p>
+					{{result.firstName}} {{result.lastName}}
+				</p>
+			</div>
 
-		<div id="content1" style= "background-color: #F6A3B2;">	
-			<h2>Next Appointment</h2>
-			<p>
-			Test test 2
-			</p>
-			<p> 
-				Test test 3
-			</p>
-		</div>
+			<div id="content3" style="background-color: white;">
+				NRIC
+				<p>
+					{{result.nric}}
+				</p>
+			</div>
 
-		<div id="content2" style= "background-color: white;">	
-			Name
-			<p>
-			Test test 2
-			</p>
-			<p> 
-				Test test 3
-			</p>
-		</div>
+			<div id="content4" style="background-color: white;">
+				Address
+				<p>
+					{{result.residential_address}}
+				</p>
+			</div>
 
-		<div id="content3" style= "background-color: white;">	
-			NRIC
-			<p>
-			Test test 2
-			</p>
-			<p> 
-				Test test 3
-			</p>
-		</div>
+			<div id="content5" style="background-color: white;">
+				Email
+				<p>
+					{{result.email_address}}
+				</p>
+			</div>
 
-		<div id="content4" style= "background-color: white;">	
-			Address
-			<p>
-			Test test 2
-			</p>
-			<p> 
-				Test test 3
-			</p>
-		</div>
+			<div id="content6" style="background-color: white;">
+				Phone Number
+				<p>
+					{{result.mobile_number}}
+				</p>
+				<p>
+					{{result.home_number}}
+				</p>
+			</div>
 
-		<div id="content5" style= "background-color: white;">	
-			Email
-			<p>
-			Test test 2
-			</p>
-			<p> 
-				Test test 3
-			</p>
-		</div>
+			<div id="content7" style="background-color: white;">
+				Last Visit
+				<p>
+					{{result.lastVisit}}
+				</p>
+				<p>
+			</div>
 
-		<div id="content6" style= "background-color: white;">	
-			Phone Number
-			<p>
-			Test test 2
-			</p>
-			<p> 
-				Test test 3
-			</p>
-		</div>
-
-		<div id="content7" style= "background-color: white;">	
-			Last Visit
-			<p>
-			Test test 2
-			</p>
-			<p> 
-				Test test 3
-			</p>
-		</div>
-
-		<!--<div id="footer">
+			<!--<div id="footer">
 			<p>
 				Webpage made by <a href="/" target="_blank">[your name]</a>
 			</p>
 		</div>-->
+		</div>
 	</div>
 </body>
+
 </html>
