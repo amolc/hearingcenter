@@ -35,6 +35,8 @@ app.use(bodyParser.raw({ limit: '50mb' }));
 app.get('/api/allcustomer', customer.allCustomer);
 app.get('/api/findByIc/:ic', customer.findByIc);
 
+app.post('/api/insertcustomer', customer.insertCustomer);
+
 
 var singapore = connect();
 singapore.use(serveStatic('singapore'));
