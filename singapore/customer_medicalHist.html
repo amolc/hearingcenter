@@ -41,8 +41,28 @@
           <li type="circle"><a href="customer_misc.html"><h3>Miscellaneous</h3></a></li><br>
         </ul>
         <br><br>          
-        <h5> Returning patient? Sign in <a href="login.html"> here</a> </h5>
+        <h5> Returning patient? Sign in</h5>
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">here</button>
 
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+     <form class="form-style-9" ng-controller="crmcontroller" ng-submit=insertCustomer()>
+            <span class="close"></span>
+            <div class="logo_1"> <img src="images/logo_1_50.png"> </div>
+            <h1>Returning Patient?</h1>
+            <p>Simply enter your NRIC/Password number below to consult our specialist</p><br>
+          <ul>
+            <li>
+              <h1>NRIC/Passport Number </h1>
+              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="NRIC" ng-model="nric"/>
+              <input type="submit" value="Submit" />
+            </li>
+         </ul>
+    </form>
+</div>
       </nav>
 
       <article>
@@ -76,6 +96,33 @@
     </div>
 
   </div>
+  <script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
 </body>
 
 </html>

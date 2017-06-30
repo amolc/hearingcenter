@@ -53,8 +53,28 @@
           </li><br>
         </ul>
         <br><br>
-        <h5> Returning patient? Sign in <a href="login.html"> here</a> </h5>
+        <h5> Returning patient? Sign in </h5>
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">here</button>
 
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+     <form class="form-style-9" ng-controller="crmcontroller" ng-submit=insertCustomer()>
+            <span class="close"></span>
+            <div class="logo_1"> <img src="images/logo_1_50.png"> </div>
+            <h1>Returning Patient?</h1>
+            <p>Simply enter your NRIC/Password number below to consult our specialist</p><br>
+          <ul>
+            <li>
+              <h1>NRIC/Passport Number </h1>
+              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="NRIC" ng-model="nric"/>
+              <input type="submit" value="Submit" />
+            </li>
+         </ul>
+    </form>
+</div>
       </nav>
 
       <article>
@@ -62,37 +82,27 @@
         <form class="form-style-9" ng-controller="crmcontroller" ng-submit=insertCustomer()>
           <ul>
             <li>
-              <input type="text" name="field1" class="field-style field-split align-left" required placeholder="First Name" ng-model="firstName"
-              />
-              <input type="text" name="field2" class="field-style field-split align-right" required placeholder="Last Name" ng-model="lastName"
-              />
+              <input type="text" name="field1" class="field-style field-split align-left" required placeholder="First Name" ng-model="firstName"/>
+              <input type="text" name="field2" class="field-style field-split align-right" required placeholder="Last Name" ng-model="lastName"/>
 
             </li>
             <li>
-              <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Email" ng-model="email"
-              />
-              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="NRIC" ng-model="nric"
-              />
+              <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Email" ng-model="email"/>
+              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="NRIC" ng-model="nric"/>
             </li>
             <li>
-              <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Mobile No." ng-model="mobile"
-              />
-              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Home No." ng-model="home"
-              />
+              <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Mobile No." ng-model="mobile"/>
+              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Home No." ng-model="home"/>
             </li>
             <li>
-              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Gender" ng-model="gender"
-              />
+              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Gender" ng-model="gender"/>
             </li>
             <li>
-              <input type="text" name="field3" class="field-style field-full align-none" required placeholder="Address" ng-model="address"
-              />
+              <input type="text" name="field3" class="field-style field-full align-none" required placeholder="Address" ng-model="address"/>
             </li>
             <li>
-              <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Postal Code" ng-model="postal"
-              />
-              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Country" ng-model="country"
-              />
+              <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Postal Code" ng-model="postal"/>
+              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Country" ng-model="country"/>
             </li>
             <li>
               <input type="submit" value="Submit" />
@@ -110,6 +120,33 @@
     </div>
 
   </div>
+  <script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
 </body>
 
 </html>
