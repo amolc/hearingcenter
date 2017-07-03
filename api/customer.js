@@ -10,9 +10,22 @@ var db = mysql.createPool({
 
  var CRUD = require('mysql-crud');
  var customerCRUD = CRUD(db, 'customer');
+ var miscCRUD = CRUD(db, 'misc');
 
 
-/*
+/******************************************************
+Retrieve misc checkbox option
+*/
+exports.getOption = function(req, res){
+	var query = "SELECT * from misc";
+		db.query(query, function(err, rows){
+	res.jsonp(rows);
+	});
+
+}
+
+
+/******************************************************
 insert customer into db
 */
 exports.insertCustomer = function(req, res){
@@ -54,7 +67,7 @@ exports.insertCustomer = function(req, res){
 }
 
 
-/*
+/******************************************************
 Retrieve all customers from customer table
 */
 exports.allCustomer = function(req, res) {
@@ -64,7 +77,7 @@ exports.allCustomer = function(req, res) {
 	});
 };
 
-/*
+/******************************************************
 Retrieve customer using NRIC/FIN number
 */
 exports.findByIc = function(req, res) {

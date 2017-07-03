@@ -34,6 +34,7 @@ app.use(bodyParser.raw({ limit: '50mb' }));
 */
 app.get('/api/allcustomer', customer.allCustomer);
 app.get('/api/findByIc/:ic', customer.findByIc);
+app.get('/api/getoption', customer.getOption);
 
 app.post('/api/insertcustomer', customer.insertCustomer);
 

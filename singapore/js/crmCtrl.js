@@ -3,6 +3,58 @@ app.controller('crmcontroller', function ($scope, $http, $window, $location) {
 
 
 //*********************************************** */
+//Insert user's medical histories
+    $scope.insertHistories = function(req, res){
+        
+        var stringUrl = $location.absUrl();
+        var EqualPos = stringUrl.indexOf("=");
+        var id = stringUrl.substring(EqualPos + 1);
+
+        $window.location.href = 'customer_misc.html?id=' + id;
+        
+    }
+
+
+
+//*********************************************** */
+//Insert user's miscellaneous responses
+    $scope.insertResponse = function(req, res){
+        
+        var stringUrl = $location.absUrl();
+        var EqualPos = stringUrl.indexOf("=");
+        var id = stringUrl.substring(EqualPos + 1);
+
+        for(var i=0; i<req.length; i++){
+;
+            if(req[i].checked){
+                console.log(req[i].name);
+            }
+        }
+        
+    }
+
+
+//*********************************************** */
+//Retrieve miscellaneous responses
+    $scope.getOption = function(req, res){
+        
+        $http.get(baseurl + 'getoption').success(function (res) {
+
+            if (res.status == 'false') {
+                $scope.result = "You have entered an invalid NRIC/Passport Number"
+
+            } else {
+                $scope.option = res;
+                console.log("success");
+            }
+
+        }).error(function () {
+
+        });
+        
+    }
+
+//*********************************************** */
 //Register customer for queue number
     $scope.insertCustomer = function(req, res){
         $scope.data = {};
@@ -22,7 +74,21 @@ app.controller('crmcontroller', function ($scope, $http, $window, $location) {
             if (res.status == 'false') {
 
             } else {
-                $window.location = 'thankyou.html';
+                
+                $http.get(baseurl + 'findByIc/' + $scope.data.nric).success(function (res) {
+                    if (res.status == 'false') {
+
+                    } else {
+
+                        console.log(res);
+                        for(var i=0; i<res.length; i++){
+                            $window.location.href = 'customer_medicalHist.html?id=' + res[i].id;
+                        }
+                    }
+
+                }).error(function () {
+
+                });
             }
         }).error(function () {
             console.log("error");

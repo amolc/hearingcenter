@@ -70,25 +70,32 @@
 
       <article>
         <h1>How did you hear about us?</h1><br>
-<!--
-        <form class="miscellaneous" method="get">
-          <input type="checkbox" name="aboutus" value="Newspaper"> Newspaper
-          <input type="checkbox" name="aboutus" value="Google"> Google
-          <input type="checkbox" name="aboutus" value="Workshop"> Talk/Workshop<br>
-          <input type="checkbox" name="aboutus" value="ENTS"> ENTS
-          <input type="checkbox" name="aboutus" value="Flyer"> Flyer
-          <input type="checkbox" name="aboutus" value="Facebook"> Facebook<br>
-          <input type="checkbox" name="aboutus" value="Refered by friend"> Refered by friend
-          <input type="checkbox" name="aboutus" value="Other"> Other<br><br><br>
+
+        <form class="miscellaneous">
+          <!--<div ng-repeat="choice in option">
+              <input type="checkbox" value="{{choice.id}}" ng-model="choice.checked"> {{choice.name}}
+          </div>
+
+          <input type="checkbox" name="aboutus" value="Google" ng-model="cb.value2"> Google
+          <input type="checkbox" name="aboutus" value="Workshop" ng-model="cb.value3"> Talk/Workshop<br>
+          <input type="checkbox" name="aboutus" value="ENTS" ng-model="cb.value4"> ENTS
+          <input type="checkbox" name="aboutus" value="Flyer" ng-model="cb.value5"> Flyer
+          <input type="checkbox" name="aboutus" value="Facebook" ng-model="cb.value6"> Facebook<br>
+          <input type="checkbox" name="aboutus" value="Refered by friend" ng-model="cb.value7"> Refered by friend
+          <input type="checkbox" name="aboutus" value="Other" ng-model="cb.value8"> Other<br><br><br>
+          
           <h1> Do you want to subscribe for our newsletter? </h1><br>
           <label class="switch">
           <input type="checkbox" checked>
           <div class="slider round"></div>
           </label><br><br>
-        </form>
+       
+
         <br><br>
         <input type="button" class="button1" value="Cancel">-->
-        <input type="button" class="button2" value="Submit">
+        <input type="button" class="button2" value="Submit" ng-click="insertHistories()">
+
+         </form>
       </article>
       <div id="footer">
         <p>
