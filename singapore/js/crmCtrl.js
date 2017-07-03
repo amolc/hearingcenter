@@ -13,8 +13,17 @@ app.controller('crmcontroller', function ($scope, $http, $window, $location) {
         $window.location.href = 'customer_misc.html?id=' + id;
         
     }
+//*********************************************** */
+//Check if "Other" checkbox is selected
+$scope.check = function(value){
+    if(value == '8'){
+        $scope.disable = false;
+    } else{
+        $scope.disable=true;
+    }   
+}
 
-
+$scope.disable=true;
 
 //*********************************************** */
 //Insert user's miscellaneous responses
@@ -29,6 +38,7 @@ app.controller('crmcontroller', function ($scope, $http, $window, $location) {
         checkList.push(id);
         checkList.push($scope.news);
 
+        //checkbox selection
         for(var i=0; i<$scope.option.length; i++){
 
             if($scope.option[i].selected){
@@ -36,6 +46,7 @@ app.controller('crmcontroller', function ($scope, $http, $window, $location) {
             }
         }
 
+        //textbox input
         if($scope.other != null){
             checkList.push($scope.other);
         }
@@ -215,3 +226,5 @@ app.controller('crmcontroller', function ($scope, $http, $window, $location) {
     }
  
 });
+
+

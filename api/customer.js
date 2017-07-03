@@ -29,7 +29,7 @@ exports.getOption = function(req, res){
 insert misc checkbox option
 */
 exports.insertMisc = function(req, res){
-
+	console.log(req.body);
 	var submittedOption = req.body;
 	var custId = submittedOption[0];
 	var newsOption =submittedOption[1];
@@ -39,12 +39,12 @@ exports.insertMisc = function(req, res){
 	newsLetter.push(newsOption);
 	includeNewsletter(newsLetter);
 
-	for(var i=1; i<submittedOption.length; i++){
+	for(var i=2; i<submittedOption.length; i++){
 
-		console.log(submittedOption[i] + " submittedOption");
+		console.log(submittedOption[i]);
 
 		var miscId = "";
-		console.log(submittedOption[i].id + " submited ID");
+		//console.log(submittedOption[i].id + " submited ID");
 		if(submittedOption[i].id == "undefined"){
 			miscId = "8";
 		}else{
@@ -53,7 +53,7 @@ exports.insertMisc = function(req, res){
  
 		var name = submittedOption[i].name;
 
-		console.log(name);
+		// console.log(name);
 
 		custResponseCRUD.create({
 			'custId': custId,
