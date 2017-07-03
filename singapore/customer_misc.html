@@ -36,14 +36,17 @@
         <ul>
           <h1> Register here to get started </h1>
           <h5> It should only take a couple of minitues </h5><br><br><br>
-          <li type="circle"><a href="customer_personal.html"><h3>Personal Particulars</h3></a></li><br>
-          <li type="circle"><a href="customer_medicalHist.html"><h3>Medical History</h3></a></li><br>
+          <h3> <a> Personal Particulars <img src="images/tick.png"> </a> </h3>
+          <h3> <a> Medical History <img src="images/tick.png"> </a> </h3>
           <li type="circle"><a href="customer_misc.html"><h3>Miscellaneous</h3></a></li><br>
         </ul>
         <br><br>          
-        <h5> Returning patient? Sign in</h5>
-<!-- Trigger/Open The Modal -->
-<button id="myBtn">here</button>
+<div class="signin"> 
+        <h5> Returning patient? Sign in </h5>
+        <!-- Trigger/Open The Modal -->
+        <!--<button id="myBtn">here</button>-->
+        <h5> <a href="#" data-toggle="modal" data-target="#myModal"> here <img src="images/arrow.png"> </a> </h5>
+</div>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -116,9 +119,9 @@ var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
+// btn.onclick = function() {
+//     modal.style.display = "block";
+// }
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {

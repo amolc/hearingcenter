@@ -38,12 +38,14 @@ app.controller('crmcontroller', function ($scope, $http, $window, $location) {
             if (res.status == 'false') {
 
             } else {
+           
                 
                
             }
         }).error(function () {
             console.log("error");
         })
+        $window.location = 'thankyou.html';
         
     }
 
