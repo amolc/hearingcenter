@@ -11,6 +11,7 @@ var db = mysql.createPool({
  var CRUD = require('mysql-crud');
  var customerCRUD = CRUD(db, 'customer');
  var custResponseCRUD = CRUD(db, 'custResponse');
+ var newsLetterCRUD = CRUD(db, 'newsletter');
 
 
 /******************************************************
@@ -31,6 +32,12 @@ exports.insertMisc = function(req, res){
 
 	var submittedOption = req.body;
 	var custId = submittedOption[0];
+	var newsOption =submittedOption[1];
+
+	var newsLetter = [];
+	newsLetter.push(custId);
+	newsLetter.push(newsOption);
+	includeNewsletter(newsLetter);
 
 	for(var i=1; i<submittedOption.length; i++){
 		var miscId = submittedOption[i].id;
@@ -45,6 +52,30 @@ exports.insertMisc = function(req, res){
 		})
 	}
 
+}
+
+/******************************************************
+insert newsletter option
+*/
+
+function includeNewsletter(req, res){
+
+	for(var i=req.length-1; i<req.length; i++){
+		var custId = req[0];
+		var sub = "no";
+
+		if(req[1]){
+			sub = "yes";
+		}
+
+		newsLetterCRUD.create({
+			'custId': custId,
+			'subscribe' : sub,
+		},function (err,vals){
+			
+		})
+
+	}
 }
 
 /******************************************************

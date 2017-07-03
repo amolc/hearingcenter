@@ -19,27 +19,28 @@ app.controller('crmcontroller', function ($scope, $http, $window, $location) {
 //*********************************************** */
 //Insert user's miscellaneous responses
     $scope.insertResponse = function(req, res){
-        
+    
         var stringUrl = $location.absUrl();
         var EqualPos = stringUrl.indexOf("=");
         var id = stringUrl.substring(EqualPos + 1);
 
         var checkList = [];
+        
         checkList.push(id);
+        checkList.push($scope.news);
 
-        for(var i=0; i<req.length; i++){
-;
-            if(req[i].checked){
-                checkList.push(req[i]);
+        for(var i=0; i<$scope.option.length; i++){
+
+            if($scope.option[i].selected){
+                checkList.push($scope.option[i]);
             }
         }
+
         
         $http.post(baseurl + 'insertmisc', checkList).success(function (res) {
             if (res.status == 'false') {
 
-            } else {
-           
-                
+            } else {      
                
             }
         }).error(function () {
@@ -57,11 +58,10 @@ app.controller('crmcontroller', function ($scope, $http, $window, $location) {
         $http.get(baseurl + 'getoption').success(function (res) {
 
             if (res.status == 'false') {
-                $scope.result = "You have entered an invalid NRIC/Passport Number"
 
             } else {
                 $scope.option = res;
-                console.log("success");
+
             }
 
         }).error(function () {
