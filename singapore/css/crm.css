@@ -179,11 +179,41 @@ body{
    
 }
 
-box {
+#content8 {
+	  margin: 10px 0;
+    background: white;
+    padding: 20px;
+    clear: both;
+    float: left; 
+    width: 1135px;
+    height: 100px;
+}
+
+section { background-color: white; margin: 10px; border:1px solid red; padding:10px; overflow:hidden; width: 334px; height: 275px; padding-left: 10px;}
+    section > section { float:left; }
+    .indent-1 { padding-left:10px; width: 1130px; height: 1130px; border:1px solid #efefef; background-color: #efefef}
+    .indent-2 { background-color: white; margin: 10px; border:1px solid black; padding:10px; overflow:hidden; width: 334px; height: 275px; padding-left: 10px;}
+
+.button {
+    background-color: #45A77A; 
+    border: none;
+    color: white;
+    padding: 8px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+}
+
+#box {
+    padding:50px;
     font-size: 500%;
     align-content: center;
     color: white;
+    margin-left: 58px;
 }
+
+
 #footer{
 }
 	#footer p{

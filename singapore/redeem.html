@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<!-- your webpage info goes here -->
+
+	<title>The Hearing Centre</title>
+
+	<meta name="author" content="Ama" />
+	<meta name="description" content="" />
+
+	<!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed -->
+	<link rel="stylesheet" href="css/crm.css" type="text/css" />
+
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+	<script type="text/javascript" src="js/angular-storage.min.js"></script>
+	<script src="js/bootstrap.js" type="text/javascript"></script>
+	<script src="js/index.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/crmCtrl.js"></script>
+
+</head>
+
+<body>
+	<div data-ng-app="crm" data-ng-controller="crmcontroller" ng-init="getID()">
+		<header>
+			<div id="logo">
+				<img src="images/logo_3_35.png">
+			</div>
+
+			<div id="nav">
+				<ul>
+					<!--<li><a href="#/contact.html">Logout</a></li>-->
+					<li><a href="index.html">Logout</a></li>
+				</ul>
+			</div>
+
+		</header>
+
+		<div id="tab">
+			<ul>
+				<li><a href="#/contact.html">Member's Portal</a></li>
+				<li><a href="#/contact.html">Redeem Points</a></li>
+			</ul>
+		</div>
+		<!-- webpage content goes here in the body -->
+
+		<div id="page">
+
+			<div id="content8" style="background-color: #45A77A;">
+				<h2>My Points</h2>
+				<div id = "box">
+					{{result.points}}
+				</div>
+				<!--<img src="images/medal.png" align = "right" width="110" height="110">-->
+			</div>
+
+            <section class="indent-1">
+                <!-- Section 1 --> 
+                <section class = "indent-2">
+                    <center><div><b>DURACELL</b><br><br>
+                    Points: 500<br>
+                    <img src="images/battery.png" align="middle" width="120px"; height="150px" ><br>
+                    <a href="#" class="button">REDEEM</a><br><br>
+                    Expires: 19 July 2017<br>
+                    
+                    </div></center>
+                </section>
+
+                <!-- Section 2 -->
+                <section class = "indent-2">
+                    <center><div><b>DURACELL</b><br><br>
+                    Points: 500<br>
+                    <img src="images/battery.png" align="middle" width="120px"; height="150px" ><br>
+                   <a href="#" class="button">REDEEM</a><br><br>
+                    Expires: 19 July 2017<br>
+                   </div></center>
+                </section>
+
+                 <section class = "indent-2">
+                    <center><div><b>DURACELL</b><br><br>
+                    Points: 500<br>
+                    <img src="images/battery.png" align="middle" width="120px"; height="150px" ><br>
+                   <a href="#" class="button">REDEEM</a><br><br>
+                    Expires: 19 July 2017<br>
+                   </div></center>
+                </section>
+
+                 <section class = "indent-2">
+                    <center><div><b>DURACELL</b><br><br>
+                    Points: 500<br>
+                    <img src="images/battery.png" align="middle" width="120px"; height="150px" ><br>
+                   <a href="#" class="button">REDEEM</a><br><br>
+                    Expires: 19 July 2017<br>
+                   </div></center>
+                </section>
+
+                <!-- Section 2 -->
+                 <section class = "indent-2">
+                    <center><div><b>DURACELL</b>L<br><br>
+                    Points: 500<br>
+                    <img src="images/battery.png" align="middle" width="120px"; height="150px" ><br>
+                   <a href="#" class="button">REDEEM</a><br><br>
+                    Expires: 19 July 2017<br>
+                   </div></center>
+                </section>
+
+                 <section class = "indent-2">
+                    <center><div><b>DURACELL</b><br><br>
+                    Points: 500<br>
+                    <img src="images/battery.png" align="middle" width="120px"; height="150px" ><br>
+                   <a href="#" class="button">REDEEM</a><br><br>
+                    Expires: 19 July 2017<br>
+                   </div></center>
+                </section>
+
+            </section>
+
+
+			<!--<div id="footer">
+			<p>
+				Webpage made by <a href="/" target="_blank">[your name]</a>
+			</p>
+		</div>-->
+		</div>
+	</div>
+</body>
+
+</html>
