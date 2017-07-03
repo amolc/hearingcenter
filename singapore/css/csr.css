@@ -428,3 +428,15 @@ input:checked + .slider:before {
     text-align: left;
     
 }
+nav ul img{
+    width: 5%;
+    height: auto;
+    margin-left: -25px;
+    display: flex;
+    margin-top: -20px;
+}
+nav ul p{
+    color: green;
+    text-decoration: none;
+    text-align: left;
+}
