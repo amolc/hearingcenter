@@ -78,6 +78,8 @@
               <input type="checkbox" value="{{choice.id}}" ng-model="choice.selected"> {{choice.name}}
           </div>
 
+          <input type="text" placeholder="Others" ng-model="other">
+
           
           <h1> Do you want to subscribe for our newsletter? </h1><br>
           <label class="switch">
@@ -87,7 +89,7 @@
        
 
         <br><br>
-        <input type="button" class="button1" value="Cancel"  >
+        <input type="button" class="button1" value="Cancel" onclick="window.location='http://localhost:5000/singapore/customer_misc.html';return false;" >
         <input type="submit" class="button2" value="Submit" name="submit">
 
          </form>

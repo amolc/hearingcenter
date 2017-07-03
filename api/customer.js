@@ -40,8 +40,20 @@ exports.insertMisc = function(req, res){
 	includeNewsletter(newsLetter);
 
 	for(var i=1; i<submittedOption.length; i++){
-		var miscId = submittedOption[i].id;
+
+		console.log(submittedOption[i] + " submittedOption");
+
+		var miscId = "";
+		console.log(submittedOption[i].id + " submited ID");
+		if(submittedOption[i].id == "undefined"){
+			miscId = "8";
+		}else{
+			miscId = submittedOption[i].id;
+		}
+ 
 		var name = submittedOption[i].name;
+
+		console.log(name);
 
 		custResponseCRUD.create({
 			'custId': custId,

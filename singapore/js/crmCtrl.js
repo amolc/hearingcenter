@@ -36,6 +36,9 @@ app.controller('crmcontroller', function ($scope, $http, $window, $location) {
             }
         }
 
+        if($scope.other != null){
+            checkList.push($scope.other);
+        }
         
         $http.post(baseurl + 'insertmisc', checkList).success(function (res) {
             if (res.status == 'false') {
@@ -44,7 +47,7 @@ app.controller('crmcontroller', function ($scope, $http, $window, $location) {
                
             }
         }).error(function () {
-            console.log("error");
+ 
         })
         $window.location = 'thankyou.html';
         
