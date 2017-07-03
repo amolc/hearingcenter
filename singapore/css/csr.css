@@ -16,10 +16,10 @@ h5{
 text-align: -webkit-center; 
 
 display: inline-flex;
-padding-left: 70px;
+/*padding-left: 70px;*/
 }
 a{
-	color: black;
+	color: green;
 	text-decoration: none;
 }
 	a:hover,
