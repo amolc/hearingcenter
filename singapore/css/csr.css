@@ -128,6 +128,7 @@ nav {
     max-width: 700px;
     margin: 40px;
     padding: 1em;
+    margin-right: -100px;
 }
 
 nav ul {
@@ -343,11 +344,11 @@ input:checked + .slider:before {
     margin-left: 90px;
 }
 .thankyou img{
-    width: 30%;
+    width: 20%;
     height: auto;
-    margin-left: 1px;
+    margin-left: -100px;
     display: inline-block;
-
+    margin-top: -7px;
     
 }
 .logo{
@@ -406,4 +407,24 @@ input:checked + .slider:before {
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+
+.signin img{
+    width: 10%;
+    height: auto;
+    margin-left: 25px;
+    display: flex;
+    margin-top: -20px;
+    
+}
+.signin a{
+    /*width: 20%;
+    height: auto;
+    margin-left: -100px;
+    display: inline-block;
+    margin-top: -7px;*/
+    color: green;
+    text-decoration: none;
+    text-align: left;
+    
 }
