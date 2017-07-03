@@ -24,12 +24,26 @@ app.controller('crmcontroller', function ($scope, $http, $window, $location) {
         var EqualPos = stringUrl.indexOf("=");
         var id = stringUrl.substring(EqualPos + 1);
 
+        var checkList = [];
+        checkList.push(id);
+
         for(var i=0; i<req.length; i++){
 ;
             if(req[i].checked){
-                console.log(req[i].name);
+                checkList.push(req[i]);
             }
         }
+        
+        $http.post(baseurl + 'insertmisc', checkList).success(function (res) {
+            if (res.status == 'false') {
+
+            } else {
+                
+               
+            }
+        }).error(function () {
+            console.log("error");
+        })
         
     }
 

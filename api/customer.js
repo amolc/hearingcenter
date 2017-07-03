@@ -10,7 +10,7 @@ var db = mysql.createPool({
 
  var CRUD = require('mysql-crud');
  var customerCRUD = CRUD(db, 'customer');
- var miscCRUD = CRUD(db, 'misc');
+ var custResponseCRUD = CRUD(db, 'custResponse');
 
 
 /******************************************************
@@ -24,6 +24,28 @@ exports.getOption = function(req, res){
 
 }
 
+/******************************************************
+insert misc checkbox option
+*/
+exports.insertMisc = function(req, res){
+
+	var submittedOption = req.body;
+	var custId = submittedOption[0];
+
+	for(var i=1; i<submittedOption.length; i++){
+		var miscId = submittedOption[i].id;
+		var name = submittedOption[i].name;
+
+		custResponseCRUD.create({
+			'custId': custId,
+			'miscId' : miscId,
+			'name': name
+		},function (err,vals){
+			
+		})
+	}
+
+}
 
 /******************************************************
 insert customer into db

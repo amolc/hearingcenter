@@ -37,6 +37,7 @@ app.get('/api/findByIc/:ic', customer.findByIc);
 app.get('/api/getoption', customer.getOption);
 
 app.post('/api/insertcustomer', customer.insertCustomer);
+app.post('/api/insertmisc', customer.insertMisc);
 
 
 var singapore = connect();
