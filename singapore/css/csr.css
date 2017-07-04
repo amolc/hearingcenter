@@ -440,3 +440,10 @@ nav ul p{
     text-decoration: none;
     text-align: left;
 }
+
+.miscellaneous li{
+
+display: inline-block;
+margin-right: 100px;
+
+}
