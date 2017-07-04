@@ -38,6 +38,7 @@ app.get('/api/getoption', customer.getOption);
 
 app.post('/api/insertcustomer', customer.insertCustomer);
 app.post('/api/insertmisc', customer.insertMisc);
+app.post('/api/insertHistories', customer.insertHistories);
 
 
 var singapore = connect();

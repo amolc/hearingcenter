@@ -10,20 +10,38 @@ app.controller('crmcontroller', function ($scope, $http, $window, $location) {
         var EqualPos = stringUrl.indexOf("=");
         var id = stringUrl.substring(EqualPos + 1);
 
+        $scope.data = {};
+        $scope.data.custId = id;
+        $scope.data.bloodGrp = $scope.blood;
+
+        $http.post(baseurl + 'insertHistories', $scope.data).success(function (res) {
+            if (res.status == 'false') {
+
+            } else {      
+               
+            }
+        }).error(function () {
+ 
+        })
+
         $window.location.href = 'customer_misc.html?id=' + id;
         
     }
 //*********************************************** */
 //Check if "Other" checkbox is selected
-$scope.check = function(value){
-    if(value == '8'){
-        $scope.disable = false;
-    } else{
-        $scope.disable=true;
-    }   
-}
+// $scope.check = function(value){
+//     console.log(value);
+//     if(value == '8'){
+//         $scope.disable = false;
+//     } else{
+//         $scope.disable=true;
+//     }   
+// }
 
-$scope.disable=true;
+
+//*********************************************** */
+//set input box disabled by default
+// $scope.disable=true;
 
 //*********************************************** */
 //Insert user's miscellaneous responses
@@ -47,9 +65,9 @@ $scope.disable=true;
         }
 
         //textbox input
-        if($scope.other != null){
-            checkList.push($scope.other);
-        }
+        // if($scope.other != null){
+        //     checkList.push($scope.other);
+        // }
         
         $http.post(baseurl + 'insertmisc', checkList).success(function (res) {
             if (res.status == 'false') {
@@ -110,7 +128,6 @@ $scope.disable=true;
 
                     } else {
 
-                        console.log(res);
                         for(var i=0; i<res.length; i++){
                             $window.location.href = 'customer_medicalHist.html?id=' + res[i].id;
                         }
@@ -145,7 +162,6 @@ $scope.disable=true;
                 }else{
                     for(var i=0; i<res.length; i++){
                         $scope.result = res[i];
-                        console.log($scope.result);
                     }
                 }
                 
@@ -160,7 +176,6 @@ $scope.disable=true;
 //Verify member login
 
     $scope.authenticateMember = function(req,res){
-        console.log("method triggered");
         var ic = $scope.ic;
         var pw = $scope.pw;
 
@@ -177,7 +192,6 @@ $scope.disable=true;
                 }else{
 
                     for(var i=0; i<res.length; i++){
-                        console.log(res[i].password);
 
                         if(pw == res[i].password){
                             $window.location.href = 'memberdashboard.html?nric=' + ic;

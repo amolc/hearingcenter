@@ -12,6 +12,24 @@ var db = mysql.createPool({
  var customerCRUD = CRUD(db, 'customer');
  var custResponseCRUD = CRUD(db, 'custResponse');
  var newsLetterCRUD = CRUD(db, 'newsletter');
+ var custMedicalHistoriesCRUD = CRUD(db, 'custMedicalHistories');
+
+
+/******************************************************
+insert medical histories
+*/
+exports.insertHistories = function(req, res){
+	console.log(req.body);
+	var custId = req.body.custId;
+	var bloodGrp = req.body.bloodGrp;
+
+	custMedicalHistoriesCRUD.create({
+			'custId': custId,
+			'bloodGrp' : bloodGrp,
+		},function (err,vals){
+			
+		})
+}
 
 
 /******************************************************
@@ -29,7 +47,6 @@ exports.getOption = function(req, res){
 insert misc checkbox option
 */
 exports.insertMisc = function(req, res){
-	console.log(req.body);
 	var submittedOption = req.body;
 	var custId = submittedOption[0];
 	var newsOption =submittedOption[1];
@@ -40,20 +57,9 @@ exports.insertMisc = function(req, res){
 	includeNewsletter(newsLetter);
 
 	for(var i=2; i<submittedOption.length; i++){
-
-		console.log(submittedOption[i]);
-
-		var miscId = "";
-		//console.log(submittedOption[i].id + " submited ID");
-		if(submittedOption[i].id == "undefined"){
-			miscId = "8";
-		}else{
-			miscId = submittedOption[i].id;
-		}
- 
+	
+		var miscId = submittedOption[i].id;
 		var name = submittedOption[i].name;
-
-		// console.log(name);
 
 		custResponseCRUD.create({
 			'custId': custId,
@@ -94,7 +100,6 @@ function includeNewsletter(req, res){
 insert customer into db
 */
 exports.insertCustomer = function(req, res){
-	console.log(req.body);
 	var firstName = req.body.firstName;
 	var lastName = req.body.lastName;
 	var country = req.body.country;

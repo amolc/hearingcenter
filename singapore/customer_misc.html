@@ -75,10 +75,10 @@
 
         <form class="miscellaneous" ng-controller="crmcontroller" ng-submit=insertResponse()>
           <div ng-repeat="choice in option">
-              <input type="checkbox" value="{{choice.id}}" ng-model="choice.selected" ng-true-value="{{choice.id}}" ng-change="check(choice.id)"> {{choice.name}}
+              <input type="checkbox" value="{{choice.id}}" ng-model="choice.selected"> {{choice.name}}
               
           </div>
-              <input type="text" class="uncheck" ng-disabled='disable'>
+          <!--<input type="text" class="uncheck" ng-disabled='disable'>-->
 
           <!--<input type="text" placeholder="Others" ng-model="other">-->
 
