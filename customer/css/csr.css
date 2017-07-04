@@ -112,15 +112,18 @@ ul li a{ box-shadow: 0px 1px 1px #999; }
 /*For customer registration*/
 div.container {
     width: 100%;
-    border: 1px solid gray;
+    /*border: 1px solid gray;*/
 }
 
-header, footer {
+header {
     padding: 1em;
     color: white;
-    background-color: black;
+    background-color: white;
     clear: left;
-    text-align: center;
+    text-align: left;
+    padding-left: 300px;
+    padding-top: 13px;
+    border-bottom: 1px solid gray;
 }
 
 nav {
@@ -447,3 +450,89 @@ display: inline-block;
 margin-right: 100px;
 
 }
+/*.header_cont
+{
+ display: inline-block;
+}
+
+.header_cont img
+{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+.header_cont button
+{
+    background-color: darkseagreen;
+    border: none;
+    color: black;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 9px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+.button1{
+    border-radius: 12px;
+}
+.button2{
+    border-radius: 12px;
+}
+.button3{
+    border-radius: 12px;
+}
+.button4{
+    border-radius: 12px;
+}
+
+input[type=text] {
+    width: 230px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    border-radius: 12px;
+    height: 20px;
+    text-align: center;
+}
+
+/* When the input field gets focus, change its width to 100% */
+/*input[type=text]:focus {
+    width: 100%;
+}
+
+.patient nav{
+     float: left;
+    max-width: 200px;
+    margin: 40px;
+    padding: 1em;
+}
+.patient nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+   
+.patient nav ul a {
+    text-decoration: none;
+}
+.patient nav ul img{
+    width: 5%;
+    height: auto;
+    margin-left: -25px;
+    display: flex;
+    margin-top: -20px;
+}
+.patient nav ul p{
+    color: green;
+    text-decoration: none;
+    text-align: left;
+}
+.header_cont h3{
+    color: black;
+    margin-left: -290px;
+    font-size: x-large;
+}*/
