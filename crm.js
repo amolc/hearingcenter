@@ -43,7 +43,7 @@ app.post('/api/insertHistories', customer.insertHistories);
 
 var customer = connect();
 customer.use(serveStatic('customer'));
-app.use('/customer', customer);
+app.use('/', customer);
 
 app.listen(7000, function () {
   console.log('CORS-enabled web server listening on port 7000')
