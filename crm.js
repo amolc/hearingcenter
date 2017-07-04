@@ -41,11 +41,11 @@ app.post('/api/insertmisc', customer.insertMisc);
 app.post('/api/insertHistories', customer.insertHistories);
 
 
-var singapore = connect();
-singapore.use(serveStatic('singapore'));
-app.use('/singapore', singapore);
+var customer = connect();
+customer.use(serveStatic('customer'));
+app.use('/customer', customer);
 
-app.listen(5000, function () {
-  console.log('CORS-enabled web server listening on port 5000')
+app.listen(7000, function () {
+  console.log('CORS-enabled web server listening on port 7000')
 })
-console.log("Magic at 5000");
+console.log("Magic at 7000");
