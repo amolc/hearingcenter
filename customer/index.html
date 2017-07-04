@@ -11,7 +11,7 @@
     <meta name="description" content="" />
 
     <!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed -->
-    <link rel="stylesheet" href="css/csr.css" type="text/css" />
+    <link rel="stylesheet" href="css/crm.css" type="text/css" />
     <script type="text/javascript" src="js/jquery.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script type="text/javascript" src="js/angular-storage.min.js"></script>
@@ -26,38 +26,22 @@
     <div data-ng-app="crm" data-ng-controller="crmcontroller">
 
         <div class="centered">
-            <div class="container">
-
-                <nav>
+         
+            <div class="form-style-9">
+                    
                     <div id="logo">
-                        <center><img src="images/logo_1_50.png"></center>
-                        <!--<h1><a href="/" id="logoLink">The Hearing Centre</a></h1>-->
+                        <img src="images/logo_1_50.png">
                     </div>
                     <br><br>
-                    <ul>
-                        <h1> Register here to get started </h1>
-                        <h5> It should only take a couple of minitues </h5><br><br><br>
-                        <li type="circle">
-                            <a href="customer_personal.html">
-                                <h3>Personal Particulars</h3>
-                            </a>
-                        </li><br>
-                        <li type="circle">
-                            <a href="customer_medicalHist.html">
-                                <h3>Medical History</h3>
-                            </a>
-                        </li><br>
-                        <li type="circle">
-                            <a href="customer_misc.html">
-                                <h3>Miscellaneous</h3>
-                            </a>
-                        </li><br>
-                    </ul>
+                   
                     <br><br>
-                    <h5> Returning patient? Sign in <a href="login.html">here</a> </h5>
-
-                </nav>
+                    
+                    <div id="wrapper">
+                        <button class="button2" onclick="location.href='login.html'" type="button">SIGN IN</button>
+                        <button class="button2" onclick="location.href='customer_personal.html'" type="button">REGISTER</button>
+                    </div>
             </div>
+          
         </div>
     </div>
 </body>

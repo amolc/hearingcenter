@@ -1,6 +1,26 @@
 
 app.controller('crmcontroller', function ($scope, $http, $window, $location) {
 
+//*********************************************** */
+//Get all customers to display
+
+    $scope.allCustomer = function(req, res){
+        $http.get(baseurl + 'allcustomer').success(function (res) {
+
+            if (res.status == 'false') {
+
+            } else {
+                $scope.customerList = res;
+
+            }
+
+        }).error(function () {
+
+        });
+        
+
+    }
+
 
 //*********************************************** */
 //Insert user's medical histories

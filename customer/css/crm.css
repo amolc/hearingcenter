@@ -303,6 +303,79 @@ ul li a{ box-shadow: 0px 1px 1px #999; }
   max-width: 300px;
   margin: 0 auto;
 }
+.form-style-9{
+    max-width: 900px;
+    background: #FAFAFA;
+    padding: 80px;
+    margin: 10px 10px;
+    box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+    border: 6px solid #3CB371;
+    float: inherit;
+}
+.form-style-9 ul{
+    padding:0;
+    margin:0;
+    list-style:none;
+}
+.form-style-9 ul li{
+    display: block;
+    margin-bottom: 10px;
+    min-height: 35px;
+}
+.form-style-9 ul li  .field-style{
+    box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    padding: 8px;
+    outline: none;
+    border: 1px solid #B0CFE0;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+
+}.form-style-9 ul li  .field-style:focus{
+    box-shadow: 0 0 5px #B0CFE0;
+    border:1px solid #B0CFE0;
+}
+.form-style-9 ul li .field-split{
+    width: 30%;
+    margin-right: 30px;
+}
+.form-style-9 ul li .field-full{
+    width: 100%;
+}
+.form-style-9 ul li input.align-left{
+    float:left;
+}
+.form-style-9 ul li input.align-right{
+    float:left;
+}
+.form-style-9 ul li textarea{
+    width: 100%;
+    height: 100px;
+}
+.form-style-9 ul li input[type="button"], 
+.form-style-9 ul li input[type="submit"] {
+    -moz-box-shadow: inset 0px 1px 0px 0px #3CB371;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #3CB371;
+    box-shadow: inset 0px 1px 0px 0px #3CB371;
+    background-color: #3CB371;
+    border: 1px solid #3CB371;
+    display: inline-block;
+    cursor: pointer;
+    color: #FFFFFF;
+    padding: 8px 18px;
+    text-decoration: none;
+    font: 12px Arial, Helvetica, sans-serif;
+    float: left;
+}
+.form-style-9 ul li input[type="button"]:hover, 
+.form-style-9 ul li input[type="submit"]:hover {
+    background: linear-gradient(to bottom, #3CB371 5%, #3CB371 100%);
+    background-color: #3CB371;
+}
 .container:before, .container:after {
   content: "";
   display: block;
@@ -335,4 +408,66 @@ ul li a{ box-shadow: 0px 1px 1px #999; }
   position: relative;
 	margin-top: 0px;
   text-align: center;
+}
+.button1{
+    border-radius: 12px;
+}
+.button2{
+    border-radius: 12px;
+}
+.button3{
+    border-radius: 12px;
+}
+.button4{
+    border-radius: 12px;
+}
+.button1 {
+    background-color: #fff;
+    border: none;
+    color: #000;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 1px 109px;
+    cursor: pointer;
+}
+
+.button2 {
+    background-color: #3CB371;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px 1px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+button {
+  display:inline-block;
+}
+
+.wrapper {
+  text-align: center;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.form-style-9 img{
+   margin:60px;
+   height: 120px;
+   width: 200px;
 }
