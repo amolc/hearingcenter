@@ -27,21 +27,6 @@ app.controller('crmcontroller', function ($scope, $http, $window, $location) {
         $window.location.href = 'customer_misc.html?id=' + id;
         
     }
-//*********************************************** */
-//Check if "Other" checkbox is selected
-// $scope.check = function(value){
-//     console.log(value);
-//     if(value == '8'){
-//         $scope.disable = false;
-//     } else{
-//         $scope.disable=true;
-//     }   
-// }
-
-
-//*********************************************** */
-//set input box disabled by default
-// $scope.disable=true;
 
 //*********************************************** */
 //Insert user's miscellaneous responses
@@ -63,11 +48,6 @@ app.controller('crmcontroller', function ($scope, $http, $window, $location) {
                 checkList.push($scope.option[i]);
             }
         }
-
-        //textbox input
-        // if($scope.other != null){
-        //     checkList.push($scope.other);
-        // }
         
         $http.post(baseurl + 'insertmisc', checkList).success(function (res) {
             if (res.status == 'false') {
