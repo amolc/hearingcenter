@@ -45,6 +45,10 @@ var customer = connect();
 customer.use(serveStatic('customer'));
 app.use('/', customer);
 
+var admin = connect();
+admin.use(serveStatic('admin'));
+app.use('/', admin);
+
 app.listen(7000, function () {
   console.log('CORS-enabled web server listening on port 7000')
 })

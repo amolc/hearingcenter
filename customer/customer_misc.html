@@ -37,7 +37,7 @@
           <h1> Register here to get started </h1>
           <h5> It should only take a couple of minitues </h5><br><br><br>
           <h3> <p> Personal Particulars <img src="images/tick.png"> </p> </h3>
-          <h3> <p> Medical History <img src="images/tick.png"> </p> </h3>
+          <!--<h3> <p> Medical History <img src="images/tick.png"> </p> </h3>-->
           <li type="circle"><h3>Miscellaneous</h3></li><br>
         </ul>
         <br><br>          
@@ -52,7 +52,7 @@
 <div id="myModal" class="modal">
 
   <!-- Modal content -->
-     <form class="form-style-9" ng-controller="crmcontroller" ng-submit=insertCustomer()>
+     <form class="form-style-9" ng-controller="crmcontroller" ng-submit=loginMember()>
             <span class="close"></span>
             <div class="logo_1"> <img src="images/logo_1_50.png"> </div>
             <h1>Returning Patient?</h1>
@@ -65,6 +65,13 @@
             </li>
          </ul>
     </form>
+      <div id="error">
+          <div class="error">
+              <div class="item">
+                  <span><h4><b><font color="red">Your NRIC/Passport Number or Password is incorrect. Please try again.</font></b></h4></span>
+              </div>
+          </div>
+      </div>
 </div>
 
 

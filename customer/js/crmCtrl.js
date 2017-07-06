@@ -1,5 +1,34 @@
 
 app.controller('crmcontroller', function ($scope, $http, $window, $location) {
+//Verify member login
+
+    $scope.loginMember = function(req,res){
+        var ic = $scope.nric;
+        $("#error").hide();
+        $scope.result = true;
+
+        $http.get(baseurl + 'findByIc/' + ic).success(function (res) {
+            if (res.status == 'false') {
+                console.log(res.status);
+            }  else {
+
+                if(res.length == 0){
+                    $("#error").show();
+
+                }else{
+                    $("#error").hide();
+                    $window.location.href = 'memberdashboard.html?nric=' + ic;
+                }
+                
+            }
+        }).error(function () {
+
+        });
+    }
+
+
+//*********************************************** */
+
 
 //*********************************************** */
 //Get all customers to display
@@ -129,7 +158,8 @@ app.controller('crmcontroller', function ($scope, $http, $window, $location) {
                     } else {
 
                         for(var i=0; i<res.length; i++){
-                            $window.location.href = 'customer_medicalHist.html?id=' + res[i].id;
+                            //$window.location.href = 'customer_medicalHist.html?id=' + res[i].id;
+                            $window.location.href = 'customer_misc.html?id=' + res[i].id;
                         }
                     }
 
