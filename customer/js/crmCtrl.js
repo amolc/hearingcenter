@@ -223,7 +223,7 @@ app.controller('crmcontroller', function ($scope, $http, $window, $location) {
 
                     for(var i=0; i<res.length; i++){
 
-                        if(pw == res[i].password){
+                        if(pw == res[i].mobile_number){
                             $window.location.href = 'memberdashboard.html?nric=' + ic;
 
                         }else{
