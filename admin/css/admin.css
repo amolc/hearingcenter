@@ -144,10 +144,10 @@ nav ul a {
 }
 
 article {
-    /*margin-left: 500px;*/
-    border-left: 1px solid gray;
-    padding: 10em;
     overflow: hidden;
+    position: absolute;
+    top: 119px;
+    right: -10px;
 }
 
 .miscellaneous input {
@@ -463,8 +463,22 @@ margin-right: 100px;
 }
 .header_cont button
 {
+    /*background-color: darkseagreen;*/
+    /*border: black;*/
+    color: black;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 9px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+.header_cont button:hover
+{
     background-color: darkseagreen;
-    border: none;
+    /*border: black;*/
     color: black;
     padding: 5px 12px;
     text-align: center;
@@ -477,15 +491,23 @@ margin-right: 100px;
 }
 .button1{
     border-radius: 12px;
+    background-color: white;
+    border: 1px solid grey;
 }
 .button2{
     border-radius: 12px;
+     background-color: darkseagreen;
+     border: 1px solid grey;
 }
 .button3{
     border-radius: 12px;
+    background-color: white;
+    border: 1px solid grey;
 }
 .button4{
     border-radius: 12px;
+    background-color: white;
+    border: 1px solid grey;
 }
 
 input[type=text] {
@@ -535,4 +557,39 @@ input[type=text]:focus {
     color: black;
     margin-left: -290px;
     font-size: x-large;
+}
+.header_cont h6{
+    color: black;
+    position: absolute;
+    top: -20px;
+    right: 100px;
+    font-size: larger;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+.blue_box {
+    display: block;
+    clear:both;
+    border: 2px border-style black;
+}
+.blue_box span {
+    background-color: blue;
+    color: white;
+    /*padding: 100px 500px;*/
+    display: block;
+    float: right;
 }

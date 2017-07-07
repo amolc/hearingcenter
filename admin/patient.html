@@ -28,6 +28,7 @@
     <button class = "button2" >Patient</button>
     <button class = "button3" >Accounts</button>
     <button class = "button4" >Clinic</button>
+    <h6 id="demo"></h6>
     <img src="images/logo_2.png"><br><br>
     <div><h3><b>Patient</b></h3></div>
     </div> 
@@ -38,29 +39,30 @@
 <div class="patient">
 
 <nav>
-        <div id="logo">
-          <center><img src="images/logo_1_50.png"></center>
-        </div>
-        <br><br>
-        <ul>
-          <h1> Register here to get started </h1>
-          <h5> It should only take a couple of minitues </h5><br><br><br>
-          <!--<a><img src="images/tick.png"><p>Personal Particulars</p></a>-->
-          <h3> <p> Personal Particulars <img src="images/tick.png"> </p> </h3>
-          <li type="circle"><h3>Medical History</h3></li><br>
-          <h3>Miscellaneous</h3><br>
-        </ul>
-        <br><br>          
+<div class="blue_box">
+  <span>
+                          <h1> FILTER BY </h1>
+                             <h1> Type of Patients </h1>
+                             <input type="checkbox" name="vehicle" value="Bike"> I have a bike<br>
+                             <input type="checkbox" name="vehicle" value="Car" checked="checked"> I have a car<br>
+                            <!--<li><input type="checkbox" value="PATIENT 1" ng-model="CHOICE_1">PATIENT 1</li>
+                            <li><input type="checkbox" value="PATIENT 2" ng-model="CHOICE_2">PATIENT 2</li>
+                            <li><input type="checkbox" value="PATIENT 3" ng-model="CHOICE_3">PATIENT 3</li>-->
+                            <h1> GENDER </h1>
+                            <li><input type="checkbox" value="FEMALE" ng-model="female">FEMALE</li>
+                            <li><input type="checkbox" value="MALE" ng-model="male">MALE</li>
+  </span>                        
+  </div>             
 </nav>
      <article>
 
                     <table>
                        <tr>
-                           <td>Name</td>
-                           <td>NRIC</td>
-                           <td>Mobile No.</td>
-                           <td>Email</td>
-                           <td>Last Visit</td>
+                           <th>Name</th>
+                           <th>NRIC</th>
+                           <th>Mobile No.</th>
+                           <th>Email</th>
+                           <th>Last Visit</th>
                        </tr>
                        <tr ng-repeat="cust in customerList">
                            <td>{{cust.firstName}} {{cust.lastName}}</td>
@@ -75,6 +77,12 @@
 </div>
 
   </div>
+
+<script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d.toDateString();
+</script>
+
 </body>
 
 </html>
