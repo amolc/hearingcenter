@@ -77,10 +77,10 @@
                 <td>{{cust.lastVisit}}</td>
             </tr>
         </table>-->
-
+        
         <table>
             <tr>
-                <th><input type="checkbox" ng-model="master"></th>
+                <th><input type="checkbox" ng-model="allSelected" ng-model-options="{getterSetter: true}"></th>
                 <th>Name</th>
                 <th>NRIC</th>
                 <th>Mobile No.</th>
@@ -96,7 +96,7 @@
                   <!--<form ng-controller="crmcontroller" ng-submit=deletePatient()>
 
                   </form>-->
-                  <input type="checkbox" value="{{cust.id}}" ng-model="cust.selected" ng-checked="master">
+                  <input type="checkbox" value="{{cust.id}}" ng-model="cust.selected">
                 </td>
                 <td>{{cust.firstName}} {{cust.lastName}}</td>
                 <td>{{cust.nric}}</td>

@@ -2,6 +2,32 @@
 app.controller('admincontroller', function ($scope, $http, $window, $location) {
 
 //*********************************************** */
+//Checkbox option for selecting patients 
+    
+    $scope.allSelected = function (value) {
+        if (value !== undefined) {
+            return setAllSelected(value);
+        } else {
+            return getAllSelected();
+        }
+    }
+
+    function getAllSelected() {
+        var selectedItems = $scope.customerList.filter(function (cust) {
+            return cust.selected;
+        });
+        
+        return selectedItems.length === $scope.customerList.length;
+    }
+    
+    function setAllSelected(value) {
+        angular.forEach($scope.customerList, function (cust) {
+            cust.selected = value;
+        });
+    }
+
+
+//*********************************************** */
 //Delete selected patient
     $scope.deletePatient = function(req, res){
         
