@@ -248,3 +248,103 @@ color: white;
     font-weight: 700;
     background-color: blue;
 }
+.box1{
+    display: block;
+    clear:both;
+    position: absolute;
+    top: 85px;
+    left: 30px;
+}
+.box1 span{
+    background-color: white;
+    color: black;
+    padding: 10px 5px;
+    display: block;
+    float: right;
+}
+.box2{
+    display: block;
+    clear:both;
+    position: absolute;
+    top: 150px;
+    left: 30px;
+
+}
+.box2 span{
+    background-color: white;
+    color: black;
+    padding: 10px 5px;
+    display: block;
+    float: right;
+    margin-top: 10px;
+}
+.box3{
+    display: block;
+    clear: both;
+    margin-right: -10px;
+    margin-top: -10px;
+    margin-left: -10px;
+
+}
+.box3 span{
+    background-color: white;
+    color: black;
+    padding: 10px;
+    display: block;
+    float: right;
+}
+.box3 table{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-right: 350px;
+    margin-bottom: 220px;
+}
+
+.box3 th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+    color: white;
+    font-size: 1.3em;
+    font-weight: 700;
+    background-color: blue;
+}
+.patient2 article{
+    overflow: hidden;
+    position: absolute;
+    top: 85px;
+    right: 210px;
+}
+.box3 button
+{
+    background-color: white;
+    /* border: black; */
+    color: black;
+    padding: 10px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 1px;
+
+    /*border-radius: 12px;*/
+    /*background-color: darkseagreen;*/
+    border: 1px solid grey;
+}
+.box3 button:hover
+{
+    background-color: blue;
+    /* border: black; */
+    color: white;
+    padding: 10px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 1px;
+
+    /*border: 1px solid grey;*/
+}
