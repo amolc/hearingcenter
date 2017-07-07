@@ -16,6 +16,33 @@ var db = mysql.createPool({
 
 
 /******************************************************
+Delete customer from db
+*/
+exports.deleteCustomer = function(req, res) {
+	console.log(req);
+	console.log(req.params);
+  	console.log(req.params.ic);
+	var id = req.params.id ;
+
+	customerCRUD.destroy({'id' : id}, function (err, vals) {
+	console.log(vals.affectedRows);
+		
+		// if(parseInt(vals.affectedRows)>0){
+		// 	var resdata={status:true,
+		// 		message:'patient successfully deleted'};
+		// 	res.jsonp(resdata);
+		// }else{
+		// 	var resdata={status:false,
+		// 	message:'record not found '};
+		// 	res.jsonp(resdata);
+		// }
+	});
+
+	
+ };
+
+
+/******************************************************
 insert medical histories
 */
 exports.insertHistories = function(req, res){

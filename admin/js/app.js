@@ -1,5 +1,5 @@
 'use strict';
-var app = angular.module('crm', ['angular-storage']);
+var app = angular.module('admin', ['angular-storage']);
 
 var baseurl = "http://localhost:7000/api/";
 
