@@ -18,7 +18,7 @@
   <script src="js/bootstrap.js" type="text/javascript"></script>
   <script src="js/index.js"></script>
   <script type="text/javascript" src="js/app.js"></script>
-  <script type="text/javascript" src="js/crmCtrl.js"></script>
+  <script type="text/javascript" src="js/adminCtrl.js"></script>
 
 </head>
 <header>
@@ -34,42 +34,49 @@
     </div> 
 </header>
 <body>
-  <div data-ng-app="crm" data-ng-controller="crmcontroller" ng-init="allCustomer()">
+  <div data-ng-app="crm" data-ng-controller="admincontroller" ng-init=allCustomer()>
 
 <div class="patient">
 
 <nav>
 <div class="blue_box">
   <span>
-                          <h1> FILTER BY </h1>
-                             <h2> Type of Patients </h2>
-                             <input type="checkbox" name="patient_1" value="patient_1"> Patient_1<br>
-                             <input type="checkbox" name="patient_2" value="patient_2"> Patient_2<br>
-                             <input type="checkbox" name="patient_3" value="patient_3"> Patient_3<br><br>
-                             <h2> GENDER </h2>
-                            <input type="checkbox" name="male" value="male"> Male <br>
-                            <input type="checkbox" name="female" value="female"> Female<br>
+    <h1> FILTER BY </h1>
+        <h2> Type of Patients </h2>
+        <input type="checkbox" name="patient_1" value="patient_1"> Patient_1<br>
+        <input type="checkbox" name="patient_2" value="patient_2"> Patient_2<br>
+        <input type="checkbox" name="patient_3" value="patient_3"> Patient_3<br><br>
+        <h2> GENDER </h2>
+      <input type="checkbox" name="male" value="male"> Male <br>
+      <input type="checkbox" name="female" value="female"> Female<br>
   </span>                        
   </div>             
 </nav>
      <article>
 
-                    <table>
-                       <tr>
-                           <th>Name</th>
-                           <th>NRIC</th>
-                           <th>Mobile No.</th>
-                           <th>Email</th>
-                           <th>Last Visit</th>
-                       </tr>
-                       <tr ng-repeat="cust in customerList">
-                           <td>{{cust.firstName}} {{cust.lastName}}</td>
-                           <td>{{cust.nric}}</td>
-                           <td>{{cust.mobile_number}}</td>
-                           <td>{{cust.email_address}}</td>
-                           <td>{{cust.lastVisit}}</td>
-                       </tr>
-                   </table>
+        <table>
+            <tr>
+                <th><input type="checkbox"></th>
+                <th>Name</th>
+                <th>NRIC</th>
+                <th>Mobile No.</th>
+                <th>Email</th>
+                <th>Last Visit</th>
+            </tr>
+            <tr ng-repeat="cust in customerList">
+                <td>
+                  <!--<form ng-controller="crmcontroller" ng-submit=deletePatient()>
+
+                  </form>-->
+                  <input type="checkbox" value="{{cust.id}}">
+                </td>
+                <td>{{cust.firstName}} {{cust.lastName}}</td>
+                <td>{{cust.nric}}</td>
+                <td>{{cust.mobile_number}}</td>
+                <td>{{cust.email_address}}</td>
+                <td>{{cust.lastVisit}}</td>
+            </tr>
+        </table>
 
       </article>
 </div>

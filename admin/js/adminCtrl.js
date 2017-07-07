@@ -1,10 +1,11 @@
 
-app.controller('crmcontroller', function ($scope, $http, $window, $location) {
+app.controller('admincontroller', function ($scope, $http, $window, $location) {
 
 //*********************************************** */
 //Delete selected patient
     $scope.deletePatient = function(req, res){
-    
+        
+        console.log(req);
         var patientList = [];
 
         //checkbox selection
@@ -59,6 +60,7 @@ app.controller('crmcontroller', function ($scope, $http, $window, $location) {
             if (res.status == 'false') {
 
             } else {
+                console.log("in");
                 $scope.customerList = res;
 
             }
