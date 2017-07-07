@@ -54,7 +54,7 @@
 </nav>
      <article>
 
-        <table>
+        <!--<table>
             <tr>
                 <th><input type="checkbox"></th>
                 <th>Name</th>
@@ -65,10 +65,38 @@
             </tr>
             <tr ng-repeat="cust in customerList">
                 <td>
+                  <form ng-controller="crmcontroller" ng-submit=deletePatient()>
+
+                  </form>
+                  <input type="checkbox" value="{{cust.id}}">
+                </td>
+                <td>{{cust.firstName}} {{cust.lastName}}</td>
+                <td>{{cust.nric}}</td>
+                <td>{{cust.mobile_number}}</td>
+                <td>{{cust.email_address}}</td>
+                <td>{{cust.lastVisit}}</td>
+            </tr>
+        </table>-->
+
+        <table>
+            <tr>
+                <th><input type="checkbox" ng-model="master"></th>
+                <th>Name</th>
+                <th>NRIC</th>
+                <th>Mobile No.</th>
+                <th>Email</th>
+                <th>Last Visit</th>
+            </tr>
+            <tr>
+
+
+            </tr>
+            <tr ng-repeat="cust in customerList">
+                <td>
                   <!--<form ng-controller="crmcontroller" ng-submit=deletePatient()>
 
                   </form>-->
-                  <input type="checkbox" value="{{cust.id}}">
+                  <input type="checkbox" value="{{cust.id}}" ng-model="cust.selected" ng-checked="master">
                 </td>
                 <td>{{cust.firstName}} {{cust.lastName}}</td>
                 <td>{{cust.nric}}</td>
