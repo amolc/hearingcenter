@@ -75,7 +75,7 @@
                   <!--<form ng-controller="crmcontroller" ng-submit=deletePatient()>
 
                   </form>-->
-                  <input type="checkbox" value="{{cust.id}}" ng-model="cust.selected">
+                  <input type="checkbox" value="{{cust.id}}" ng-model="cust.selected" ng-change="change(cust)">
                 </td>
                 <td>{{cust.firstName}} {{cust.lastName}}</td>
                 <td>{{cust.nric}}</td>
@@ -83,6 +83,7 @@
                 <td>{{cust.email_address}}</td>
                 <td>{{cust.lastVisit}}</td>
             </tr>
+            <p>total checked: {{selectedCounter}}</p>
         </table>
 
       </article>

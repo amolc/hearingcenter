@@ -44,6 +44,15 @@ app.controller('admincontroller', function ($scope, $http, $window, $location) {
         });
     }
 
+    $scope.selectedCounter = 0;
+    $scope.change = function (cust) {
+        if (cust.selected) {
+            $scope.selectedCounter++
+        } else {
+            $scope.selectedCounter--
+        }
+    };
+
 
 //*********************************************** */
 //Delete selected patient
