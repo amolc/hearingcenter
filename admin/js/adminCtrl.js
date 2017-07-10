@@ -42,27 +42,34 @@ app.controller('admincontroller', function ($scope, $http, $window, $location) {
     
     function setAllSelected(value) {
         angular.forEach($scope.customerList, function (cust) {
-            //console.log(value);
             cust.selected = value;
         });
     }
 
-    $scope.selectedCounter = 0;
+    // $scope.selectedCounter = 0;
    
-    $scope.change = function (cust) {
-        if (cust.selected) {
-            $scope.selectedCounter++
-        } else {
-            if($scope.selectedCounter > 0){
-                $scope.selectedCounter--
-            }else{
-                $scope.selectedCounter = 0;
-            }
+    // $scope.change = function (cust) {
+    //     if (cust.selected) {
+    //         $scope.selectedCounter++
+    //     } else {
+    //         if($scope.selectedCounter > 0){
+    //             $scope.selectedCounter--
+    //         }else{
+    //             $scope.selectedCounter = 0;
+    //         }
             
+    //     }
+    // };
+/***************************************** */
+//count number of checkbox selected
+    $scope.$watch('customerList', function() {
+        var no = 0;
+        for(var i = 0; i < $scope.customerList.length; i++) {
+            if($scope.customerList[i].selected === true)
+                no++;
         }
-    };
-
-
+        $scope.noSelectedItems = no;
+    }, true);
 //*********************************************** */
 //Delete selected patient
     $scope.deletePatient = function(req, res){
