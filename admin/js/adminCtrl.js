@@ -2,6 +2,19 @@
 app.controller('admincontroller', function ($scope, $http, $window, $location) {
 
 //*********************************************** */
+//Authenticate Administrator
+    
+    $scope.authenticateAdmin = function (req, res) {
+        var username = $scope.username;
+        var password = $scope.password;
+
+        if(username == "admin" && password == "admin"){
+            $window.location = "patient.html";
+        }
+    }
+
+
+//*********************************************** */
 //Checkbox option for selecting patients 
     
     $scope.allSelected = function (value) {
