@@ -119,6 +119,80 @@ article {
     border: 1px solid grey;
 }
 
+.button5
+{
+    /*background-color: darkseagreen;*/
+    /*border: black;*/
+    color: black;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 9px;
+    cursor: pointer;
+    border-radius: 12px;
+    border-radius: 12px;
+    background-color: white;
+    border: 1px solid grey;
+    position: absolute;
+    top: 0px;
+    right: 10px;
+}
+
+.button5:hover
+{
+    background-color: darkseagreen;
+    /*border: black;*/
+    color: black;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 9px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.button6
+{
+    /*background-color: darkseagreen;*/
+    /*border: black;*/
+    color: black;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 9px;
+    cursor: pointer;
+    border-radius: 12px;
+    border-radius: 12px;
+    background-color: white;
+    border: 1px solid grey;
+    position: absolute;
+    top: 0px;
+    left: 150px;
+}
+
+.button6:hover
+{
+    background-color: darkseagreen;
+    /*border: black;*/
+    color: black;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 9px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+
+
 input[type=text] {
     width: 230px;
     -webkit-transition: width 0.4s ease-in-out;
