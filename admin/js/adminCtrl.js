@@ -23,7 +23,8 @@ app.controller('admincontroller', function ($scope, $http, $window, $location) {
 //Checkbox option for selecting patients 
     
     $scope.allSelected = function (value) {
-        if (value !== undefined) {
+        //console.log(value);
+        if (value != undefined) {
             return setAllSelected(value);
         } else {
             return getAllSelected();
@@ -32,6 +33,7 @@ app.controller('admincontroller', function ($scope, $http, $window, $location) {
 
     function getAllSelected() {
         var selectedItems = $scope.customerList.filter(function (cust) {
+            console.log(cust.selected);
             return cust.selected;
         });
         
@@ -40,16 +42,23 @@ app.controller('admincontroller', function ($scope, $http, $window, $location) {
     
     function setAllSelected(value) {
         angular.forEach($scope.customerList, function (cust) {
+            //console.log(value);
             cust.selected = value;
         });
     }
 
     $scope.selectedCounter = 0;
+   
     $scope.change = function (cust) {
         if (cust.selected) {
             $scope.selectedCounter++
         } else {
-            $scope.selectedCounter--
+            if($scope.selectedCounter > 0){
+                $scope.selectedCounter--
+            }else{
+                $scope.selectedCounter = 0;
+            }
+            
         }
     };
 
