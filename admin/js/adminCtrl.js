@@ -10,6 +10,8 @@ app.controller('admincontroller', function ($scope, $http, $window, $location) {
 
         if(username == "admin" && password == "admin"){
             $window.location = "patient.html";
+        }else{
+            $("#error").show();
         }
     }
 
