@@ -9,6 +9,9 @@ app.controller('admincontroller', function ($scope, $http, $window, $location) {
         var password = $scope.password;
 
         if(username == "admin" && password == "admin"){
+            console.log("authenticated");
+            window.localStorage.setItem('user','1');
+            console.log(window.localStorage.getItem('user'));
             $window.location = "patient.html";
         }else{
             $("#error").show();
@@ -96,6 +99,11 @@ app.controller('admincontroller', function ($scope, $http, $window, $location) {
 //Get all customers to display
 
     $scope.allCustomer = function(req, res){
+
+        if(window.localStorage.getItem('user')!="1"){
+            $window.location = 'index.html';
+        }
+
         $http.get(baseurl + 'allcustomer').success(function (res) {
 
             if (res.status == 'false') {
@@ -112,6 +120,14 @@ app.controller('admincontroller', function ($scope, $http, $window, $location) {
         
 
     }
+
+//*********************************************** */
+//Logout function
+    $scope.logout = function(){
+        window.localStorage.setItem('user','0');
+        $window.location = 'index.html';
+    }
+ 
 
 //*********************************************** */
 //Trigger default success or error message

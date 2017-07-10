@@ -28,6 +28,7 @@
     <button class = "button2" >Patient</button>
     <button class = "button3" >Accounts</button>
     <button class = "button4" >Clinic</button>
+
     <h6 id="demo"></h6>
     <img src="images/logo_2.png"><br><br>
     <div><h3><b>Patient</b></h3></div>
@@ -35,7 +36,7 @@
 </header>
 <body>
   <div data-ng-app="crm" data-ng-controller="admincontroller" ng-init=allCustomer()>
-
+    
 <div class="patient">
 
 <nav>
@@ -54,29 +55,7 @@
 </nav>
      <article>
 
-        <!--<table>
-            <tr>
-                <th><input type="checkbox"></th>
-                <th>Name</th>
-                <th>NRIC</th>
-                <th>Mobile No.</th>
-                <th>Email</th>
-                <th>Last Visit</th>
-            </tr>
-            <tr ng-repeat="cust in customerList">
-                <td>
-                  <form ng-controller="crmcontroller" ng-submit=deletePatient()>
-
-                  </form>
-                  <input type="checkbox" value="{{cust.id}}">
-                </td>
-                <td>{{cust.firstName}} {{cust.lastName}}</td>
-                <td>{{cust.nric}}</td>
-                <td>{{cust.mobile_number}}</td>
-                <td>{{cust.email_address}}</td>
-                <td>{{cust.lastVisit}}</td>
-            </tr>
-        </table>-->
+        <button class = "button4" ng-click=logout()>Logout</button>
         
         <table>
             <tr>
