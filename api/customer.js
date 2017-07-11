@@ -19,24 +19,27 @@ var db = mysql.createPool({
 Delete customer from db
 */
 exports.deleteCustomer = function(req, res) {
-	console.log(req);
-	console.log(req.params);
-  	console.log(req.params.ic);
-	var id = req.params.id ;
+	console.log(req.body.length);
+	
+	for(var i=0; i<req.body.length; i++){
 
-	customerCRUD.destroy({'id' : id}, function (err, vals) {
-	console.log(vals.affectedRows);
-		
-		// if(parseInt(vals.affectedRows)>0){
-		// 	var resdata={status:true,
-		// 		message:'patient successfully deleted'};
-		// 	res.jsonp(resdata);
-		// }else{
-		// 	var resdata={status:false,
-		// 	message:'record not found '};
-		// 	res.jsonp(resdata);
-		// }
-	});
+		var id = req.body[i].id ;
+
+		customerCRUD.destroy({'id' : id}, function (err, vals) {
+			
+			if(parseInt(vals.affectedRows)>0){
+				var resdata={status:true,
+					message:'patient successfully deleted'};
+				//res.jsonp(resdata);
+			}else{
+				var resdata={status:false,
+				message:'record not found '};
+				//res.jsonp(resdata);
+			}
+		});
+
+	}
+	
 
 	
  };

@@ -33,7 +33,6 @@ app.controller('admincontroller', function ($scope, $http, $window, $location) {
 
     function getAllSelected() {
         var selectedItems = $scope.customerList.filter(function (cust) {
-            console.log(cust.selected);
             return cust.selected;
         });
         
@@ -72,18 +71,13 @@ app.controller('admincontroller', function ($scope, $http, $window, $location) {
     }, true);
 //*********************************************** */
 //Delete selected patient
-    $scope.deletePatient = function(req, res){
+    $scope.delete = function(req, res){
         
-        console.log(req);
-        var patientList = [];
-
-        //checkbox selection
-        for(var i=0; i<$scope.customerList.length; i++){
-
-            if($scope.customerList[i].selected){
-                patientList.push($scope.customerList[i]);
-            }
-        }
+      
+        var patientList = $scope.customerList.filter(function (cust) {
+            return cust.selected;
+            
+        });
         
         $http.post(baseurl + 'deleteCustomer', patientList).success(function (res) {
             if (res.status == 'false') {
