@@ -1,5 +1,13 @@
 
 app.controller('admincontroller', function ($scope, $http, $window, $location) {
+    
+    
+//*********************************************** */
+//Little function to create the sort order click handler
+    $scope.setOrder = function (orderProp) {
+        $scope.orderProp = orderProp;
+    };
+
 
 //*********************************************** */
 //Authenticate Administrator

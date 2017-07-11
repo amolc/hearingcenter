@@ -65,24 +65,54 @@
         <table>
             <tr>
                 <th><input type="checkbox" ng-model="allSelected" ng-model-options="{getterSetter: true}"></th>
-                <th>Name</th>
-                <th>NRIC</th>
-                <th>Mobile No.</th>
-                <th>Email</th>
-                <th>Last Visit</th>
+
+                <th>
+                  Name
+                  <a ng-click="setOrder('firstName')" class="headerSortDown"></a>
+                  <a ng-click="setOrder('-firstName')" class="headerSortUp"></a></th>
+                </th>
+
+                <th>
+                  Gender
+                  <a ng-click="setOrder('gender')" class="headerSortDown"></a>
+                  <a ng-click="setOrder('-gender')" class="headerSortUp"></a></th>
+                </th>
+
+                <th>
+                  NRIC
+                  <a ng-click="setOrder('nric')" class="headerSortDown"></a>
+                  <a ng-click="setOrder('-nric')" class="headerSortUp"></a></th>
+                </th>
+
+                <th>
+                  Mobile No.
+                  <a ng-click="setOrder('mobile_number')" class="headerSortDown"></a>
+                  <a ng-click="setOrder('-mobile_number')" class="headerSortUp"></a></th>
+                </th>
+
+                <th>
+                  Email
+                  <a ng-click="setOrder('email_address')" class="headerSortDown"></a>
+                  <a ng-click="setOrder('-email_address')" class="headerSortUp"></a></th>
+                </th>
+
+                <th>
+                  Last Visit
+                  <a ng-click="setOrder('lastVisit')" class="headerSortDown"></a>
+                  <a ng-click="setOrder('-lastVisit')" class="headerSortUp"></a></th>
+                </th>
             </tr>
             <tr>
 
 
             </tr>
-            <tr ng-repeat="cust in customerList">
-                <td>
-                  <!--<form ng-controller="crmcontroller" ng-submit=deletePatient()>
-
-                  </form>-->
+            <tr ng-repeat="cust in customerList|orderBy:orderProp">
+                
+                <td>  
                   <input type="checkbox" value="{{cust.id}}" ng-model="cust.selected" ng-change="change(cust)">
                 </td>
                 <td>{{cust.firstName}} {{cust.lastName}}</td>
+                <td>{{cust.gender}}</td>
                 <td>{{cust.nric}}</td>
                 <td>{{cust.mobile_number}}</td>
                 <td>{{cust.email_address}}</td>
