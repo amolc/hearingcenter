@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+  
+<div data-ng-app="crm" data-ng-controller="admincontroller" ng-init=allCustomer()>
 
 <head>
 
@@ -21,6 +23,7 @@
   <script type="text/javascript" src="js/adminCtrl.js"></script>
 
 </head>
+
 <header>
     <div class = "header_cont" >
       <input type="text" name="search" placeholder="Search..">
@@ -28,6 +31,7 @@
       <button class = "button2" >Patient</button>
       <button class = "button3" >Accounts</button>
       <button class = "button4" >Clinic</button>
+      <button class = "button4" ng-click=logout()>Logout</button>
       <h6 id="demo"></h6>
       <img src="images/logo_2.png"><br><br>
       <div><h3><b>Patient</b></h3></div>
@@ -35,7 +39,7 @@
     </div> 
 </header>
 <body>
-  <div data-ng-app="crm" data-ng-controller="admincontroller" ng-init=allCustomer()>
+  <!--<div data-ng-app="crm" data-ng-controller="admincontroller" ng-init=allCustomer()>-->
     
 <div class="patient">
 
@@ -55,7 +59,7 @@
 </nav>
      <article>
 
-        <button class = "button5" ng-click=logout()>Logout</button>
+        <!--<button class = "button5" ng-click=logout()>Logout</button>-->
         <button class = "button6" ng-click=delete()>Delete</button>
         
         <table>
