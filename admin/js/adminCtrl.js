@@ -2,14 +2,14 @@
 app.controller('admincontroller', function ($scope, $http, $window, $location) {
     
     
-//*********************************************** */
+//********************************************************************************* */
 //Little function to create the sort order click handler
     $scope.setOrder = function (orderProp) {
         $scope.orderProp = orderProp;
     };
 
 
-//*********************************************** */
+//********************************************************************************* */
 //Authenticate Administrator
     
     $scope.authenticateAdmin = function (req, res) {
@@ -27,7 +27,7 @@ app.controller('admincontroller', function ($scope, $http, $window, $location) {
     }
 
 
-//*********************************************** */
+//********************************************************************************* */
 //Checkbox option for selecting patients 
     
     $scope.allSelected = function (value) {
@@ -67,7 +67,9 @@ app.controller('admincontroller', function ($scope, $http, $window, $location) {
             
     //     }
     // };
-/***************************************** */
+
+
+//********************************************************************************* */
 //count number of checkbox selected
     $scope.$watch('customerList', function() {
         var no = 0;
@@ -77,7 +79,9 @@ app.controller('admincontroller', function ($scope, $http, $window, $location) {
         }
         $scope.noSelectedItems = no;
     }, true);
-//*********************************************** */
+
+
+//********************************************************************************* */
 //Delete selected patient
     $scope.delete = function(req, res){
         
@@ -101,7 +105,7 @@ app.controller('admincontroller', function ($scope, $http, $window, $location) {
     }
 
 
-//*********************************************** */
+//********************************************************************************* */
 //Get specific patient information to display
 
     $scope.getPatient = function(nric, res){
@@ -122,7 +126,8 @@ app.controller('admincontroller', function ($scope, $http, $window, $location) {
         
     }
 
-//*********************************************** */
+
+//********************************************************************************* */
 //Get all customers to display
 
     $scope.allCustomer = function(req, res){
@@ -148,7 +153,8 @@ app.controller('admincontroller', function ($scope, $http, $window, $location) {
 
     }
 
-//*********************************************** */
+
+//********************************************************************************* */
 //Logout function
     $scope.logout = function(){
         window.localStorage.setItem('user','0');
@@ -156,7 +162,7 @@ app.controller('admincontroller', function ($scope, $http, $window, $location) {
     }
  
 
-//*********************************************** */
+//********************************************************************************* */
 //Trigger default success or error message
     $scope.init = function(){
         $("#error").hide();
