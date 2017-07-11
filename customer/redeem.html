@@ -41,8 +41,8 @@
 
 		<div id="tab">
 			<ul>
-				<li><a href="memberdashboard.html">Member's Portal</a></li>
-				<li><a href="redeem.html">Redeem Points</a></li>
+				<li><a href="memberdashboard.html?nric={{result.nric}}">Member's Portal</a></li>
+				<li><a href="redeem.html?nric={{result.nric}}">Redeem Points</a></li>
 			</ul>
 		</div>
 		<!-- webpage content goes here in the body -->
@@ -52,7 +52,7 @@
 			<div id="content8" style="background-color: #45A77A;">
 				<h2>My Points</h2>
 				<div id = "box">
-					{{result.points}}
+					<center>{{result.points}}</center>
 				</div>
 				<!--<img src="images/medal.png" align = "right" width="110" height="110">-->
 			</div>
