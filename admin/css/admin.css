@@ -441,9 +441,10 @@ color: white;
 }
 
 .box3 input[type=text] {
-    width: 785px;
+    width: 800px;
     height: 150px;
     padding: 25px;
+    padding-left: 10px;
     margin: 25px;
     position: absolute;
     top: 15px;
@@ -451,3 +452,27 @@ color: white;
     border-radius: 1px;
     text-align: left;
 }
+
+.page2 table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+    position: absolute;
+    left: 550px;
+}
+
+.page2 td{
+    text-align: center;
+    background-color: white;
+}
+.page2 table td input {
+ width: 100%;   
+}
+ .page2 myclass {
+        height: 20px;
+        position: relative;
+        border: 2px solid #cdcdcd;
+        border-color: rgba(0,0,0,.14);
+        background-color: AliceBlue ;   ;
+        font-size: 14px;
+    }
