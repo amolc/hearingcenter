@@ -468,11 +468,24 @@ color: white;
 .page2 table td input {
  width: 100%;   
 }
- .page2 myclass {
-        height: 20px;
-        position: relative;
-        border: 2px solid #cdcdcd;
-        border-color: rgba(0,0,0,.14);
-        background-color: AliceBlue ;   ;
-        font-size: 14px;
-    }
+ .page2 textarea{
+-webkit-appearance: textarea;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    user-select: text;
+    flex-direction: column;
+    resize: auto;
+    cursor: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    border-width: 1px;
+    border-style: solid;
+    border-color: initial;
+    border-image: initial;
+    padding: 2px;
+    position: absolute;
+    position: absolute;
+    left: 550px;
+    top: 33px;
+    width: 835px;
+ }
