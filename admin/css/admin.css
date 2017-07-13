@@ -205,11 +205,6 @@ input[type=text] {
     text-align: center;
 }
 
-/* When the input field gets focus, change its width to 100% */
-input[type=text]:focus {
-    width: 100%;
-}
-
 .patient nav{
     position: absolute;
     top: 65px;
@@ -389,6 +384,8 @@ color: white;
     position: absolute;
     top: 85px;
     right: 210px;
+    height: 100%;
+    width: 100%;
 }
 .box3 button
 {
@@ -441,4 +438,16 @@ color: white;
 .headerSortDown,
 .headerSortUp{
   padding-right: 10px;
+}
+
+.box3 input[type=text] {
+    width: 785px;
+    height: 150px;
+    padding: 25px;
+    margin: 25px;
+    position: absolute;
+    top: 15px;
+    left: 823px;
+    border-radius: 1px;
+    text-align: left;
 }
