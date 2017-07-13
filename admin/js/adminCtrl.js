@@ -2,6 +2,33 @@
 app.controller('admincontroller', function ($scope, $http, $window, $location) {
     
 
+    $scope.tab = 1;
+//********************************************************************************* */
+//When admin click on tab, it initialises the variable with value
+    $scope.setTab = function(newTab){
+      $scope.tab = newTab;
+    };
+
+
+//********************************************************************************* */
+//When admin click on tab, it initialises the variable with value
+    $scope.setSubTab = function(newTab){
+      $scope.subTab = newTab;
+    };
+
+//********************************************************************************* */
+//Check if current tab is set to the initialised value. If true, display, else, hide
+    $scope.isSet = function(tabNum){
+      return $scope.tab === tabNum;
+    };
+
+
+//********************************************************************************* */
+//Check if current tab is set to the initialised value. If true, display, else, hide
+    $scope.isSubSet = function(tabNum){
+      return $scope.subTab === tabNum;
+    };
+
 
 //********************************************************************************* */
 //Patient detail using their nric
@@ -83,21 +110,6 @@ app.controller('admincontroller', function ($scope, $http, $window, $location) {
             cust.selected = value;
         });
     }
-
-    // $scope.selectedCounter = 0;
-   
-    // $scope.change = function (cust) {
-    //     if (cust.selected) {
-    //         $scope.selectedCounter++
-    //     } else {
-    //         if($scope.selectedCounter > 0){
-    //             $scope.selectedCounter--
-    //         }else{
-    //             $scope.selectedCounter = 0;
-    //         }
-            
-    //     }
-    // };
 
 
 //********************************************************************************* */

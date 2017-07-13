@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-
+<div data-ng-app="crm" data-ng-controller="admincontroller" ng-init=getID()>
 <head>
 
   <!-- your webpage info goes here -->
@@ -26,14 +26,15 @@
     <input type="text" name="search" placeholder="Search..">
     <button class = "button1" >Dashboard</button>
     <button class = "button2" onclick="location.href='patient.html';" >Patient</button> 
-    <button class = "button3" >Accounts</button>
+    <!-- <button class = "button3" onclick="location.href='account.html';">Accounts</button> -->
+    <button class = "button3"><a href="account.html?nric={{result.nric}}">Accounts</a></button>
     <button class = "button4" >Clinic</button>
     <h6 id="demo"></h6>
     <img src="images/logo_2.png"><br><br>
     </div> 
 </header>
 <body>
-  <div data-ng-app="crm" data-ng-controller="admincontroller" ng-init=getID()>
+  <!-- <div data-ng-app="crm" data-ng-controller="admincontroller" ng-init=getID()> -->
 
 <div class="patient2">
 
