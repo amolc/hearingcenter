@@ -88,19 +88,26 @@
                 <td><button class = "button" >Create Invoice</button></td>
                 <td><button class = "button" >Schedule Appointment</button></td>
                 </tr>
-                     <textarea rows="4" cols="50" name="comment" form="usrform"></textarea>
+                     <textarea rows="4" cols="50" name="message" id="user_input" ></textarea>
            
         </table>
 </div>
 <div class="page2-2">
         <table>
                 <tr>
-                <td><button class = "button" >Save</button></td>
+                <td><button class = "button" onclick="showInput();" >Save</button></td>
                 <td><button class = "button" >Discard</button></td>
                 </tr>
         </table>
 </div>
-    </article>
+<div class="msg">
+        <table>
+            <td><p><span id='display'></span></p></td>
+        </table>
+            
+</div>
+
+</article>
 </div>
 
   </div>
@@ -108,6 +115,15 @@
 <script>
 var d = new Date();
 document.getElementById("demo").innerHTML = d.toDateString();
+
+
+  function showInput() {
+        document.getElementById('display').innerHTML = 
+                    document.getElementById("user_input").value;
+    }
+  
+
+
 </script>
 
 </body>

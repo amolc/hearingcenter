@@ -536,3 +536,17 @@ color: white;
     text-align: center;
     background-color: white;
 }
+.msg table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+    position: absolute;
+    left: 550px;
+    top: 300px;
+    border-bottom-color: blue;
+}
+
+.msg td{
+    text-align: left;
+    background-color: white;
+}
