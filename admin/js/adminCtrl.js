@@ -1,7 +1,38 @@
 
 app.controller('admincontroller', function ($scope, $http, $window, $location) {
     
-    
+
+
+//********************************************************************************* */
+//Patient detail using their nric
+    $scope.getID = function(){
+
+        var stringUrl = $location.absUrl();
+        var EqualPos = stringUrl.indexOf("=");
+        var ic = stringUrl.substring(EqualPos + 1);
+        
+        $http.get(baseurl + 'findByIc/' + ic).success(function (res) {
+            if (res.status == 'false') {
+
+            } else {
+
+                if(res.length == 0){
+                    $("#error").show();
+
+                }else{
+                    for(var i=0; i<res.length; i++){
+                        $scope.result = res[i];
+                    }
+                }
+                
+            }
+
+        }).error(function () {
+
+        });
+    }
+
+
 //********************************************************************************* */
 //Little function to create the sort order click handler
     $scope.setOrder = function (orderProp) {

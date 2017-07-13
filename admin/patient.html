@@ -111,7 +111,7 @@
                 <td>  
                   <input type="checkbox" value="{{cust.id}}" ng-model="cust.selected" ng-change="change(cust)">
                 </td>
-                <td>{{cust.firstName}} {{cust.lastName}}</td>
+                <td><a href="patient2.html?nric={{cust.nric}}">{{cust.firstName}} {{cust.lastName}}</a></td>
                 <td>{{cust.gender}}</td>
                 <td>{{cust.nric}}</td>
                 <td>{{cust.mobile_number}}</td>
