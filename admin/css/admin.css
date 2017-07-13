@@ -465,11 +465,10 @@ color: white;
     text-align: center;
     background-color: white;
 }
-.page2 table td input {
- width: 100%;   
-}
+
  .page2 textarea{
--webkit-appearance: textarea;
+    -webkit-appearance: textarea;
+    height: 150px;
     background-color: white;
     -webkit-rtl-ordering: logical;
     user-select: text;
@@ -486,6 +485,54 @@ color: white;
     position: absolute;
     position: absolute;
     left: 550px;
-    top: 33px;
+    top: 40px;
     width: 49.6%;
  }
+.page2 button
+{
+
+    background-color: white;
+    /* border: black; */
+    color: black;
+    padding: 0px 0px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 1px;
+    /* border-radius: 12px; */
+    /* background-color: darkseagreen; */
+    border: 1px solid white
+}
+.page2-2 button
+{
+
+    background-color: white;
+    /* border: black; */
+    color: black;
+    padding: 0px 0px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 1px;
+    /* border-radius: 12px; */
+    /* background-color: darkseagreen; */
+    border: 1px solid white
+}
+.page2-2 table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 20%;
+    position: absolute;
+    left: 550px;
+    top: 196px;
+    border-bottom-color: blue;
+}
+
+.page2-2 td{
+    text-align: center;
+    background-color: white;
+}
