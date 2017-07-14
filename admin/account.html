@@ -54,20 +54,21 @@
                     <br>
                     Customer Information<br><br>
 
-                    <form ng-controller="admincontroller" ng-submit=authenticate()>
-                        <table>
+                    <form class="form-style-0" ng-controller="admincontroller" ng-submit=authenticate()>
+                        <!-- <table>
                             <tr>
                                 <td>
                                     <table>
                                         <tr><td>FIRST NAME</td></tr>
-                                        <tr><td><input name="firstName" type="text" value="{{result.firstName}}" required ng-model="firstName"></td></tr>
+                                         <tr><td><input name="firstName" class="field-style field-split align-left" type="text" value="{{result.firstName}}" required ng-model="firstName"></td></tr> 
+                                        
                                     </table>
                                 </td>
 
                                 <td>
                                     <table>
                                         <tr><td>LAST NAME</td></tr>
-                                        <tr><td><input name="lastName" type="text" value="{{result.lastName}}" required ng-model="lastName"></td></tr>
+                                        <tr><td><input name="lastName" class="field-style field-split align-right" type="text" value="{{result.lastName}}" required ng-model="lastName"></td></tr>
                                     </table>
                                 </td>
                             </tr>
@@ -76,7 +77,7 @@
                                 <td>
                                     <table>
                                         <tr><td>ADDRESS</td></tr>
-                                        <tr><td><input name="address" type="password" value="{{result.residential_address}}" required ng-model="address"></td></tr>
+                                        <tr><td><input name="address" type="text" value="{{result.residential_address}}" required ng-model="address"></td></tr>
                                     </table>
                                 </td>
              
@@ -86,13 +87,13 @@
                                  <td>
                                     <table>
                                         <tr><td>COUNTRY</td></tr>
-                                        <tr><td><input name="country" type="password" value="{{result.country}}" required ng-model="lastName"></td></tr>
+                                        <tr><td><input name="country" type="text" value="{{result.country}}" required ng-model="lastName"></td></tr>
                                     </table>
                                 </td>
                                  <td>
                                     <table>
                                         <tr><td>CITY</td></tr>
-                                        <tr><td><input name="city" type="password" required ng-model="lastName"></td></tr>
+                                        <tr><td><input name="city" type="text" required ng-model="lastName"></td></tr>
                                     </table>
                                 </td>
                             </tr>
@@ -101,13 +102,13 @@
                                 <td>
                                     <table>
                                         <tr><td>POSTAL</td></tr>
-                                        <tr><td><input name="postal" type="password" value="{{result.postal}}" required ng-model="lastName"></td></tr>
+                                        <tr><td><input name="postal" type="text" value="{{result.postal}}" required ng-model="lastName"></td></tr>
                                     </table>
                                 </td>
                                  <td>
                                     <table>
                                         <tr><td>PHONE</td></tr>
-                                        <tr><td><input name="phone" type="password" value="{{result.mobile_number}}" required ng-model="lastName"></td></tr>
+                                        <tr><td><input name="phone" type="text" value="{{result.mobile_number}}" required ng-model="lastName"></td></tr>
                                     </table>
                                 </td>
                             </tr>
@@ -115,7 +116,36 @@
                             <tr>
                                 <td><input value="CONTINUE TO ITEM SELECTION" style="margin-left: 10px;" name="submit" type="submit"></td>
                             </tr>
-                        </table>
+                        </table> -->
+
+                        <ul>
+            <li>
+              <input type="text" name="field1" class="field-style field-split align-left" required placeholder="First Name" ng-model="firstName"/>
+              <input type="text" name="field2" class="field-style field-split align-right" required placeholder="Last Name" ng-model="lastName"/>
+
+            </li>
+            <li>
+              <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Email" ng-model="email"/>
+              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="NRIC" ng-model="nric"/>
+            </li>
+            <li>
+              <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Mobile No." ng-model="mobile"/>
+              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Home No." ng-model="home"/>
+            </li>
+            <li>
+              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Gender" ng-model="gender"/>
+            </li>
+            <li>
+              <input type="text" name="field3" class="field-style field-full align-none" required placeholder="Address" ng-model="address"/>
+            </li>
+            <li>
+              <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Postal Code" ng-model="postal"/>
+              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Country" ng-model="country"/>
+            </li>
+            <li>
+              <input type="submit" value="Submit" />
+            </li>
+          </ul>
                     </form>
 
                 </div>
