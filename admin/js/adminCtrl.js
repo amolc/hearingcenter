@@ -1,10 +1,41 @@
 
-app.controller('admincontroller', function ($scope, $http, $window, $location) {
+app.controller('admincontroller', function ($scope, $http, $window, $location, $rootScope, $filter) {
+    
+//********************************************************************************* */
+//Clear textLog content
+    $scope.clearField = function(){
+        document.getElementById("user_input").value = "";
+    }
+
+
+//********************************************************************************* */
+//Get tab value
+    $scope.inputLog = function(req,res){
+      var firstName = $scope.result.firstName;
+      var lastName = $scope.result.lastName;
+      var id = $scope.tabId;
+
+      $scope.toPost = "Admin created a " + id + " for " + firstName + " " + lastName;
+      $scope.date = $filter('date')(new Date(), 'dd MMM yyyy');
+      $scope.time = $filter('date')(new Date(), 'h.mma');
+      
+      $scope.toPost3 = req;
+      $("#display").append();
+    };
+
+
+//********************************************************************************* */
+//Get tab value
+    $scope.buttonId = function(value){
+      $scope.tabId = value;
+      console.log($scope.tabId);
+    };
+
+    
+//********************************************************************************* */
+//
     
 
-    $scope.tab = 1;
-//********************************************************************************* */
-//When admin click on tab, it initialises the variable with value
     $scope.setTab = function(newTab){
       $scope.tab = newTab;
     };
@@ -212,5 +243,12 @@ app.controller('admincontroller', function ($scope, $http, $window, $location) {
     }
  
 });
+
+
+//********************************************************************************* */
+//Other variables that needs to be initialised
+    $scope.tab = 1;
+
+    
 
 
