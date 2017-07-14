@@ -81,12 +81,12 @@
 <div class="page2">
         <table>
                 <tr>
-                <td><button class = "button" >New Patient Log</button></td>
-                <td><button class = "button" >Notes</button></td>
-                <td><button class = "button" >Log Activity</button></td>
-                <td><button class = "button" >Create Task</button></td>
-                <td><button class = "button" >Create Invoice</button></td>
-                <td><button class = "button" >Schedule Appointment</button></td>
+                <td><button id = "btn1" class = "button" value = "New Patient Log" onclick="buttonid()" >New Patient Log</button></td>
+                <td><button id = "btn2" class = "button" value = "Notes" onclick="buttonid()">Notes</button></td>
+                <td><button id = "btn3" class = "button" value = "Log Activity" onclick="buttonid()">Log Activity</button></td>
+                <td><button id = "btn4" class = "button" value = "Create Task" onclick="buttonid()">Create Task</button></td>
+                <td><button id = "btn5" class = "button" value = "Create Invoice" onclick="buttonid()">Create Invoice</button></td>
+                <td><button id = "btn6" class = "button" value = "Schedule Appointment" onclick="buttonid()">Schedule Appointment</button></td>
                 </tr>
                      <textarea rows="4" cols="50" name="message" id="user_input" ></textarea>
            
@@ -95,37 +95,37 @@
 <div class="page2-2">
         <table>
                 <tr>
-                <td><button class = "button" onclick="showInput();" >Save</button></td>
-                <td><button class = "button" >Discard</button></td>
+                <td><button id="submit"class = "button" >Save</button></td>
+                <td><button type="button" id="reset" class = "button" onclick="ClearFields();">Discard</button></td>
                 </tr>
         </table>
 </div>
-<div class="msg">
+<div id="newDivs"class="msg">
         <table>
             <td><p><span id='display'></span></p></td>
         </table>
             
 </div>
-
 </article>
 </div>
-
-  </div>
+</div>
 
 <script>
 var d = new Date();
 document.getElementById("demo").innerHTML = d.toDateString();
+$('#submit').click(function(){
+        // document.getElementById('display').innerHTML = 
+        //             document.getElementById("user_input").value;
+        var text = $('#user_input').val();
+        $('#display').append('<span>'+ text + '</span><br><hr>');
+        document.getElementById("user_input").value = "";
+  });
+function ClearFields() {
+    document.getElementById("user_input").value = "";
+}
+function buttonid(){
 
-
-  function showInput() {
-        document.getElementById('display').innerHTML = 
-                    document.getElementById("user_input").value;
-    }
-  
-
-
+}
 </script>
-
 </body>
-
 </html>
