@@ -53,7 +53,6 @@
                 <div ng-show="isSubSet(11)">
                     <br>
                     Customer Information<br><br>
- <div class="cust">
         <form class="form-style-9" ng-controller="crmcontroller" ng-submit=insertCustomer()>
           <ul>
             <li>
@@ -84,9 +83,81 @@
             </li>
           </ul>
         </form>
-</div>
-
                 </div>
+
+ <div ng-hide="isSubSet(12)">
+                    <br>
+                   ITEM SELECTION<br><br>
+        <form class="form-style-9" ng-controller="crmcontroller" ng-submit=insertCustomer()>
+          <ul>
+            <li>
+              <input type="text" name="field1" class="field-style field-split align-left" required placeholder="First Name" ng-model="firstName"/>
+              <input type="text" name="field2" class="field-style field-split align-right" required placeholder="Last Name" ng-model="lastName"/>
+
+            </li>
+            <li>
+              <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Email" ng-model="email"/>
+              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="NRIC" ng-model="nric"/>
+            </li>
+            <li>
+              <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Mobile No." ng-model="mobile"/>
+              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Home No." ng-model="home"/>
+            </li>
+            <li>
+              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Gender" ng-model="gender"/>
+            </li>
+            <li>
+              <input type="text" name="field3" class="field-style field-full align-none" required placeholder="Address" ng-model="address"/>
+            </li>
+            <li>
+              <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Postal Code" ng-model="postal"/>
+              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Country" ng-model="country"/>
+            </li>
+            <li>
+              <input type="submit" value="Submit" />
+            </li>
+          </ul>
+        </form>
+                </div>
+
+ <div ng-hide="isSubSet(13)">
+                    <br>
+                   PAYMENT SELECTION<br><br>
+        <form class="form-style-9" ng-controller="crmcontroller" ng-submit=insertCustomer()>
+          <ul>
+            <li>
+              <input type="text" name="field1" class="field-style field-split align-left" required placeholder="First Name" ng-model="firstName"/>
+              <input type="text" name="field2" class="field-style field-split align-right" required placeholder="Last Name" ng-model="lastName"/>
+
+            </li>
+            <li>
+              <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Email" ng-model="email"/>
+              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="NRIC" ng-model="nric"/>
+            </li>
+            <li>
+              <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Mobile No." ng-model="mobile"/>
+              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Home No." ng-model="home"/>
+            </li>
+            <li>
+              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Gender" ng-model="gender"/>
+            </li>
+            <li>
+              <input type="text" name="field3" class="field-style field-full align-none" required placeholder="Address" ng-model="address"/>
+            </li>
+            <li>
+              <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Postal Code" ng-model="postal"/>
+              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Country" ng-model="country"/>
+            </li>
+            <li>
+              <input type="submit" value="Submit" />
+            </li>
+          </ul>
+        </form>
+                </div>
+
+
+
+
 
             </div>
 
