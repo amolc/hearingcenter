@@ -48,21 +48,17 @@
             <button class = "button3" ng-click="setSubTab(11)" >01 CUSTOMER INFO</button>
             <button class = "button3" ng-click="setSubTab(12)" >02 ITEM SELECTION</button>
             <button class = "button3" ng-click="setSubTab(13)" >03 PAYMENT SELECTION</button>
-
+<!--CUSTOMER INFO PAGE  -->
             <div class="tab">
                 <div ng-show="isSubSet(11)">
                     <br>
                     Customer Information<br><br>
-        <form class="form-style-9" ng-controller="crmcontroller" ng-submit=insertCustomer()>
+
+        <form class="form-style-9" ng-controller="admincontroller" ng-submit=authenticate()>
           <ul>
             <li>
               <input type="text" name="field1" class="field-style field-split align-left" required placeholder="First Name" ng-model="firstName"/>
               <input type="text" name="field2" class="field-style field-split align-right" required placeholder="Last Name" ng-model="lastName"/>
-
-            </li>
-            <li>
-              <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Email" ng-model="email"/>
-              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="NRIC" ng-model="nric"/>
             </li>
             <li>
               <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Mobile No." ng-model="mobile"/>
@@ -79,91 +75,55 @@
               <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Country" ng-model="country"/>
             </li>
             <li>
-              <input type="submit" value="Submit" />
+              <input type="submit" value="CONTINUE TO ITEM SLECTION" />
             </li>
           </ul>
-        </form>
-                </div>
-
- <div ng-hide="isSubSet(12)">
-                    <br>
-                   ITEM SELECTION<br><br>
-        <form class="form-style-9" ng-controller="crmcontroller" ng-submit=insertCustomer()>
-          <ul>
-            <li>
-              <input type="text" name="field1" class="field-style field-split align-left" required placeholder="First Name" ng-model="firstName"/>
-              <input type="text" name="field2" class="field-style field-split align-right" required placeholder="Last Name" ng-model="lastName"/>
-
-            </li>
-            <li>
-              <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Email" ng-model="email"/>
-              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="NRIC" ng-model="nric"/>
-            </li>
-            <li>
-              <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Mobile No." ng-model="mobile"/>
-              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Home No." ng-model="home"/>
-            </li>
-            <li>
-              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Gender" ng-model="gender"/>
-            </li>
-            <li>
-              <input type="text" name="field3" class="field-style field-full align-none" required placeholder="Address" ng-model="address"/>
-            </li>
-            <li>
-              <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Postal Code" ng-model="postal"/>
-              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Country" ng-model="country"/>
-            </li>
-            <li>
-              <input type="submit" value="Submit" />
-            </li>
-          </ul>
-        </form>
-                </div>
-
- <div ng-hide="isSubSet(13)">
-                    <br>
-                   PAYMENT SELECTION<br><br>
-        <form class="form-style-9" ng-controller="crmcontroller" ng-submit=insertCustomer()>
-          <ul>
-            <li>
-              <input type="text" name="field1" class="field-style field-split align-left" required placeholder="First Name" ng-model="firstName"/>
-              <input type="text" name="field2" class="field-style field-split align-right" required placeholder="Last Name" ng-model="lastName"/>
-
-            </li>
-            <li>
-              <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Email" ng-model="email"/>
-              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="NRIC" ng-model="nric"/>
-            </li>
-            <li>
-              <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Mobile No." ng-model="mobile"/>
-              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Home No." ng-model="home"/>
-            </li>
-            <li>
-              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Gender" ng-model="gender"/>
-            </li>
-            <li>
-              <input type="text" name="field3" class="field-style field-full align-none" required placeholder="Address" ng-model="address"/>
-            </li>
-            <li>
-              <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Postal Code" ng-model="postal"/>
-              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Country" ng-model="country"/>
-            </li>
-            <li>
-              <input type="submit" value="Submit" />
-            </li>
-          </ul>
-        </form>
-                </div>
-
-
-
-
-
+        </form>               </div>
             </div>
+<!--END OF CUSTOMER INFO PAGE  -->
 
-        </div>
+            <!--ITEM SELECTION PAGE  -->
+            <div class="tab">
+                <div ng-show="isSubSet(12)">
+                    <br>
+                    ITEM SELECTION<br><br>
 
-        <div ng-show="isSet(2)">
+        <form class="form-style-9" ng-controller="admincontroller" ng-submit=authenticate()>
+          <ul>
+            <li>
+              <input type="text" name="field1" class="field-style field-split align-left" required placeholder="ITEM 1 NAME" ng-model="item1"/>
+              <input type="text" name="field2" class="field-style field-split align-right" required placeholder="ITEM 2 NAME" ng-model="item2"/>
+
+            </li>
+            <li>
+              <input type="submit" value="CONTINUE TO PAYMENT SELECTION" />
+            </li>
+          </ul>
+        </form>
+                </div>
+            </div>            
+<!--END OF ITEM SELECTION PAGE  -->
+            <!--PAYMENT PAGE  -->
+
+            <div class="tab">
+                <div ng-show="isSubSet(13)">
+                    <br>
+                    PAYMENT SELECTION<br><br>
+
+        <form class="form-style-9" ng-controller="admincontroller" ng-submit=authenticate()>
+          <ul>
+            <li>
+              <input type="text" name="field1" class="field-style field-split align-left" required placeholder="PAYMENT METHOD" ng-model="paymethod"/>
+            </li>
+            <li>
+              <input type="submit" value="Submit" />
+            </li>
+          </ul>
+        </form>
+                </div>
+            </div>            
+<!--END OF PAYMENT  -->
+            <div ng-show="isSet(2)">
 
         </div>
 
