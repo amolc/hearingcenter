@@ -53,72 +53,9 @@
                 <div ng-show="isSubSet(11)">
                     <br>
                     Customer Information<br><br>
-
-                    <form class="form-style-0" ng-controller="admincontroller" ng-submit=authenticate()>
-                        <!-- <table>
-                            <tr>
-                                <td>
-                                    <table>
-                                        <tr><td>FIRST NAME</td></tr>
-                                         <tr><td><input name="firstName" class="field-style field-split align-left" type="text" value="{{result.firstName}}" required ng-model="firstName"></td></tr> 
-                                        
-                                    </table>
-                                </td>
-
-                                <td>
-                                    <table>
-                                        <tr><td>LAST NAME</td></tr>
-                                        <tr><td><input name="lastName" class="field-style field-split align-right" type="text" value="{{result.lastName}}" required ng-model="lastName"></td></tr>
-                                    </table>
-                                </td>
-                            </tr>
-                            
-                            <tr>
-                                <td>
-                                    <table>
-                                        <tr><td>ADDRESS</td></tr>
-                                        <tr><td><input name="address" type="text" value="{{result.residential_address}}" required ng-model="address"></td></tr>
-                                    </table>
-                                </td>
-             
-                            </tr>
-
-                            <tr>
-                                 <td>
-                                    <table>
-                                        <tr><td>COUNTRY</td></tr>
-                                        <tr><td><input name="country" type="text" value="{{result.country}}" required ng-model="lastName"></td></tr>
-                                    </table>
-                                </td>
-                                 <td>
-                                    <table>
-                                        <tr><td>CITY</td></tr>
-                                        <tr><td><input name="city" type="text" required ng-model="lastName"></td></tr>
-                                    </table>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <table>
-                                        <tr><td>POSTAL</td></tr>
-                                        <tr><td><input name="postal" type="text" value="{{result.postal}}" required ng-model="lastName"></td></tr>
-                                    </table>
-                                </td>
-                                 <td>
-                                    <table>
-                                        <tr><td>PHONE</td></tr>
-                                        <tr><td><input name="phone" type="text" value="{{result.mobile_number}}" required ng-model="lastName"></td></tr>
-                                    </table>
-                                </td>
-                            </tr>
-                            
-                            <tr>
-                                <td><input value="CONTINUE TO ITEM SELECTION" style="margin-left: 10px;" name="submit" type="submit"></td>
-                            </tr>
-                        </table> -->
-
-                        <ul>
+ <div class="cust">
+        <form class="form-style-9" ng-controller="crmcontroller" ng-submit=insertCustomer()>
+          <ul>
             <li>
               <input type="text" name="field1" class="field-style field-split align-left" required placeholder="First Name" ng-model="firstName"/>
               <input type="text" name="field2" class="field-style field-split align-right" required placeholder="Last Name" ng-model="lastName"/>
@@ -146,7 +83,8 @@
               <input type="submit" value="Submit" />
             </li>
           </ul>
-                    </form>
+        </form>
+</div>
 
                 </div>
 
