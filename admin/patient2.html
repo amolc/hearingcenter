@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<div data-ng-app="crm" data-ng-controller="admincontroller" ng-init=getID()>
+<div data-ng-app="crm" data-ng-controller="admincontroller" ng-init=getID();getLog()>
 
     <head>
 
@@ -68,7 +68,7 @@
             </nav>
             <article>
 
-                <form name="cfologin" ng-controller="admincontroller" ng-submit=inputLog()>
+                <form name="patient2" ng-controller="admincontroller" ng-submit=inputLog()>
                     <div class="page2">
 
                         <table>
@@ -81,7 +81,7 @@
                                 <td><button id="btn6" class="button" ng-click="buttonId('Schedule Appointment')">Schedule Appointment</button></td>
                             </tr>
 
-                            <textarea rows="4" cols="50" name="message" id="user_input" ng-model="textLog"></textarea>
+                            <textarea rows="4" cols="50" name="message" required id="user_input" ng-model="textLog"></textarea>
 
                         </table>
 
@@ -97,16 +97,17 @@
                         </table>
                     </div>
                     <form>
+
                         <div id="newDivs" class="msg">
-                            <table>
-                                <td>
-                                    <span id='display'>
-                                        <p><span>{{toPost}}</span></p>
-                                        <p><span>{{date}} at {{time}}
-                                        <p><span>{{toPost3}}</span></p>
-                                    </span>
-                                </td>
-                            </table>
+                              <table>
+                                <tr ng-repeat="patient in patientLog">
+                                    <td>Admin created a {{patient.tabType}} for {{patient.firstName}} {{patient.lastName}}<br>
+                                        {{patient.date}} at {{patient.time}}<br><br>
+                                        {{patient.remark}}<br><br>
+                                    </td>
+                                </tr>
+                                
+                            </table>  
 
                         </div>
             </article>
@@ -116,20 +117,6 @@
 <script>
     var d = new Date();
     document.getElementById("demo").innerHTML = d.toDateString();
-    $('#submit').click(function () {
-        // document.getElementById('display').innerHTML = 
-        //             document.getElementById("user_input").value;
-        var text = $('#user_input').val();
-        $('#display').append('<span>' + text + '</span><br><hr>');
-        document.getElementById("user_input").value = "";
-    });
-// function ClearFields() {
-//     document.getElementById("user_input").value = "";
-// }
-// function buttonid(){
-
-// }
-
 </script>
 </body>
 

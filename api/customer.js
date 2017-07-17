@@ -13,13 +13,55 @@ var db = mysql.createPool({
  var custResponseCRUD = CRUD(db, 'custResponse');
  var newsLetterCRUD = CRUD(db, 'newsletter');
  var custMedicalHistoriesCRUD = CRUD(db, 'custMedicalHistories');
+ var patientLogCRUD = CRUD(db, 'patientLog');
+
+
+/******************************************************
+Get patient log from DB
+*/
+exports.getPatientLog = function(req, res){
+	console.log(req.params);
+	var ic = req.params.ic ;
+
+	var query = 'select * from patientLog where `nric`="' + ic +'" ORDER BY id DESC;';
+
+		db.query(query, function(err, rows){
+			var userdetails = rows[0] ;
+			res.jsonp(rows);
+		});
+
+}
+/******************************************************
+Insert patient log into DB
+*/
+exports.insertPatientLog = function(req, res){
+
+	var firstName = req.body.firstName;
+	var lastName = req.body.lastName;
+	var nric = req.body.nric;
+	var tabType = req.body.tabType;
+	var date = req.body.date;
+	var time = req.body.time;
+	var remark = req.body.remark;
+
+	patientLogCRUD.create({
+			'firstName': firstName,
+			'lastName' : lastName,
+			'nric': nric,
+			'tabType' : tabType,
+			'date': date,
+			'time' : time,
+			'remark': remark,
+		},function (err,vals){
+			
+		})
+}
 
 
 /******************************************************
 Delete customer from db
 */
 exports.deleteCustomer = function(req, res) {
-	console.log(req.body.length);
 	
 	for(var i=0; i<req.body.length; i++){
 
@@ -49,7 +91,7 @@ exports.deleteCustomer = function(req, res) {
 insert medical histories
 */
 exports.insertHistories = function(req, res){
-	console.log(req.body);
+
 	var custId = req.body.custId;
 	var bloodGrp = req.body.bloodGrp;
 
@@ -181,11 +223,11 @@ exports.allCustomer = function(req, res) {
 Retrieve customer using NRIC/FIN number
 */
 exports.findByIc = function(req, res) {
-  	console.log(req.params.ic);
+
 	var ic = req.params.ic ;
 
 	var query = 'select * from customer where `nric`="' + ic +'";';
-		console.log(query);
+
 		db.query(query, function(err, rows){
 			var userdetails = rows[0] ;
 			res.jsonp(rows);

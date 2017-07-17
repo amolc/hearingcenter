@@ -1,6 +1,30 @@
-
 app.controller('admincontroller', function ($scope, $http, $window, $location, $rootScope, $filter) {
+
     
+//********************************************************************************* */
+//Retrieve patientLogs
+    $scope.getLog = function(){
+
+        var stringUrl = $location.absUrl();
+        var EqualPos = stringUrl.indexOf("=");
+        var ic = stringUrl.substring(EqualPos + 1);
+
+        console.log("inside method");
+        $http.get(baseurl + 'getPatientLog/' + ic).success(function (res) {
+
+            if (res.status == 'false') {
+
+            } else {
+                $scope.patientLog = res;
+
+            }
+
+        }).error(function () {
+
+        });
+    }
+
+
 //********************************************************************************* */
 //Clear textLog content
     $scope.clearField = function(){
@@ -11,16 +35,33 @@ app.controller('admincontroller', function ($scope, $http, $window, $location, $
 //********************************************************************************* */
 //Get tab value
     $scope.inputLog = function(req,res){
-      var firstName = $scope.result.firstName;
-      var lastName = $scope.result.lastName;
-      var id = $scope.tabId;
 
-      $scope.toPost = "Admin created a " + id + " for " + firstName + " " + lastName;
-      $scope.date = $filter('date')(new Date(), 'dd MMM yyyy');
-      $scope.time = $filter('date')(new Date(), 'h.mma');
-      
-      $scope.toPost3 = req;
-      $("#display").append();
+        $scope.data = {};
+
+        $scope.date = $filter('date')(new Date(), 'dd MMM yyyy');
+        $scope.time = $filter('date')(new Date(), 'h.mma');
+
+        $scope.data.firstName = $scope.result.firstName;
+        $scope.data.lastName = $scope.result.lastName;
+        $scope.data.nric = $scope.result.nric;
+        $scope.data.tabType = $scope.tabId;
+        $scope.data.date = $scope.date;
+        $scope.data.time = $scope.time;
+        $scope.data.remark = $scope.textLog;
+
+        $http.post(baseurl + 'insertPatientLog', $scope.data).success(function (res) {
+            if (res.status == 'false') {
+
+            } else {      
+               
+            }
+            
+        }).error(function () {
+ 
+        })
+
+        $window.location = "patient2.html?nric=" + $scope.result.nric;
+        
     };
 
 
@@ -28,14 +69,11 @@ app.controller('admincontroller', function ($scope, $http, $window, $location, $
 //Get tab value
     $scope.buttonId = function(value){
       $scope.tabId = value;
-      console.log($scope.tabId);
     };
 
     
 //********************************************************************************* */
 //
-    
-
     $scope.setTab = function(newTab){
       $scope.tab = newTab;
     };
@@ -106,9 +144,9 @@ app.controller('admincontroller', function ($scope, $http, $window, $location, $
         var password = $scope.password;
 
         if(username == "admin" && password == "admin"){
-            console.log("authenticated");
+
             window.localStorage.setItem('user','1');
-            console.log(window.localStorage.getItem('user'));
+
             $window.location = "patient.html";
         }else{
             $("#error").show();
@@ -120,7 +158,7 @@ app.controller('admincontroller', function ($scope, $http, $window, $location, $
 //Checkbox option for selecting patients 
     
     $scope.allSelected = function (value) {
-        //console.log(value);
+
         if (value != undefined) {
             return setAllSelected(value);
         } else {
@@ -215,7 +253,7 @@ app.controller('admincontroller', function ($scope, $http, $window, $location, $
             if (res.status == 'false') {
 
             } else {
-                console.log("in");
+
                 $scope.customerList = res;
 
             }
@@ -241,13 +279,16 @@ app.controller('admincontroller', function ($scope, $http, $window, $location, $
     $scope.init = function(){
         $("#error").hide();
     }
- 
-});
 
 
 //********************************************************************************* */
 //Other variables that needs to be initialised
     $scope.tab = 1;
+    
+ 
+});
+
+
 
     
 
