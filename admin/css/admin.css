@@ -623,6 +623,36 @@ color: white;
     background: linear-gradient(to bottom, #3CB371 5%, #3CB371 100%);
     background-color: #3CB371;
 }
+.boxbox{
+    display: block;
+    clear:both;
+    position: absolute;
+    top: 85px;
+    left: 30px;
+    width: 16%;
+}
+.boxbox span{
+    background-color: white;
+    color: black;
+    padding: 10px 2px;
+    display: block;
+    float: right;
+}
+.boxbox2{
+    display: block;
+    clear:both;
+    position: absolute;
+    top: 250px;
+    left: 30px;
+    width: 16%;
+}
+.boxbox2 span{
+    background-color: white;
+    color: black;
+    padding: 10px 5px;
+    display: block;
+    float: right;
+}
 
 
 

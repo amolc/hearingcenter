@@ -41,31 +41,66 @@
         <div class="patient2">
 
             <nav>
-                <div class="box1">
-                    <span>
-                {{result.firstName}} {{result.lastName}}<br>
-                {{result.nric}}<br>
-                Patient<br>
-            </span>
+                <div class="boxbox">
+                    <table>
+                        <th><h2></h2></th>
+                        <tr><td><h2>{{result.firstName}} {{result.lastName}}</h2><br><h3>{{result.nric}}</h3><br><h3>Patient</h3></</td></tr>
+                        
+                        <!-- {{result.firstName}} {{result.lastName}}<br>
+                        {{result.nric}}<br>
+                        Patient<br> -->
+                    </table>
                 </div>
 
-                <div class="box2">
-                    <span>
-                Patient Detail <br>
-                FirstName : {{result.firstName}}<br>
-                LastName : {{result.lastName}}<br>
-                Email : {{result.email_address}}<br>
-                NRIC : {{result.nric}}<br>
-                Mobile Number : {{result.mobile_number}}<br>
-                Home Number : {{result.home_number}}<br>
-                Type of Patient : {{}}<br>
-                Gender : {{result.gender}}<br>
-                Address : {{result.residential_address}}<br>
-                Postal Code : {{result.postal}}<br>
-                Country : {{result.country}}<br>
-            </span>
+                <div class="boxbox2">
+
+                        <table>
+                            <th>Patient Detail</th>
+
+                            <tr><td><strong>First Name</strong><br>{{result.firstName}}</td></tr>
+
+                            <tr><td><strong>Last Name</strong><br>{{result.lastName}}</td></tr>
+
+                            <tr><td><strong>Email</strong><br>{{result.email_address}}</td></tr>
+
+                            <tr><td><strong>NRIC</strong><br>{{result.nric}}</td></tr>
+
+                            <tr><td><strong>Mobile No.</strong><br>{{result.mobile_number}}</td></tr>
+
+                            <tr><td><strong>Home No.</strong><br>{{result.home_number}}</td></tr>
+
+                            <tr><td><strong>Types of patients</strong><br>N.A</td></tr>
+
+                            <tr><td><strong>Gender</strong><br>{{result.gender}}</td></tr>
+
+                            <tr><td><strong>Address</strong><br>{{result.residential_address}}</td></tr>
+
+                            <tr><td><strong>Postal</strong><br>{{result.postal}}</td></tr>
+
+                            <tr><td><strong>Country</strong><br>{{result.country}}</td></tr>    
+                            
+                            <tr><td><a href="www.google.com">Edit details</a></td></tr> 
+            
+                        </table>
+
                 </div>
             </nav>
+
+            <!-- <div data-role="popup" id="myPopup">
+                <form method="post" action="/action_page_post.php">
+                    <div>
+                    <h3>Login information</h3>
+                    <label for="usrnm" class="ui-hidden-accessible">Username:</label>
+                    <input type="text" name="user" id="usrnm" placeholder="Username">
+                    <label for="pswd" class="ui-hidden-accessible">Password:</label>
+                    <input type="password" name="passw" id="pswd" placeholder="Password">
+                    <label for="log">Keep me logged in</label>
+                    <input type="checkbox" name="login" id="log" value="1" data-mini="true">
+                    <input type="submit" data-inline="true" value="Log in">
+                    </div>
+                </form>
+            </div> -->
+
             <article>
 
                 <form name="patient2" ng-controller="admincontroller" ng-submit=inputLog()>
@@ -99,15 +134,20 @@
                     <form>
 
                         <div id="newDivs" class="msg">
-                              <table>
+                            <table>
                                 <tr ng-repeat="patient in patientLog">
-                                    <td>Admin created a {{patient.tabType}} for {{patient.firstName}} {{patient.lastName}}<br>
-                                        {{patient.date}} at {{patient.time}}<br><br>
-                                        {{patient.remark}}<br><br>
+                                    <td>
+                                        <strong>
+                                            Admin created a <u>{{patient.tabType}}</u> for {{patient.firstName}} {{patient.lastName}}<br>
+                                            {{patient.date}} at {{patient.time}}<br><br>
+                                        </strong> {{patient.remark}}
+
+                                        <br><br>
+
                                     </td>
                                 </tr>
-                                
-                            </table>  
+
+                            </table>
 
                         </div>
             </article>
@@ -117,6 +157,7 @@
 <script>
     var d = new Date();
     document.getElementById("demo").innerHTML = d.toDateString();
+
 </script>
 </body>
 
