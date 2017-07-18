@@ -53,30 +53,32 @@
 <!--CUSTOMER INFO PAGE  -->
 <div id = "custinfo">
 <br> Customer Information<br><br>
-        <form class="form-style-9" >
+        <form class="form-style-9" name="custInfo" ng-controller="admincontroller" ng-submit=updateCustInfo()>
           <ul>
             <li>
-              <input type="text" name="field1" class="field-style field-split align-left" required placeholder="First Name" ng-model="firstName"/>
-              <input type="text" name="field2" class="field-style field-split align-right" required placeholder="Last Name" ng-model="lastName"/>
+              <input type="text" name="field1" class="field-style field-split align-left" required ng-model="result.firstName"/>
+              <input type="text" name="field2" class="field-style field-split align-right" required ng-model="result.lastName"/>
             </li>
             <li>
-              <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Mobile No." ng-model="mobile"/>
-              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Home No." ng-model="home"/>
+              <input type="text" name="field3" class="field-style field-split align-left" required ng-model="result.mobile_number"/>
+              <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.home_number"/>
             </li>
             <li>
-              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Gender" ng-model="gender"/>
+              <input type="hidden" name="field4" class="field-style field-split align-left" required ng-model="result.id"/>
+              <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.gender"/>
             </li>
             <li>
-              <input type="text" name="field3" class="field-style field-full align-none" required placeholder="Address" ng-model="address"/>
+              <input type="text" name="field3" class="field-style field-full align-none" required ng-model="result.residential_address"/>
             </li>
             <li>
-              <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Postal Code" ng-model="postal"/>
-              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Country" ng-model="country"/>
+              <input type="text" name="field3" class="field-style field-split align-left" required ng-model="result.postal"/>
+              <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.country"/>
             </li>
 
             <li>
               <!-- <input type="submit" value="CONTINUE TO ITEM SLECTION" /> -->
-              <button class = "button3" ng-click="custInfo()" >SUBMIT</button>
+              <input value="Submit" class="button3" name="submit" type="submit">
+              <!-- <button class = "button3" ng-click="custInfo()" >SUBMIT</button> -->
             </li>
           </ul>
         </form>   

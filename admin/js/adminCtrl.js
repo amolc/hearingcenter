@@ -1,21 +1,57 @@
 app.controller('admincontroller', function ($scope, $http, $window, $location, $rootScope, $filter) {
 
-//********************************************************************************* */
 
+//********************************************************************************* */
+//Update customer info from account.html
+$scope.updateCustInfo = function(){
+    $scope.data = {};
+
+    $scope.data.firstName = $scope.result.firstName;
+    $scope.data.lastName = $scope.result.lastName;
+    $scope.data.mobile_number = $scope.result.mobile_number;
+    $scope.data.home_number = $scope.result.home_number;
+    $scope.data.id = $scope.result.id;
+    $scope.data.gender = $scope.result.gender;
+    $scope.data.residential_address = $scope.result.residential_address;
+    $scope.data.postal = $scope.result.postal;
+    $scope.data.country = $scope.result.country;
+
+    $http.post(baseurl + 'updateCustomer', $scope.data).success(function (res) {
+        if (res.status == 'false') {
+
+        } else {      
+            
+        }
+        
+    }).error(function () {
+ 
+    })
+     $("#custinfo").hide();
+        $("#itemSel").show();
+        $("#pay").hide();
+    
+
+}
+
+
+//********************************************************************************* */
+//Show and hide tab info
 $scope.custInfo = function() {
         $("#custinfo").hide();
         $("#itemSel").show();
         $("#pay").hide();
     };
-    $scope.itemSel = function(){
-        $("#custinfo").hide();
-        $("#itemSel").hide();
-        $("#pay").show();
-    }
+
+ 
+//********************************************************************************* */
+//Show and hide tab info    
+$scope.itemSel = function(){
+    $("#custinfo").hide();
+    $("#itemSel").hide();
+    $("#pay").show();
+}
 
 
-
-    
 //********************************************************************************* */
 //Retrieve patientLogs
     $scope.getLog = function(){

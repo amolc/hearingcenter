@@ -17,6 +17,36 @@ var db = mysql.createPool({
 
 
 /******************************************************
+Update customer info in customer DB
+*/
+exports.updateCustomer = function(req, res) {
+	console.log(req.body);
+	var firstName = req.body.firstName;
+	var lastName = req.body.lastName;
+	var mobile_number = req.body.mobile_number;
+	var home_number = req.body.home_number;
+	var id = req.body.id;
+	var gender = req.body.gender;
+	var residential_address = req.body.residential_address;
+	var postal = req.body.postal;
+	var country = req.body.country;
+
+
+	customerCRUD.update({'id' : id}, {firstName:firstName, lastName:lastName, mobile_number:mobile_number, home_number:home_number,gender:gender, residential_address:residential_address, postal:postal, country:country}, function (err, vals) {
+		if(parseInt(vals.affectedRows)>0){
+			var resdata={status:true,
+			message:'staff successfully updated'};
+			//res.jsonp(resdata);
+		}else{
+			var resdata={status:false,
+			message:'record not updated '};
+			//res.jsonp(resdata);
+		}
+	});
+};
+
+
+/******************************************************
 Get patient log from DB
 */
 exports.getPatientLog = function(req, res){
