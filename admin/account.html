@@ -45,16 +45,15 @@
     <div class="tab">
         <div ng-show="isSet(1)">
             
-            <button class = "button3" ng-click="setSubTab(11)" >01 CUSTOMER INFO</button>
-            <button class = "button3" ng-click="setSubTab(12)" >02 ITEM SELECTION</button>
-            <button class = "button3" ng-click="setSubTab(13)" >03 PAYMENT SELECTION</button>
-<!--CUSTOMER INFO PAGE  -->
-            <div class="tab">
-                <div ng-show="isSubSet(11)">
-                    <br>
-                    Customer Information<br><br>
+             <button class = "button3">01 CUSTOMER INFO</button> 
+             <button class = "button3">02 ITEM SELECTION</button> 
+             <button class = "button3">03 PAYMENT SELECTION</button> 
 
-        <form class="form-style-9" ng-controller="admincontroller" ng-submit=authenticate()>
+
+<!--CUSTOMER INFO PAGE  -->
+<div id = "custinfo">
+<br> Customer Information<br><br>
+        <form class="form-style-9" >
           <ul>
             <li>
               <input type="text" name="field1" class="field-style field-split align-left" required placeholder="First Name" ng-model="firstName"/>
@@ -74,71 +73,62 @@
               <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Postal Code" ng-model="postal"/>
               <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Country" ng-model="country"/>
             </li>
+
             <li>
-              <input type="submit" value="CONTINUE TO ITEM SLECTION" />
+              <!-- <input type="submit" value="CONTINUE TO ITEM SLECTION" /> -->
+              <button class = "button3" ng-click="custInfo()" >SUBMIT</button>
             </li>
           </ul>
-        </form>               </div>
-            </div>
-<!--END OF CUSTOMER INFO PAGE  -->
-
-            <!--ITEM SELECTION PAGE  -->
-            <div class="tab">
-                <div ng-show="isSubSet(12)">
-                    <br>
-                    ITEM SELECTION<br><br>
-
-        <form class="form-style-9" ng-controller="admincontroller" ng-submit=authenticate()>
+        </form>   
+</div>
+<!--ITEM SELECTION PAGE  -->
+<div id="itemSel" >
+<br>ITEM SELECTION<br><br>
+      <form class="form-style-9"  >
           <ul>
             <li>
               <input type="text" name="field1" class="field-style field-split align-left" required placeholder="ITEM 1 NAME" ng-model="item1"/>
               <input type="text" name="field2" class="field-style field-split align-right" required placeholder="ITEM 2 NAME" ng-model="item2"/>
-
             </li>
             <li>
-              <input type="submit" value="CONTINUE TO PAYMENT SELECTION" />
+              <!-- <input type="submit" value="CONTINUE TO PAYMENT SELECTION" /> -->
+              <button class = "button3" ng-click="itemSel()" >SUBMIT</button>
             </li>
           </ul>
         </form>
-                </div>
-            </div>            
-<!--END OF ITEM SELECTION PAGE  -->
-            <!--PAYMENT PAGE  -->
-
-            <div class="tab">
-                <div ng-show="isSubSet(13)">
-                    <br>
-                    PAYMENT SELECTION<br><br>
-
-        <form class="form-style-9" ng-controller="admincontroller" ng-submit=authenticate()>
+</div>          
+<!--END OF ITEM SELECTION PAGE  -->        
+ <!--PAYMENT PAGE  -->
+<div id="pay" >
+<br>PAYMENT SELECTION<br><br>
+        <form class="form-style-9" >
           <ul>
             <li>
               <input type="text" name="field1" class="field-style field-split align-left" required placeholder="PAYMENT METHOD" ng-model="paymethod"/>
             </li>
             <li>
-              <input type="submit" value="Submit" />
+              <button class = "button3" ng-click="pay()" >SUBMIT</button>
             </li>
           </ul>
         </form>
-                </div>
-            </div>            
-<!--END OF PAYMENT  -->
-            <div ng-show="isSet(2)">
+</div>            
+<!--END OF PAYMENT  -->       
 
-        </div>
-
+       </div>
     </div>
+<!--END OF CUSTOMER INFO PAGE  -->
 
-    
-
-
-
-
-  </div>
+<!--  INVOICE  -->
+        <div ng-show="isSet(2)">
+        </div>
+    </div>
+</div>
 
 <script>
+
 var d = new Date();
 document.getElementById("demo").innerHTML = d.toDateString();
+
 </script>
 
 </body>

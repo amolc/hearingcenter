@@ -1,5 +1,20 @@
 app.controller('admincontroller', function ($scope, $http, $window, $location, $rootScope, $filter) {
 
+//********************************************************************************* */
+
+$scope.custInfo = function() {
+        $("#custinfo").hide();
+        $("#itemSel").show();
+        $("#pay").hide();
+    };
+    $scope.itemSel = function(){
+        $("#custinfo").hide();
+        $("#itemSel").hide();
+        $("#pay").show();
+    }
+
+
+
     
 //********************************************************************************* */
 //Retrieve patientLogs
@@ -107,6 +122,11 @@ app.controller('admincontroller', function ($scope, $http, $window, $location, $
         var EqualPos = stringUrl.indexOf("=");
         var ic = stringUrl.substring(EqualPos + 1);
         
+        $("#custinfo").show();
+        $("#itemSel").hide();
+        $("#pay").hide();
+
+
         $http.get(baseurl + 'findByIc/' + ic).success(function (res) {
             if (res.status == 'false') {
 
