@@ -1,12 +1,6 @@
 app.controller('admincontroller', function ($scope, $http, $window, $location, $rootScope, $filter) {
 
 
-$scope.editInfo = function(){
-    $("#myModal").show();
-}
-$scope.edit = function(){
-    $("#myModal").hide();
-}
 
 //********************************************************************************* */
 //Update customer info from account.html
@@ -48,14 +42,22 @@ $scope.custInfo = function() {
         $("#itemSel").show();
         $("#pay").hide();
     };
+  
 
- 
-//********************************************************************************* */
-//Show and hide tab info    
 $scope.itemSel = function(){
     $("#custinfo").hide();
     $("#itemSel").hide();
     $("#pay").show();
+}
+
+
+$scope.editInfo = function(){
+    $("#myModal").show();
+}
+
+
+$scope.edit = function(){
+    $("#myModal").hide();
 }
 
 

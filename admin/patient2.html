@@ -47,100 +47,77 @@
                         <tr><td><h2>{{result.firstName}} {{result.lastName}}</h2>
                             <h3>{{result.nric}}</h3>
                             <h3>Patient</h3></</td></tr>
-                        
-                        <!-- {{result.firstName}} {{result.lastName}}<br>
-                        {{result.nric}}<br>
-                        Patient<br> -->
                     </table>
                 </div>
 
                 <div class="boxbox2">
 
-                        <table>
-                            <th>Patient Detail</th>
+                    <table>
+                        <th>Patient Detail</th>
 
-                            <tr><td><strong>First Name</strong><br>{{result.firstName}}</td></tr>
-
-                            <tr><td><strong>Last Name</strong><br>{{result.lastName}}</td></tr>
-
-                            <tr><td><strong>Email</strong><br>{{result.email_address}}</td></tr>
-
-                            <tr><td><strong>NRIC</strong><br>{{result.nric}}</td></tr>
-
-                            <tr><td><strong>Mobile No.</strong><br>{{result.mobile_number}}</td></tr>
-
-                            <tr><td><strong>Home No.</strong><br>{{result.home_number}}</td></tr>
-
-                            <tr><td><strong>Types of patients</strong><br>N.A</td></tr>
-
-                            <tr><td><strong>Gender</strong><br>{{result.gender}}</td></tr>
-
-                            <tr><td><strong>Address</strong><br>{{result.residential_address}}</td></tr>
-
-                            <tr><td><strong>Postal</strong><br>{{result.postal}}</td></tr>
-
-                            <tr><td><strong>Country</strong><br>{{result.country}}</td></tr>    
-                            
-                        </table>
+                        <tr><td><strong>First Name</strong><br>{{result.firstName}}</td></tr>
+                        <tr><td><strong>Last Name</strong><br>{{result.lastName}}</td></tr>
+                        <tr><td><strong>Email</strong><br>{{result.email_address}}</td></tr>
+                        <tr><td><strong>NRIC</strong><br>{{result.nric}}</td></tr>
+                        <tr><td><strong>Mobile No.</strong><br>{{result.mobile_number}}</td></tr>
+                        <tr><td><strong>Home No.</strong><br>{{result.home_number}}</td></tr>
+                        <tr><td><strong>Types of patients</strong><br>N.A</td></tr>
+                        <tr><td><strong>Gender</strong><br>{{result.gender}}</td></tr>
+                        <tr><td><strong>Address</strong><br>{{result.residential_address}}</td></tr>
+                        <tr><td><strong>Postal</strong><br>{{result.postal}}</td></tr>
+                        <tr><td><strong>Country</strong><br>{{result.country}}</td></tr>            
+                    </table>
                 </div>
 
 
             <div id="myModal" class="modal">
             <!-- Modal content -->
-        <span class="close"></span>
-        <form class="form-style-9" name="custInfo" ng-controller="admincontroller" ng-submit=updateCustInfo();edit()>
-          <ul>
-            <li>
-              <input type="text" name="field1" class="field-style field-split align-left" required ng-model="result.firstName"/>
-              <input type="text" name="field2" class="field-style field-split align-right" required ng-model="result.lastName"/>
-            </li>
-            <li>
-              <input type="text" name="field3" class="field-style field-split align-left" required ng-model="result.mobile_number"/>
-              <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.home_number"/>
-            </li>
-            <li>
-              <input type="text" name="field3" class="field-style field-split align-left" required ng-model="result.email_address"/>
-              <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.nric"/>
-            </li>
-            <li>
-              <input type="hidden" name="field4" class="field-style field-split align-left" required ng-model="result.id"/>
-              <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.gender"/>
-            </li>
-            <li>
-              <input type="text" name="field3" class="field-style field-full align-none" required ng-model="result.residential_address"/>
-            </li>
-            <li>
-              <input type="text" name="field3" class="field-style field-split align-left" required ng-model="result.postal"/>
-              <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.country"/>
-            </li>
+                <span class="close"></span>
 
-            <li>
-              <!-- <input type="submit" value="CONTINUE TO ITEM SLECTION" /> -->
-              <input value="Submit" class="button3" name="submit" type="submit">
-            </li>
-          </ul>
-        </form> 
+                <form class="form-style-9" name="custInfo" ng-controller="admincontroller" ng-submit=updateCustInfo();edit()>
+                    <ul>
+                        <li>
+                            <input type="text" name="field1" class="field-style field-split align-left" required ng-model="result.firstName"/>
+                            <input type="text" name="field2" class="field-style field-split align-right" required ng-model="result.lastName"/> 
+                        </li>
+
+                        <li>
+                            <input type="text" name="field3" class="field-style field-split align-left" required ng-model="result.mobile_number"/>
+                            <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.home_number"/>
+                        </li>
+
+                        <li>
+                            <input type="text" name="field3" class="field-style field-split align-left" required ng-model="result.email_address"/>
+                            <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.nric"/>
+                        </li>
+
+                        <li>
+                            <input type="hidden" name="field4" class="field-style field-split align-left" required ng-model="result.id"/>
+                            <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.gender"/>
+                        </li>
+
+                        <li>
+                            <input type="text" name="field3" class="field-style field-full align-none" required ng-model="result.residential_address"/>
+                        </li>
+
+                        <li>
+                            <input type="text" name="field3" class="field-style field-split align-left" required ng-model="result.postal"/>
+                            <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.country"/>
+                        </li>
+
+                        <li>
+                            <input value="Submit" class="button3" name="submit" type="submit">
+                            <input value="Cancel" class="button3" name="submit" type="submit" ng-click="edit()">
+                        </li>
+                    </ul>
+                </form> 
             </div>
             </nav>
-
-            <!-- <div data-role="popup" id="myPopup">
-                <form method="post" action="/action_page_post.php">
-                    <div>
-                    <h3>Login information</h3>
-                    <label for="usrnm" class="ui-hidden-accessible">Username:</label>
-                    <input type="text" name="user" id="usrnm" placeholder="Username">
-                    <label for="pswd" class="ui-hidden-accessible">Password:</label>
-                    <input type="password" name="passw" id="pswd" placeholder="Password">
-                    <label for="log">Keep me logged in</label>
-                    <input type="checkbox" name="login" id="log" value="1" data-mini="true">
-                    <input type="submit" data-inline="true" value="Log in">
-                    </div>
-                </form>
-            </div> -->
 
             <article>
 
                 <form name="patient2" ng-controller="admincontroller" ng-submit=inputLog()>
+                    
                     <div class="edit">
                         <table>
                             <tr>
@@ -148,8 +125,8 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="page2">
 
+                    <div class="page2">
                         <table>
                             <tr>
                                 <td><button id="btn1" class="button" ng-click="buttonId('New Patient Log')">New Patient Log</button></td>
@@ -162,12 +139,9 @@
 
                             <textarea rows="4" cols="50" name="message" required id="user_input" ng-model="textLog"></textarea>
 
-                        </table>
-                                                   
-
-
-
+                        </table>                                                
                     </div>
+
                     <div class="page2-2">
                         <table>
                             <tr>
@@ -177,29 +151,25 @@
                         </table>
                     </div>
 
-                                                   
+                </form>
 
+                    <div id="newDivs" class="msg">
+                        <table>
+                            <tr ng-repeat="patient in patientLog">
+                                <td>
+                                    <strong>
+                                        Admin created a <u>{{patient.tabType}}</u> for {{patient.firstName}} {{patient.lastName}}<br>
+                                        {{patient.date}} at {{patient.time}}<br><br>
+                                    </strong> {{patient.remark}}
 
+                                    <br><br>
 
-                    <form>
+                                </td>
+                            </tr>
 
-                        <div id="newDivs" class="msg">
-                            <table>
-                                <tr ng-repeat="patient in patientLog">
-                                    <td>
-                                        <strong>
-                                            Admin created a <u>{{patient.tabType}}</u> for {{patient.firstName}} {{patient.lastName}}<br>
-                                            {{patient.date}} at {{patient.time}}<br><br>
-                                        </strong> {{patient.remark}}
+                        </table>
+                    </div>
 
-                                        <br><br>
-
-                                    </td>
-                                </tr>
-
-                            </table>
-
-                        </div>
             </article>
         </div>
 </div>
