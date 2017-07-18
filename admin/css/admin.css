@@ -659,15 +659,69 @@ color: white;
     text-decoration: underline;
     text-align: right;
 } */
-.boxbox2 td a{
+.patient2 a{
     color: red;
-    text-decoration: underline;
     text-align: right;
     padding-left: 150px;
-    
+    position: absolute;
+    bottom: 35px;
+    left: -16px;
 }
 
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
 
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.edit button
+{
+    background-color: white;
+    /* border: black; */
+    color: red;
+    padding: 0px 0px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 1px;
+    /* border-radius: 12px; */
+    /* background-color: darkseagreen; */
+    border: 1px solid white
+}
+.edit table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 14.4%;
+    position: absolute;
+    left: 240px;
+    bottom: 106px;
+    border-bottom-color: blue;
+}
+
+.edit td{
+    text-align: right;
+    background-color: white;
+}
 /*----------------------------------------  */
 
 

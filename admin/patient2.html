@@ -81,11 +81,26 @@
 
                             <tr><td><strong>Country</strong><br>{{result.country}}</td></tr>    
                             
-                            <tr><td><a href="www.google.com">Edit details</a></td></tr> 
-            
                         </table>
-
                 </div>
+
+
+            <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <form class="form-style-9">
+                <span class="close"></span>
+                <div class="logo_1"> <img src="images/logo_1_50.png"> </div>
+                <h1>Returning Patient?</h1>
+                <p>Simply enter your NRIC/Password number below to consult our specialist</p><br>
+                <ul>
+                <li>
+                <h1>NRIC/Passport Number </h1>
+                <input type="text" name="field4" class="field-style field-split align-right" required placeholder="NRIC" ng-model="nric"/>
+                <input type="submit" value="Submit" />
+                </li>
+                </ul>
+            </form>
+            </div>
             </nav>
 
             <!-- <div data-role="popup" id="myPopup">
@@ -121,6 +136,7 @@
                             <textarea rows="4" cols="50" name="message" required id="user_input" ng-model="textLog"></textarea>
 
                         </table>
+                                                   
 
 
 
@@ -133,6 +149,17 @@
                             </tr>
                         </table>
                     </div>
+                    <div class="edit">
+                        <table>
+                            <tr>
+                                <td><button id="submit" class="button">Edit details</button></td>
+                            </tr>
+                        </table>
+                    </div>
+                                                   
+
+
+
                     <form>
 
                         <div id="newDivs" class="msg">
