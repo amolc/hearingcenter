@@ -33,6 +33,10 @@ $scope.updateCustInfo = function(){
 
 }
 
+$scope.editInfo = function(){
+    $("#myModal").show();
+}
+
 
 //********************************************************************************* */
 //Show and hide tab info
@@ -55,7 +59,7 @@ $scope.itemSel = function(){
 //********************************************************************************* */
 //Retrieve patientLogs
     $scope.getLog = function(){
-
+         $("#myModal").hide();
         var stringUrl = $location.absUrl();
         var EqualPos = stringUrl.indexOf("=");
         var ic = stringUrl.substring(EqualPos + 1);
