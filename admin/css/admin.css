@@ -642,7 +642,7 @@ color: white;
     display: block;
     clear:both;
     position: absolute;
-    top: 250px;
+    top: 210px;
     left: 30px;
     width: 16%;
 }
@@ -654,8 +654,18 @@ color: white;
     float: right;
 }
 
-
-
+/* .boxbox2 a{
+    color: red;
+    text-decoration: underline;
+    text-align: right;
+} */
+.boxbox2 td a{
+    color: red;
+    text-decoration: underline;
+    text-align: right;
+    padding-left: 150px;
+    
+}
 
 
 /*----------------------------------------  */
