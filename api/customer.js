@@ -30,9 +30,10 @@ exports.updateCustomer = function(req, res) {
 	var residential_address = req.body.residential_address;
 	var postal = req.body.postal;
 	var country = req.body.country;
+	var nric = req.body.nric;
+	var email = req.body.email;
 
-
-	customerCRUD.update({'id' : id}, {firstName:firstName, lastName:lastName, mobile_number:mobile_number, home_number:home_number,gender:gender, residential_address:residential_address, postal:postal, country:country}, function (err, vals) {
+	customerCRUD.update({'id' : id}, {firstName:firstName, lastName:lastName, mobile_number:mobile_number, home_number:home_number,gender:gender, residential_address:residential_address, postal:postal, country:country , nric:nric , email_address:email}, function (err, vals) {
 		if(parseInt(vals.affectedRows)>0){
 			var resdata={status:true,
 			message:'staff successfully updated'};

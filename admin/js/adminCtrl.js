@@ -1,6 +1,13 @@
 app.controller('admincontroller', function ($scope, $http, $window, $location, $rootScope, $filter) {
 
 
+$scope.editInfo = function(){
+    $("#myModal").show();
+}
+$scope.edit = function(){
+    $("#myModal").hide();
+}
+
 //********************************************************************************* */
 //Update customer info from account.html
 $scope.updateCustInfo = function(){
@@ -15,7 +22,8 @@ $scope.updateCustInfo = function(){
     $scope.data.residential_address = $scope.result.residential_address;
     $scope.data.postal = $scope.result.postal;
     $scope.data.country = $scope.result.country;
-
+    $scope.data.email = $scope.result.email_address;
+    $scope.data.nric = $scope.result.nric;
     $http.post(baseurl + 'updateCustomer', $scope.data).success(function (res) {
         if (res.status == 'false') {
 
@@ -32,11 +40,6 @@ $scope.updateCustInfo = function(){
     
 
 }
-
-$scope.editInfo = function(){
-    $("#myModal").show();
-}
-
 
 //********************************************************************************* */
 //Show and hide tab info

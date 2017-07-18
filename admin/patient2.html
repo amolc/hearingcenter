@@ -87,19 +87,39 @@
 
             <div id="myModal" class="modal">
             <!-- Modal content -->
-            <form class="form-style-9">
-                <span class="close"></span>
-                <div class="logo_1"> <img src="images/logo_1_50.png"> </div>
-                <h1>Returning Patient?</h1>
-                <p>Simply enter your NRIC/Password number below to consult our specialist</p><br>
-                <ul>
-                <li>
-                <h1>NRIC/Passport Number </h1>
-                <input type="text" name="field4" class="field-style field-split align-right" required placeholder="NRIC" ng-model="nric"/>
-                <input type="submit" value="Submit" />
-                </li>
-                </ul>
-            </form>
+        <span class="close"></span>
+        <form class="form-style-9" name="custInfo" ng-controller="admincontroller" ng-submit=updateCustInfo();edit()>
+          <ul>
+            <li>
+              <input type="text" name="field1" class="field-style field-split align-left" required ng-model="result.firstName"/>
+              <input type="text" name="field2" class="field-style field-split align-right" required ng-model="result.lastName"/>
+            </li>
+            <li>
+              <input type="text" name="field3" class="field-style field-split align-left" required ng-model="result.mobile_number"/>
+              <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.home_number"/>
+            </li>
+            <li>
+              <input type="text" name="field3" class="field-style field-split align-left" required ng-model="result.email_address"/>
+              <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.nric"/>
+            </li>
+            <li>
+              <input type="hidden" name="field4" class="field-style field-split align-left" required ng-model="result.id"/>
+              <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.gender"/>
+            </li>
+            <li>
+              <input type="text" name="field3" class="field-style field-full align-none" required ng-model="result.residential_address"/>
+            </li>
+            <li>
+              <input type="text" name="field3" class="field-style field-split align-left" required ng-model="result.postal"/>
+              <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.country"/>
+            </li>
+
+            <li>
+              <!-- <input type="submit" value="CONTINUE TO ITEM SLECTION" /> -->
+              <input value="Submit" class="button3" name="submit" type="submit">
+            </li>
+          </ul>
+        </form> 
             </div>
             </nav>
 
@@ -121,6 +141,13 @@
             <article>
 
                 <form name="patient2" ng-controller="admincontroller" ng-submit=inputLog()>
+                    <div class="edit">
+                        <table>
+                            <tr>
+                                <td><button id="submit" class="button"ng-click = "editInfo()">Edit details</button></td>
+                            </tr>
+                        </table>
+                    </div>
                     <div class="page2">
 
                         <table>
@@ -149,13 +176,7 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="edit">
-                        <table>
-                            <tr>
-                                <td><button id="submit" class="button"ng-click = "editInfo()">Edit details</button></td>
-                            </tr>
-                        </table>
-                    </div>
+
                                                    
 
 
