@@ -723,6 +723,30 @@ color: white;
     text-align: right;
     background-color: white;
 }
+
+.article apptDate{
+    /* -webkit-appearance: textarea;
+    height: 150px;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    user-select: text;
+    flex-direction: column;
+    resize: auto;
+    cursor: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    border-width: 1px;
+    border-style: solid;
+    border-color: initial;
+    border-image: initial; */
+    padding: 2px;
+    position: absolute;
+    position: absolute;
+    left: 750px;
+    top: 70px;
+    width: 10%;
+ 
+}
 /*----------------------------------------  */
 
 

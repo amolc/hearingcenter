@@ -1,6 +1,15 @@
 app.controller('admincontroller', function ($scope, $http, $window, $location, $rootScope, $filter) {
 
+//********************************************************************************* */
+//Schedule Appointment box
+$scope.scheduleAppt = function(req,res){
+     $("#user_input").hide();
+     $("#newDivs").hide();
+     $("#saveAndDiscard").hide();
+    //  $("#apptDate").show();
 
+     
+}
 
 //********************************************************************************* */
 //Update customer info from account.html
@@ -28,9 +37,10 @@ $scope.updateCustInfo = function(){
     }).error(function () {
  
     })
-     $("#custinfo").hide();
-        $("#itemSel").show();
-        $("#pay").hide();
+    
+    $("#custinfo").hide();
+    $("#itemSel").show();
+    $("#pay").hide();
     
 
 }
@@ -69,7 +79,6 @@ $scope.edit = function(){
         var EqualPos = stringUrl.indexOf("=");
         var ic = stringUrl.substring(EqualPos + 1);
 
-        console.log("inside method");
         $http.get(baseurl + 'getPatientLog/' + ic).success(function (res) {
 
             if (res.status == 'false') {
@@ -129,6 +138,20 @@ $scope.edit = function(){
 //Get tab value
     $scope.buttonId = function(value){
       $scope.tabId = value;
+      
+      if($scope.tabId ==="Schedule Appointment"){
+            $("#user_input").hide();
+            $("#newDivs").hide();
+            $("#saveAndDiscard").hide();
+            $("#apptDate").show();
+
+      }else{
+            $("#user_input").show();
+            $("#newDivs").show();
+            $("#saveAndDiscard").show();
+            $("#apptDate").hide();
+      }
+      
     };
 
     

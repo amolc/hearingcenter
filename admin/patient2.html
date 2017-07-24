@@ -137,13 +137,15 @@
                                 <td><button id="btn6" class="button" ng-click="buttonId('Schedule Appointment')">Schedule Appointment</button></td>
                             </tr>
 
+                            <!--Large textbox for user -->
                             <textarea rows="4" cols="50" name="message" required id="user_input" ng-model="textLog"></textarea>
 
+                            
                         </table>                                                
                     </div>
 
                     <div class="page2-2">
-                        <table>
+                        <table id="saveAndDiscard">
                             <tr>
                                 <td><button id="submit" class="button">Save</button></td>
                                 <td><button type="button" id="reset" class="button" ng-click="clearField();">Discard</button></td>
@@ -153,22 +155,35 @@
 
                 </form>
 
-                    <div id="newDivs" class="msg">
-                        <table>
-                            <tr ng-repeat="patient in patientLog">
-                                <td>
-                                    <strong>
-                                        Admin created a <u>{{patient.tabType}}</u> for {{patient.firstName}} {{patient.lastName}}<br>
-                                        {{patient.date}} at {{patient.time}}<br><br>
-                                    </strong> {{patient.remark}}
+                <div id="newDivs" class="msg">
+                    <table>
+                        <tr ng-repeat="patient in patientLog">
+                            <td>
+                                <strong>
+                                    Admin created a <u>{{patient.tabType}}</u> for {{patient.firstName}} {{patient.lastName}}<br>
+                                    {{patient.date}} at {{patient.time}}<br><br>
+                                </strong> {{patient.remark}}
 
-                                    <br><br>
+                                <br><br>
 
-                                </td>
-                            </tr>
+                            </td>
+                        </tr>
 
-                        </table>
-                    </div>
+                    </table>
+                </div>
+
+                <!--Drop down selection for clinic and dates -->
+                <div class="apptDate">
+                    <!-- <select>
+                        <option value="jan">January</option>
+                        <option value="feb">February</option>
+                        <option value="mar">March</option>
+                        <option value="apr">April</option>
+                        <option value="may">May</option>
+                    </select>   -->
+                    Showing
+                </div>
+
 
             </article>
         </div>
