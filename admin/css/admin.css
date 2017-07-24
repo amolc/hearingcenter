@@ -724,25 +724,43 @@ color: white;
     background-color: white;
 }
 
-.apptDate select{
+.apptDate select.month{
     padding: 2px;
     position: absolute;
     position: absolute;
-    left: 750px;
+    left: 790px;
     top: 70px;
     width: 10%;
  
 }
 
-.apptDate select.hello {
+.apptDate select.day {
     padding: 2px;
     position: absolute;
     position: absolute;
-    left: 680px;
+    left: 720px;
     top: 70px;
     width: 4%;
 }
 
+.apptDate select.year {
+    padding: 2px;
+    position: absolute;
+    position: absolute;
+    left: 955px;
+    top: 70px;
+    width: 6%;
+}
+
+.apptDate select.clinic{
+    padding: 2px;
+    position: absolute;
+    position: absolute;
+    left: 550px;
+    top: 70px;
+    width: 10%;
+ 
+}
 /*----------------------------------------  */
 
 
