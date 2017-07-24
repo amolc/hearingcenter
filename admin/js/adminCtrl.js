@@ -193,7 +193,7 @@ $scope.edit = function(){
         $("#custinfo").show();
         $("#itemSel").hide();
         $("#pay").hide();
-
+        $("#apptDate").hide();
 
         $http.get(baseurl + 'findByIc/' + ic).success(function (res) {
             if (res.status == 'false') {
