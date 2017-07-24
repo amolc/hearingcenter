@@ -1,5 +1,7 @@
 app.controller('admincontroller', function ($scope, $http, $window, $location, $rootScope, $filter) {
 
+
+    
 //********************************************************************************* */
 //Schedule Appointment box
 $scope.scheduleAppt = function(req,res){
