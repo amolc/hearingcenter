@@ -725,20 +725,6 @@ color: white;
 }
 
 .apptDate select{
-    /* -webkit-appearance: textarea;
-    height: 150px;
-    background-color: white;
-    -webkit-rtl-ordering: logical;
-    user-select: text;
-    flex-direction: column;
-    resize: auto;
-    cursor: auto;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    border-width: 1px;
-    border-style: solid;
-    border-color: initial;
-    border-image: initial; */
     padding: 2px;
     position: absolute;
     position: absolute;
@@ -747,6 +733,16 @@ color: white;
     width: 10%;
  
 }
+
+.apptDate select.hello {
+    padding: 2px;
+    position: absolute;
+    position: absolute;
+    left: 680px;
+    top: 70px;
+    width: 4%;
+}
+
 /*----------------------------------------  */
 
 
