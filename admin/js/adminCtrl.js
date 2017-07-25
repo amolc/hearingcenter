@@ -76,7 +76,12 @@ $scope.edit = function(){
 //********************************************************************************* */
 //Retrieve patientLogs
     $scope.getLog = function(){
-         $("#myModal").hide();
+
+        if(window.localStorage.getItem('user')!="1"){
+            $window.location = 'index.html';
+        }
+
+        $("#myModal").hide();
         var stringUrl = $location.absUrl();
         var EqualPos = stringUrl.indexOf("=");
         var ic = stringUrl.substring(EqualPos + 1);
@@ -187,6 +192,10 @@ $scope.edit = function(){
 //********************************************************************************* */
 //Patient detail using their nric
     $scope.getID = function(){
+
+         if(window.localStorage.getItem('user')!="1"){
+            $window.location = 'index.html';
+        }
 
         var stringUrl = $location.absUrl();
         var EqualPos = stringUrl.indexOf("=");
