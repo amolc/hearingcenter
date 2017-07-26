@@ -42,13 +42,16 @@
 
         <div class="feedback">
             <div class="rating">
-                <img class="ratePic" src="images/excellent.png" width="80" height="90">Excellent
-                <img class="ratePic" src="images/good.png" width="80" height="90">Good
-                <img class="ratePic" src="images/average.png" width="80" height="90">Average
-                <img class="ratePic" src="images/poor.png" width="80" height="90">Poor
-                <img class="ratePic" src="images/verypoor.png" width="80" height="90">Very Poor
-                
-                <div class="footer">
+
+                <!-- <form ng-controller="crmcontroller" ng-submit="custFeedback()"> -->
+                    <button><img class="ratePic" ng-src="images/excellent.png" width="90" height="90" ng-click="custFeedback(5)">Excellent</button>
+                    <button><img class="ratePic" ng-src="images/good.png" width="90" height="90" ng-click="custFeedback(4)">Good</button>
+                    <button><img class="ratePic" ng-src="images/average.png" width="90" height="90" ng-click="custFeedback(3)">Average</button>
+                    <button><img class="ratePic" ng-src="images/poor.png" width="90" height="90" ng-click="custFeedback(2)">Poor</button>
+                    <button><img class="ratePic" ng-src="images/verypoor.png" width="90" height="90" ng-click="custFeedback(1)">Very Poor</button>
+                <!-- </form> -->
+
+                <div class="footer">    
                     We appreciate your feedback to continuously improve our service
                 </div>
                 
@@ -58,6 +61,7 @@
 
         
     </div>
+    
 </body>
 
 </html>

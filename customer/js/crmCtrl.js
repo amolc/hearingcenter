@@ -1,5 +1,28 @@
 
-app.controller('crmcontroller', function ($scope, $http, $window, $location) {
+app.controller('crmcontroller', function ($scope, $http, $window, $location, $timeout) {
+
+
+    
+//*********************************************** */
+//Feedback value 
+    $scope.custFeedback = function(req, res){
+        $scope.data = {};
+        $scope.data.value = req;
+
+        $http.post(baseurl + 'insertFeedback', $scope.data).success(function (res) {
+            if (res.status == 'false') {
+
+            } else {      
+               
+            }
+        }).error(function () {
+ 
+        })
+
+        $window.location.href = 'feedback2.html'
+    }
+
+//*********************************************** */
 //Verify member login
 
     $scope.loginMember = function(req,res){
@@ -25,9 +48,6 @@ app.controller('crmcontroller', function ($scope, $http, $window, $location) {
 
         });
     }
-
-
-//*********************************************** */
 
 
 //*********************************************** */

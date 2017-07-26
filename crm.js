@@ -45,6 +45,7 @@ app.post('/api/insertmisc', customer.insertMisc);
 app.post('/api/insertHistories', customer.insertHistories);
 app.post('/api/insertPatientLog', customer.insertPatientLog);
 app.post('/api/insertAppt', customer.insertAppt);
+app.post('/api/insertFeedback', customer.insertFeedback);
 
 
 var customer = connect();

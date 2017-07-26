@@ -14,7 +14,36 @@ var db = mysql.createPool({
  var custMedicalHistoriesCRUD = CRUD(db, 'custMedicalHistories');
  var patientLogCRUD = CRUD(db, 'patientLog');
  var appointmentCRUD = CRUD(db, 'appointment');
+ var feedbackCRUD = CRUD(db, 'feedback');
 
+/******************************************************
+Get all patient appointment from DB
+*/
+exports.insertFeedback = function(req, res){
+	
+	var feedbackValue = req.body.value;
+	var response = "";
+	
+	if(feedbackValue == 5){
+		response = "excellent";
+	}else if(feedbackValue == 4){
+		response = "good";
+	}else if(feedbackValue == 3){
+		response = "average";
+	}else if(feedbackValue == 2){
+		response = "poor";
+	}else{
+		response = "veryPoor";
+	}
+
+	feedbackCRUD.create({
+		'feedback' : response,
+		'feedback_value': feedbackValue,
+	},function (err,vals){
+		
+	})
+
+}
 
 
 /******************************************************

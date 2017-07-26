@@ -474,7 +474,7 @@ button {
 
 .feedback {  
     float: left;
-    width: 480px;
+    width: 580px;
     height: 250px;
     margin-top: 100px;
     margin-left: 100px;
@@ -485,7 +485,7 @@ button {
 }
 
 .feedback h1 {
-    font-size: 40px;
+    font-size: 50px;
     color: black;
     text-align: left
 }
@@ -499,7 +499,7 @@ button {
 }
 
 .feedback .rating .footer{
-    margin-top: 160px;
+    margin-top: 120px;
     font-size: 20px;
     color: black;
     text-align: center;
