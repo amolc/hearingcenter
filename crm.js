@@ -36,6 +36,7 @@ app.get('/api/allcustomer', customer.allCustomer);
 app.get('/api/findByIc/:ic', customer.findByIc);
 app.get('/api/getoption', customer.getOption);
 app.get('/api/getPatientLog/:ic', customer.getPatientLog);
+app.get('/api/getAppt', customer.getAppt);
 
 app.post('/api/insertcustomer', customer.insertCustomer);
 app.post('/api/deleteCustomer', customer.deleteCustomer);
@@ -43,6 +44,7 @@ app.post('/api/updateCustomer', customer.updateCustomer);
 app.post('/api/insertmisc', customer.insertMisc);
 app.post('/api/insertHistories', customer.insertHistories);
 app.post('/api/insertPatientLog', customer.insertPatientLog);
+app.post('/api/insertAppt', customer.insertAppt);
 
 
 var customer = connect();

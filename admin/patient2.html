@@ -21,6 +21,7 @@
         <script type="text/javascript" src="js/app.js"></script>
         <script type="text/javascript" src="js/adminCtrl.js"></script>
 
+
     </head>
     <header>
         <div class="header_cont">
@@ -174,37 +175,47 @@
 
                 <!--Drop down selection for clinic and dates -->
                 <div id= "apptDate" class="apptDate">
-
-                    <select class="clinic">
-                        <option value="clinic1">Clinic 1</option>
-                        <option value="clinic2">Clinic 2</option>
-                        <option value="clinic3">Clinic 3</option>
-                    </select>    
-
-                    <select class="day">
-                        <option value="1">01</option>
-                        <option value="2">02</option>
-                        <option value="3">03</option>
-                        <option value="4">04</option>
-                        <option value="5">05</option>
-                    </select>   
-
-                    <select class="month">
-                        <option value="jan">January</option>
-                        <option value="feb">February</option>
-                        <option value="mar">March</option>
-                        <option value="apr">April</option>
-                        <option value="may">May</option>
-                    </select>   
-
-                    <select class="year">
-                        <option value="1900">1900</option>
-                        <option value="1901">1901</option>
-                        <option value="1902">1902</option>
-                        <option value="1903">1903</option>
-                        <option value="1904">1904</option>
-                    </select> 
                     
+                    <form name="appointment" ng-controller="admincontroller" ng-submit=scheduleAppt()>
+                        <select class="clinic" ng-model="clinic">
+                            <option value="clinic1">Clinic 1</option>
+                            <option value="clinic2">Clinic 2</option>
+                            <option value="clinic3">Clinic 3</option>
+                        </select>    
+
+                        <select class="day" ng-model="day">
+                            <option value="1">01</option>
+                            <option value="2">02</option>
+                            <option value="3">03</option>
+                            <option value="4">04</option>
+                            <option value="5">05</option>
+                        </select>   
+
+                        <select class="month" ng-model="month">
+                            <option value="jan">January</option>
+                            <option value="feb">February</option>
+                            <option value="mar">March</option>
+                            <option value="apr">April</option>
+                            <option value="may">May</option>
+                        </select>   
+
+                        <select class="year" ng-model="year">
+                            <option value="1900">1900</option>
+                            <option value="1901">1901</option>
+                            <option value="1902">1902</option>
+                            <option value="1903">1903</option>
+                            <option value="1904">1904</option>
+                        </select> 
+
+                        <button class="scheduleSubmit" id="submit" class="button">Submit</button>
+                    </form>
+                </div>
+
+                <div id="appointment" class="appointment">
+                     testing 
+                     <datepicker>
+                        <input ng-model="date" type="text"/>
+                    </datepicker>
                 </div>
 
 

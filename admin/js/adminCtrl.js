@@ -1,6 +1,24 @@
 app.controller('admincontroller', function ($scope, $http, $window, $location, $rootScope, $filter) {
 
 
+//********************************************************************************* */
+//Schedule Appointment box
+$scope.allAppt = function(req, res){
+
+    $http.get(baseurl + 'getAppt' ).success(function (res) {
+
+        if (res.status == 'false') {
+
+        } else {
+            $scope.apptLog = res;
+
+        }
+
+    }).error(function () {
+
+    });
+
+}
     
 //********************************************************************************* */
 //Schedule Appointment box
@@ -8,8 +26,28 @@ $scope.scheduleAppt = function(req,res){
      $("#user_input").hide();
      $("#newDivs").hide();
      $("#saveAndDiscard").hide();
-    //  $("#apptDate").show();
 
+    $scope.data = {};
+    $scope.data.firstName = $scope.result.firstName;
+    $scope.data.lastName = $scope.result.lastName;
+    $scope.data.nric = $scope.result.nric;
+    $scope.data.clinic = $scope.clinic;
+    $scope.data.day = $scope.day;
+    $scope.data.month = $scope.month;
+    $scope.data.year = $scope.year;
+
+    $http.post(baseurl + 'insertAppt', $scope.data).success(function (res) {
+        if (res.status == 'false') {
+
+        } else {      
+        
+        }
+            
+    }).error(function () {
+ 
+    })
+
+    $window.location = "patient2.html?nric=" + $scope.result.nric;
      
 }
 

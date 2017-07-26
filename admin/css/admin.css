@@ -761,6 +761,26 @@ color: white;
     width: 10%;
  
 }
+
+.apptDate button.scheduleSubmit{
+    padding: 2px;
+    position: absolute;
+    position: absolute;
+    left: 1155px;
+    top: 70px;
+    width: 10%;
+ 
+}
+
+.appointment {
+    padding: 2px;
+    position: absolute;
+    position: absolute;
+    left: 550px;
+    top: 200px;
+    width: 10%;
+ 
+}
 /*----------------------------------------  */
 
 

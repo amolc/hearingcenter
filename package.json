@@ -4,10 +4,12 @@
   "description": "This is 1.0 CFOhonour",
   "main": "app.js",
   "dependencies": {
+    "angularjs-datepicker": "^2.1.23",
     "body-parser": "^1.17.2",
     "connect": "^3.6.2",
     "cors": "^2.8.3",
     "express": "^4.15.3",
+    "moment": "^2.18.1",
     "mysql": "^2.13.0",
     "mysql-crud": "^0.1.4",
     "ng-init": "^4.0.1",

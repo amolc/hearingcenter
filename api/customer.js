@@ -1,4 +1,3 @@
-
 var http = require('http');
 var mysql = require('mysql');
 var db = mysql.createPool({
@@ -14,6 +13,51 @@ var db = mysql.createPool({
  var newsLetterCRUD = CRUD(db, 'newsletter');
  var custMedicalHistoriesCRUD = CRUD(db, 'custMedicalHistories');
  var patientLogCRUD = CRUD(db, 'patientLog');
+ var appointmentCRUD = CRUD(db, 'appointment');
+
+
+
+/******************************************************
+Get all patient appointment from DB
+*/
+exports.getAppt = function(req, res){
+
+	var query = 'select * from appointment';
+	//var query = 'select * from appointment where `nric`="' + ic +'" ORDER BY id DESC;';
+
+	db.query(query, function(err, rows){
+		console.log(rows);
+		res.jsonp(rows);
+	});
+
+}
+	
+
+/******************************************************
+Insert patient appointment into DB
+*/
+exports.insertAppt = function(req, res){
+
+	var firstName = req.body.firstName;
+	var lastName = req.body.lastName;
+	var nric = req.body.nric;
+	var clinic = req.body.clinic;
+	var day = req.body.day;
+	var month = req.body.month;
+	var year = req.body.year;
+
+	appointmentCRUD.create({
+			'firstName': firstName,
+			'lastName' : lastName,
+			'nric': nric,
+			'clinic' : clinic,
+			'day': day,
+			'month' : month,
+			'year': year,
+		},function (err,vals){
+			
+		})
+}
 
 
 /******************************************************
