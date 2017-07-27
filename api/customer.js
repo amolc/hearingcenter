@@ -16,6 +16,21 @@ var db = mysql.createPool({
  var appointmentCRUD = CRUD(db, 'appointment');
  var feedbackCRUD = CRUD(db, 'feedback');
 
+
+/******************************************************
+Get all patient appointment from DB
+*/
+exports.getAllFeedback = function(req, res){
+
+	var query = 'select * from feedback';
+
+	db.query(query, function(err, rows){
+		//console.log(rows);
+		res.jsonp(rows);
+	});
+
+} 
+
 /******************************************************
 Get all patient appointment from DB
 */
@@ -37,6 +52,7 @@ exports.insertFeedback = function(req, res){
 	}
 
 	feedbackCRUD.create({
+		'clinic' : "Clinic1",
 		'feedback' : response,
 		'feedback_value': feedbackValue,
 	},function (err,vals){

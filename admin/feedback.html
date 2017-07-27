@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<div data-ng-app="crm" data-ng-controller="admincontroller" ng-init=feedbackScore()>
+<head>
+
+  <!-- your webpage info goes here -->
+
+  <title>The Hearing Centre</title>
+
+  <meta name="author" content="Ama" />
+  <meta name="description" content="" />
+
+  <!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed -->
+  <link rel="stylesheet" href="css/admin.css" type="text/css" />
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script type="text/javascript" src="js/angular-storage.min.js"></script>
+  <script src="js/bootstrap.js" type="text/javascript"></script>
+  <script src="js/index.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/adminCtrl.js"></script>
+
+</head>
+<header>
+    <div class = "header_cont" >
+    <input type="text" name="search" placeholder="Search..">
+    <button class = "button1" >Dashboard</button>
+    <button class = "button3" onclick="location.href='patient.html';" >Patient</button> 
+    <button class = "button2" >Accounts</button>
+    <button class = "button4" >Clinic</button>
+    <button class="button4"><a href="feedback.html">Feedback</a></button>
+    <button class="button4" ng-click="logout()">Logout</button>
+    <h6 id="demo"></h6>
+    <img src="images/logo_2.png"><br><br>
+    </div> 
+</header>
+<body>
+
+    <!--Use ng repeat for each of the clinic and rating  -->
+
+ 
+        <div class="feedback">  
+            <h1>Clinic 1</h1><br>
+            <h2><font color="green">{{clinic1Avg}}</font><br></h2>
+            <h3>{{clinic1Feedback}}</h3>
+        </div>
+
+        <div class="feedback">       
+            <h1>Clinic 2</h1><br>
+            <h2><font color="green">{{clinic2Avg}}</font><br></h2>
+            <h3>{{clinic2Feedback}}</h3>
+        </div>
+
+        <div class="feedback">
+            <h1>Clinic 3</h1><br>
+            <h2><font color="green">{{clinic3Avg}}</font><br></h2>
+            <h3>{{clinic3Feedback}}</h3>
+        </div>
+
+</body>
+
+</html>

@@ -37,6 +37,7 @@ app.get('/api/findByIc/:ic', customer.findByIc);
 app.get('/api/getoption', customer.getOption);
 app.get('/api/getPatientLog/:ic', customer.getPatientLog);
 app.get('/api/getAppt', customer.getAppt);
+app.get('/api/getAllFeedback', customer.getAllFeedback);
 
 app.post('/api/insertcustomer', customer.insertCustomer);
 app.post('/api/deleteCustomer', customer.deleteCustomer);

@@ -3,21 +3,78 @@ app.controller('admincontroller', function ($scope, $http, $window, $location, $
 
 //********************************************************************************* */
 //Schedule Appointment box
-$scope.allAppt = function(req, res){
+$scope.feedbackScore = function(req, res){
 
-    $http.get(baseurl + 'getAppt' ).success(function (res) {
+    if(window.localStorage.getItem('user')!="1"){
+            $window.location = 'index.html';
+    }
+
+    $http.get(baseurl + 'getAllFeedback' ).success(function (res) {
 
         if (res.status == 'false') {
 
         } else {
-            $scope.apptLog = res;
+            $scope.feedbackLog = res;
+            var clinic1Score = 0;
+            var clinic1Counter = 0;
 
+            var clinic2Score = 0;
+            var clinic2Counter = 0;
+
+            var clinic3Score = 0;
+            var clinic3Counter = 0;
+
+            for(var i=0; i<res.length; i++){
+                if(res[i].clinic == "Clinic1"){
+                    clinic1Score = clinic1Score + res[i].feedback_value;
+                    clinic1Counter += 1;
+
+                }else if(res[i].clinic == "Clinic2"){
+                    clinic2Score = clinic2Score + res[i].feedback_value;
+                    clinic2Counter += 1;
+
+                }else{
+                    clinic3Score = clinic3Score + res[i].feedback_value;
+                    clinic3Counter += 1;
+
+                }
+            }
+
+            $scope.clinic1Avg = Math.trunc(clinic1Score/clinic1Counter);
+            $scope.clinic2Avg = Math.trunc(clinic2Score/clinic2Counter);
+            $scope.clinic3Avg = Math.trunc(clinic3Score/clinic3Counter);
+
+            $scope.clinic1Feedback = $scope.getDesc($scope.clinic1Avg);
+            $scope.clinic2Feedback = $scope.getDesc($scope.clinic2Avg);
+            $scope.clinic3Feedback = $scope.getDesc($scope.clinic3Avg);
+
+            
         }
 
     }).error(function () {
 
     });
+}
 
+
+//********************************************************************************* */
+//Feedback description
+$scope.getDesc = function(req, res){
+    console.log(req);
+    $scope.desc = ""
+
+    if(req == 5){
+        $scope.desc = "Excellent";
+    }else if(req == 4){
+        $scope.desc = "Good";
+    }else if(req == 3){ 
+        $scope.desc = "Average";
+    }else if(req == 2){
+        $scope.desc = "Poor";
+    }else{
+        $scope.desc = "Very Poor";
+    }
+    return $scope.desc;
 }
     
 //********************************************************************************* */
