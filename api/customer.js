@@ -1,10 +1,10 @@
 var http = require('http');
 var mysql = require('mysql');
 var db = mysql.createPool({
-	database : 'hearing_centre',
-     user : 'cio_choice',
+	database : 'hearingcenter',
+     user : 'ftdev',
 	password : '10gXWOqeaf',
-    host :'cxohonour.com',
+    host :'crmfountechies.com',
  });
 
  var CRUD = require('mysql-crud');
