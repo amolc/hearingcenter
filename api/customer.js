@@ -36,6 +36,7 @@ Get all patient appointment from DB
 */
 exports.insertFeedback = function(req, res){
 	
+	var clinic = req.body.clinic;
 	var feedbackValue = req.body.value;
 	var response = "";
 	
@@ -52,7 +53,7 @@ exports.insertFeedback = function(req, res){
 	}
 
 	feedbackCRUD.create({
-		'clinic' : "Clinic1",
+		'clinic' : clinic,
 		'feedback' : response,
 		'feedback_value': feedbackValue,
 	},function (err,vals){

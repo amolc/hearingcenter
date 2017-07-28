@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    <div data-ng-app="crm" data-ng-controller="crmcontroller">
+    <div data-ng-app="crm" data-ng-controller="crmcontroller" ng-init="getClinic('Clinic1')">
 
                  
         <div class="feedback">
@@ -43,14 +43,12 @@
         <div class="feedback">
             <div class="rating">
 
-                <!-- <form ng-controller="crmcontroller" ng-submit="custFeedback()"> -->
-                    <button><img class="ratePic" ng-src="images/excellent.png" width="90" height="90" ng-click="custFeedback(5)">Excellent</button>
-                    <button><img class="ratePic" ng-src="images/good.png" width="90" height="90" ng-click="custFeedback(4)">Good</button>
-                    <button><img class="ratePic" ng-src="images/average.png" width="90" height="90" ng-click="custFeedback(3)">Average</button>
-                    <button><img class="ratePic" ng-src="images/poor.png" width="90" height="90" ng-click="custFeedback(2)">Poor</button>
-                    <button><img class="ratePic" ng-src="images/verypoor.png" width="90" height="90" ng-click="custFeedback(1)">Very Poor</button>
-                <!-- </form> -->
-
+                <button><img class="ratePic" ng-src="images/excellent.png" width="90" height="90" ng-click="custFeedback(5)">Excellent</button>
+                <button><img class="ratePic" ng-src="images/good.png" width="90" height="90" ng-click="custFeedback(4)">Good</button>
+                <button><img class="ratePic" ng-src="images/average.png" width="90" height="90" ng-click="custFeedback(3)">Average</button>
+                <button><img class="ratePic" ng-src="images/poor.png" width="90" height="90" ng-click="custFeedback(2)">Poor</button>
+                <button><img class="ratePic" ng-src="images/verypoor.png" width="90" height="90" ng-click="custFeedback(1)">Very Poor</button>
+               
                 <div class="footer">    
                     We appreciate your feedback to continuously improve our service
                 </div>

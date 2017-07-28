@@ -2,12 +2,20 @@
 app.controller('crmcontroller', function ($scope, $http, $window, $location, $timeout) {
 
 
+
+
+//*********************************************** */
+//Retrieve Clinic type (e.g. Clinic1,Clinic2,etc...)   
+    $scope.getClinic = function(req,res){
+        $scope.clinic = req;
+    }
     
 //*********************************************** */
 //Feedback value 
     $scope.custFeedback = function(req, res){
         $scope.data = {};
         $scope.data.value = req;
+        $scope.data.clinic = $scope.clinic;
 
         $http.post(baseurl + 'insertFeedback', $scope.data).success(function (res) {
             if (res.status == 'false') {
@@ -19,7 +27,7 @@ app.controller('crmcontroller', function ($scope, $http, $window, $location, $ti
  
         })
 
-        $window.location.href = 'feedback2.html'
+        $window.location.href = 'feedbackSummary.html'
     }
 
 //*********************************************** */
