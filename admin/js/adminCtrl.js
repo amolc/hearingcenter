@@ -94,9 +94,11 @@ $scope.scheduleAppt = function(req,res){
     $scope.data.year = $scope.year;
 
     $http.post(baseurl + 'insertAppt', $scope.data).success(function (res) {
-        if (res.status == 'false') {
+        if (res.status == 'false') 
+        {
 
-        } else {      
+        } 
+        else {      
         
         }
             
@@ -124,10 +126,13 @@ $scope.updateCustInfo = function(){
     $scope.data.country = $scope.result.country;
     $scope.data.email = $scope.result.email_address;
     $scope.data.nric = $scope.result.nric;
-    $http.post(baseurl + 'updateCustomer', $scope.data).success(function (res) {
-        if (res.status == 'false') {
 
-        } else {      
+    $http.post(baseurl + 'updateCustomer', $scope.data).success(function (res) {
+        if (res.status == 'false') 
+        {
+
+        } 
+        else {      
             
         }
         
@@ -158,34 +163,31 @@ $scope.itemSel = function(){
 }
 
 
-$scope.editInfo = function(){
-    $("#myModal").show();
-}
-
-
-$scope.edit = function(){
-    $("#myModal").hide();
-}
 
 
 //********************************************************************************* */
 //Retrieve patientLogs
     $scope.getLog = function(){
 
-        if(window.localStorage.getItem('user')!="1"){
+        if(window.localStorage.getItem('user')!="1")
+        {
             $window.location = 'index.html';
         }
 
-        $("#myModal").hide();
+        //$("#modalEditPatient").hide();
+
         var stringUrl = $location.absUrl();
         var EqualPos = stringUrl.indexOf("=");
         var ic = stringUrl.substring(EqualPos + 1);
 
         $http.get(baseurl + 'getPatientLog/' + ic).success(function (res) {
 
-            if (res.status == 'false') {
+            if (res.status == 'false') 
+            {
 
-            } else {
+            } 
+            else 
+            {
                 $scope.patientLog = res;
 
             }
@@ -221,9 +223,14 @@ $scope.edit = function(){
         $scope.data.remark = $scope.textLog;
 
         $http.post(baseurl + 'insertPatientLog', $scope.data).success(function (res) {
-            if (res.status == 'false') {
 
-            } else {      
+            if (res.status == 'false') 
+            {
+
+
+            } 
+            else 
+            {      
                
             }
             
@@ -288,7 +295,8 @@ $scope.edit = function(){
 //Patient detail using their nric
     $scope.getID = function(){
 
-         if(window.localStorage.getItem('user')!="1"){
+        if(window.localStorage.getItem('user')!="1")
+        {
             $window.location = 'index.html';
         }
 
@@ -301,8 +309,21 @@ $scope.edit = function(){
         $("#pay").hide();
         $("#apptDate").hide();
 
+
+        $scope.editInfo = function(){
+            $("#modalEditPatient").show();
+        }
+
+
+        $scope.edit = function(){
+            $("#modalEditPatient").hide();
+        }
+
+
         $http.get(baseurl + 'findByIc/' + ic).success(function (res) {
-            if (res.status == 'false') {
+
+            if (res.status == 'false') 
+            {
 
             } else {
 

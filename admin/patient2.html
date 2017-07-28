@@ -13,6 +13,8 @@
 
         <!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed -->
         <link rel="stylesheet" href="css/admin.css" type="text/css" />
+        <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css" type="text/css" />
+
         <script type="text/javascript" src="js/jquery.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
         <script type="text/javascript" src="js/angular-storage.min.js"></script>
@@ -55,7 +57,13 @@
                 <div class="boxbox2">
 
                     <table>
-                        <th>Patient Detail</th>
+                        <tr>
+                            <th>
+                                <span> Patient Detail </span>
+                                <i style="float:right;cursor:pointer" id="submit" class="fa fa-pencil-square-o fa-lg" ng-click = "editInfo()"></i> 
+                            </th>
+
+                        </tr>
 
                         <tr><td><strong>First Name</strong><br>{{result.firstName}}</td></tr>
                         <tr><td><strong>Last Name</strong><br>{{result.lastName}}</td></tr>
@@ -72,48 +80,49 @@
                 </div>
 
 
-            <div id="myModal" class="modal">
-            <!-- Modal content -->
-                <span class="close"></span>
+                <div id="modalEditPatient" class="modal">
+                <!-- Modal content -->
+                    <span class="close"></span>
 
-                <form class="form-style-9" name="custInfo" ng-controller="admincontroller" ng-submit=updateCustInfo();edit()>
-                    <ul>
-                        <li>
-                            <input type="text" name="field1" class="field-style field-split align-left" required ng-model="result.firstName"/>
-                            <input type="text" name="field2" class="field-style field-split align-right" required ng-model="result.lastName"/> 
-                        </li>
+                    <form class="form-style-9" name="custInfo" ng-controller="admincontroller" ng-submit=updateCustInfo();edit()>
+                        <ul>
+                            <li>
+                                <input type="text" name="field1" class="field-style field-split align-left" required ng-model="result.firstName"/>
+                                <input type="text" name="field2" class="field-style field-split align-right" required ng-model="result.lastName"/> 
+                            </li>
 
-                        <li>
-                            <input type="text" name="field3" class="field-style field-split align-left" required ng-model="result.mobile_number"/>
-                            <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.home_number"/>
-                        </li>
+                            <li>
+                                <input type="text" name="field3" class="field-style field-split align-left" required ng-model="result.mobile_number"/>
+                                <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.home_number"/>
+                            </li>
 
-                        <li>
-                            <input type="text" name="field3" class="field-style field-split align-left" required ng-model="result.email_address"/>
-                            <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.nric"/>
-                        </li>
+                            <li>
+                                <input type="text" name="field3" class="field-style field-split align-left" required ng-model="result.email_address"/>
+                                <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.nric"/>
+                            </li>
 
-                        <li>
-                            <input type="hidden" name="field4" class="field-style field-split align-left" required ng-model="result.id"/>
-                            <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.gender"/>
-                        </li>
+                            <li>
+                                <input type="hidden" name="field4" class="field-style field-split align-left" required ng-model="result.id"/>
+                                <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.gender"/>
+                            </li>
 
-                        <li>
-                            <input type="text" name="field3" class="field-style field-full align-none" required ng-model="result.residential_address"/>
-                        </li>
+                            <li>
+                                <input type="text" name="field3" class="field-style field-full align-none" required ng-model="result.residential_address"/>
+                            </li>
 
-                        <li>
-                            <input type="text" name="field3" class="field-style field-split align-left" required ng-model="result.postal"/>
-                            <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.country"/>
-                        </li>
+                            <li>
+                                <input type="text" name="field3" class="field-style field-split align-left" required ng-model="result.postal"/>
+                                <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.country"/>
+                            </li>
 
-                        <li>
-                            <input value="Submit" class="button3" name="submit" type="submit">
-                            <input value="Cancel" class="button3" name="submit" type="submit" ng-click="edit()">
-                        </li>
-                    </ul>
-                </form> 
-            </div>
+                            <li>
+                                <input value="Submit" class="button3" name="submit" type="submit">
+                                <input value="Cancel" class="button3" name="submit" type="submit" ng-click="edit()">
+                            </li>
+                        </ul>
+                    </form> 
+                </div>
+
             </nav>
 
             <article>
@@ -123,7 +132,9 @@
                     <div class="edit">
                         <table>
                             <tr>
-                                <td><button id="submit" class="button"ng-click = "editInfo()">Edit details</button></td>
+                                <td>
+                                    <!--  <button id="submit" class="button" ng-click = "editInfo()"><i class="fa fa-pencil-square"></i> Edit details </button>  --> 
+                                </td>
                             </tr>
                         </table>
                     </div>

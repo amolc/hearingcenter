@@ -383,9 +383,10 @@ color: white;
     overflow: hidden;
     position: absolute;
     top: 85px;
-    right: 210px;
+    left: 245px;
     height: 100%;
     width: 100%;
+    border:0px solid black;
 }
 .box3 button
 {
@@ -458,7 +459,7 @@ color: white;
     border-collapse: collapse;
     width: 50%;
     position: absolute;
-    left: 550px;
+    left: 0px;
 }
 
 .page2 td{
@@ -484,7 +485,7 @@ color: white;
     padding: 2px;
     position: absolute;
     position: absolute;
-    left: 550px;
+    left: 0px;
     top: 40px;
     width: 49.6%;
  }
@@ -527,7 +528,7 @@ color: white;
     border-collapse: collapse;
     width: 20%;
     position: absolute;
-    left: 550px;
+    left: 0px;
     top: 196px;
     border-bottom-color: blue;
 }
@@ -541,7 +542,7 @@ color: white;
     border-collapse: collapse;
     width: 50%;
     position: absolute;
-    left: 550px;
+    left: 0px;
     top: 300px;
     border-bottom-color: blue;
 }
@@ -647,11 +648,11 @@ color: white;
     width: 16%;
 }
 .boxbox2 span{
-    background-color: white;
+  /*  background-color: white;
     color: black;
     padding: 10px 5px;
     display: block;
-    float: right;
+    float: right;*/
 }
 
 /* .boxbox2 a{
@@ -660,12 +661,12 @@ color: white;
     text-align: right;
 } */
 .patient2 a{
-    color: red;
+/*    color: red;
     text-align: right;
     padding-left: 150px;
     position: absolute;
     bottom: 35px;
-    left: -16px;
+    left: -16px;*/
 }
 
 /* The Modal (background) */
