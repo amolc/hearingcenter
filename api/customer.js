@@ -40,6 +40,7 @@ exports.insertFeedback = function(req, res){
 	var feedbackValue = req.body.value;
 	var response = "";
 	
+	console.log(clinic);
 	if(feedbackValue == 5){
 		response = "excellent";
 	}else if(feedbackValue == 4){
