@@ -14,6 +14,7 @@
 
   <!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed -->
   <link rel="stylesheet" href="css/admin.css" type="text/css" />
+<!--   <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css" type="text/css" /> -->
   <script type="text/javascript" src="js/jquery.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
   <script type="text/javascript" src="js/angular-storage.min.js"></script>
@@ -63,9 +64,15 @@
         <!--<button class = "button5" ng-click=logout()>Logout</button>-->
         <button class = "button6" ng-click=delete()>Delete</button>
         
-        <table>
+        <table class="table table-striped table-hover">
             <tr>
                 <th><input type="checkbox" ng-model="allSelected" ng-model-options="{getterSetter: true}"></th>
+
+         <!--        <th>
+                  Type of Patients
+                  <a ng-click="setOrder('type')" class="headerSortDown"></a>
+                  <a ng-click="setOrder('-type')" class="headerSortUp"></a></th>
+                </th> -->
 
                 <th>
                   Name
@@ -107,17 +114,19 @@
 
 
             </tr>
+
             <tr ng-repeat="cust in customerList | orderBy:orderProp | filter:searchText">
-                
                 <td>  
                   <input type="checkbox" value="{{cust.id}}" ng-model="cust.selected" ng-change="change(cust)">
                 </td>
+              <!--   <td>{{cust.description}}</td> -->
                 <td><a href="patient2.html?nric={{cust.nric}}">{{cust.firstName}} {{cust.lastName}}</a></td>
                 <td>{{cust.gender}}</td>
                 <td>{{cust.nric}}</td>
                 <td>{{cust.mobile_number}}</td>
                 <td>{{cust.email_address}}</td>
                 <td>{{cust.lastVisit}}</td>
+
             </tr>
             <p>Total Checked: {{noSelectedItems}}</p>
         </table>

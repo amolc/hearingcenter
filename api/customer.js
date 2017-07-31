@@ -123,15 +123,24 @@ exports.updateCustomer = function(req, res) {
 	var country = req.body.country;
 	var nric = req.body.nric;
 	var email = req.body.email;
+	var custypeID = req.body.custypeID;
 
-	customerCRUD.update({'id' : id}, {firstName:firstName, lastName:lastName, mobile_number:mobile_number, home_number:home_number,gender:gender, residential_address:residential_address, postal:postal, country:country , nric:nric , email_address:email}, function (err, vals) {
-		if(parseInt(vals.affectedRows)>0){
+	customerCRUD.update({'id' : id}, {custypeID:custypeID, firstName:firstName, lastName:lastName, mobile_number:mobile_number, home_number:home_number,gender:gender, residential_address:residential_address, postal:postal, country:country , nric:nric , email_address:email}, function (err, vals) {
+
+		if(parseInt(vals.affectedRows)>0)
+		{
 			var resdata={status:true,
 			message:'staff successfully updated'};
 			//res.jsonp(resdata);
-		}else{
+
+			console.log('resdata: ',resdata);
+		}
+		else
+		{
 			var resdata={status:false,
 			message:'record not updated '};
+
+			console.log('resdata: ',resdata);
 			//res.jsonp(resdata);
 		}
 	});
@@ -335,9 +344,19 @@ exports.insertCustomer = function(req, res){
 Retrieve all customers from customer table
 */
 exports.allCustomer = function(req, res) {
-	var query = "SELECT * from customer";
+	var query = "SELECT customer.*, b.description, b.color FROM customer LEFT JOIN custType b ON b.custypeID = customer.custypeID WHERE 1";
 		db.query(query, function(err, rows){
 	res.jsonp(rows);
+	});
+};
+
+/******************************************************
+Retrieve all customers type from cusType Table
+*/
+exports.customerType = function(req, res) {
+	var query = "SELECT * FROM custType";
+	db.query(query, function(err, rows){
+		res.jsonp(rows);
 	});
 };
 
@@ -348,7 +367,7 @@ exports.findByIc = function(req, res) {
 
 	var ic = req.params.ic ;
 
-	var query = 'SELECT customer.*, b.description FROM customer LEFT JOIN custType b ON b.id = customer.type WHERE `nric`="' + ic +'";';
+	var query = 'SELECT customer.*, b.description, b.color FROM customer LEFT JOIN custType b ON b.custypeID = customer.custypeID WHERE `nric`="' + ic +'";';
 
 	db.query(query, function(err, rows){
 		var userdetails = rows[0] ;

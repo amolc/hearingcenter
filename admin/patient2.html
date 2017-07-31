@@ -14,7 +14,7 @@
         <!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed -->
         <link rel="stylesheet" href="css/admin.css" type="text/css" />
         <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css" type="text/css" />
-
+<!--         <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css" type="text/css" /> -->
         <script type="text/javascript" src="js/jquery.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
         <script type="text/javascript" src="js/angular-storage.min.js"></script>
@@ -47,10 +47,33 @@
             <nav>
                 <div class="boxbox">
                     <table>
-                        <th><h2></h2></th>
-                        <tr><td><h2>{{result.firstName}} {{result.lastName}}</h2>
-                            <h3>{{result.nric}}</h3>
-                            <h3>Patient</h3></</td></tr>
+
+                        <th>
+                            &nbsp;
+                        </th>
+
+                        <tr>
+                            <td>
+                                <h2>{{result.firstName}} {{result.lastName}}</h2>
+                                <h3>{{result.nric}}</h3>
+                                <h3 ng-show = "result.custypeID == 0" ng-style="{'color': colorChange}">
+                                   Normal Patient 
+                                </h3>
+                                <h3 ng-show = "result.custypeID == 1" style="color:#aa66cc" ng-style="colorChange">
+                                    <strong> Past Surgery </strong>
+                                  <!--  <strong> {{result.description}} </strong> -->
+                                </h3>
+                                <h3 ng-show = "result.custypeID == 2" style="color:#fbc02d" ng-style="colorChange">
+                                    <strong> VIP </strong>
+                                   <!--  <strong> {{result.description}} </strong> -->
+                                </h3>
+                                <h3 ng-show = "result.custypeID == 3" style="color: #263238" ng-style="colorChange">
+                                    <strong> Blacklisted </strong>
+                                    <!-- <strong> {{result.description}} </strong> -->
+                                </h3>
+                            </td>
+                        </tr>
+
                     </table>
                 </div>
 
@@ -72,29 +95,29 @@
                         <tr><td><strong>Mobile No.</strong><br>{{result.mobile_number}}</td></tr>
                         <tr><td><strong>Home No.</strong><br>{{result.home_number}}</td></tr>
 
-                        <tr ng-if = "result.type == 1">
+                        <!-- <tr ng-if = "result.type == 1">
                             <td>
-                                <strong>Types of patients</strong><br>{{result.description}} <!-- Normal Patient; no color -->
+                                <strong>Types of patients</strong><br>{{result.description}} 
                             </td>
                         </tr>
 
                         <tr ng-if = "result.type == 2">
-                            <td ng-style="{'background-color': '#aa66cc','color': 'white'}"> <!-- Past Surgery; violet -->
+                            <td ng-style="{'background-color': result.color,'color': 'white'}"> 
                                 <strong>Types of patients</strong><br>{{result.description}}
                             </td>
                         </tr>
 
                         <tr ng-if = "result.type == 3">
-                            <td ng-style="{'background-color': '#fdd835 ','color': 'white'}"> <!-- VIP; yellow -->
+                            <td ng-style="{'background-color': result.color,'color': 'white'}"> 
                                 <strong>Types of patients</strong><br>{{result.description}}
                             </td>
                         </tr>
 
                         <tr ng-if = "result.type == 4">
-                            <td ng-style="{'background-color': '#263238','color': 'white'}"> <!-- Blacklisted; black -->
+                            <td ng-style="{'background-color': result.color,'color': 'white'}"> 
                                 <strong>Types of patients</strong><br>{{result.description}}
                             </td>
-                        </tr>
+                        </tr> -->
 
                         <tr><td><strong>Gender</strong><br>{{result.gender}}</td></tr>
                         <tr><td><strong>Address</strong><br>{{result.residential_address}}</td></tr>
@@ -130,11 +153,11 @@
                                 <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.gender"/>
 
 
-                                <select  class="field-style field-split align-right" required ng-model="result.type">
+                                <select class="field-style field-split align-right" required ng-model="result.custypeID" ng-change="changeColor(result.custypeID)" ng-options="custype.custypeID as custype.description for custype in customerType">>
                                     
                                 </select>
 
-                                <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.gender"/>
+                               <!--  <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.description"/> -->
                             </li>
 
                             <li>

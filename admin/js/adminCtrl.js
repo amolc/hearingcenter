@@ -127,13 +127,16 @@ $scope.updateCustInfo = function(){
     $scope.data.country = $scope.result.country;
     $scope.data.email = $scope.result.email_address;
     $scope.data.nric = $scope.result.nric;
+    $scope.data.custypeID = $scope.result.custypeID;
+
 
     $http.post(baseurl + 'updateCustomer', $scope.data).success(function (res) {
         if (res.status == 'false') 
         {
 
         } 
-        else {      
+        else 
+        {      
             
         }
         
@@ -294,6 +297,30 @@ $scope.itemSel = function(){
     };
 
 
+
+//********************************************************************************* */
+//Patient detail using their nric
+/*    $scope.getCustomerType = function(){
+
+        $http.get(baseurl + 'customerType').success(function (res) {
+
+            if (res.status == 'false') 
+            {
+
+            } 
+            else
+            {
+
+                $scope.customerType = res;
+                console.log('customerType: ', $scope.customerType );
+
+            }
+
+        }).error(function () {
+
+        });
+    }   */
+
 //********************************************************************************* */
 //Patient detail using their nric
     $scope.getID = function(){
@@ -324,6 +351,8 @@ $scope.itemSel = function(){
             $("#modalEditPatient").hide();
         }
 
+        // get the customer type 
+        
 
         $http.get(baseurl + 'findByIc/' + ic).success(function (res) {
 
@@ -344,8 +373,63 @@ $scope.itemSel = function(){
                     for(var i=0; i<res.length; i++)
                     {
                         $scope.result = res[i];
-                        console.log('res',$scope.result);
-                        console.log('type',$scope.result.description);
+                        $scope.result.desc =  $scope.result.description;
+                       // console.log('res',$scope.result.description);
+
+
+                        $http.get(baseurl + 'customerType').success(function (res2) {
+
+                            if (res2.status == 'false') 
+                            {
+
+                            } 
+                            else
+                            {
+                                // no. of customer type
+                                var custypeID = $scope.result.custypeID;
+
+                                // DATA
+                                $scope.customerType = res2;
+
+                                //GET THE ID FOR SELECTED ID
+                                $scope.selected = angular.copy($scope.customerType[custypeID]);
+
+
+                                $scope.changeColor = function(id){
+                                    console.log('id',id);
+
+                                   // $scope.colorChange = {'background-color':$scope.headerColor};
+
+                                    switch(id)
+                                    {
+
+                                        case 1:
+                                            $scope.colorChange = {'color':'#aa66cc'};
+                                            break;
+                                        case 2:
+                                            $scope.colorChange = {'color':'#fbc02d'};
+                                            break;
+                                        case 3:
+                                            $scope.colorChange = {'color':'#263238'};
+                                            break;
+                                        default:
+                                             $scope.colorChange = {'color':''};
+                                   }
+
+
+
+
+                                }
+
+
+                                console.log('customerType Res: ',  $scope.customerType);
+
+                            }
+
+                        }).error(function () {
+
+                        });
+
                     }
                 }
                 
@@ -472,17 +556,22 @@ $scope.itemSel = function(){
 
     $scope.allCustomer = function(req, res){
 
-        if(window.localStorage.getItem('user')!="1"){
+        if(window.localStorage.getItem('user')!="1")
+        {
             $window.location = 'index.html';
         }
 
         $http.get(baseurl + 'allcustomer').success(function (res) {
 
-            if (res.status == 'false') {
+            if (res.status == 'false') 
+            {
 
-            } else {
+            } 
+            else 
+            {
 
                 $scope.customerList = res;
+                console.log('customerList: ',$scope.customerList);
 
             }
 

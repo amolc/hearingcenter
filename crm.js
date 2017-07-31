@@ -33,6 +33,7 @@ app.use(bodyParser.raw({ limit: '50mb' }));
 ---app.get and app.post methods
 */
 app.get('/api/allcustomer', customer.allCustomer);
+app.get('/api/customerType', customer.customerType);
 app.get('/api/findByIc/:ic', customer.findByIc);
 app.get('/api/getoption', customer.getOption);
 app.get('/api/getPatientLog/:ic', customer.getPatientLog);
@@ -47,7 +48,7 @@ app.post('/api/insertHistories', customer.insertHistories);
 app.post('/api/insertPatientLog', customer.insertPatientLog);
 app.post('/api/insertAppt', customer.insertAppt);
 app.post('/api/insertFeedback', customer.insertFeedback);
-
+app.get('/api/customerType', customer.customerType);
 
 var customer = connect();
 customer.use(serveStatic('customer'));
