@@ -121,6 +121,7 @@ $scope.updateCustInfo = function(){
     $scope.data.home_number = $scope.result.home_number;
     $scope.data.id = $scope.result.id;
     $scope.data.gender = $scope.result.gender;
+    $scope.data.type = $scope.result.type;
     $scope.data.residential_address = $scope.result.residential_address;
     $scope.data.postal = $scope.result.postal;
     $scope.data.country = $scope.result.country;
@@ -189,6 +190,8 @@ $scope.itemSel = function(){
             else 
             {
                 $scope.patientLog = res;
+
+
 
             }
 
@@ -300,10 +303,12 @@ $scope.itemSel = function(){
             $window.location = 'index.html';
         }
 
+        // These will get the id
         var stringUrl = $location.absUrl();
         var EqualPos = stringUrl.indexOf("=");
         var ic = stringUrl.substring(EqualPos + 1);
         
+
         $("#custinfo").show();
         $("#itemSel").hide();
         $("#pay").hide();
@@ -325,14 +330,22 @@ $scope.itemSel = function(){
             if (res.status == 'false') 
             {
 
-            } else {
+            } 
+            else
+            {
 
-                if(res.length == 0){
+                if(res.length == 0)
+                {
                     $("#error").show();
 
-                }else{
-                    for(var i=0; i<res.length; i++){
+                }
+                else
+                {
+                    for(var i=0; i<res.length; i++)
+                    {
                         $scope.result = res[i];
+                        console.log('res',$scope.result);
+                        console.log('type',$scope.result.description);
                     }
                 }
                 

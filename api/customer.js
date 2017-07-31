@@ -348,12 +348,16 @@ exports.findByIc = function(req, res) {
 
 	var ic = req.params.ic ;
 
-	var query = 'select * from customer where `nric`="' + ic +'";';
+	var query = 'SELECT customer.*, b.description FROM customer LEFT JOIN custType b ON b.id = customer.type WHERE `nric`="' + ic +'";';
 
-		db.query(query, function(err, rows){
-			var userdetails = rows[0] ;
-			res.jsonp(rows);
-		});
+	db.query(query, function(err, rows){
+		var userdetails = rows[0] ;
+		res.jsonp(rows);
+
+		console.log('rows',rows);
+
+	
+	});
  };
 
  

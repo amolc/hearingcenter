@@ -71,7 +71,31 @@
                         <tr><td><strong>NRIC</strong><br>{{result.nric}}</td></tr>
                         <tr><td><strong>Mobile No.</strong><br>{{result.mobile_number}}</td></tr>
                         <tr><td><strong>Home No.</strong><br>{{result.home_number}}</td></tr>
-                        <tr><td><strong>Types of patients</strong><br>N.A</td></tr>
+
+                        <tr ng-if = "result.type == 1">
+                            <td>
+                                <strong>Types of patients</strong><br>{{result.description}} <!-- Normal Patient; no color -->
+                            </td>
+                        </tr>
+
+                        <tr ng-if = "result.type == 2">
+                            <td ng-style="{'background-color': '#aa66cc','color': 'white'}"> <!-- Past Surgery; violet -->
+                                <strong>Types of patients</strong><br>{{result.description}}
+                            </td>
+                        </tr>
+
+                        <tr ng-if = "result.type == 3">
+                            <td ng-style="{'background-color': '#fdd835 ','color': 'white'}"> <!-- VIP; yellow -->
+                                <strong>Types of patients</strong><br>{{result.description}}
+                            </td>
+                        </tr>
+
+                        <tr ng-if = "result.type == 4">
+                            <td ng-style="{'background-color': '#263238','color': 'white'}"> <!-- Blacklisted; black -->
+                                <strong>Types of patients</strong><br>{{result.description}}
+                            </td>
+                        </tr>
+
                         <tr><td><strong>Gender</strong><br>{{result.gender}}</td></tr>
                         <tr><td><strong>Address</strong><br>{{result.residential_address}}</td></tr>
                         <tr><td><strong>Postal</strong><br>{{result.postal}}</td></tr>
@@ -103,6 +127,13 @@
 
                             <li>
                                 <input type="hidden" name="field4" class="field-style field-split align-left" required ng-model="result.id"/>
+                                <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.gender"/>
+
+
+                                <select  class="field-style field-split align-right" required ng-model="result.type">
+                                    
+                                </select>
+
                                 <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.gender"/>
                             </li>
 
