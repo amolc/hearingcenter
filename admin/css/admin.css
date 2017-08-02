@@ -41,7 +41,7 @@ header {
     text-align: left;
     padding-left: 300px;
     padding-top: 13px;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid #cccccc;
 }
 
 nav {
@@ -57,6 +57,11 @@ article {
     position: absolute;
     top: 119px;
     left: 250px;
+    padding-top: 10px;
+    width: 80%;
+    margin: 0 auto;
+    max-width: 77%;
+    padding-left: 60px;
 }
 
 .header_cont
@@ -172,7 +177,7 @@ article {
     background-color: white;
     border: 1px solid grey;
     position: absolute;
-    top: 0px;
+    top: 8px;
     left: 150px;
 }
 
@@ -208,7 +213,7 @@ article {
 .patient nav{
     position: absolute;
     top: 65px;
-    left: 5px;
+    left: 35px;
 }
 .patient nav ul {
     list-style-type: none;
@@ -248,6 +253,7 @@ table {
     border-collapse: collapse;
     width: 90%;
     margin-right: 504px;
+    border-bottom:2px solid #8eb2c3;
 }
 
 td{
@@ -274,6 +280,7 @@ th {
     display: block;
     clear:both;
     border: 2px border-style black;
+    padding-top: 49px;
 }
 .blue_box span {
     background-color: white;
@@ -284,7 +291,10 @@ th {
     padding-top: 10px;
     padding-left: 20px;
     margin-left: -40px;
-    width: 61%;
+    width: 66%;
+    border-left: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
+    border-bottom: 3px solid #8eb2c3;
 }
 .blue_box h1{
 font-size: 1.3em;
@@ -316,6 +326,7 @@ color: white;
     font-size: 1.3em;
     font-weight: 700;
     background-color: #8eb2c3;
+    width: 130px;
 }
 .box1{
     display: block;
@@ -625,7 +636,7 @@ color: white;
     background-color: #3CB371;
 }
 .boxbox{
-    display: block;
+    display: block2;
     clear:both;
     position: absolute;
     top: 85px;
@@ -643,7 +654,7 @@ color: white;
     display: block;
     clear:both;
     position: absolute;
-    top: 210px;
+    top: 245px;
     left: 30px;
     width: 16%;
 }
@@ -827,5 +838,65 @@ color: white;
 
 
 /*----------------------------------------  */
+.patient-title{
+     margin: 5px 10px;
+}
 
+button.filter-button {
+    position: absolute;
+    left: 110px;
+    bottom: 25px;
+    background: #fff;
+    border: 1px solid #cccccc;
+    padding: 5px 20px;
+    color: #8eb2c3;
+    font-weight: 700;
+    cursor: pointer;
+}
 
+/* Style the tab */
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    max-width: 806px;
+}
+
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    width: 80%;
+}
+
+.green{
+    color:green;
+}
