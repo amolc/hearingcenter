@@ -11,6 +11,7 @@
   <meta name="description" content="" />
 
   <!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed -->
+
   <link rel="stylesheet" href="css/csr.css" type="text/css" />
   <script type="text/javascript" src="js/jquery.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
@@ -33,19 +34,24 @@
           <!--<h1><a href="/" id="logoLink">The Hearing Centre</a></h1>-->
         </div>
         <br><br>
-        <ul>
+        <ul class="new-margin-left">
           <h1> Register here to get started </h1>
           <h5> It should only take a couple of minitues </h5><br><br><br>
-          <li type="circle"><h3>Personal Particulars</h3></li><br>
-                            <h3>Miscellaneous</h3>
+          <li type="circle">
+            <span class="TogButton TogButton-active">1</span>Personal Particulars
+            </li><br>
+            <li type="circle"> <span class="TogButton">2</span> Medical History </li> 
+            <br>
+            <li type="circle"> <span class="TogButton">3</span>Miscellaneous</li>
+             
           <br>
         </ul>
         <br><br>
 <div class="signin"> 
-        <h5> Returning patient? Sign in </h5>
+         <p>Returning patient? Sign in <a href="#" data-toggle="modal" data-target="#myModal"> here <img src="images/arrow.png"> </a></p>
         <!-- Trigger/Open The Modal -->
         <!--<button id="myBtn">here</button>-->
-        <h5> <a href="#" data-toggle="modal" data-target="#myModal"> here <img src="images/arrow.png"> </a> </h5>
+       
 </div>
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -73,7 +79,95 @@
       </div>
 </div>
       </nav>
+      
+      
+      
+      
+      <div class="personal-info">
+         <form class="form-style-9" ng-controller="crmcontroller" ng-submit=insertCustomer()>
+          <lable for="name">Name</lable>
+        <input type="text" required placeholder="First Name" ng-model="firstName" />
+        <input type="text" name="field2" class="field-style field-split align-right" required placeholder="Last Name" ng-model="lastName" />
+        <br>
+        <br>
+        <lable for="gender">Gender</lable>
+        <input type="text" name="field4"  required placeholder="Gender" ng-model="gender" />
+        <br>
+        <br>
+        <lable for="dob">Date of Birth</lable>
+        <input type="date" name="field4"  required/>
+        <br><br>
+        <lable for="email">Email</lable>
+        <input type="text" name="field3" required placeholder="Email" ng-model="email"/>
+        <br><br>
+        <lable for="mobile">Mobile</lable>
+        <input type="text" name="field3"  required placeholder="Mobile No." ng-model="mobile"/>
+         <br><br>
+        <lable for="NRIC">NRIC</lable>
+       <input type="text" name="field4"  required placeholder="NRIC" ng-model="nric"/>
+       <br><br>
+        <lable for="Occupation">Occupation</lable>
+       <input type="text" name="field4" required/>
+       <br><br>
+        <lable for="select">Race</lable>
+       <select>
+              <option value="volvo">Select Your Race</option>
+              <option value="saab">Saab</option>
+              <option value="mercedes">Mercedes</option>
+              <option value="audi">Audi</option>
+            </select>
+       <br><br>
+       <lable for="language">Language Spoken</lable>
+        <input type="checkbox" name="English" value="English" />English
+        <input type="checkbox" name="Tamil" value="Car" />Tamil
+        <input type="checkbox" name="Chiness" value="Chiness" />Chiness
+        <input type="checkbox" name="Malay" value="Malay" />Malay
+        <br><br>
+        <lable for="Nationality">Nationality</lable>
+        <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Country" ng-model="country"/>
+        <br><br>
+         <input type="submit" value="Submit" />
+         <input type="submit" value="Cancel" />
+            
+         
 
+         <!--
+          <ul>
+            <li>
+              
+              <input type="text" name="field1" class="field-style field-split align-left" required placeholder="First Name" ng-model="firstName"/>
+              <input type="text" name="field2" class="field-style field-split align-right" required placeholder="Last Name" ng-model="lastName"/>
+
+            </li>
+            <li>
+              <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Email" ng-model="email"/>
+              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="NRIC" ng-model="nric"/>
+            </li>
+            <li>
+      
+              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Home No." ng-model="home"/>
+            </li>
+            <li>
+              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Gender" ng-model="gender"/>
+            </li>
+            <li>
+              <input type="text" name="field3" class="field-style field-full align-none" required placeholder="Address" ng-model="address"/>
+            </li>
+            <li>
+              <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Postal Code" ng-model="postal"/>
+              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Country" ng-model="country"/>
+            </li>
+            <li>
+              <input type="submit" value="Submit" />
+            </li>
+          </ul>
+          -->
+        </form>
+          
+      </div>
+      
+      
+    <!--
       <article>
         <h1>Personal Information </h1><br>
         <form class="form-style-9" ng-controller="crmcontroller" ng-submit=insertCustomer()>
@@ -107,12 +201,12 @@
           </ul>
         </form>
       </article>
-
-      <div id="footer">
+    -->
+    <!--  <div id="footer">
         <p>
           Webpage made by <a href="/" target="_blank">[your name]</a>
         </p>
-      </div>
+      </div>-->
 
     </div>
 
@@ -144,6 +238,8 @@ window.onclick = function(event) {
     }
 }
 </script>
+
+
 
 
 </body>
