@@ -48,18 +48,13 @@
                 <div class="boxbox">
                     <table>
 
-                        <th>
-                            &nbsp;
-                        </th>
-
                         <tr>
                             <td>
-                                <h2>{{result.firstName}} {{result.lastName}} Tom Tan Yi Wei</h2>
-                                <h3>{{result.nric}} S1355605D</h3>
-                                <h3 ng-show = "result.custypeID == 0" ng-style="{'color': colorChange}">
+                                <h2>{{result.firstName}} {{result.lastName}} </h2>
+                                <h3>{{result.nric}} </h3>
+                                <h3 ng-show = "result.custypeID == 0" style="color:green" ng-style="colorChange">
                                  Patient 
                                 </h3>
-                                <h3 class="green">Patient</h3>
                                 <h3 ng-show = "result.custypeID == 1" style="color:#aa66cc" ng-style="colorChange">
                                     <strong> Past Surgery </strong>
                                   <!--  <strong> {{result.description}} </strong> -->
@@ -83,8 +78,8 @@
                     <table>
                         <tr>
                             <th>
-                                <span> Patient Detail </span>
-                                <i style="float:right;cursor:pointer" id="submit" class="fa fa-pencil-square-o fa-lg" ng-click = "editInfo()"></i> 
+                                <span> Patient's Detail </span>
+                                <!-- <i style="float:right;cursor:pointer" id="submit" class="fa fa-pencil-square-o fa-lg" ng-click = "editInfo()"></i>  -->
                             </th>
 
                         </tr>
@@ -123,7 +118,12 @@
                         <tr><td><strong>Gender</strong><br>{{result.gender}}</td></tr>
                         <tr><td><strong>Address</strong><br>{{result.residential_address}}</td></tr>
                         <tr><td><strong>Postal</strong><br>{{result.postal}}</td></tr>
-                        <tr><td><strong>Country</strong><br>{{result.country}}</td></tr>            
+                        <tr><td><strong>Country</strong><br>{{result.country}}</td></tr>      
+                        <tr>
+                            <td>
+                                <button class="button7" id="submit" style="float:right;cursor:pointer" ng-click = "editInfo()"><i class="fa fa-pencil"></i> Edit details </button>  
+                            </td>
+                        </tr>      
                     </table>
                 </div>
 
@@ -182,9 +182,9 @@
 
             <article>
 
-                 <!--<form name="patient2" ng-controller="admincontroller" ng-submit=inputLog()>
+                 <form name="patient2" ng-controller="admincontroller" ng-submit=inputLog()>
                     
-                    <div class="edit">
+                   <!--  <div class="edit">
                         <table>
                             <tr>
                                 <td>
@@ -192,7 +192,7 @@
                                 </td>
                             </tr>
                         </table>
-                    </div>
+                    </div> -->
 
                     <div class="page2">
                         <table>
@@ -205,7 +205,7 @@
                                 <td><button id="btn6" class="button" ng-click="buttonId('Schedule Appointment')">Schedule Appointment</button></td>
                             </tr>
 
-                            <!--Large textbox for user 
+                           <!--  Large textbox for user  -->
                             <textarea rows="4" cols="50" name="message" required id="user_input" ng-model="textLog"></textarea>
 
                             
@@ -276,7 +276,7 @@
 
 
                         <button class="scheduleSubmit" id="submit" class="button">Submit</button>
-                    </form> -->
+                    </form> 
                     <div class="tab">
                       <button class="tablinks" onclick="openCity(event, 'New Patience Log')">New Patience Log</button>
                       <button class="tablinks" onclick="openCity(event, 'Notes')">Notes</button>
@@ -309,12 +309,12 @@
 
                 </div>
 
-                 <!-- <div id="appointment" class="appointment">
+              <!--   <div id="appointment" class="appointment">
                      testing 
                      <datepicker>
                         <input ng-model="date" type="text"/>
                     </datepicker>
-                </div>  -->
+                </div>   -->
 
 
             </article>

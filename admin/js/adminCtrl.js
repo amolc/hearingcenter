@@ -398,8 +398,8 @@ $scope.itemSel = function(){
                                 $scope.changeColor = function(id){
                                     console.log('id',id);
 
-                                   // $scope.colorChange = {'background-color':$scope.headerColor};
-
+                                   
+                                    // this will change the color of patient type
                                     switch(id)
                                     {
 
@@ -413,7 +413,7 @@ $scope.itemSel = function(){
                                             $scope.colorChange = {'color':'#263238'};
                                             break;
                                         default:
-                                             $scope.colorChange = {'color':''};
+                                             $scope.colorChange = {'color':'green'};
                                    }
 
 

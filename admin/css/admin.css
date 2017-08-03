@@ -196,6 +196,41 @@ article {
     border-radius: 12px;
 }
 
+.button7
+{
+    /*background-color: darkseagreen;*/
+    /*border: black;*/
+    color: white;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 9px;
+    cursor: pointer;
+    border-radius: 12px;
+    border-radius: 12px;
+    background-color: #8eb2c3;
+    border: 1px solid #8eb2c3;
+
+}
+
+.button6:hover
+{
+    background-color: darkseagreen;
+    /*border: black;*/
+    color: black;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 9px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+
 
 
 .header_cont input[type=text] {
@@ -267,10 +302,10 @@ th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
-    color: white;
+    /*color: white;*/
     font-size: 1.3em;
     font-weight: 700;
-    background-color: #8eb2c3;
+    /*background-color: #8eb2c3;*/
 }
 
 /*tr:nth-child(even) {
@@ -569,7 +604,7 @@ color: white;
     margin: 10px 100px;
     box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
     border-radius: 10px;
-    border: 6px solid #3CB371;
+    border: 6px solid #8eb2c3; /*#3CB371*/
     float: inherit;
 }
 .form-style-9 ul{
@@ -618,11 +653,11 @@ color: white;
 }
 .form-style-9 ul li input[type="button"], 
 .form-style-9 ul li input[type="submit"] {
-    -moz-box-shadow: inset 0px 1px 0px 0px #3CB371;
-    -webkit-box-shadow: inset 0px 1px 0px 0px #3CB371;
-    box-shadow: inset 0px 1px 0px 0px #3CB371;
-    background-color: #3CB371;
-    border: 1px solid #3CB371;
+    -moz-box-shadow: inset 0px 1px 0px 0px #8eb2c3;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #8eb2c3;
+    box-shadow: inset 0px 1px 0px 0px #8eb2c3;
+    background-color: #8eb2c3;
+    border: 1px solid #8eb2c3;
     display: inline-block;
     cursor: pointer;
     color: #FFFFFF;
@@ -632,7 +667,7 @@ color: white;
 }
 .form-style-9 ul li input[type="button"]:hover, 
 .form-style-9 ul li input[type="submit"]:hover {
-    background: linear-gradient(to bottom, #3CB371 5%, #3CB371 100%);
+    background: linear-gradient(to bottom, #8eb2c3 5%, #8eb2c3 100%);
     background-color: #3CB371;
 }
 .boxbox{
