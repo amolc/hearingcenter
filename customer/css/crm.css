@@ -180,24 +180,37 @@ body{
 }
 
 #content8 {
-	  margin: 10px 0;
-    background: white;
-    padding: 20px;
-    clear: both;
-    float: left; 
-    width: 1135px;
-    height: 100px;
+  margin:0 auto;
+  background: white;
+  padding: 20px;
+  clear: both;
+  width: 95%;
+  height: 100px;
 }
 
 section { background-color: white; margin: 10px; border:1px solid red; padding:10px; overflow:hidden; width: 334px; height: 275px; padding-left: 10px;}
     section > section { float:left; }
-    .indent-1 { padding-left:10px; width: 1130px; height: 1130px; border:1px solid #efefef; background-color: #efefef}
-    .indent-2 { background-color: white; margin: 10px; border:1px solid black; padding:10px; overflow:hidden; width: 334px; height: 275px; padding-left: 10px;}
+    .indent-1 { padding-left:60px; width: 1130px; height: 1130px; border:1px solid #efefef; background-color: #efefef}
+
+    .indent-2 {
+        background-color: white;
+        margin: 10px;
+        padding: 10px;
+        overflow: hidden;
+        width: 334px;
+        height: 275px;
+        padding-left: 10px;
+        border: none;
+        box-shadow: 0px 3px 5px #dcdcdc;
+        border-radius: 10px;
+    }
 
 .button {
-    background-color: #45A77A; 
-    border: none;
-    color: white;
+    
+ 
+   border: 2px solid #45A77A;
+    border-radius: 30px;
+    color: #45A77A;
     padding: 8px 30px;
     text-align: center;
     text-decoration: none;
@@ -206,11 +219,11 @@ section { background-color: white; margin: 10px; border:1px solid red; padding:1
 }
 
 #box {
-    padding:50px;
+    padding:30px;
     font-size: 500%;
     align-content: center;
     color: white;
-    margin-left: 58px;
+   
 }
 
 
@@ -521,4 +534,25 @@ button {
     color: black;
     text-align: center;
     
+}
+
+/*CSS New -- mohaiman*/
+.logo-login img {
+    margin-left: 25px;
+}
+
+
+div#load-more {
+    text-align: center;
+}
+
+
+#load-more button {
+    margin-top: 25px;
+    background: #3CB371;
+    color: #fff;
+    border: 0;
+    padding: 10px 15px;
+    border-radius: 15px;
+    cursor: pointer;
 }

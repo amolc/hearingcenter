@@ -18,9 +18,9 @@ h1{ font-size: 1.5em; }
 h2{ font-size: 1.5em; }
 h4{ text-align: center; }
 h5{ 
-text-align: -webkit-center; 
+text-align:center; 
 
-display: inline-flex;
+
 /*padding-left: 70px;*/
 }
 a{
@@ -45,6 +45,7 @@ body{
 	font-family: georgia;
 	display: inline-block;
 	align-content: center;
+    margin-left: 70px;
 }
 /* but try and be as concise as possible */
 #nav{
@@ -53,7 +54,9 @@ body{
 	text-align: right;
 	float: right;
 }
-	#nav ul{}
+	#nav ul{
+    
+}
 		#nav ul li{
 			display: inline-block;
 			height: 62px;
@@ -140,8 +143,8 @@ nav {
 }
 
 nav ul {
-    list-style-type: none;
-    padding: 0;
+       list-style-type: none;
+    padding: 25px;
 }
    
 nav ul a {
@@ -149,9 +152,9 @@ nav ul a {
 }
 
 article {
-    /*margin-left: 500px;*/
+    margin-left: 500px;
     border-left: 1px solid gray;
-    padding: 10em;
+    padding: 1em;
     overflow: hidden;
 }
 
@@ -257,14 +260,10 @@ input:checked + .slider:before {
     margin-top: -45px;
 }
 .form-style-9{
-    max-width: 900px;
-    background: #FAFAFA;
+  
     padding: 50px;
     margin: 10px 100px;
-    box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
-    border-radius: 10px;
-    border: 6px solid #3CB371;
-    float: inherit;
+ 
 }
 .form-style-9 ul{
     padding:0;
@@ -418,12 +417,15 @@ input:checked + .slider:before {
 }
 
 .signin img{
-    width: 10%;
+    width: 2%;
     height: auto;
     margin-left: 25px;
     display: flex;
     margin-top: -20px;
-    
+    position: absolute;
+    left: 260px;
+}
+
 }
 .signin a{
     /*width: 20%;
@@ -541,3 +543,96 @@ input[type=text] {
     margin-left: -290px;
     font-size: x-large;
 }*/
+/*css*/
+
+.personal-info {
+    position: absolute;
+    right: 160px;
+    border-left: 1px solid #ccc;
+    padding-left: 40px;
+    display: table;
+}
+
+
+
+
+
+lable {
+    display: table-cell;
+    padding-bottom: 5px;
+    font-size: 15px;
+}
+
+
+input{
+    padding: 10px;
+    display: table-cell;
+    border:1px solid #ccc;
+}
+
+input[type="submit"] {
+    background: #3CB371;
+    border: 0;
+    color: #fff;
+    padding: 10px;
+}
+   
+p {
+    
+    margin-left: 50px;
+}
+
+.new-margin-left li{
+    margin-left: 60px;
+    list-style: none;
+}
+
+
+.TogButton {
+    background: grey;
+    color: white;
+    border-radius: 50%;
+    padding: 1px 5px;
+    margin-right: 5px;
+}
+
+.TogButton-active {
+    background: #3CB371 !important;
+    border-color: #3CB371!important;
+    color: #fff;
+}
+i.fa.fa-check {
+    font-size: 10px;
+}
+
+
+section.content-1 {
+    margin-left: 400px;
+    border-left: 1px solid gray;
+    padding: 60px;
+    overflow: hidden;
+    min-height: 650px;
+}
+
+
+button.content-1-button {
+    border: 1px solid #ccc;
+    background: #fff;
+    padding: 10px 25px;
+    clear: both;
+}
+
+
+p.content-1-p {
+    margin: 0;
+    /* padding: 10px; */
+    margin-top: 15px;
+    line-height: 20px;
+    font-size: 15px;
+}
+
+
+.content-1 textarea {
+    border: 1px solid #ccc;
+    margin-top: 15px;
+}

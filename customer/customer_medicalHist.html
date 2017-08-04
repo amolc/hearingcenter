@@ -11,7 +11,9 @@
   <meta name="description" content="" />
 
   <!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed -->
+  <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
   <link rel="stylesheet" href="css/csr.css" type="text/css" />
+  
   <script type="text/javascript" src="js/jquery.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
   <script type="text/javascript" src="js/angular-storage.min.js"></script>
@@ -27,33 +29,41 @@
 
     <div class="container">
 
-      <nav>
+        <nav>
         <div id="logo">
           <center><img src="images/logo_1_50.png"></center>
           <!--<h1><a href="/" id="logoLink">The Hearing Centre</a></h1>-->
         </div>
         <br><br>
-        <ul>
+        <ul class="new-margin-left">
           <h1> Register here to get started </h1>
           <h5> It should only take a couple of minitues </h5><br><br><br>
-          <!--<a><img src="images/tick.png"><p>Personal Particulars</p></a>-->
-          <h3> <p> Personal Particulars <img src="images/tick.png"> </p> </h3>
-          <li type="circle"><h3>Medical History</h3></li><br>
-          <h3>Miscellaneous</h3><br>
+          <li type="circle">
+            <span class="TogButton "><i class="fa fa-check"></i></span>Personal Particulars
+            </li><br>
+            <li type="circle"> <span class="TogButton TogButton-active">2</span> Medical History </li> 
+            <br>
+            <li type="circle"> <span class="TogButton">3</span>Miscellaneous</li>
+             
+          <br>
         </ul>
-        <br><br>          
+        <br><br>
 <div class="signin"> 
-        <h5> Returning patient? Sign in </h5>
+         <p>Returning patient? Sign in <a href="#" data-toggle="modal" data-target="#myModal"> here <img src="images/arrow.png"> </a></p>
         <!-- Trigger/Open The Modal -->
         <!--<button id="myBtn">here</button>-->
-        <h5> <a href="#" data-toggle="modal" data-target="#myModal"> here <img src="images/arrow.png"> </a> </h5>
+       
 </div>
+
+
+
+
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
 
   <!-- Modal content -->
-     <form class="form-style-9" ng-controller="crmcontroller" ng-submit=insertCustomer()>
+     <form class="form-style-9" ng-controller="crmcontroller" ng-submit=loginMember()>
             <span class="close"></span>
             <div class="logo_1"> <img src="images/logo_1_50.png"> </div>
             <h1>Returning Patient?</h1>
@@ -66,30 +76,65 @@
             </li>
          </ul>
     </form>
+      <div id="error">
+          <div class="error">
+              <div class="item">
+                  <span><h4><b><font color="red">Your NRIC/Passport Number or Password is incorrect. Please try again.</font></b></h4></span>
+              </div>
+          </div>
+      </div>
 </div>
       </nav>
-
+      
+      
+      
+      <section class="content-1">
+          <h1>Do you have any past ear surgery?</h1>
+          <button class="content-1-button TogButton-active">YES</button>
+          <button class="content-1-button">NO</button>
+          <p class="content-1-p">If yes, Briefly mention about the medical conditions <br> in the field below</p>
+          <textarea name="" id="" cols="50" rows="5" placeholder="Type here...."></textarea>
+          <br><br>
+          <input type="submit" value="Submit" />
+          <input type="submit" value="Cancel" />
+      </section>
+      
+      
+      
+      
+      
+      
+      
+      <!--
       <article>
         <h1>Enter your blood group?</h1><br>
 
         <form class="miscellaneous" ng-controller="crmcontroller" ng-submit=insertHistories()>
-          <label> Blood group </br>
-          <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Blood group" ng-model="blood"/></br>
+            <label> Blood group </label>
+          <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Blood group" ng-model="blood"/>
          
           
-        <input type="submit" class="button2" value="Submit" name="submit">
+        <input type="submit" class="button2" value="Submit" name="submit"/>
 
          </form>
       </article>
+      -->
+      
+      
+      <!--
       <div id="footer">
         <p>
           Webpage made by <a href="/" target="_blank">[your name]</a>
         </p>
       </div>
-
+    -->
     </div>
 
   </div>
+  
+  
+  
+  
   <script>
 // Get the modal
 var modal = document.getElementById('myModal');
