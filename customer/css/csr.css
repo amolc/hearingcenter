@@ -255,10 +255,12 @@ input:checked + .slider:before {
 
 
 /*PERSONAL INFORMATION*/
+
 .logo_1 img{
     margin-left:800px;
     margin-top: -45px;
 }
+/*
 .form-style-9{
   
     padding: 50px;
@@ -328,6 +330,8 @@ input:checked + .slider:before {
     background: linear-gradient(to bottom, #3CB371 5%, #3CB371 100%);
     background-color: #3CB371;
 }
+
+*/
 
 /*Thank you*/
 .thank {
@@ -547,10 +551,11 @@ input[type=text] {
 
 .personal-info {
     position: absolute;
-    right: 160px;
+    right: 390px;
     border-left: 1px solid #ccc;
-    padding-left: 40px;
-    display: table;
+    height: 700px;
+    overflow: hidden;
+
 }
 
 
@@ -635,4 +640,48 @@ p.content-1-p {
 .content-1 textarea {
     border: 1px solid #ccc;
     margin-top: 15px;
+}
+
+/*        .main {
+          width: 800px;
+          height: 600px;
+          background: red;
+           position: absolute;
+        right: 90px;
+        top: 60px;
+             } */
+      
+      label {
+          width: 130px;
+          float: left;
+          padding: 6px;
+      }
+      
+      input {
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+              max-width: 170px;
+      }
+      
+      .form-top {
+          margin-top: 18px;
+      }
+      
+      .main {
+         
+              font-family: sans-serif;
+    margin-left: 50px;
+    margin-top: 50px;
+      }
+      
+      select {
+          border: 1px solid #ccc;
+          padding: 5px 10px;
+          border-radius: 4px;
+      }
+
+.form-top.left-butt {
+    margin-left: 190px;
+    margin-top: 20px;
 }

@@ -81,55 +81,115 @@
       </nav>
       
       
+<!-- NEW FORM START-->
+<div class="personal-info">
+    <div class="main">
+        <form action="" ng-controller="crmcontroller" ng-submit=insertCustomer()>
+            <div class="form-top">
+                <label for="">Name</label>
+                <input type="text" placeholder="first name" ng-model="firstName" required>
+                <input type="text" name="field2" placeholder="last name" ng-model="lastName" required> </div>
+            <div class="form-top">
+                <label for="">Gender</label>
+                <input type="radio" name="" value="male" ng-model="gender" required>Male
+                <input type="radio" name="" value="female" ng-model="gender" required>Female
+            </div>
+            <div class="form-top">
+                <label for="">Date of Birth</label>
+                <input type="date" /> </div>
+            <div class="form-top">
+                <label for="">Email</label>
+                <input type="email" placeholder="kanlder@email.com" ng-model="email" /> </div>
+            <div class="form-top">
+                <label for="">Mobile</label>
+                <input type="text" placeholder="+923 2155 3214" ng-model="mobile" /> </div>
+            <div class="form-top">
+                <label for="">NRIC</label>
+                <input type="text" placeholder="S923SFS2155" ng-model="nric" /> </div>
+            <div class="form-top">
+                <label for="">Occupation</label>
+                <input type="text" placeholder="Sales Excituive" /> </div>
+            <div class="form-top">
+                <label for="">Race</label>
+                <select>
+                    <option value="volvo">Select Your Race</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </div>
+            <div class="form-top">
+                <label for="">Language Spoken</label>
+                <input type="checkbox" name="English" value="English" />English
+                <input type="checkbox" name="Tamil" value="Car" />Tamil
+                <br>
+                <input type="checkbox" name="Chiness" value="Chiness" />Chiness
+                <input type="checkbox" name="Malay" value="Malay" />Malay </div>
+            <div class="form-top">
+                <label for="">Nationality</label>
+                <input type="text" placeholder="Singapore" ng-model="country"> </div>
+            <div class="form-top left-butt">
+                <input type="submit" value="Cancel">
+                <input type="submit" value="Save"> </div>
+        </form>
+    </div>
+</div>
+<!--END NEW FORM-->
       
       
+      
+      
+      <!--
       <div class="personal-info">
          <form class="form-style-9" ng-controller="crmcontroller" ng-submit=insertCustomer()>
           <lable for="name">Name</lable>
-        <input type="text" required placeholder="First Name" ng-model="firstName" />
+           <input type="text" required placeholder="First Name" ng-model="firstName" />
         <input type="text" name="field2" class="field-style field-split align-right" required placeholder="Last Name" ng-model="lastName" />
+        
         <br>
         <br>
-        <lable for="gender">Gender</lable>
-        <input type="text" name="field4"  required placeholder="Gender" ng-model="gender" />
+        <lable for="gender">Gender
+           <input type="text" name="field4"  required placeholder="Gender" ng-model="gender" />
+        </lable>
+        
         <br>
         <br>
-        <lable for="dob">Date of Birth</lable>
-        <input type="date" name="field4"  required/>
+        <lable for="dob">Date of Birth  <input type="date" name="field4"  required/></lable>
+       
         <br><br>
-        <lable for="email">Email</lable>
-        <input type="text" name="field3" required placeholder="Email" ng-model="email"/>
+        <lable for="email">Email <input type="text" name="field3" required placeholder="Email" ng-model="email"/></lable>
+        
         <br><br>
-        <lable for="mobile">Mobile</lable>
-        <input type="text" name="field3"  required placeholder="Mobile No." ng-model="mobile"/>
+        <lable for="mobile">Mobile <input type="text" name="field3"  required placeholder="Mobile No." ng-model="mobile"/></lable>
+        
          <br><br>
-        <lable for="NRIC">NRIC</lable>
-       <input type="text" name="field4"  required placeholder="NRIC" ng-model="nric"/>
+        <lable for="NRIC">NRIC  <input type="text" name="field4"  required placeholder="NRIC" ng-model="nric"/></lable>
+      
        <br><br>
-        <lable for="Occupation">Occupation</lable>
-       <input type="text" name="field4" required/>
+        <lable for="Occupation">Occupation   <input type="text" name="field4" required/></lable>
+     
        <br><br>
-        <lable for="select">Race</lable>
-       <select>
+        <lable for="select">Race <select>
               <option value="volvo">Select Your Race</option>
               <option value="saab">Saab</option>
               <option value="mercedes">Mercedes</option>
               <option value="audi">Audi</option>
-            </select>
+            </select></lable>
+       
        <br><br>
-       <lable for="language">Language Spoken</lable>
-        <input type="checkbox" name="English" value="English" />English
+       <lable for="language">Language Spoken <input type="checkbox" name="English" value="English" />English
         <input type="checkbox" name="Tamil" value="Car" />Tamil
         <input type="checkbox" name="Chiness" value="Chiness" />Chiness
-        <input type="checkbox" name="Malay" value="Malay" />Malay
+        <input type="checkbox" name="Malay" value="Malay" />Malay</lable>
+        
         <br><br>
-        <lable for="Nationality">Nationality</lable>
-        <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Country" ng-model="country"/>
+        <lable for="Nationality">Nationality  <input type="text" name="field4" class="field-style field-split align-right" required placeholder="Country" ng-model="country"/></lable>
+       
         <br><br>
          <input type="submit" value="Submit" />
          <input type="submit" value="Cancel" />
             
-         
+         -->
 
          <!--
           <ul>
@@ -162,9 +222,9 @@
             </li>
           </ul>
           -->
-        </form>
+    
           
-      </div>
+    
       
       
     <!--
