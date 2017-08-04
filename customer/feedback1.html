@@ -11,7 +11,8 @@
     <meta name="description" content="" />
 
     <!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed -->
-    <link rel="stylesheet" href="css/crm.css" type="text/css" />
+    <!--<link rel="stylesheet" href="css/crm.css" type="text/css" />-->
+    <link rel="stylesheet" href="css/new-css.css" type="text/css" />
     <script type="text/javascript" src="js/jquery.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script type="text/javascript" src="js/angular-storage.min.js"></script>
@@ -23,42 +24,88 @@
 </head>
 
 <body>
-    <div data-ng-app="crm" data-ng-controller="crmcontroller" ng-init="getClinic('Clinic1')">
-
-                 
-        <div class="feedback">
-            <img class="feedbackImg" src="images/logo.png">
-
-        </div>
-
-        <div class="feedback">
-            <h1>
-                Thank you for visiting<br>
-                <font color="green">The Hearing Centre</font>.<br>
-                Please rate our services<br>
-            </h1>
-
-        </div>
-
-        <div class="feedback">
-            <div class="rating">
-
-                <button><img class="ratePic" ng-src="images/excellent.png" width="90" height="90" ng-click="custFeedback(5)">Excellent</button>
-                <button><img class="ratePic" ng-src="images/good.png" width="90" height="90" ng-click="custFeedback(4)">Good</button>
-                <button><img class="ratePic" ng-src="images/average.png" width="90" height="90" ng-click="custFeedback(3)">Average</button>
-                <button><img class="ratePic" ng-src="images/poor.png" width="90" height="90" ng-click="custFeedback(2)">Poor</button>
-                <button><img class="ratePic" ng-src="images/verypoor.png" width="90" height="90" ng-click="custFeedback(1)">Very Poor</button>
-               
-                <div class="footer">    
-                    We appreciate your feedback to continuously improve our service
-                </div>
-                
+      
+ <div class="feedback" data-ng-app="crm" data-ng-controller="crmcontroller" ng-init="getClinic('Clinic1')">
+    <div class="feedback-main">
+        <div class="feedback-img">
+            <div class="content-feedback-1">
+                <img src="images/logo.png" alt="">
             </div>
-
+            <div class="content-feedback-2">
+                <p>Thank you for visiting
+                    <br> <span class="content-feedback-color">The Hearing Centre.</span>
+                    <br> Please rate our services</p>
+            </div>
         </div>
-
-        
     </div>
+
+    <div class="feedback-rating">
+        <div class="feedback-button">
+            <button><img class="ratePic" ng-src="images/excellent.png" width="90" height="90" ng-click="custFeedback(5)">
+                <br>Excellent</button>
+            <button><img class="ratePic" ng-src="images/good.png" width="90" height="90" ng-click="custFeedback(4)">
+                <br>Good</button>
+            <button><img class="ratePic" ng-src="images/average.png" width="90" height="90" ng-click="custFeedback(3)">
+                <br>Average</button>
+            <button><img class="ratePic" ng-src="images/poor.png" width="90" height="90" ng-click="custFeedback(2)">
+                <br>Poor</button>
+            <button><img class="ratePic" ng-src="images/verypoor.png" width="90" height="90" ng-click="custFeedback(1)">
+                <br>Very Poor</button>
+        </div>
+        <p>We appreciate your feedback to continuously improve our service</p>
+    </div>
+    </div>
+            
+             
+              
+               
+                
+                 
+                  
+                   
+                    
+                     
+                      
+                       
+                        
+                         
+                          
+                           
+                            
+                              <!--     <div data-ng-app="crm" data-ng-controller="crmcontroller" ng-init="getClinic('Clinic1')">
+           
+            <div class="feedback">
+                <img class="feedbackImg" src="images/logo.png">
+           
+            </div>
+           
+            <div class="feedback">
+                <h1>
+                        Thank you for visiting<br>
+                        <font color="green">The Hearing Centre</font>.<br>
+                        Please rate our services<br>
+                    </h1>
+           
+            </div>
+           
+            <div class="feedback">
+                <div class="rating">
+           
+                    <button><img class="ratePic" ng-src="images/excellent.png" width="90" height="90" ng-click="custFeedback(5)">Excellent</button>
+                    <button><img class="ratePic" ng-src="images/good.png" width="90" height="90" ng-click="custFeedback(4)"> Good</button>
+                    <button><img class="ratePic" ng-src="images/average.png" width="90" height="90" ng-click="custFeedback(3)">Average</button>
+                    <button><img class="ratePic" ng-src="images/poor.png" width="90" height="90" ng-click="custFeedback(2)">Poor</button>
+                    <button><img class="ratePic" ng-src="images/verypoor.png" width="90" height="90" ng-click="custFeedback(1)">Very Poor</button>
+           
+                    <div class="footer">
+                        We appreciate your feedback to continuously improve our service
+                    </div>
+           
+                </div>
+           
+            </div>
+           
+                   </div> -->
     
 </body>
 

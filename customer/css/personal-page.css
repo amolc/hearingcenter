@@ -1,0 +1,72 @@
+body{
+	background: white;
+}
+
+.sidebar {
+    padding-top: 130px;
+    border-right: 1px solid #ccc;
+    height: auto;
+    padding-right: 80px;
+    padding-bottom: 100px;
+}
+
+.sidebar-context-tab {
+ 
+    padding-top: 20px;
+}
+
+.sidebar-context-tab ul {
+    list-style: none;
+    text-align: justify;
+        margin-left: 30px;
+}
+
+.sidebar-context-tab ul li{
+    padding-bottom: 20px;
+}
+
+.sidebar-context-tab ul li span {
+    background: #45A77A;
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px 5px;
+    margin-right: 5px;
+}
+
+.sidebar-context-footer {
+    padding-top: 80px;
+}
+
+.sidebar-context-footer p {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.background{
+	background: #45A77A;
+} 
+
+.color{
+	color:  #45A77A;
+}
+
+span.glyphicon.glyphicon-triangle-right{
+    background: #45A77A;
+    color: #fff;
+    border-radius: 50px;
+    padding: 5px 5px;
+    margin-left: 10px;
+}
+
+.full-form {
+    padding-top: 70px;
+    padding-left: 60px;
+}
+
+.full-form label.col-sm-3.control-label {
+    text-align: justify;
+}
+
+.sidebar-context-tab .gray{
+	background-color: #adacac;
+}

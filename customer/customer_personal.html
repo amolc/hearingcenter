@@ -12,7 +12,9 @@
 
   <!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed -->
 
-  <link rel="stylesheet" href="css/csr.css" type="text/css" />
+  <!--<link rel="stylesheet" href="css/csr.css" type="text/css" />-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/personal-page.css">
   <script type="text/javascript" src="js/jquery.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
   <script type="text/javascript" src="js/angular-storage.min.js"></script>
@@ -24,39 +26,133 @@
 </head>
 
 <body>
-  <div data-ng-app="crm" data-ng-controller="crmcontroller">
-
-    <div class="container">
-
-      <nav>
-        <div id="logo">
-          <center><img src="images/logo_1_50.png"></center>
-          <!--<h1><a href="/" id="logoLink">The Hearing Centre</a></h1>-->
+     
+     
+ <!-- NEW CODE START-->
+     <div class="container" data-ng-app="crm" data-ng-controller="crmcontroller">
+    <div class="row">
+        <div class="col-md-4 text-center sidebar">
+            <div>
+                <img src="images/logo_1_50.png" alt="">
+            </div>
+            <div class="sidebar-context">
+                <h3>Register here to get started</h3>
+                <p>It should only take a couple of minitues</p>
+            </div>
+            <div class="sidebar-context-tab">
+                <ul>
+                    <li><span>1</span>Personal Particulars</li>
+                    <li><span class="gray">2</span>Medical History</li>
+                    <li><span class="gray">3</span>Miscellaneous</li>
+                </ul>
+            </div>
+            <div class="sidebar-context-footer">
+                <p>Returning patient? Sign in <span class="color">here</span><span class="glyphicon glyphicon-triangle-right"></span></p>
+            </div>
         </div>
-        <br><br>
-        <ul class="new-margin-left">
-          <h1> Register here to get started </h1>
-          <h5> It should only take a couple of minitues </h5><br><br><br>
-          <li type="circle">
-            <span class="TogButton TogButton-active">1</span>Personal Particulars
-            </li><br>
-            <li type="circle"> <span class="TogButton">2</span> Medical History </li> 
-            <br>
-            <li type="circle"> <span class="TogButton">3</span>Miscellaneous</li>
-             
-          <br>
-        </ul>
-        <br><br>
-<div class="signin"> 
-         <p>Returning patient? Sign in <a href="#" data-toggle="modal" data-target="#myModal"> here <img src="images/arrow.png"> </a></p>
-        <!-- Trigger/Open The Modal -->
-        <!--<button id="myBtn">here</button>-->
-       
+        <div class="col-md-7">
+            <div class="full-form">
+                <form class="form-horizontal" ng-controller="crmcontroller" ng-submit=insertCustomer()>
+                    <div class="form-group">
+                        <label for="" class="col-sm-3 control-label">Name</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="" placeholder="Kenndel Janner" ng-model="firstName">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-sm-3 control-label">Gender</label>
+                        <div class="col-sm-6">
+                            <input type="radio" id="" value="option1" ng-model="gender"> Male
+                            <input type="radio" id="" value="option2" ng-model="gender"> Female
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-sm-3 control-label">Date of Birth</label>
+                        <div class="col-sm-6">
+                            <input type="date" class="form-control" id=""  value="1983-02-01">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-sm-3 control-label">Email</label>
+                        <div class="col-sm-6">
+                            <input type="email" class="form-control" id="" placeholder="kandler@mail.com" ng-model="email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-sm-3 control-label">Mobile</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="" placeholder="+9465412315" ng-model="mobile">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="" class="col-sm-3 control-label">NRIC</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="" placeholder="S9465412AS315" ng-model="nric">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="" class="col-sm-3 control-label">Oppupation</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="" placeholder="Sales Exucative">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="" class="col-sm-3 control-label">Race</label>
+                        <div class="col-sm-6">
+                            <select class="form-control">
+                                <option>Select your Race</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="" class="col-sm-3 control-label">Language Spooken</label>
+                        <div class="col-sm-6">
+                            <input type="checkbox"> English
+                            <input type="checkbox"> Tamil
+                            <input type="checkbox"> Chiness
+                            <input type="checkbox"> Malay
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="" class="col-sm-3 control-label">Nationality</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="" placeholder="Singapor" ng-model="country">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-4 col-sm-8">
+                            <button type="submit" class="btn btn-defualt">Cancel</button>
+                            <button type="submit" class="btn btn-success">Save</button>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
+ <!-- NEW CODE END --> 
+     
+     
+     
+
+
+
 <!-- The Modal -->
-<div id="myModal" class="modal">
+<!--<div id="myModal" class="modal">
 
   <!-- Modal content -->
+    <!--
      <form class="form-style-9" ng-controller="crmcontroller" ng-submit=loginMember()>
             <span class="close"></span>
             <div class="logo_1"> <img src="images/logo_1_50.png"> </div>
@@ -77,64 +173,10 @@
               </div>
           </div>
       </div>
-</div>
-      </nav>
+</div>-->
+   
       
-      
-<!-- NEW FORM START-->
-<div class="personal-info">
-    <div class="main">
-        <form action="" ng-controller="crmcontroller" ng-submit=insertCustomer()>
-            <div class="form-top">
-                <label for="">Name</label>
-                <input type="text" placeholder="first name" ng-model="firstName" required>
-                <input type="text" name="field2" placeholder="last name" ng-model="lastName" required> </div>
-            <div class="form-top">
-                <label for="">Gender</label>
-                <input type="radio" name="" value="male" ng-model="gender" required>Male
-                <input type="radio" name="" value="female" ng-model="gender" required>Female
-            </div>
-            <div class="form-top">
-                <label for="">Date of Birth</label>
-                <input type="date" /> </div>
-            <div class="form-top">
-                <label for="">Email</label>
-                <input type="email" placeholder="kanlder@email.com" ng-model="email" /> </div>
-            <div class="form-top">
-                <label for="">Mobile</label>
-                <input type="text" placeholder="+923 2155 3214" ng-model="mobile" /> </div>
-            <div class="form-top">
-                <label for="">NRIC</label>
-                <input type="text" placeholder="S923SFS2155" ng-model="nric" /> </div>
-            <div class="form-top">
-                <label for="">Occupation</label>
-                <input type="text" placeholder="Sales Excituive" /> </div>
-            <div class="form-top">
-                <label for="">Race</label>
-                <select>
-                    <option value="volvo">Select Your Race</option>
-                    <option value="saab">Saab</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
-                </select>
-            </div>
-            <div class="form-top">
-                <label for="">Language Spoken</label>
-                <input type="checkbox" name="English" value="English" />English
-                <input type="checkbox" name="Tamil" value="Car" />Tamil
-                <br>
-                <input type="checkbox" name="Chiness" value="Chiness" />Chiness
-                <input type="checkbox" name="Malay" value="Malay" />Malay </div>
-            <div class="form-top">
-                <label for="">Nationality</label>
-                <input type="text" placeholder="Singapore" ng-model="country"> </div>
-            <div class="form-top left-butt">
-                <input type="submit" value="Cancel">
-                <input type="submit" value="Save"> </div>
-        </form>
-    </div>
-</div>
-<!--END NEW FORM-->
+
       
       
       
@@ -268,10 +310,7 @@
         </p>
       </div>-->
 
-    </div>
-
-  </div>
-  <script>
+<script>
 // Get the modal
 var modal = document.getElementById('myModal');
 

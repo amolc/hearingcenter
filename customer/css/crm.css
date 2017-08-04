@@ -556,3 +556,65 @@ div#load-more {
     border-radius: 15px;
     cursor: pointer;
 }
+
+
+     .feedback-main{
+            width: 90%;   
+            height:280px;
+            margin: 0 auto;
+          
+        }
+
+                .feedback-img {
+            width: 80%;
+            height: 300px;
+            margin: 0 auto;
+        }
+
+        .content-feedback-1 {
+    width: 50%;
+    float: left;
+}
+
+
+.content-feedback-2 {
+    width: 50%;
+    float: right;
+}
+
+.content-feedback-2 p {
+    font-size: 35px;
+    font-family: monospace;
+}
+
+.content-feedback-1 img {
+    margin-left: 25%;
+    margin-top: 8%;
+}
+
+span.content-feedback-color {
+    color: #45A77A;
+}
+
+.feedback-rating {
+    width: 90%;
+ 
+    margin: 0 auto;
+}
+
+
+.feedback-button {
+    width: 50%;
+
+    margin: 0 auto;
+}
+
+.feedback-rating p {
+    text-align: center;
+    font-family: monospace;
+    font-size: 20px;
+}
+
+.feedback{
+    padding-top: 70px;
+}
