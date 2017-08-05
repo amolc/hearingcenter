@@ -1,0 +1,32 @@
+.thank-you {
+    padding-top: 120px;
+    color:#676767;
+}
+
+
+
+.thank-you img {
+    width: 20%;
+}
+
+.correct img {
+    width: 110px;
+}
+
+.correct p {
+    font-size: 16px;
+}
+
+.thank-you a {
+    font-size: 16px;
+    color: #676767;
+    font-weight: 600;
+}
+
+
+span.glyphicon.glyphicon-chevron-right {
+    background: #45A77A;
+    color: #fff;
+    border-radius: 50%;
+    padding: 5px;
+}

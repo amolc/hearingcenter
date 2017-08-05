@@ -1,0 +1,39 @@
+.main-login{
+    padding-top: 120px;
+}
+
+
+
+.login img {
+    width: 20%;
+}
+
+.login-form input {
+    width: 200px;
+    margin: 0 auto;
+     padding: 21px;
+    border: 1px solid #e5e6e8;
+    background: #f4f8f9;
+}
+
+.login-form {
+    padding-top: 50px;
+    padding-bottom: 30px;
+   
+}
+
+
+.login-form button {
+    border: 1px solid #3EA878;
+    padding: 10px 71px;
+    border: 0;
+    background: #3EA878;
+    color: #fff;
+}
+
+.forget-pass {
+    padding-top: 15px;
+    border-top: 1px solid #e5e6e8;
+    width: 260px;
+    margin: 0 auto;
+}
