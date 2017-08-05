@@ -52,11 +52,15 @@
         </div>
         <div class="col-md-7 medical-hisory">
             <h4>Do you have any past ear surgery?</h4>
-            <div class="tab-butt">
-                <ul class="nav nav-pills">
-                  <li role="presentation" class="active"><a href="#">YES</a></li>
-                  <li role="presentation"><a href="#">NO</a></li>
-                </ul>
+          <div class="tab-butt">
+                <form class="form">
+                    <div class="switch-field">
+                        <input type="radio" id="switch_left" name="switch_2" value="yes" checked/>
+                        <label for="switch_left">YES</label>
+                        <input type="radio" id="switch_right" name="switch_2" value="no" />
+                        <label for="switch_right">NO</label>
+                    </div>
+                </form>
             </div>
             <p>If yes, Briefly mention about the medical conditions <br> in the field below</p>
             <div class="form-group">
