@@ -12,8 +12,10 @@
 
   <!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed -->
   <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
-  <link rel="stylesheet" href="css/csr.css" type="text/css" />
-  
+  <!--<link rel="stylesheet" href="css/csr.css" type="text/css" />-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/personal-page.css">
+  <link rel="stylesheet" href="css/customer_medicalHist.css">
   <script type="text/javascript" src="js/jquery.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
   <script type="text/javascript" src="js/angular-storage.min.js"></script>
@@ -21,121 +23,106 @@
   <script src="js/index.js"></script>
   <script type="text/javascript" src="js/app.js"></script>
   <script type="text/javascript" src="js/crmCtrl.js"></script>
-
+    
 </head>
 
 <body>
-  <div data-ng-app="crm" data-ng-controller="crmcontroller">
-
-    <div class="container">
-
-        <nav>
-        <div id="logo">
-          <center><img src="images/logo_1_50.png"></center>
-          <!--<h1><a href="/" id="logoLink">The Hearing Centre</a></h1>-->
+ 
+ <!-- NEW CODE START-->
+     <div class="container" data-ng-app="crm" data-ng-controller="crmcontroller">
+    <div class="row">
+        <div class="col-md-4 text-center sidebar">
+            <div>
+                <img src="images/logo_1_50.png" alt="">
+            </div>
+            <div class="sidebar-context">
+                <h3>Register here to get started</h3>
+                <p>It should only take a couple of minitues</p>
+            </div>
+            <div class="sidebar-context-tab">
+                <ul>
+                    <li><span><i class="fa fa-check"></i></span>Personal Particulars</li>
+                    <li><span class="">2</span>Medical History</li>
+                    <li><span class="gray">3</span>Miscellaneous</li>
+                </ul>
+            </div>
+            <div class="sidebar-context-footer">
+                <p>Returning patient? Sign in <a class="color" data-toggle="modal" data-target=".bs-example-modal-lg">here</a><span class="glyphicon glyphicon-chevron-right"></span></p>
+            </div>
         </div>
-        <br><br>
-        <ul class="new-margin-left">
-          <h1> Register here to get started </h1>
-          <h5> It should only take a couple of minitues </h5><br><br><br>
-          <li type="circle">
-            <span class="TogButton "><i class="fa fa-check"></i></span>Personal Particulars
-            </li><br>
-            <li type="circle"> <span class="TogButton TogButton-active">2</span> Medical History </li> 
-            <br>
-            <li type="circle"> <span class="TogButton">3</span>Miscellaneous</li>
-             
-          <br>
-        </ul>
-        <br><br>
-<div class="signin"> 
-         <p>Returning patient? Sign in <a href="#" data-toggle="modal" data-target="#myModal"> here <img src="images/arrow.png"> </a></p>
-        <!-- Trigger/Open The Modal -->
-        <!--<button id="myBtn">here</button>-->
-       
-</div>
+        <div class="col-md-7 medical-hisory">
+            <h4>Do you have any past ear surgery?</h4>
+            <div class="tab-butt">
+                <ul class="nav nav-pills">
+                  <li role="presentation" class="active"><a href="#">YES</a></li>
+                  <li role="presentation"><a href="#">NO</a></li>
+                </ul>
+            </div>
+            <p>If yes, Briefly mention about the medical conditions <br> in the field below</p>
+            <div class="form-group">
+              <textarea class="form-control" rows="5" id="comment"></textarea>
+            </div>
+              <div class="form-group">
+                        <div class="col-sm-offset-4 col-sm-8 form-button text-right">
+                            <button type="reset" class="btn btn-defualt">Cancel</button>
+                            <button type="submit" class="btn btn-success">Save</button>
 
-
-
-
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-     <form class="form-style-9" ng-controller="crmcontroller" ng-submit=loginMember()>
-            <span class="close"></span>
-            <div class="logo_1"> <img src="images/logo_1_50.png"> </div>
-            <h1>Returning Patient?</h1>
-            <p>Simply enter your NRIC/Password number below to consult our specialist</p><br>
-          <ul>
-            <li>
-              <h1>NRIC/Passport Number </h1>
-              <input type="text" name="field4" class="field-style field-split align-right" required placeholder="NRIC" ng-model="nric"/>
-              <input type="submit" value="Submit" />
-            </li>
-         </ul>
-    </form>
-      <div id="error">
-          <div class="error">
-              <div class="item">
-                  <span><h4><b><font color="red">Your NRIC/Passport Number or Password is incorrect. Please try again.</font></b></h4></span>
-              </div>
-          </div>
-      </div>
-</div>
-      </nav>
-      
-      
-      
-      <section class="content-1">
-          <h1>Do you have any past ear surgery?</h1>
-          <button class="content-1-button TogButton-active">YES</button>
-          <button class="content-1-button">NO</button>
-          <p class="content-1-p">If yes, Briefly mention about the medical conditions <br> in the field below</p>
-          <textarea name="" id="" cols="50" rows="5" placeholder="Type here...."></textarea>
-          <br><br>
-          <input type="submit" value="Submit" />
-          <input type="submit" value="Cancel" />
-      </section>
-      
-      
-      
-      
-      
-      
-      
-      <!--
-      <article>
-        <h1>Enter your blood group?</h1><br>
-
-        <form class="miscellaneous" ng-controller="crmcontroller" ng-submit=insertHistories()>
-            <label> Blood group </label>
-          <input type="text" name="field3" class="field-style field-split align-left" required placeholder="Blood group" ng-model="blood"/>
-         
-          
-        <input type="submit" class="button2" value="Submit" name="submit"/>
-
-         </form>
-      </article>
-      -->
-      
-      
-      <!--
-      <div id="footer">
-        <p>
-          Webpage made by <a href="/" target="_blank">[your name]</a>
-        </p>
-      </div>
-    -->
+                        </div>
+                    </div>
+        </div>
     </div>
+</div>
+ <!-- NEW CODE END --> 
+     
+<!-- Modal -->
 
-  </div>
+   
+     
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+       
+                   <div class="text-left">
+                       <h3>Returning Patient?</h3>
+                   </div>
+                     <div class="text-right model-img">
+                      <img src="images/logo_1_50.png"/>
+                   </div>
+                   <div class="mod-context">
+                         <p>Simply enter your NRIC/Password number below to consult our specialist</p>
+                         <form>
+                          <div class="form-group model-from-group">
+                            <label for="">NRIC/Passport Number </label>
+                            <input type="text" class="form-control" id="" placeholder="">
+                          </div>       
+                          <button type="submit" class="btn btn-default">Submit</button>
+                        </form>
+                   </div>
+               </div>
+           </div>
+    </div>
+ 
+ 
   
   
   
   
-  <script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+<script>
 // Get the modal
 var modal = document.getElementById('myModal');
 

@@ -4,9 +4,9 @@ body{
 }
 
 .sidebar {
-    padding-top: 130px;
+    padding-top: 50px;
     border-right: 1px solid #ccc;
-    height: auto;
+    height: 700px;
     padding-right: 80px;
     padding-bottom: 100px;
 }
@@ -60,7 +60,7 @@ span.glyphicon.glyphicon-chevron-right{
 }
 
 .full-form {
-    padding-top: 70px;
+    padding-top: 50px;
     padding-left: 60px;
 }
 
@@ -73,8 +73,9 @@ span.glyphicon.glyphicon-chevron-right{
 }
 
 .form-control{
-    border: 1px solid #e0eaf9;
-        background: #f1f1f1;
+    border: 1px solid #e5e6e8;
+        background: #f4f8f9;
+    padding: 20px 20px;
 }
 
 
@@ -113,4 +114,8 @@ label.col-sm-3.control-label {
 
 .form-group.model-from-group {
     width: 50%;
+}
+
+.form-control [type=checkbox]{
+    outline: 1px soild red;
 }
