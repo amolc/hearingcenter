@@ -1,5 +1,6 @@
 body{
 	background: white;
+    color: #676767;
 }
 
 .sidebar {
@@ -29,7 +30,7 @@ body{
     background: #45A77A;
     color: #fff;
     border-radius: 50%;
-    padding: 2px 5px;
+    padding: 3px 7px;
     margin-right: 5px;
 }
 
@@ -50,12 +51,12 @@ body{
 	color:  #45A77A;
 }
 
-span.glyphicon.glyphicon-triangle-right{
+span.glyphicon.glyphicon-chevron-right{
     background: #45A77A;
     color: #fff;
     border-radius: 50px;
     padding: 5px 5px;
-    margin-left: 10px;
+    margin-left: 5px;
 }
 
 .full-form {
@@ -69,4 +70,47 @@ span.glyphicon.glyphicon-triangle-right{
 
 .sidebar-context-tab .gray{
 	background-color: #adacac;
+}
+
+.form-control{
+    border: 1px solid #e0eaf9;
+        background: #f1f1f1;
+}
+
+
+.sidebar img {
+    padding-bottom: 30px;
+}
+
+
+label.col-sm-3.control-label {
+    font-size: 16px;
+    color: #676767;
+    font-weight: normal;
+}
+
+.form-button {
+    margin-left: 50px;
+    margin-top: 15px;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #45A77A;
+    border-color: #45A77A;
+}
+
+.modal-content {
+    padding: 20px;
+}
+
+.model-img.text-right {
+    position: absolute;
+    right: 15px;
+    top: 16px;
+}
+
+
+.form-group.model-from-group {
+    width: 50%;
 }
