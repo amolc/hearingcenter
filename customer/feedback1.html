@@ -12,7 +12,8 @@
 
     <!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed -->
     <!--<link rel="stylesheet" href="css/crm.css" type="text/css" />-->
-    <link rel="stylesheet" href="css/new-css.css" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/feedback-1.css">
     <script type="text/javascript" src="js/jquery.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script type="text/javascript" src="js/angular-storage.min.js"></script>
@@ -23,9 +24,72 @@
 
 </head>
 
-<body>
+<body data-ng-app="crm" data-ng-controller="crmcontroller" ng-init="getClinic('Clinic1')">
+     
+     
+     <section class="top">
+     <div class="container">
+        <div class="row">
+            <div class="col-md-6 text-right feed-img">
+                <img src="images/logo.png" alt="">
+            </div>
+            <div class="col-md-6 feed-contexts">
+                <p>Thank you for visiting <br> <span class="feedback-color">The Hearing Centre.</span> <br> Please rate our services</p>
+            </div>
+        </div>
+     </div>
+     </section>
+     
+     <section class="rateing">
+         <div class="container">
+             <div class="row">
+                 <div class="col-md-12 text-center">
+                     <div class="rate">
+                         <a href="">
+                           <img class="image-rate" src="images/excellent.png" alt="" ng-click="custFeedback(5)"><br> Excellent </a>
+                     </div>
+                     <div class="rate">
+                            <a href=""><img class="image-rate" src="images/good.png" alt="" ng-click="custFeedback(4)"> <br> Good</a>
+                     </div>
+                     <div class="rate">
+                            <a href=""><img class="image-rate" src="images/average.png" alt="" ng-click="custFeedback(3)"> <br> Average</a>
+                     </div>
+                     <div class="rate">
+                            <a href=""><img class="image-rate" src="images/poor.png" alt="" ng-click="custFeedback(2)"> <br> Poor</a>
+                     </div>
+                     <div class="rate">
+                            <a href=""><img class="image-rate" src="images/verypoor.png" alt="" ng-click="custFeedback(1)"> <br> Very Poor</a>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>
+     
+     <section class="footer">
+         <div class="container">
+             <div class="row">
+                 <div class="col-md-12 text-center">
+                     <p>We appreciate your feedback to continuously improve our service.</p>
+                 </div>
+             </div>
+         </div>
+     </section>
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
       
- <div class="feedback" data-ng-app="crm" data-ng-controller="crmcontroller" ng-init="getClinic('Clinic1')">
+ <!-- <div class="feedback" data-ng-app="crm" data-ng-controller="crmcontroller" ng-init="getClinic('Clinic1')">
     <div class="feedback-main">
         <div class="feedback-img">
             <div class="content-feedback-1">
@@ -38,7 +102,7 @@
             </div>
         </div>
     </div>
-
+ 
     <div class="feedback-rating">
         <div class="feedback-button">
             <button><img class="ratePic" ng-src="images/excellent.png" width="90" height="90" ng-click="custFeedback(5)">
@@ -54,7 +118,7 @@
         </div>
         <p>We appreciate your feedback to continuously improve our service</p>
     </div>
-    </div>
+    </div> -->
             
              
               

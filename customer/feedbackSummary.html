@@ -11,7 +11,9 @@
     <meta name="description" content="" />
 
     <!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed -->
-    <link rel="stylesheet" href="css/crm.css" type="text/css" />
+    <!-- <link rel="stylesheet" href="css/crm.css" type="text/css" /> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+   <link rel="stylesheet" href="css/thank-you.css">
     <script type="text/javascript" src="js/jquery.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script type="text/javascript" src="js/angular-storage.min.js"></script>
@@ -19,31 +21,51 @@
     <script src="js/index.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/crmCtrl.js"></script>
-
+    <style>
+        .auto-ref{padding-top: 15px;}
+        .auto-ref img {width: 7%;padding-bottom: 25px;}
+    </style>
 </head>
 
 <body>
-    <div data-ng-app="crm" data-ng-controller="crmcontroller">
-
+   
+     <div class="container" data-ng-app="crm" data-ng-controller="crmcontroller">
+        <div class="row">
+            <div class="col-md-12 text-center thank-you">
+               <img src="images/logo.png" alt="">
+               <h3>Thank you for your feedback. <br> See you again!</h3>
+               <div class="correct auto-ref">
+                   <img src="images/refresh.png" alt="">
+                   <p> This page will auto refresh after 5 seconds</p>
+               </div>
+             
+            </div>
+        </div>
+    </div>
+   
+   
+   
+    <!-- <div data-ng-app="crm" data-ng-controller="crmcontroller">
+    
                  
         <div class="feedbackEnd">
             <img class="feedbackImg" src="images/logo.png">
-
+    
         </div>
-
+    
         <div class="feedbackEnd">
             <h1>
                 Thank you for your feedback.<br>
                 See you again!<br><br>
-
+    
                 <img src="images/refresh.png" width="100" height="100"><br><br>
             </h1>
                 This page will auto refresh after 5 seconds
         </div>
-
+    
     
         
-    </div>
+    </div> -->
     
 <script>
     setTimeout(function(){location.href="feedback1.html"} , 5000);  
