@@ -1,0 +1,98 @@
+body{
+  height: 700px;
+  background: #f9f9f9;
+}
+
+
+
+section#header {
+    box-shadow: 1px 1px 19px #ccc;
+        padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.log-out-button {
+    margin-top: 20px;
+}
+
+.menu{
+  background: red;
+}
+
+section#hello {
+    padding-top: 25px;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: black;
+    cursor: pointer;
+    border: 0;
+     border-bottom-color: transparent;
+    border-bottom: 2px solid green;
+}
+
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 15px 15px;
+    color: black;
+  }
+
+
+  .my-points {
+    background: #25965E;
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.my-points-number img {
+    width: 70px;
+}
+
+
+.my-points-number p {
+    font-size: 35px;
+   
+}
+
+.no-margin h3 {
+    margin: 0;
+    padding-bottom: 30px;
+}
+
+section.main-board {
+    padding-top: 50px;
+}
+
+  .my-points-2 {
+    background: #F9A2B2;
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+        margin-top: 20px;
+}
+
+.detailes{
+  background: white;
+      padding-top: 20px;
+    padding-bottom: 25px;
+    color:#ccc;
+}
+
+.detailes p {
+    font-size: 18px;
+    color:black;
+}
+
+.color {
+    font-size: 16px;
+    padding-top: 5px;
+    color: #25965E;
+}
+
+.info{
+ padding-left: 40px;
+}
+
+

@@ -11,8 +11,10 @@
 	<meta name="description" content="" />
 
 	<!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed -->
-	<link rel="stylesheet" href="css/crm.css" type="text/css" />
-
+	<!--<link rel="stylesheet" href="css/crm.css" type="text/css" />-->
+    <!--<link rel="stylesheet" href="css/csr.css" type="text/css" />-->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+     <link rel="stylesheet" href="css/member-dashboard.css">
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
 	<script type="text/javascript" src="js/angular-storage.min.js"></script>
@@ -23,98 +25,196 @@
 
 </head>
 
-<body>
-	<div data-ng-app="crm" data-ng-controller="crmcontroller" ng-init="getID()">
-		<header>
-			<div id="logo">
-				<img src="images/logo_3_35.png">
-			</div>
+<body data-ng-app="crm" data-ng-controller="crmcontroller" ng-init="getID()">
 
-			<div id="nav">
-				<ul>
-					<!--<li><a href="#/contact.html">Logout</a></li>-->
-					<li><a href="index.html">Logout</a></li>
-				</ul>
-			</div>
 
-		</header>
 
-		<div id="tab">
-			<ul>
-				<li><a href="memberdashboard.html?nric={{result.nric}}">Member's Portal</a></li>
-				<li><a href="redeem.html?nric={{result.nric}}">Redeem Points</a></li>
-			</ul>
-		</div>
-		<!-- webpage content goes here in the body -->
+    <section id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="logo text-left">
+                        <img src="images/logo_1_50.png" alt="">
+                    </div>
+                </div>
+                    <div class="col-md-6">
+                    <div class="log-out-button text-right">
+                        <button class="btn" href="index.html">Log out</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+    </section>
 
-		<div id="page">
 
-			<div id="content1" style="background-color: #45A77A;">
-				<h2>My Points</h2>
-				<div id = "box">
-					{{result.points}}
-				</div>
-				<!--<img src="images/medal.png" align = "right" width="110" height="110">-->
-			</div>
+   <section id="hello">
+       <div class="container">
+           <div class="row">
+               <div class="cl-md-12 menu-bar">
+                   <ul class="nav nav-tabs">
+                       <li class="active"><a href="memberdashboard.html?nric={{result.nric}}">Member's Portal</a></li>
+                       <li><a href="redeem.html?nric={{result.nric}}">Redeem Points</a></li>
+                    </ul>
+               </div>
+           </div>
+       </div>
+   </section>
 
-			<div id="content1" style="background-color: #F6A3B2;">
-				<h2>Next Appointment</h2>
-					{{result.nextAppointment}}
-			</div>
 
-			<div id="content2" style="background-color: white;">
-				Name
-				<p>
-					{{result.firstName}} {{result.lastName}}
-				</p>
-			</div>
+   <section class="main-board">
+       <div class="container">
+           <div class="row">
+               <div class="col-md-4">
+                  <div class="my-points">
+                   <div class="no-margin text-center">
+                       <h3>My Points</h3>
+                   </div>
+                    <div class="my-points-number text-center">
+                       <p>{{result.points}}<img src="images/medal.png" alt=""></p>
+                   </div>
+                  </div>
+                  <div class="my-points-2">
+                   <div class="no-margin text-center">
+                       <h3>Next Appointment</h3>
+                   </div>
+                    <div class="my-points-number text-center">
+                       <p>20 OCT 2017 {{result.nextAppointment}}</p>
+                   </div>
+                  </div>
+               </div>
+            <div class="col-md-8 info">
+               <div class="col-md-6 detailes">
+                  <h5>Name</h5>
+                  <p> {{result.firstName}} {{result.lastName}}</p>
+               </div>
+               <div class="col-md-6 detailes">
+                  <h5>NRIC</h5>
+                  <p>{{result.nric}}</p>
+               </div>
+               <div class="col-md-6 detailes">
+                  <h5>Adress</h5>
+                  <p> {{result.residential_address}}</p>
+               </div>
+               <div class="col-md-6 detailes">
+                  <h5>Email</h5>
+                  <p> {{result.email_address}}</p>
+               </div>
+               <div class="col-md-6 detailes">
+                  <h5>Mobile Number</h5>
+                  <p>{{result.mobile_number}}</p>
+               </div>
+               <div class="col-md-6 detailes">
+                  <h5>Last Visit</h5>
+                  <p>{{result.lastVisit}}  <br></p>
+               </div>
+                <div class="text-center color">
+                <p>Information not correct? Contuct your friendly staff at <b>63882027</b> to update it</p>
+                </div>
+              </div>  
+           </div>
+       </div>
+   </section>
 
-			<div id="content3" style="background-color: white;">
-				NRIC
-				<p>
-					{{result.nric}}
-				</p>
-			</div>
 
-			<div id="content4" style="background-color: white;">
-				Address
-				<p>
-					{{result.residential_address}}
-				</p>
-			</div>
 
-			<div id="content5" style="background-color: white;">
-				Email
-				<p>
-					{{result.email_address}}
-				</p>
-			</div>
 
-			<div id="content6" style="background-color: white;">
-				Phone Number
-				<p>
-					{{result.mobile_number}}
-				</p>
-				<p>
-					{{result.home_number}}
-				</p>
-			</div>
 
-			<div id="content7" style="background-color: white;">
-				Last Visit
-				<p>
-					{{result.lastVisit}}
-				</p>
-				<p>
-			</div>
 
-			<!--<div id="footer">
-			<p>
-				Webpage made by <a href="/" target="_blank">[your name]</a>
-			</p>
-		</div>-->
-		</div>
-	</div>
+	<!-- <div >
+	    <header>
+	        <div id="logo">
+	            <img src="images/logo_3_35.png">
+	        </div>
+	
+	        <div id="nav">
+	            <ul>
+	                <li><a href="#/contact.html">Logout</a></li>
+	                <li><a href="index.html">Logout</a></li>
+	            </ul>
+	        </div>
+	
+	    </header>
+	
+	    <div id="tab">
+	        <ul>
+	            <li><a href="memberdashboard.html?nric={{result.nric}}">Member's Portal</a></li>
+	            <li><a href="redeem.html?nric={{result.nric}}">Redeem Points</a></li>
+	        </ul>
+	    </div>
+	    webpage content goes here in the body
+	
+	    <div id="page">
+	
+	        <div id="content1" style="background-color: #45A77A;">
+	            <h2>My Points</h2>
+	            <div id = "box">
+	                
+	                <div class="sub">{{result.points}}</div>
+	                <div class="sub"><img src="images/medal.png" alt=""></div>
+	                
+	            
+	            </div>
+	            
+	        </div>
+	
+	        <div id="content1" style="background-color: #F6A3B2;">
+	            <h2>Next Appointment</h2>
+	                {{result.nextAppointment}}
+	        </div>
+	
+	        <div id="content2" style="background-color: white;">
+	            Name
+	            <p>
+	                {{result.firstName}} {{result.lastName}}
+	            </p>
+	        </div>
+	
+	        <div id="content3" style="background-color: white;">
+	            NRIC
+	            <p>
+	                {{result.nric}}
+	            </p>
+	        </div>
+	
+	        <div id="content4" style="background-color: white;">
+	            Address
+	            <p>
+	                {{result.residential_address}}
+	            </p>
+	        </div>
+	
+	        <div id="content5" style="background-color: white;">
+	            Email
+	            <p>
+	                {{result.email_address}}
+	            </p>
+	        </div>
+	
+	        <div id="content6" style="background-color: white;">
+	            Phone Number
+	            <p>
+	                {{result.mobile_number}}
+	            </p>
+	            <p>
+	                {{result.home_number}}
+	            </p>
+	        </div>
+	
+	        <div id="content7" style="background-color: white;">
+	            Last Visit
+	            <p>
+	                {{result.lastVisit}}
+	            </p>
+	            <p>
+	        </div>
+	
+	        <div id="footer">
+	        <p>
+	            Webpage made by <a href="/" target="_blank">[your name]</a>
+	        </p>
+	    </div>
+	    </div>
+	</div> -->
 </body>
 
 </html>

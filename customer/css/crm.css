@@ -23,6 +23,10 @@ header {
     background-color: white;
     clear: left;
     padding: 20px;
+    box-shadow: 1px 1px 19px #ccc;
+    -webkit-box-shadow: 1px 1px 19px #ccc;
+     -moz-box-shadow: 1px 1px 19px #ccc;
+    -o-box-shadow: 1px 1px 19px #ccc;
 }
 
 /* you can structure your code's white space so that it is as readable for when you come back in the future or for other people to read and edit quickly */
@@ -34,6 +38,7 @@ body{
     width: 100%; 
     margin: 0; 
     background: #efefef;
+  
 }
 /* you can put your code all in one line like above */
 #page { 
@@ -90,9 +95,9 @@ body{
 		}
 			#tab ul li a{
 				padding: 20px;
-				background: #45A77A;
-				color: white;
-        margin: 5px;
+				color: black;
+                border-bottom: 2px solid #45A77A;
+                margin: 5px;
 			}
 			#tab ul li a:hover{
 				background-color: #45A77A;
@@ -223,6 +228,11 @@ section { background-color: white; margin: 10px; border:1px solid red; padding:1
     font-size: 500%;
     align-content: center;
     color: white;
+    margin-top: 10px;
+    margin-left: 30px;
+  
+    width: 200px;
+    height: 80px;
    
 }
 
@@ -617,4 +627,14 @@ span.content-feedback-color {
 
 .feedback{
     padding-top: 70px;
+}
+
+.sub {
+    width: 50%;
+   
+    float: left;
+}
+
+.sub img {
+    width: 70px;
 }
