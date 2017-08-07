@@ -55,3 +55,30 @@ button {
     background: #25965E;
     color: #fff;
 }
+
+
+.modal-body p {
+    padding: 10px;
+    font-size: 18px;
+
+}
+.model-button button.btn {
+    border: 1px solid green;
+    background: green;
+    color: #fff;
+    padding: 8px 15px;
+    width: 75px;
+    margin-left: 5px;
+    margin-bottom: 15px;
+}
+
+.modal-title {
+    margin: 0;
+    line-height: 1.42857143;
+    padding-top: 5px;
+}
+
+button.btn.gray-btn {
+    background: #ccc;
+    border: #ccc;
+}
