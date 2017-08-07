@@ -51,6 +51,7 @@
                    <ul class="nav nav-tabs">
                        <li ><a href="memberdashboard.html?nric={{result.nric}}">Member's Portal</a></li>
                        <li class="active"><a href="redeem.html?nric={{result.nric}}">Redeem Points</a></li>
+                       <li><a href="my_items.html">My Items</a></li>
                     </ul>
                </div>
            </div>
@@ -87,7 +88,7 @@
             <div class="red-img">
               <img src="images/battery.png" alt="">
             </div>
-            <button>Reedeem</button>
+            <button data-toggle="modal" data-target="#myModal">Reedeem</button>
             <p>12 Batterys</p>
           </div>
           </div>
@@ -101,7 +102,7 @@
             <div class="red-img">
               <img src="images/battery.png" alt="">
             </div>
-            <button>Reedeem</button>
+            <button data-toggle="modal" data-target="#myModal">Reedeem</button>
             <p>12 Batterys</p>
           </div>
           </div>
@@ -115,7 +116,7 @@
             <div class="red-img">
               <img src="images/battery.png" alt="">
             </div>
-            <button>Reedeem</button>
+            <button data-toggle="modal" data-target="#myModal">Reedeem</button>
             <p>12 Batterys</p>
           </div>
           </div>
@@ -129,7 +130,7 @@
             <div class="red-img">
               <img src="images/battery.png" alt="">
             </div>
-            <button>Reedeem</button>
+            <button data-toggle="modal" data-target="#myModal">Reedeem</button>
             <p>12 Batterys</p>
           </div>
           </div>
@@ -143,7 +144,7 @@
             <div class="red-img">
               <img src="images/battery.png" alt="">
             </div>
-            <button>Reedeem</button>
+            <button data-toggle="modal" data-target="#myModal">Reedeem</button>
             <p>12 Batterys</p>
           </div>
           </div>
@@ -157,7 +158,7 @@
             <div class="red-img">
               <img src="images/battery.png" alt="">
             </div>
-            <button>Reedeem</button>
+            <button data-toggle="modal" data-target="#myModal">Reedeem</button>
             <p>12 Batterys</p>
           </div>
           </div>
@@ -178,7 +179,25 @@
 
 
 
-
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+     <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Redeem Confirmation</h4>
+      </div>
+      <div class="modal-body">
+        <p>Are You Sure??</p>
+         <div class="model-button text-right">
+        <button type="button" class="btn gray-btn" data-dismiss="modal">NO</button>
+        <button type="button" class="btn">YES</button>
+      </div>
+      </div>
+     
+    </div>
+  </div>
+</div>
 
 
 
