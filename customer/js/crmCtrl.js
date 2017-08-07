@@ -163,16 +163,18 @@ app.controller('crmcontroller', function ($scope, $http, $window, $location, $ti
 //Register customer for queue number
     $scope.insertCustomer = function(req, res){
         $scope.data = {};
-        $scope.data.firstName = $scope.firstName;
-        $scope.data.lastName = $scope.lastName;
-        $scope.data.country = $scope.country;
-        $scope.data.nric = $scope.nric;
-        $scope.data.gender = $scope.gender;
-        $scope.data.mobile_number = $scope.mobile;
-        $scope.data.home_number = $scope.home;
-        $scope.data.email_address = $scope.email;
-        $scope.data.residential_address = $scope.address;
-        $scope.data.postal = $scope.postal;
+        $scope.data.firstName = $scope.firstName | "";
+        $scope.data.lastName = $scope.lastName | "";
+        $scope.data.country = $scope.country | "";
+        $scope.data.nric = $scope.nric | "";
+        $scope.data.gender = $scope.gender | "";
+        $scope.data.mobile_number = $scope.mobile | "";
+        $scope.data.home_number = $scope.home | "";
+        $scope.data.email_address = $scope.email | "";
+        $scope.data.residential_address = $scope.address | "";
+        $scope.data.postal = $scope.postal | "";
+        $scope.data.lastVisit = new Date();
+        $scope.data.nextAppointment = new Date();
 
 
         $http.post(baseurl + 'insertcustomer', $scope.data).success(function (res) {
