@@ -2,8 +2,22 @@
 app.controller('crmcontroller', function ($scope, $http, $window, $location, $timeout) {
 
 
+    $scope.redeemList = [];
+    $scope.getRedeemList = function () {
+        $http.get(baseurl + 'redeem-list').success(function (res) {
 
+            if (res.status == 'false') {
 
+            } else {
+                $scope.redeemList = res;
+
+            }
+
+        }).error(function () {
+
+        });
+    }
+    $scope.getRedeemList();
 //*********************************************** */
 //Retrieve Clinic type (e.g. Clinic1,Clinic2,etc...)   
     $scope.getClinic = function(req,res){
@@ -236,9 +250,10 @@ app.controller('crmcontroller', function ($scope, $http, $window, $location, $ti
 //Verify member login
 
     $scope.authenticateMember = function(req,res){
+    
         var ic = $scope.ic;
         var pw = $scope.pw;
-
+        console.log("in a m", ic);
         $scope.result = false;
 
         $http.get(baseurl + 'findByIc/' + ic).success(function (res) {
@@ -250,7 +265,7 @@ app.controller('crmcontroller', function ($scope, $http, $window, $location, $ti
                     $("#error").show();
 
                 }else{
-
+                    $window.location.href = 'memberdashboard.html?nric=' + ic;
                     for(var i=0; i<res.length; i++){
 
                         if(pw == res[i].mobile_number){
@@ -298,6 +313,16 @@ app.controller('crmcontroller', function ($scope, $http, $window, $location, $ti
     $scope.init = function(){
         $("#error").hide();
     }
+
+    $scope.confirmRedeem = function () {
+        console.log("confirm redeem");
+        
+    }
+    $scope.loginFromModal = function (nric) {
+        console.log(nric);
+        
+    }
+    
  
 });
 

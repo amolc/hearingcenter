@@ -25,11 +25,11 @@
 
 </head>
 
-<body>
+<body data-ng-app="crm" data-ng-controller="crmcontroller">
      
      
  <!-- NEW CODE START-->
-     <div class="container" data-ng-app="crm" data-ng-controller="crmcontroller">
+     <div class="container" >
     <div class="row">
         <div class="col-md-4 text-center sidebar">
             <div>
@@ -159,13 +159,13 @@
                    </div>
                    <div class="mod-context">
                          <p>Simply enter your NRIC/Password number below to consult our specialist</p>
-                         <form>
+                         <div>
                           <div class="form-group model-from-group">
                             <label for="">NRIC/Passport Number </label>
-                            <input type="text" class="form-control" id="" placeholder="">
+                            <input type="text" class="form-control" id="" placeholder="" ng-model="ic">
                           </div>       
-                          <button type="submit" class="btn btn-default">Submit</button>
-                        </form>
+                          <button class="btn btn-default" ng-click="authenticateMember()">Submit</button>
+                        </div>
                    </div>
                </div>
            </div>

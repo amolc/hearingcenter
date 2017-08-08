@@ -37,7 +37,7 @@
             </div>
             <div class="col-md-6">
                 <div class="log-out-button text-right">
-                    <button class="btn" href="index.html">Log out</button>
+                    <a class="btn btn-primary" href="/index.html">Log out</a>
                 </div>
             </div>
         </div>
@@ -51,7 +51,7 @@
                    <ul class="nav nav-tabs">
                        <li ><a href="memberdashboard.html?nric={{result.nric}}">Member's Portal</a></li>
                        <li class="active"><a href="redeem.html?nric={{result.nric}}">Redeem Points</a></li>
-                       <li><a href="my_items.html">My Items</a></li>
+                       <li><a href="my_items.html?nric={{result.nric}}">My Items</a></li>
                     </ul>
                </div>
            </div>
@@ -80,89 +80,21 @@
       <div class="row">
        
 
-        <div class="col-md-4 text-center">
+        <div ng-repeat= "item in redeemList" class="col-md-4 text-center">
           <div class="main-box">
           <div class="reedem-box">
-            <h3>DURACELL</h3>
-            <p>200 <img src="images/medal.png" alt=""></p>
+            <h3>{{item.name}}</h3>
+            <p>{{item.point}} <img src="images/medal.png" alt=""></p>
             <div class="red-img">
-              <img src="images/battery.png" alt="">
+              <img src="{{item.image_url}}" alt="">
             </div>
             <button data-toggle="modal" data-target="#myModal">Reedeem</button>
-            <p>12 Batterys</p>
+            <p>{{item.stock}} Batterys</p>
           </div>
           </div>
         </div>
 
-       <div class="col-md-4 text-center">
-          <div class="main-box">
-          <div class="reedem-box">
-            <h3>DURACELL</h3>
-            <p>200 <img src="images/medal.png" alt=""></p>
-            <div class="red-img">
-              <img src="images/battery.png" alt="">
-            </div>
-            <button data-toggle="modal" data-target="#myModal">Reedeem</button>
-            <p>12 Batterys</p>
-          </div>
-          </div>
-        </div>
 
-        <div class="col-md-4 text-center">
-          <div class="main-box">
-          <div class="reedem-box">
-            <h3>DURACELL</h3>
-            <p>200 <img src="images/medal.png" alt=""></p>
-            <div class="red-img">
-              <img src="images/battery.png" alt="">
-            </div>
-            <button data-toggle="modal" data-target="#myModal">Reedeem</button>
-            <p>12 Batterys</p>
-          </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 text-center">
-          <div class="main-box">
-          <div class="reedem-box">
-            <h3>DURACELL</h3>
-            <p>200 <img src="images/medal.png" alt=""></p>
-            <div class="red-img">
-              <img src="images/battery.png" alt="">
-            </div>
-            <button data-toggle="modal" data-target="#myModal">Reedeem</button>
-            <p>12 Batterys</p>
-          </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 text-center">
-          <div class="main-box">
-          <div class="reedem-box">
-            <h3>DURACELL</h3>
-            <p>200 <img src="images/medal.png" alt=""></p>
-            <div class="red-img">
-              <img src="images/battery.png" alt="">
-            </div>
-            <button data-toggle="modal" data-target="#myModal">Reedeem</button>
-            <p>12 Batterys</p>
-          </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 text-center">
-          <div class="main-box">
-          <div class="reedem-box">
-            <h3>DURACELL</h3>
-            <p>200 <img src="images/medal.png" alt=""></p>
-            <div class="red-img">
-              <img src="images/battery.png" alt="">
-            </div>
-            <button data-toggle="modal" data-target="#myModal">Reedeem</button>
-            <p>12 Batterys</p>
-          </div>
-          </div>
-        </div>
         
 
         <div class="col-md-12 text-center load-button">
@@ -191,7 +123,7 @@
         <p>Are You Sure??</p>
          <div class="model-button text-right">
         <button type="button" class="btn gray-btn" data-dismiss="modal">NO</button>
-        <button type="button" class="btn">YES</button>
+        <button type="button" class="btn" data-dismiss="modal" ng-click="confirmRedeem()">YES</button>
       </div>
       </div>
      

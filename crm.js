@@ -49,6 +49,9 @@ app.post('/api/insertPatientLog', customer.insertPatientLog);
 app.post('/api/insertAppt', customer.insertAppt);
 app.post('/api/insertFeedback', customer.insertFeedback);
 app.get('/api/customerType', customer.customerType);
+app.get('/api/redeem-list', customer.redeemList);
+app.get('/api/my-points', customer.gerMyPoints);
+app.post('/api/add-redeem', customer.addRedeem);
 
 var customer = connect();
 customer.use(serveStatic('customer'));

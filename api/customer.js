@@ -15,6 +15,9 @@ var db = mysql.createPool({
  var patientLogCRUD = CRUD(db, 'patientLog');
  var appointmentCRUD = CRUD(db, 'appointment');
  var feedbackCRUD = CRUD(db, 'feedback');
+ var redeemCRUD = CRUD(db, 'redeems');
+ var customerRedeemsCRUD = CRUD(db, 'customer_redeems');
+
 
 
 /******************************************************
@@ -388,4 +391,23 @@ exports.findByIc = function(req, res) {
 	});
  };
 
- 
+exports.redeemList = function (req, res) {
+	var query = "SELECT * FROM redeems";
+	db.query(query, function(err, rows){
+		res.jsonp(rows);
+	});
+};
+
+exports.gerMyPoints = function (req, res) {
+	var query = "SELECT * FROM redeems";
+	db.query(query, function(err, rows){
+		res.jsonp(rows);
+	});
+};
+
+exports.addRedeem = function (req, res) {
+	var query = "SELECT * FROM redeems";
+	db.query(query, function(err, rows){
+		res.jsonp(rows);
+	});
+};
