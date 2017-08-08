@@ -1,190 +1,412 @@
 <!DOCTYPE html>
 <html>
-<div data-ng-app="crm" data-ng-controller="admincontroller" ng-init=getID();getLog()>
 
-    <head>
+<head>
 
-        <!-- your webpage info goes here -->
+    <!-- your webpage info goes here -->
 
-        <title>The Hearing Centre</title>
+    <title>The Hearing Centre</title>
 
-        <meta name="author" content="Ama" />
-        <meta name="description" content="" />
+    <meta name="author" content="Ama" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-        <!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed -->
-        <link rel="stylesheet" href="css/admin.css" type="text/css" />
-        <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css" type="text/css" />
-<!--         <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css" type="text/css" /> -->
-        <script type="text/javascript" src="js/jquery.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-        <script type="text/javascript" src="js/angular-storage.min.js"></script>
-        <script src="js/bootstrap.js" type="text/javascript"></script>
-        <script src="js/index.js"></script>
-        <script type="text/javascript" src="js/app.js"></script>
-        <script type="text/javascript" src="js/adminCtrl.js"></script>
+    <!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed -->
+    <!-- <link rel="stylesheet" href="css/admin.css" type="text/css" /> -->
+    <link rel="stylesheet" href="css/patient2.css">
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css" type="text/css" />
 
+    <!--         <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css" type="text/css" /> -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script type="text/javascript" src="js/angular-storage.min.js"></script>
+    <script src="js/bootstrap.js" type="text/javascript"></script>
+    <script src="js/index.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/adminCtrl.js"></script>
 
-    </head>
-    <header>
-        <div class="header_cont">
-            <input type="text" name="search" placeholder="Search..">
-            <button class="button1">Dashboard</button>
-            <button class="button2" onclick="location.href='patient.html';">Patient</button>
-            <button class="button3"><a href="account.html?nric={{result.nric}}">Accounts</a></button>
-            <button class="button4">Clinic</button>
-            <button class="button4"><a href="feedback.html">Feedback</a></button>
-            <button class="button4" ng-click="logout()">Logout</button>
-            <h6 id="demo"></h6>
-            <img src="images/logo_2.png"><br><br>
+</head>
+
+<body data-ng-app="crm" data-ng-controller="admincontroller" ng-init=getID()>
+    
+    
+    
+    <!--START NEW CODE-->
+    <section id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <input class="form-control" type="text" placeholder="Search...">
+                </div>
+                <div class="col-md-6">
+                    <div class="menu">
+                        <ul class="nav nav-pills">
+                            <li><a href="#">Dashboard</a></li>
+                            <li class="active"><a onclick="location.href='patient.html';">Patient</a></li>
+                            <li><a href="account.html?nric={{result.nric}}">Accounts</a></li>
+                            <li><a href="#">Clinic</a></li>
+                            <li><a href="feedback.html">Feedback</a></li>
+                            <li><a href="#" ng-click="logout()">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2 date">
+                    <p id="demo"></p>
+                </div>
+                <div class="col-md-1 text-right">
+                    <img src="images/logo_2.png" alt="">
+                </div>
+            </div>
         </div>
-    </header>
+    </section>
 
-    <body>
-        <!-- <div data-ng-app="crm" data-ng-controller="admincontroller" ng-init=getID()> -->
+    <section id="main-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="box">
+                        <h4>{{result.firstName}} {{result.lastName}}</h4>
+                        <p>{{result.nric}}</p>
+                        <p ng-show="result.custypeID == 1" style="color:#45A77A" ng-style="colorChange"><strong>Patient</strong></p>
+                        <p ng-show="result.custypeID == 1" style="color:#aa66cc" ng-style="colorChange"><strong>Past Surgery</strong></p>
+                        <p ng-show="result.custypeID == 2" style="color:#fbc02d" ng-style="colorChange"><strong>VIP</strong></p>
+                        <p ng-show="result.custypeID == 3" style="color: #263238" ng-style="colorChange"><strong>Blacklisted</strong></p>
+                    </div>
 
-        <div class="patient2">
+                    <div class="box-2">
+                        <h4>Patient's Detail</h4>
 
-            <nav>
-                <div class="boxbox">
-                    <table>
+                        <div class="fileds">
+                            <h5><strong>First Name</strong></h5>
+                            <p>{{result.firstName}}</p>
+                        </div>
 
-                        <tr>
-                            <td>
-                                <h2>{{result.firstName}} {{result.lastName}} </h2>
-                                <h3>{{result.nric}} </h3>
-                                <h3 ng-show = "result.custypeID == 0" style="color:green" ng-style="colorChange">
-                                 Patient 
-                                </h3>
-                                <h3 ng-show = "result.custypeID == 1" style="color:#aa66cc" ng-style="colorChange">
-                                    <strong> Past Surgery </strong>
-                                  <!--  <strong> {{result.description}} </strong> -->
-                                </h3>
-                                <h3 ng-show = "result.custypeID == 2" style="color:#fbc02d" ng-style="colorChange">
-                                    <strong> VIP </strong>
-                                   <!--  <strong> {{result.description}} </strong> -->
-                                </h3>
-                                <h3 ng-show = "result.custypeID == 3" style="color: #263238" ng-style="colorChange">
-                                    <strong> Blacklisted </strong>
-                                    <!-- <strong> {{result.description}} </strong> -->
-                                </h3>
-                            </td>
-                        </tr>
+                        <div class="fileds">
+                            <h5><strong>Last Name</strong></h5>
+                            <p>{{result.lastName}}</p>
+                        </div>
 
-                    </table>
+                        <div class="fileds">
+                            <h5><strong>Email</strong></h5>
+                            <p>{{result.email_address}}</p>
+                        </div>
+
+                        <div class="fileds">
+                            <h5><strong>NRIC</strong></h5>
+                            <p>{{result.nric}}</p>
+                        </div>
+
+                        <div class="fileds">
+                            <h5><strong>Mobile No.</strong></h5>
+                            <p>{{result.mobile_number}}</p>
+                        </div>
+
+                        <div class="fileds">
+                            <h5><strong>Home No.</strong></h5>
+                            <p>{{result.home_number}}</p>
+                        </div>
+
+                        <div class="fileds">
+                            <h5><strong>Gender</strong></h5>
+                            <p>{{result.gender}}</p>
+                        </div>
+
+                        <div class="fileds">
+                            <h5><strong>Address</strong></h5>
+                            <p>{{result.residential_address}}</p>
+                        </div>
+
+                        <div class="fileds">
+                            <h5><strong>Postal</strong></h5>
+                            <p>{{result.postal}}</p>
+                        </div>
+
+                        <div class="fileds">
+                            <h5><strong>Country</strong></h5>
+                            <p>{{result.country}}</p>
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="boxbox2">
+                <div class="col-md-9">
+                  <div class="tab-section">
+                    <div class="panel with-nav-tabs panel-default">
+                        <div class="panel-heading">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#tab1default" data-toggle="tab">New Patience Log</a></li>
+                                <li><a href="#tab2default" data-toggle="tab">Notes</a></li>
+                                <li><a href="#tab3default" data-toggle="tab">Log Activity</a></li>
+                                <li><a href="#tab4default" data-toggle="tab">Create Tasks</a></li>
+                                <li><a href="#tab5default" data-toggle="tab">Create Invoice</a></li>
+                                <li><a href="#tab6default" data-toggle="tab">Appointemnt</a></li>
 
-                    <table>
-                        <tr>
-                            <th>
-                                <span> Patient's Detail </span>
-                                <!-- <i style="float:right;cursor:pointer" id="submit" class="fa fa-pencil-square-o fa-lg" ng-click = "editInfo()"></i>  -->
-                            </th>
+                            </ul>
+                        </div>
+                        <div class="panel-body">
+                            <div class="tab-content">
+                                <div class="tab-pane fade in active tab-context" id="tab1default">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, magni, officiis? Numquam fugiat hic quas, totam eos iste soluta culpa perferendis placeat. Veritatis perspiciatis accusantium laboriosam ea, amet quasi cumque.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, magni, officiis? Numquam fugiat hic quas, totam eos iste soluta culpa perferendis placeat. Veritatis perspiciatis accusantium laboriosam ea, amet quasi cumque.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, magni, officiis? Numquam fugiat hic quas, totam eos iste soluta culpa perferendis placeat. Veritatis perspiciatis accusantium laboriosam ea, amet quasi cumque.</p>
+                                    <button class="btn tab-but-1">Save Note</button>
+                                    <button class="btn tab-but-2" ng-click="clearField();">Discard</button>
+                                </div>
+                                <div class="tab-pane fade" id="tab2default">
+                                    <p>Default 2</p>
+                                    <button class="btn tab-but-1">Save Note</button>
+                                    <button class="btn tab-but-2" ng-click="clearField();">Discard</button>
+                                </div>
+                                <div class="tab-pane fade" id="tab3default">
+                                    <p>Default 3</p>
+                                    <button class="btn tab-but-1">Save Note</button>
+                                    <button class="btn tab-but-2" ng-click="clearField();">Discard</button>
+                                </div>
+                                <div class="tab-pane fade" id="tab4default">
+                                    <p>Default 4</p>
+                                    <button class="btn tab-but-1">Save Note</button>
+                                    <button class="btn tab-but-2" ng-click="clearField();">Discard</button>
+                                </div>
+                                <div class="tab-pane fade" id="tab5default">
+                                    <p>Default 5</p>
+                                    <button class="btn tab-but-1">Save Note</button>
+                                    <button class="btn tab-but-2" ng-click="clearField();">Discard</button>
+                                </div>
+                                <div class="tab-pane fade" id="tab6default">
+                                    <p>Default 6</p>
+                                    <button class="btn tab-but-1">Save Note</button>
+                                    <button class="btn tab-but-2" ng-click="clearField();">Discard</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--SECTION TIMELINE-->
+                <div class="time-line-main">
+                    <ul class="timeline">
+                        <li>
+                            <div class="timeline-badge"><i class="glyphicon glyphicon-edit"></i></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Mussum ipsum cacilds</h4>
+                                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11 hours ago via Twitter</small></p>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="timeline-badge"><i class="glyphicon glyphicon-duplicate"></i></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Mussum ipsum cacilds</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+                                </div>
+                            </div>
+                        </li>
+                        
+                          <li>
+                            <div class="timeline-badge"><i class="glyphicon glyphicon-plus"></i></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Mussum ipsum cacilds</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+                                </div>
+                            </div>
+                        </li>
+                      
+                   </ul>        
+                </div>
+              </div>
+            </div>
+        </div>
+    </section>
+    <!--END NEW CODE-->
 
-                        </tr>
 
-                        <tr><td><strong>First Name</strong><br>{{result.firstName}}</td></tr>
-                        <tr><td><strong>Last Name</strong><br>{{result.lastName}}</td></tr>
-                        <tr><td><strong>Email</strong><br>{{result.email_address}}</td></tr>
-                        <tr><td><strong>NRIC</strong><br>{{result.nric}}</td></tr>
-                        <tr><td><strong>Mobile No.</strong><br>{{result.mobile_number}}</td></tr>
-                        <tr><td><strong>Home No.</strong><br>{{result.home_number}}</td></tr>
 
-                        <!-- <tr ng-if = "result.type == 1">
+
+
+
+
+
+ <!--     <div data-ng-app="crm" data-ng-controller="admincontroller" ng-init=getID()>
+     
+     <div class="patient2">
+     
+         <nav>
+        <div class="boxbox">
+            <table>
+     
+                <tr>
+                    <td>
+                        <h2>{{result.firstName}} {{result.lastName}} </h2>
+                        <h3>{{result.nric}} </h3>
+                        <h3 ng-show="result.custypeID == 0" style="color:green" ng-style="colorChange">
+                                 Patient 
+                                </h3>
+                        <h3 ng-show="result.custypeID == 1" style="color:#aa66cc" ng-style="colorChange">
+                                    <strong> Past Surgery </strong>
+                                  <strong> {{result.description}} </strong>
+                                </h3>
+                        <h3 ng-show="result.custypeID == 2" style="color:#fbc02d" ng-style="colorChange">
+                                    <strong> VIP </strong>
+                                   <strong> {{result.description}} </strong>
+                                </h3>
+                        <h3 ng-show="result.custypeID == 3" style="color: #263238" ng-style="colorChange">
+                                    <strong> Blacklisted </strong>
+                                    <strong> {{result.description}} </strong>
+                                </h3>
+                    </td>
+                </tr>
+     
+            </table>
+        </div>
+     
+        <div class="boxbox2">
+     
+            <table>
+                <tr>
+                    <th>
+                        <span> Patient's Detail </span>
+                        <i style="float:right;cursor:pointer" id="submit" class="fa fa-pencil-square-o fa-lg" ng-click = "editInfo()"></i>
+                    </th>
+     
+                </tr>
+     
+                <tr>
+                    <td><strong>First Name</strong>
+                        <br>{{result.firstName}}</td>
+                </tr>
+                <tr>
+                    <td><strong>Last Name</strong>
+                        <br>{{result.lastName}}</td>
+                </tr>
+                <tr>
+                    <td><strong>Email</strong>
+                        <br>{{result.email_address}}</td>
+                </tr>
+                <tr>
+                    <td><strong>NRIC</strong>
+                        <br>{{result.nric}}</td>
+                </tr>
+                <tr>
+                    <td><strong>Mobile No.</strong>
+                        <br>{{result.mobile_number}}</td>
+                </tr>
+                <tr>
+                    <td><strong>Home No.</strong>
+                        <br>{{result.home_number}}</td>
+                </tr>
+     
+                <tr ng-if = "result.type == 1">
                             <td>
                                 <strong>Types of patients</strong><br>{{result.description}} 
                             </td>
                         </tr>
-
+     
                         <tr ng-if = "result.type == 2">
                             <td ng-style="{'background-color': result.color,'color': 'white'}"> 
                                 <strong>Types of patients</strong><br>{{result.description}}
                             </td>
                         </tr>
-
+     
                         <tr ng-if = "result.type == 3">
                             <td ng-style="{'background-color': result.color,'color': 'white'}"> 
                                 <strong>Types of patients</strong><br>{{result.description}}
                             </td>
                         </tr>
-
+     
                         <tr ng-if = "result.type == 4">
                             <td ng-style="{'background-color': result.color,'color': 'white'}"> 
                                 <strong>Types of patients</strong><br>{{result.description}}
                             </td>
-                        </tr> -->
-
-                        <tr><td><strong>Gender</strong><br>{{result.gender}}</td></tr>
-                        <tr><td><strong>Address</strong><br>{{result.residential_address}}</td></tr>
-                        <tr><td><strong>Postal</strong><br>{{result.postal}}</td></tr>
-                        <tr><td><strong>Country</strong><br>{{result.country}}</td></tr>      
-                        <tr>
-                            <td>
-                                <button class="button7" id="submit" style="float:right;cursor:pointer" ng-click = "editInfo()"><i class="fa fa-pencil"></i> Edit details </button>  
-                            </td>
-                        </tr>      
-                    </table>
-                </div>
-
-
-                <div id="modalEditPatient" class="modal">
-                <!-- Modal content -->
-                    <span class="close"></span>
-
-                    <form class="form-style-9" name="custInfo" ng-controller="admincontroller" ng-submit=updateCustInfo();edit()>
-                        <ul>
-                            <li>
-                                <input type="text" name="field1" class="field-style field-split align-left" required ng-model="result.firstName"/>
-                                <input type="text" name="field2" class="field-style field-split align-right" required ng-model="result.lastName"/> 
-                            </li>
-
-                            <li>
-                                <input type="text" name="field3" class="field-style field-split align-left" required ng-model="result.mobile_number"/>
-                                <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.home_number"/>
-                            </li>
-
-                            <li>
-                                <input type="text" name="field3" class="field-style field-split align-left" required ng-model="result.email_address"/>
-                                <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.nric"/>
-                            </li>
-
-                            <li>
-                                <input type="hidden" name="field4" class="field-style field-split align-left" required ng-model="result.id"/>
-                                <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.gender"/>
-
-
-                                <select class="field-style field-split align-right" required ng-model="result.custypeID" ng-change="changeColor(result.custypeID)" ng-options="custype.custypeID as custype.description for custype in customerType">>
-                                    
-                                </select>
-
-                               <!--  <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.description"/> -->
-                            </li>
-
-                            <li>
-                                <input type="text" name="field3" class="field-style field-full align-none" required ng-model="result.residential_address"/>
-                            </li>
-
-                            <li>
-                                <input type="text" name="field3" class="field-style field-split align-left" required ng-model="result.postal"/>
-                                <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.country"/>
-                            </li>
-
-                            <li>
-                                <input value="Submit" class="button3" name="submit" type="submit">
-                                <input value="Cancel" class="button3" name="submit" type="submit" ng-click="edit()">
-                            </li>
-                        </ul>
-                    </form> 
-                </div>
-
-            </nav>
-
-            <article>
-
-                 <form name="patient2" ng-controller="admincontroller" ng-submit=inputLog()>
-                    
-                   <!--  <div class="edit">
+                        </tr>
+     
+                <tr>
+                    <td><strong>Gender</strong>
+                        <br>{{result.gender}}</td>
+                </tr>
+                <tr>
+                    <td><strong>Address</strong>
+                        <br>{{result.residential_address}}</td>
+                </tr>
+                <tr>
+                    <td><strong>Postal</strong>
+                        <br>{{result.postal}}</td>
+                </tr>
+                <tr>
+                    <td><strong>Country</strong>
+                        <br>{{result.country}}</td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="button7" id="submit" style="float:right;cursor:pointer" ng-click="editInfo()"><i class="fa fa-pencil"></i> Edit details </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+     
+        <div id="modalEditPatient" class="modal">
+            Modal content
+            <span class="close"></span>
+     
+            <form class="form-style-9" name="custInfo" ng-controller="admincontroller" ng-submit=updateCustInfo();edit()>
+                <ul>
+                    <li>
+                        <input type="text" name="field1" class="field-style field-split align-left" required ng-model="result.firstName" />
+                        <input type="text" name="field2" class="field-style field-split align-right" required ng-model="result.lastName" />
+                    </li>
+     
+                    <li>
+                        <input type="text" name="field3" class="field-style field-split align-left" required ng-model="result.mobile_number" />
+                        <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.home_number" />
+                    </li>
+     
+                    <li>
+                        <input type="text" name="field3" class="field-style field-split align-left" required ng-model="result.email_address" />
+                        <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.nric" />
+                    </li>
+     
+                    <li>
+                        <input type="hidden" name="field4" class="field-style field-split align-left" required ng-model="result.id" />
+                        <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.gender" />
+     
+                        <select class="field-style field-split align-right" required ng-model="result.custypeID" ng-change="changeColor(result.custypeID)" ng-options="custype.custypeID as custype.description for custype in customerType">>
+     
+                        </select>
+     
+                        <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.description"/>
+                    </li>
+     
+                    <li>
+                        <input type="text" name="field3" class="field-style field-full align-none" required ng-model="result.residential_address" />
+                    </li>
+     
+                    <li>
+                        <input type="text" name="field3" class="field-style field-split align-left" required ng-model="result.postal" />
+                        <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.country" />
+                    </li>
+     
+                    <li>
+                        <input value="Submit" class="button3" name="submit" type="submit">
+                        <input value="Cancel" class="button3" name="submit" type="submit" ng-click="edit()">
+                    </li>
+                </ul>
+            </form>
+        </div>
+     
+         </nav>
+     
+         <article>
+     
+        <form name="patient2" ng-controller="admincontroller" ng-submit=inputLog()>
+     
+            <div class="edit">
                         <table>
                             <tr>
                                 <td>
@@ -192,165 +414,176 @@
                                 </td>
                             </tr>
                         </table>
-                    </div> -->
-
-                    <div class="page2">
-                        <table>
-                            <tr>
-                                <td><button id="btn1" class="button" ng-click="buttonId('New Patient Log')">New Patient Log</button></td>
-                                <td><button id="btn2" class="button" ng-click="buttonId('Notes')">Notes</button></td>
-                                <td><button id="btn3" class="button" ng-click="buttonId('Log Activity')">Log Activity</button></td>
-                                <td><button id="btn4" class="button" ng-click="buttonId('Create Task')">Create Task</button></td>
-                                <td><button id="btn5" class="button" ng-click="buttonId('Create Invoice')">Create Invoice</button></td>
-                                <td><button id="btn6" class="button" ng-click="buttonId('Schedule Appointment')">Schedule Appointment</button></td>
-                            </tr>
-
-                           <!--  Large textbox for user  -->
-                            <textarea rows="4" cols="50" name="message" required id="user_input" ng-model="textLog"></textarea>
-
-                            
-                        </table>                                                
                     </div>
-
-                    <div class="page2-2">
-                        <table id="saveAndDiscard">
-                            <tr>
-                                <td><button id="submit" class="button">Save</button></td>
-                                <td><button type="button" id="reset" class="button" ng-click="clearField();">Discard</button></td>
-                            </tr>
-                        </table>
-                    </div>
-
-                </form>
-
-                <div id="newDivs" class="msg">
-                    <table>
-                        <tr ng-repeat="patient in patientLog">
-                            <td>
-                                <strong>
+     
+            <div class="page2">
+                <table>
+                    <tr>
+                        <td>
+                            <button id="btn1" class="button" ng-click="buttonId('New Patient Log')">New Patient Log</button>
+                        </td>
+                        <td>
+                            <button id="btn2" class="button" ng-click="buttonId('Notes')">Notes</button>
+                        </td>
+                        <td>
+                            <button id="btn3" class="button" ng-click="buttonId('Log Activity')">Log Activity</button>
+                        </td>
+                        <td>
+                            <button id="btn4" class="button" ng-click="buttonId('Create Task')">Create Task</button>
+                        </td>
+                        <td>
+                            <button id="btn5" class="button" ng-click="buttonId('Create Invoice')">Create Invoice</button>
+                        </td>
+                        <td>
+                            <button id="btn6" class="button" ng-click="buttonId('Schedule Appointment')">Schedule Appointment</button>
+                        </td>
+                    </tr>
+     
+                    Large textbox for user
+                    <textarea rows="4" cols="50" name="message" required id="user_input" ng-model="textLog"></textarea>
+     
+                </table>
+            </div>
+     
+            <div class="page2-2">
+                <table id="saveAndDiscard">
+                    <tr>
+                        <td>
+                            <button id="submit" class="button">Save</button>
+                        </td>
+                        <td>
+                            <button type="button" id="reset" class="button" ng-click="clearField();">Discard</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+     
+        </form>
+     
+        <div id="newDivs" class="msg">
+            <table>
+                <tr ng-repeat="patient in patientLog">
+                    <td>
+                        <strong>
                                     Admin created a <u>{{patient.tabType}}</u> for {{patient.firstName}} {{patient.lastName}}<br>
                                     {{patient.date}} at {{patient.time}}<br><br>
                                 </strong> {{patient.remark}}
-
-                                <br><br>
-
-                            </td>
-                        </tr>
-
-                    </table>
-                </div>
-
-                Drop down selection for clinic and dates 
-                <div id= "apptDate" class="apptDate">
-                    
-                    <form name="appointment" ng-controller="admincontroller" ng-submit=scheduleAppt()>
-                        <select class="clinic" ng-model="clinic">
-                            <option value="clinic1">Clinic 1</option>
-                            <option value="clinic2">Clinic 2</option>
-                            <option value="clinic3">Clinic 3</option>
-                        </select>    
-
-                        <select class="day" ng-model="day">
-                            <option value="1">01</option>
-                            <option value="2">02</option>
-                            <option value="3">03</option>
-                            <option value="4">04</option>
-                            <option value="5">05</option>
-                        </select>   
-
-                        <select class="month" ng-model="month">
-                            <option value="jan">January</option>
-                            <option value="feb">February</option>
-                            <option value="mar">March</option>
-                            <option value="apr">April</option>
-                            <option value="may">May</option>
-                        </select>   
-
-                        <select class="year" ng-model="year">
-                            <option value="1900">1900</option>
-                            <option value="1901">1901</option>
-                            <option value="1902">1902</option>
-                            <option value="1903">1903</option>
-                            <option value="1904">1904</option>
-                        </select> 
-
-
-                        <button class="scheduleSubmit" id="submit" class="button">Submit</button>
-                    </form> 
-                    <div class="tab">
-                      <button class="tablinks" onclick="openCity(event, 'New Patience Log')">New Patience Log</button>
-                      <button class="tablinks" onclick="openCity(event, 'Notes')">Notes</button>
-                      <button class="tablinks" onclick="openCity(event, 'Log Activity')">Log Activity</button>
-                      <button class="tablinks" onclick="openCity(event, 'Create Tasks')">Create Tasks</button>
-                      <button class="tablinks" onclick="openCity(event, 'Create Invoice')">Create Invoice</button>
-                      <button class="tablinks" onclick="openCity(event, 'Appointemnt')">Appointemnt</button>
-
-                    </div>
-
-                    <div id="New Patience Log" class="tabcontent">
-                      <h3>New Patience Log</h3>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    </div>
-
-                    <div id="Notes" class="tabcontent">
-                      <h3>Notes</h3>
-                      <p>Notes is the capital of France.</p> 
-                    </div>
-
-                    <div id="Log Activity" class="tabcontent">
-                      <h3>Log Activity</h3>
-                      <p>Log Activity is the capital of Japan.</p>
-                    </div>
-
-                </div>
-
-              <!--   <div id="appointment" class="appointment">
+     
+                        <br>
+                        <br>
+     
+                    </td>
+                </tr>
+     
+            </table>
+        </div>
+     
+        Drop down selection for clinic and dates
+        <div id="apptDate" class="apptDate">
+     
+            <form name="appointment" ng-controller="admincontroller" ng-submit=scheduleAppt()>
+                <select class="clinic" ng-model="clinic">
+                    <option value="clinic1">Clinic 1</option>
+                    <option value="clinic2">Clinic 2</option>
+                    <option value="clinic3">Clinic 3</option>
+                </select>
+     
+                <select class="day" ng-model="day">
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                    <option value="5">05</option>
+                </select>
+     
+                <select class="month" ng-model="month">
+                    <option value="jan">January</option>
+                    <option value="feb">February</option>
+                    <option value="mar">March</option>
+                    <option value="apr">April</option>
+                    <option value="may">May</option>
+                </select>
+     
+                <select class="year" ng-model="year">
+                    <option value="1900">1900</option>
+                    <option value="1901">1901</option>
+                    <option value="1902">1902</option>
+                    <option value="1903">1903</option>
+                    <option value="1904">1904</option>
+                </select>
+     
+                <button class="scheduleSubmit" id="submit" class="button">Submit</button>
+            </form>
+            <div class="tab">
+                <button class="tablinks" onclick="openCity(event, 'New Patience Log')">New Patience Log</button>
+                <button class="tablinks" onclick="openCity(event, 'Notes')">Notes</button>
+                <button class="tablinks" onclick="openCity(event, 'Log Activity')">Log Activity</button>
+                <button class="tablinks" onclick="openCity(event, 'Create Tasks')">Create Tasks</button>
+                <button class="tablinks" onclick="openCity(event, 'Create Invoice')">Create Invoice</button>
+                <button class="tablinks" onclick="openCity(event, 'Appointemnt')">Appointemnt</button>
+     
+            </div>
+     
+            <div id="New Patience Log" class="tabcontent">
+                <h3>New Patience Log</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+     
+            <div id="Notes" class="tabcontent">
+                <h3>Notes</h3>
+                <p>Notes is the capital of France.</p>
+            </div>
+     
+            <div id="Log Activity" class="tabcontent">
+                <h3>Log Activity</h3>
+                <p>Log Activity is the capital of Japan.</p>
+            </div>
+     
+        </div>
+     
+        <div id="appointment" class="appointment">
                      testing 
                      <datepicker>
                         <input ng-model="date" type="text"/>
                     </datepicker>
-                </div>   -->
+                </div>
+     
+         </article>
+     </div>
+     </div> -->
 
-
-            </article>
-        </div>
-</div>
-
-
-
-
-<script>
-    var d = new Date();
-    document.getElementById("demo").innerHTML = d.toDateString();
-
-
-    function openCity(evt, cityName) {
-    // Declare all variables
-    var i, tabcontent, tablinks;
-
-    // Get all elements with class="tabcontent" and hide them
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-
-    // Get all elements with class="tablinks" and remove the class "active"
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-
-    // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
-}
-
-</script>
+<!--     <script>
+        var d = new Date();
+        document.getElementById("demo").innerHTML = d.toDateString();
+    
+        function openCity(evt, cityName) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
+    
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+    
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+    
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script> -->
+    
+    <script>
+        var d = new Date();
+        document.getElementById("demo").innerHTML = d.toDateString();
+    </script>
+    
+    
 </body>
 
 </html>

@@ -1,0 +1,73 @@
+#main-tab input, #main-tab .content {
+    display: none;
+    background: #ba2020;
+    line-height: 25px;
+    padding: 5px 25px;
+    color: #fff;
+    font: normal 1em/150% Sans-Serif;
+    min-width: 200px;
+}
+
+#one:checked ~ .one,
+#two:checked ~ .two,
+#three:checked ~ .three,
+#four:checked ~ .four,
+#five:checked ~ .five,
+#six:checked ~ .six 
+{display: block;}
+
+#main-tab label {
+    cursor: pointer;
+  
+    height: 25px;
+    padding: 5px 10px;
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+    font: normal 1em/150% Sans-Serif;
+ 
+ 
+}
+
+#main-tab label:hover, #main-tab input:checked + #main-tab label {background: #ba2020;}
+
+#main-tab h3, p {
+    text-indent: 25px;
+    text-align: justify;
+}
+
+
+#main-tab input, #main-tab .content {
+    display: none;
+    background: #fff;
+    line-height: 25px;
+    padding: 5px 25px;
+    color: black;
+    font: normal 1em/150% Sans-Serif;
+    min-width: 200px;
+}
+
+#main-tab div {
+   max-width: 690px;
+        border: 1px solid #ccc;
+            margin-top: -2px;
+}
+
+
+#main-tab label {
+    cursor: pointer;
+
+    height: 25px;
+    padding: 10px 10px;
+    display: inline-block;
+    text-align: center;
+    color: black;
+    font: normal 1em/150% Sans-Serif;
+     border: 1px solid #ccc;
+}
+
+#main-tab label:hover, input:checked + label {
+    background: #ffffff;
+    border-bottom: 2px solid #16A3FB;
+}
+

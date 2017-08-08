@@ -179,7 +179,8 @@ article {
     border: 1px solid grey;
     position: absolute;
     top: 8px;
-    left: 150px;
+    left: 170px;
+    transition: 0.3s;
 }
 
 .button6:hover
@@ -330,7 +331,7 @@ th {
     width: 66%;
     border-left: 1px solid #cccccc;
     border-right: 1px solid #cccccc;
-    border-bottom: 3px solid #8eb2c3;
+    border-bottom: 3px solid #15A4FA;
 }
 .blue_box h1{
 font-size: 1.3em;
@@ -353,7 +354,7 @@ color: white;
     margin-left: -40px;
 }
 .blue_box th {
-    border: 1px solid #dddddd;
+    border: 1px solid #15A4FA;
     text-align: left;
     padding: 8px;
     padding-right: 2px;
@@ -361,8 +362,9 @@ color: white;
     color: white;
     font-size: 1.3em;
     font-weight: 700;
-    background-color: #8eb2c3;
+    background-color: #15A4FA;
     width: 130px;
+
 }
 .box1{
     display: block;
@@ -430,7 +432,7 @@ color: white;
     overflow: hidden;
     position: absolute;
     top: 85px;
-    left: 260px;
+    left: 235px;
     height: 100%;
     width: 100%;
     border:0px solid black;
@@ -936,3 +938,59 @@ div.tab {
 .green{
     color:green;
 }
+
+.color-head {
+    background: #15A4FA;
+    color: #fff;
+}
+
+
+.button6:hover {
+    background-color: #25965E;
+    border: 1px solid #25965E;
+    color: #fff;
+}
+
+
+body
+{
+    font-family: 'Helvetica', 'Arial', sans-serif;
+  }
+
+button.button2.button-active {
+    background: #25965E;
+    color: #fff;
+    border: 1px solid #25965E;
+}
+
+button:hover.button1 {
+    background: #25965E;
+    border: 1px solid #25965E;
+    color: #fff;
+}
+
+
+button:hover.button1 {
+    background: #25965E;
+    border: 1px solid #25965E;
+    color: #fff;
+}
+
+button:hover.button2 {
+    background: #25965E;
+    border: 1px solid #25965E;
+    color: #fff;
+}
+
+button:hover.button3 {
+    background: #25965E;
+    border: 1px solid #25965E;
+    color: #fff;
+}
+
+button:hover.button4 {
+    background: #25965E;
+    border: 1px solid #25965E;
+    color: #fff;
+}
+

@@ -1,0 +1,30 @@
+body{
+    height: auto;
+    padding-bottom: 50px;
+}
+
+.box-color {
+    background: #15A4FA;
+    color: #fff;
+    padding: 10px;
+    margin-top: 45px;
+}
+
+
+.box {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-bottom: 2px solid #15A4FA;
+    border-top: 0;
+}
+
+
+button.btn.tableButton {
+    margin-left: 35px;
+}
+
+
+thead {
+    background: #15A4FA;
+    color: #fff;
+}
