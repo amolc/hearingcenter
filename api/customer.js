@@ -313,18 +313,25 @@ exports.insertCustomer = function(req, res){
 	var email_address = req.body.email_address;
 	var residential_address = req.body.residential_address;
 	var postal = req.body.postal;
+	var lastVisit = req.body.lastVisit;
+	var nextAppointment = req.body.nextAppointment;
 
 	customerCRUD.create({
 		'firstName': firstName,
-		'lastName' : lastName,
+		'lastName' : lastName || "",
 		'country': country,
 		'nric': nric,
 		'gender': gender,
 		'mobile_number': mobile_number,
-		'home_number': home_number,
+		'home_number': home_number || "",
 		'email_address': email_address,
-		'residential_address': residential_address,
-		'postal': postal
+		'residential_address': residential_address || "",
+		'postal': postal || "",
+		'custypeID': 1,
+		'points': 500,
+		'lastVisit': lastVisit,
+		'nextAppointment': nextAppointment,
+		'questionnaire': ""
 
 	},function (err,vals){
 		if (!err) {
@@ -334,6 +341,8 @@ exports.insertCustomer = function(req, res){
 		} else{
 			var resdata={status:false,
 			message:'record not added '};
+			console.log(err);
+
 			res.jsonp(resdata);
 		}
 	})
