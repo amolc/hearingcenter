@@ -313,12 +313,31 @@ app.controller('crmcontroller', function ($scope, $http, $window, $location, $ti
 //Trigger default success or error message
     $scope.init = function(){
         $("#error").hide();
-    }
-
+    };
+$scope.currentRedeem = {};
+    $scope.setRedeem = function (item) {
+        $scope.currentRedeem = item;
+    };
     $scope.confirmRedeem = function () {
-        console.log("confirm redeem");
-        
-    }
+
+        if($scope.currentRedeem && $scope.currentRedeem.id){
+            var obj = {
+                customer_id: $scope.result.id,
+                redeem_id: $scope.currentRedeem.id
+            }
+            $http.post(baseurl + 'add-redeem', obj).success(function (res) {                    console.log(res.status);
+
+                if(res.status == true){
+
+                    $window.location.href = 'my_items.html?nric=' + $scope.result.nric;
+                }
+
+            }).error(function () {
+                console.log("error");
+            })
+        }
+
+            }
     $scope.loginFromModal = function (nric) {
         console.log(nric);
         

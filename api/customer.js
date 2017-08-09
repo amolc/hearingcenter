@@ -398,7 +398,7 @@ exports.redeemList = function (req, res) {
 	});
 };
 
-exports.gerMyPoints = function (req, res) {
+exports.gerMyItems = function (req, res) {
 	var query = "SELECT * FROM redeems";
 	db.query(query, function(err, rows){
 		res.jsonp(rows);
@@ -406,8 +406,24 @@ exports.gerMyPoints = function (req, res) {
 };
 
 exports.addRedeem = function (req, res) {
-	var query = "SELECT * FROM redeems";
-	db.query(query, function(err, rows){
-		res.jsonp(rows);
+	var customer_id = req.body.customer_id;
+	var redeem_id = req.body.redeem_id;
+
+	customerRedeemsCRUD.create({
+		customer_id: customer_id,
+		redeem_id: redeem_id,
+		total: 0
+	},function (err,vals){
+		if (!err) {
+			var resdata={status:true,
+				message:'Staff successfully added'};
+			res.jsonp(resdata);
+		} else{
+			var resdata={status:false,
+				message:'record not added '};
+			console.log(err);
+
+			res.jsonp(resdata);
+		}
 	});
 };
