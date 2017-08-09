@@ -331,7 +331,7 @@ exports.insertCustomer = function(req, res){
 		'residential_address': residential_address || "",
 		'postal': postal || "",
 		'custypeID': 1,
-		'points': 500,
+		'points': 1000,
 		'lastVisit': lastVisit,
 		'nextAppointment': nextAppointment,
 		'questionnaire': ""
