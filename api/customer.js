@@ -409,21 +409,40 @@ exports.addRedeem = function (req, res) {
 	var customer_id = req.body.customer_id;
 	var redeem_id = req.body.redeem_id;
 
-	customerRedeemsCRUD.create({
-		customer_id: customer_id,
-		redeem_id: redeem_id,
-		total: 0
-	},function (err,vals){
-		if (!err) {
-			var resdata={status:true,
-				message:'Staff successfully added'};
-			res.jsonp(resdata);
-		} else{
-			var resdata={status:false,
-				message:'record not added '};
-			console.log(err);
+	customerCRUD.load({id: customer_id}, function (err, vals) {
+		
+		
+		if(vals && vals[0] && vals[0].points){
+			var new_point = vals[0].points - 200;
+			if(new_point < 0){console.log(new_point);
 
-			res.jsonp(resdata);
+				res.jsonp({status:false,
+					message:'You have insufficient points'});
+				return;
+			}
+			customerCRUD.update({id: customer_id}, {points: new_point}, function (err, val) {
+				console.log("new update",vals);
+			});
+			customerRedeemsCRUD.create({
+				customer_id: customer_id,
+				redeem_id: redeem_id,
+				total: 0
+			},function (err,vals){
+				if (!err) {
+					var resdata={status:true,
+						message:'Staff successfully added'};
+					res.jsonp(resdata);
+				} else{
+					var resdata={status:false,
+						message:'record not added '};
+					console.log(err);
+
+					res.jsonp(resdata);
+				}
+			});
 		}
 	});
+
+
+
 };

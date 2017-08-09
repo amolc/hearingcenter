@@ -347,6 +347,8 @@ $scope.currentRedeem = {};
                 if(res.status == true){
 
                     $window.location.href = 'my_items.html?nric=' + $scope.result.nric;
+                }else{
+                    alert(res.message);
                 }
 
             }).error(function () {
