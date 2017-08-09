@@ -399,7 +399,7 @@ exports.redeemList = function (req, res) {
 };
 
 exports.gerMyItems = function (req, res) {
-	var query = "SELECT * FROM redeems";
+	var query = "SELECT  redeems.* FROM `customer`, `customer_redeems`, `redeems`  WHERE customer.id = customer_redeems.customer_id AND redeems.id = customer_redeems.redeem_id AND customer.nric = '"+ req.body.nric +"'";
 	db.query(query, function(err, rows){
 		res.jsonp(rows);
 	});

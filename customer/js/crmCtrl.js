@@ -16,7 +16,22 @@ app.controller('crmcontroller', function ($scope, $http, $window, $location, $ti
         }).error(function () {
 
         });
-    }
+    };
+    $scope.myItemList = [];
+    $scope.getMyItemList = function (nric) {
+        $http.post(baseurl + 'my-items', {nric: nric}).success(function (res) {
+
+            if (res.status == 'false') {
+
+            } else {
+                $scope.myItemList = res;
+
+            }
+
+        }).error(function () {
+
+        });
+    };
     $scope.getRedeemList();
 //*********************************************** */
 //Retrieve Clinic type (e.g. Clinic1,Clinic2,etc...)   
@@ -226,7 +241,8 @@ app.controller('crmcontroller', function ($scope, $http, $window, $location, $ti
         var EqualPos = stringUrl.indexOf("=");
         var ic = stringUrl.substring(EqualPos + 1);
         
-        $http.get(baseurl + 'findByIc/' + ic).success(function (res) {
+        $http.get(baseurl + 'findByIc/' + ic).success(function (res) { console.log("init");
+        
             if (res.status == 'false') {
 
             } else {
@@ -237,6 +253,7 @@ app.controller('crmcontroller', function ($scope, $http, $window, $location, $ti
                 }else{
                     for(var i=0; i<res.length; i++){
                         $scope.result = res[i];
+                        $scope.getMyItemList($scope.result.nric);
                     }
                 }
                 
