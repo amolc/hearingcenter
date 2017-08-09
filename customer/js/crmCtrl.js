@@ -121,7 +121,8 @@ app.controller('crmcontroller', function ($scope, $http, $window, $location, $ti
 
 //*********************************************** */
 //Insert user's miscellaneous responses
-    $scope.insertResponse = function(req, res){
+    $scope.insertResponse = function(req, res){ console.log(" in insert response");
+
     
         var stringUrl = $location.absUrl();
         var EqualPos = stringUrl.indexOf("=");
