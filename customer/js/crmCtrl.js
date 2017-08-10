@@ -219,8 +219,8 @@ app.controller('crmcontroller', function ($scope, $http, $window, $location, $ti
                     } else {
 
                         for(var i=0; i<res.length; i++){
-                            //$window.location.href = 'customer_medicalHist.html?id=' + res[i].id;
-                            $window.location.href = 'customer_misc.html?id=' + res[i].id;
+                            $window.location.href = 'customer_medicalHist.html?id=' + res[i].id;
+                            //$window.location.href = 'customer_misc.html?id=' + res[i].id;
                         }
                     }
 
