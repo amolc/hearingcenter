@@ -1,5 +1,6 @@
 
 app.controller('crmcontroller', function ($scope, $http, $window, $location, $timeout) {
+    $scope.race = '';
 
 
     $scope.redeemList = [];
@@ -361,7 +362,7 @@ $scope.currentRedeem = {};
         console.log(nric);
         
     }
-    
+
  
 });
 

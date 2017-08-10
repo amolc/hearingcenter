@@ -59,33 +59,37 @@
                 
                 <div class="check-boxs">
                      <div class="checkbox">
-                    <label> <input type="checkbox"> Newspaper</label>
+                    <label> <input type="checkbox" ng-model="howHear"> Newspaper</label>
                      
                     
                       <label for="">
-                       <input type="checkbox"> Google
+                       <input type="checkbox" ng-model="howHear.google"> Google
                        </label>
                        <label for="">
-                        <input type="checkbox"> Talk/Workshop
+                        <input type="checkbox" ng-model="howHear.talk"> Talk/Workshop
                         </label><br>
                         <label for="">
-                        <input type="checkbox"> ENTS
+                        <input type="checkbox" ng-model="howHear.ents"> ENTS
                         </label>
                         <label for="">
-                        <input type="checkbox"> Flyers
+                        <input type="checkbox" ng-model="howHear.flayer"> Flyers
                         </label>
                         <label for="">
-                        <input type="checkbox"> Facebook 
+                        <input type="checkbox" ng-model="howHear.facebook"> Facebook
                         </label> <br>
                         <label for="">
-                        <input type="checkbox"> Refered by Friends
+                        <input type="checkbox" ng-model="howHear.friends"> Refered by Friends
                         </label>
                         <label for=""> 
-                        <input type="checkbox"> Others
+                        <input type="checkbox" ng-model="howHear.other"> Others
                         </label>
+
 
 
                   </div>
+                    <label ng-show="howHear.other">
+                        <input type="text" class="form-control" id="" placeholder="" ng-model="howHear.otherText">
+                </label>
                 </div>
                 <div class="confo">
                  <h4>Do you want to subscribe for our newsletter?</h4>
@@ -101,7 +105,7 @@
                 </div>
                 </div>
                   <div class="confo">
-                 <h4>Personal Data Consest Declalation?</h4>
+                 <h4><b>PERSONAL DATA CONSEST DECLARATION</b></h4>
                  <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium voluptates, unde provident saepe, vitae consectetur rerum. Facilis ut mollitia, corporis consequuntur, ipsam reiciendis tenetur officiis, rerum expedita commodi nesciunt quo!</span>
                  <span>Dolores obcaecati nostrum, impedit, maiores possimus nesciunt molestiae, sit necessitatibus commodi deleniti dignissimos itaque. Omnis illum, illo, deleniti repudiandae nemo consectetur. Nemo culpa nam unde quasi cum et sunt aliquid.</span>
                  <span>Rerum officiis qui, repellendus necessitatibus molestiae quasi facere in eligendi. Quasi exercitationem nulla reprehenderit distinctio, eligendi placeat id. Molestiae necessitatibus eum sed inventore neque ea adipisci vero dolor deleniti non.</span></p>

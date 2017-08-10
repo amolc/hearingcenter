@@ -106,7 +106,7 @@
                     <div class="form-group">
                         <label for="" class="col-sm-3 control-label">NRIC</label>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" id="" placeholder="S9465412AS315" ng-model="nric">
+                            <input type="text" class="form-control" id="" placeholder="S9876543A" ng-model="nric">
                         </div>
                     </div>
 
@@ -120,12 +120,17 @@
                     <div class="form-group">
                         <label for="" class="col-sm-3 control-label">Race</label>
                         <div class="col-sm-6">
-                            <select class="ownClass">
-                                <option>Select your Race</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
+                            <select class="ownClass" ng-model="race">
+                                <option value="Chinese">Chinese</option>
+                                <option value="Malay">Malay</option>
+                                <option value="Indian">Indian</option>
+                                <option value="Eurasian">Eurasian</option>
+                                <option value="Others">Others</option>
+
+
+
+
+
                             </select>
                         </div>
                     </div>
