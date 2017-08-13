@@ -274,7 +274,11 @@ app.controller('crmcontroller', function ($scope, $http, $window, $location, $ti
         var pw = $scope.pw;
         console.log("in a m", ic);
         $scope.result = false;
-
+        $scope.loginErrorMsg = "";
+        if(!$scope.ic){
+            $scope.loginErrorMsg = "Please input NRIC";
+            return;
+        }
         $http.get(baseurl + 'findByIc/' + ic).success(function (res) {
             if (res.status == 'false') {
 
@@ -282,6 +286,7 @@ app.controller('crmcontroller', function ($scope, $http, $window, $location, $ti
 
                 if(res.length == 0){
                     $("#error").show();
+                    $scope.loginErrorMsg = "NRIC not found";
 
                 }else{
                     $window.location.href = 'memberdashboard.html?nric=' + ic;
@@ -361,6 +366,10 @@ $scope.currentRedeem = {};
     $scope.loginFromModal = function (nric) {
         console.log(nric);
         
+    }
+    $scope.loginModalInit = function () {
+        $scope.loginErrorMsg = "";
+        $scope.ic = "";
     }
 
  
