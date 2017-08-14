@@ -2,9 +2,9 @@ var http = require('http');
 var mysql = require('mysql');
 var db = mysql.createPool({
 	database : 'hearingcenter',
-    user : 'ftdev',
-	password : '10gXWOqeaf',
-    host :'apps.fountaintechies.com',
+	    user : 'root',
+	password : 'lamp',
+    host :'localhost',
  });
 
  var CRUD = require('mysql-crud');
@@ -13,6 +13,7 @@ var db = mysql.createPool({
  var newsLetterCRUD = CRUD(db, 'newsletter');
  var custMedicalHistoriesCRUD = CRUD(db, 'custMedicalHistories');
  var patientLogCRUD = CRUD(db, 'patientLog');
+ var logsCRUD = CRUD(db, 'patient_logs');
  var appointmentCRUD = CRUD(db, 'appointment');
  var feedbackCRUD = CRUD(db, 'feedback');
  var redeemCRUD = CRUD(db, 'redeems');
@@ -153,7 +154,7 @@ exports.updateCustomer = function(req, res) {
 /******************************************************
 Get patient log from DB
 */
-exports.getPatientLog = function(req, res){
+exports.getPatientLogOld = function(req, res){
 	console.log(req.params);
 	var ic = req.params.ic ;
 
@@ -168,7 +169,7 @@ exports.getPatientLog = function(req, res){
 /******************************************************
 Insert patient log into DB
 */
-exports.insertPatientLog = function(req, res){
+					exports.insertPatientLog = function(req, res){
 
 	var firstName = req.body.firstName;
 	var lastName = req.body.lastName;
@@ -445,4 +446,160 @@ exports.addRedeem = function (req, res) {
 
 
 
+};
+
+exports.getPatientNoteAll = function (req, res) {
+	var nric = req.params.nric;
+	var type = 'note';
+	logsCRUD.load({nric: nric, type: type}, function (err, data) {
+		res.json(data);
+	});
+};
+
+exports.getPatientNote = function (req, res) {
+	var nric = req.params.nric;
+	var id = req.params.id;
+	var type = 'note';
+	logsCRUD.load({id: id, nric: nric, type: type}, function (err, data) {
+		res.json(data);
+	});
+};
+
+exports.createPatientNote = function (req, res) {
+	var createObj = {
+		customer_id: req.body.customer_id,
+		first_name: req.body.first_name,
+		last_name: req.body.last_name,
+		nric: req.params.nric,
+		type: 'note',
+		description: req.body.description,
+		created_at: new Date()
+	};
+	logsCRUD.create(createObj, function (err, data) {
+		console.log(data)
+		res.json(data);
+	});
+};
+
+exports.updatePatientNote = function (req, res) {
+	var updateObj = {
+		first_name: req.body.first_name,
+		last_name: req.body.last_name,
+		nric: req.params.nric,
+		type: 'note',
+		description: req.body.description
+	};
+	logsCRUD.update({id: req.params.id}, updateObj, function (err, data) {
+		res.json(data);
+	});
+};
+
+exports.deletePatientNote = function (req, res) {
+	logsCRUD.destroy({id: req.params.id}, function (err, data) {
+		res.json(data);
+	})
+};
+
+exports.getPatientLogAll = function (req, res) {
+	var nric = req.params.nric;
+	var type = 'log';
+	logsCRUD.load({nric: nric, type: type}, function (err, data) {
+		res.json(data);
+	});
+};
+
+exports.getPatientLog = function (req, res) {
+	var nric = req.params.nric;
+	var id = req.params.id;
+	var type = 'log';
+	logsCRUD.load({id: id, nric: nric, type: type}, function (err, data) {
+		res.json(data);
+	});
+};
+
+exports.createPatientLog = function (req, res) {
+	var createObj = {
+		first_name: req.body.first_name,
+		last_name: req.body.last_name,
+		nric: req.params.nric,
+		type: 'log',
+		description: req.body.description,
+		created_at: new Date()
+	};
+	logsCRUD.create(createObj, function (err, data) {
+		res.json(data);
+	});
+};
+
+exports.updatePatientLog = function (req, res) {
+	var updateObj = {
+		first_name: req.body.first_name,
+		last_name: req.body.last_name,
+		nric: req.params.nric,
+		type: 'log',
+		description: req.body.description
+	};
+	logsCRUD.update({id: req.params.id}, updateObj, function (err, data) {
+		res.json(data);
+	});
+};
+
+exports.deletePatientLog = function (req, res) {
+	logsCRUD.destroy({id: req.params.id}, function (err, data) {
+		res.json(data);
+	})
+};
+
+exports.getPatientTaskAll = function (req, res) {
+	var nric = req.params.nric;
+	var type = 'task';
+	logsCRUD.load({nric: nric, type: type}, function (err, data) {
+		res.json(data);
+	});
+};
+
+exports.getPatientTask = function (req, res) {
+	var nric = req.params.nric;
+	var id = req.params.id;
+	var type = 'task';
+	logsCRUD.load({id: id, nric: nric, type: type}, function (err, data) {
+		res.json(data);
+	});
+};
+
+exports.createPatientTask = function (req, res) {
+	var createObj = {
+		first_name: req.body.first_name,
+		last_name: req.body.last_name,
+		nric: req.params.nric,
+		type: 'task',
+		description: req.body.description,
+		end_date: req.body.	end_date,
+		status: req.body.status,
+		created_at: new Date()
+	};
+	logsCRUD.create(createObj, function (err, data) {
+		res.json(data);
+	});
+};
+
+exports.updatePatientTask = function (req, res) {
+	var updateObj = {
+		first_name: req.body.first_name,
+		last_name: req.body.last_name,
+		nric: req.params.nric,
+		type: 'task',
+		description: req.body.description,
+		end_date: req.body.	end_date,
+		status: req.body.status
+	};
+	logsCRUD.update({id: req.params.id}, updateObj, function (err, data) {
+		res.json(data);
+	});
+};
+
+exports.deletePatientTask = function (req, res) {
+	logsCRUD.destroy({id: req.params.id}, function (err, data) {
+		res.json(data);
+	});
 };

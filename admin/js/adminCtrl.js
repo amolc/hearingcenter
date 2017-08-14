@@ -374,6 +374,7 @@ $scope.itemSel = function(){
                     {
                         $scope.result = res[i];
                         $scope.result.desc =  $scope.result.description;
+                        $scope.getNoteList($scope.result.nric);
                        // console.log('res',$scope.result.description);
 
 
@@ -601,8 +602,96 @@ $scope.itemSel = function(){
 //********************************************************************************* */
 //Other variables that needs to be initialised
     $scope.tab = 1;
-    
- 
+
+//    patient note, log, task
+    $scope.saveNote = function (note) {
+        if(!note)
+            return;
+        console.log("note", note);
+        console.log("result", $scope.result);
+        var createObj = {
+            customer_id: $scope.result.id,
+            first_name: $scope.result.firstName,
+            last_name: $scope.result.lastName,
+            nric: $scope.result.nric,
+            description: note || ""
+        };
+        console.log("createObj", createObj);
+
+        $http.post(baseurl + 'note/'+$scope.result.nric, createObj).success(function (res) {
+            console.log("res", res);
+            $scope.note = "";
+            $scope.noteList.push(createObj);
+        }).error(function (err) {
+            console.log("err", err);
+
+        })
+
+    };
+    $scope.updateNote = function (note) {
+
+        if(!note)
+            return;
+
+        $http.put(baseurl + 'note/'+$scope.result.nric+'/'+note.id, note).success(function (res) {
+            console.log("res", res);
+            $scope.note = "";
+            $scope.switchEditMode(note);
+        }).error(function (err) {
+            console.log("err", err);
+
+        })
+
+    };
+
+    $scope.deleteNote = function(item){
+        $http.delete(baseurl + 'note/'+$scope.result.nric+'/'+item.id).success(function (res) {
+            console.log("res", res);
+            $scope.noteList.splice(item, 1)
+        }).error(function (err) {
+            console.log("err", err);
+
+        })
+    };
+    $scope.noteList = [];
+    $scope.logList = [];
+    $scope.taskList = [];
+    $scope.getNoteList = function (nric) {
+        $http.get(baseurl + 'note/'+$scope.result.nric).success(function (res) {
+            initEditObj(res);
+            $scope.noteList = res;
+        }).error(function (err) {
+            console.log("err", err);
+
+        })
+    };
+    $scope.getLogList = function (nric) {
+        $http.get(baseurl + 'log/'+$scope.result.nric).success(function (res) {
+            initEditObj(res);
+            $scope.logList = res;
+        }).error(function (err) {
+            console.log("err", err);
+
+        })
+    };
+    $scope.getTaskList = function (nric) {
+        $http.get(baseurl + 'task/'+$scope.result.nric).success(function (res) {
+            initEditObj(res);
+            $scope.taskList = res;
+        }).error(function (err) {
+            console.log("err", err);
+
+        })
+    };
+    $scope.switchEditMode = function (item) {
+        item.editMode = !item.editMode;
+    };
+ function initEditObj(arrObj){
+     for(var i = 0; i< arrObj.length; i++){
+         arrObj[i].editMode = false;
+     }
+ }
+
 });
 
 

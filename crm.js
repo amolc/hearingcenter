@@ -36,7 +36,7 @@ app.get('/api/allcustomer', customer.allCustomer);
 app.get('/api/customerType', customer.customerType);
 app.get('/api/findByIc/:ic', customer.findByIc);
 app.get('/api/getoption', customer.getOption);
-app.get('/api/getPatientLog/:ic', customer.getPatientLog);
+app.get('/api/getPatientLog/:ic', customer.getPatientLogOld);
 app.get('/api/getAppt', customer.getAppt);
 app.get('/api/getAllFeedback', customer.getAllFeedback);
 
@@ -52,6 +52,31 @@ app.get('/api/customerType', customer.customerType);
 app.get('/api/redeem-list', customer.redeemList);
 app.post('/api/my-items', customer.gerMyItems);
 app.post('/api/add-redeem', customer.addRedeem);
+
+//patient note api
+app.get('/api/note/:nric', customer.getPatientNoteAll);
+app.get('/api/note/:nric/:id', customer.getPatientNote);
+app.post('/api/note/:nric', customer.createPatientNote);
+app.put('/api/note/:nric/:id', customer.updatePatientNote);
+app.delete('/api/note/:nric/:id', customer.deletePatientNote);
+
+//patient log api
+app.get('/api/log/:nric', customer.getPatientLogAll);
+app.get('/api/log/:nric/:id', customer.getPatientLog);
+app.post('/api/log/:nric', customer.createPatientLog);
+app.put('/api/log/:nric/:id', customer.updatePatientLog);
+app.delete('/api/log/:nric/:id', customer.deletePatientLog);
+
+//patient task api
+app.get('/api/task/:nric', customer.getPatientTaskAll);
+app.get('/api/task/:nric/:id', customer.getPatientTask);
+app.post('/api/task/:nric', customer.createPatientTask);
+app.put('/api/task/:nric/:id', customer.updatePatientTask);
+app.delete('/api/task/:nric/:id', customer.deletePatientTask);
+
+
+
+
 
 var customer = connect();
 customer.use(serveStatic('customer'));

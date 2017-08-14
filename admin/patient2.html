@@ -151,9 +151,46 @@
                                     <button class="btn tab-but-2" ng-click="clearField();">Discard</button>
                                 </div>
                                 <div class="tab-pane fade" id="tab2default">
-                                    <p>Default 2</p>
-                                    <button class="btn tab-but-1">Save Note</button>
-                                    <button class="btn tab-but-2" ng-click="clearField();">Discard</button>
+                                    <div class="input-section">
+                                        <div>
+                                            <textarea ng-model="note" class="form-control"></textarea>
+                                        </div>
+                                        <br>
+                                        <div>
+                                            <button class="btn tab-but-1" ng-click="saveNote(note)">Save Note</button>
+                                            <button class="btn tab-but-2" ng-click="clearField();">Discard</button>
+                                        </div>
+                                    </div>
+                                    <div class="list-section">
+                                        <div class="time-line-main">
+                                            <ul class="timeline">
+                                                <li ng-repeat="item in noteList">
+                                                    <div class="timeline-badge" ng-click="switchEditMode(item)"><i class="glyphicon glyphicon-edit"></i></div>
+                                                    <div class="timeline-panel">
+                                                        <!--<div class="timeline-heading">-->
+                                                            <!--<h4 class="timeline-title">Mussum ipsum cacilds</h4>-->
+                                                            <!--<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11 hours ago via Twitter</small></p>-->
+                                                        <!--</div>-->
+                                                        <div class="timeline-body">
+                                                            <div ng-hide="item.editMode">
+                                                                <p>{{item.description}}</p>
+                                                            </div>
+                                                            <div ng-show="item.editMode">
+                                                                <textarea ng-model="item.description" class="form-control"></textarea>
+                                                                <br/>
+                                                                <div>
+                                                                    <button class="btn tab-but-1" ng-click="updateNote(item)">Save Note</button>
+                                                                    <button class="btn tab-but-2" ng-click="clearField();">Discard</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="timeline-badge-right" ng-click="deleteNote(item)"><i class="glyphicon glyphicon-remove-sign"></i></div>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="tab-pane fade" id="tab3default">
                                     <p>Default 3</p>
