@@ -2,9 +2,9 @@ var http = require('http');
 var mysql = require('mysql');
 var db = mysql.createPool({
 	database : 'hearingcenter',
-	    user : 'root',
-	password : 'lamp',
-    host :'localhost',
+	user : 'ftdev',
+	password : '10gXWOqeaf',
+	host :'apps.fountaintechies.com',
  });
 
  var CRUD = require('mysql-crud');
