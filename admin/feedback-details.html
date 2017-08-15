@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!-- your webpage info goes here -->
+
+    <title>The Hearing Centre</title>
+
+    <meta name="author" content="Ama"/>
+    <meta name="description" content=""/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed -->
+    <!-- <link rel="stylesheet" href="css/admin.css" type="text/css" /> -->
+    <link rel="stylesheet" href="css/patient2.css">
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css" type="text/css"/>
+
+    <!--         <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css" type="text/css" /> -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script type="text/javascript" src="js/angular-storage.min.js"></script>
+    <script src="js/bootstrap.js" type="text/javascript"></script>
+    <script src="js/index.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/adminCtrl.js"></script>
+
+</head>
+
+<body data-ng-app="crm" data-ng-controller="admincontroller">
+
+
+<!--START NEW CODE-->
+<section id="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <input class="form-control" type="text" placeholder="Search...">
+            </div>
+            <div class="col-md-6">
+                <div class="menu">
+                    <ul class="nav nav-pills">
+                        <li><a href="#">Dashboard</a></li>
+                        <li class="active"><a onclick="location.href='patient.html';">Patient</a></li>
+                        <li><a href="account.html?nric={{result.nric}}">Accounts</a></li>
+                        <li><a href="#">Clinic</a></li>
+                        <li><a href="feedback.html">Feedback</a></li>
+                        <li><a href="#" ng-click="logout()">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2 date">
+                <p id="demo"></p>
+            </div>
+            <div class="col-md-1 text-right">
+                <img src="images/logo_2.png" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="main-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="box">
+                    <h4>{{feedback.branchName}} Branch</h4>
+                    <rating ng-model="feedback.rating"></rating>
+                </div>
+
+                <div class="box-2">
+                    <h4>Branch Details</h4>
+
+                    <div class="fileds">
+                        <h5><strong>Branch Name</strong></h5>
+                        <p>{{feedback.branchName}}</p>
+                    </div>
+                    <div class="fileds">
+                        <h5><strong>Manager</strong></h5>
+                        <p>{{feedback.manager}}</p>
+                    </div>
+                    <div class="fileds">
+                        <h5><strong>Email</strong></h5>
+                        <p>{{feedback.Email}}</p>
+                    </div>
+                    <div class="fileds">
+                        <h5><strong>NIRC</strong></h5>
+                        <p>{{feedback.nirc}}</p>
+                    </div>
+                    <div class="fileds">
+                        <h5><strong>Mobile No</strong></h5>
+                        <p>{{feedback.mobileNo}}</p>
+                    </div>
+                    <div class="fileds">
+                        <h5><strong>Office No</strong></h5>
+                        <p>{{feedback.officeNo}}</p>
+                    </div>
+                    <div class="fileds">
+                        <h5><strong>Gender</strong></h5>
+                        <p>{{feedback.gender}}</p>
+                    </div>
+                    <div class="fileds">
+                        <h5><strong>Address</strong></h5>
+                        <p>{{feedback.address}}</p>
+                    </div>
+                    <div class="fileds">
+                        <h5><strong>Postal Code</strong></h5>
+                        <p>{{feedback.postalCode}}</p>
+                    </div>
+                    <div class="fileds">
+                        <h5><strong>Country</strong></h5>
+                        <p>{{feedback.country}}</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-9">
+
+                <!--SECTION TIMELINE-->
+                <div class="time-line-main">
+                    <ul class="timeline">
+                        <li ng-repeat="item in feedbackList">
+                            <div class="timeline-badge"><i class="glyphicon glyphicon-edit"></i></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">{{item.name}}</h4>
+                                    <!--<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11 hours ago via Twitter</small></p>-->
+                                </div>
+                                <div class="timeline-body">
+                                    <rating ng-model="item.rating"></rating>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--END NEW CODE-->
+
+
+<script>
+    var d = new Date();
+    document.getElementById("demo").innerHTML = d.toDateString();
+</script>
+
+
+</body>
+
+</html>

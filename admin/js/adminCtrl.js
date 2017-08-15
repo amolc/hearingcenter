@@ -797,10 +797,42 @@ $scope.itemSel = function(){
      }
  }
 
-});
+    $scope.feedbackList = [
+        {name: "Feedback 1", rating: 5},
+        {name: "Feedback 2", rating: 5},
+        {name: "Feedback 3", rating: 3},
+        {name: "Feedback 4", rating: 5},
+        {name: "Feedback 5", rating: 4}
+    ];
+    $scope.feedback = {
+        "branchName": "Tamanna Plaza",
+        "manager": "Nusrat Jahan",
+        "Email": "nusratjahan@gmail.com",
+        "nirc": "S1355695D",
+        "mobileNo":"0185395685",
+        "officeNo":"9685323455",
+        "gender": "female",
+        "address": "Bishkathali, \n Faridganj, Chandpur",
+        "postalCode": "3600",
+        "country": "Bangladesh",
+        "rating": 3
+    }
+
+})
+    .directive('rating', function() {
+        return {
+            restrict: "AE",
+            scope: {
+                bindedModel: "=ngModel"
+            },
+            template:
+                "<div style=\"font-size: 24px; color: #FEBF00\">\n            <span class=\"glyphicon .glyphicon-star-empty\" ng-class=\"bindedModel > 0 ? 'glyphicon-star': 'glyphicon-star-empty'\"></span>\n            <span class=\"glyphicon .glyphicon-star-empty\" ng-class=\"bindedModel > 1 ? 'glyphicon-star': 'glyphicon-star-empty'\"></span>\n            <span class=\"glyphicon .glyphicon-star-empty\" ng-class=\"bindedModel > 2 ? 'glyphicon-star': 'glyphicon-star-empty'\"></span>\n            <span class=\"glyphicon .glyphicon-star-empty\" ng-class=\"bindedModel > 3 ? 'glyphicon-star': 'glyphicon-star-empty'\"></span>\n            <span class=\"glyphicon .glyphicon-star-empty\" ng-class=\"bindedModel > 4 ? 'glyphicon-star': 'glyphicon-star-empty'\"></span>\n            </div>",
+            link: function (scope, element, attrs) {
+                // console.log(attrs);
+            }
+        }
+    });
 
 
-
-    
 
 
