@@ -451,7 +451,8 @@ exports.addRedeem = function (req, res) {
 exports.getPatientNoteAll = function (req, res) {
 	var nric = req.params.nric;
 	var type = 'note';
-	logsCRUD.load({nric: nric, type: type}, function (err, data) {
+	var sql = "SELECT * FROM `patient_logs` WHERE `nric` = "+"'"+nric + "'" + " AND `type` = "+"'"+type + "' ORDER BY `created_at` DESC";
+	db.query(sql, function (err, data) {
 		res.json(data);
 	});
 };
@@ -503,7 +504,8 @@ exports.deletePatientNote = function (req, res) {
 exports.getPatientLogAll = function (req, res) {
 	var nric = req.params.nric;
 	var type = 'log';
-	logsCRUD.load({nric: nric, type: type}, function (err, data) {
+	var sql = "SELECT * FROM `patient_logs` WHERE `nric` = "+"'"+nric + "'" + " AND `type` = "+"'"+type + "' ORDER BY `created_at` DESC";
+	db.query(sql, function (err, data) {
 		res.json(data);
 	});
 };
@@ -553,7 +555,8 @@ exports.deletePatientLog = function (req, res) {
 exports.getPatientTaskAll = function (req, res) {
 	var nric = req.params.nric;
 	var type = 'task';
-	logsCRUD.load({nric: nric, type: type}, function (err, data) {
+	var sql = "SELECT * FROM `patient_logs` WHERE `nric` = "+"'"+nric + "'" + " AND `type` = "+"'"+type + "' ORDER BY `created_at` DESC";
+	db.query(sql, function (err, data) {
 		res.json(data);
 	});
 };
@@ -574,11 +577,14 @@ exports.createPatientTask = function (req, res) {
 		nric: req.params.nric,
 		type: 'task',
 		description: req.body.description,
-		end_date: req.body.	end_date,
+		end_date: new Date(req.body.end_date),
 		status: req.body.status,
 		created_at: new Date()
 	};
 	logsCRUD.create(createObj, function (err, data) {
+		if(err)
+			console.log(err);
+			
 		res.json(data);
 	});
 };
@@ -590,7 +596,7 @@ exports.updatePatientTask = function (req, res) {
 		nric: req.params.nric,
 		type: 'task',
 		description: req.body.description,
-		end_date: req.body.	end_date,
+		end_date: new Date(req.body.end_date),
 		status: req.body.status
 	};
 	logsCRUD.update({id: req.params.id}, updateObj, function (err, data) {

@@ -139,7 +139,7 @@
                                 <li><a href="#tab3default" data-toggle="tab">Log Activity</a></li>
                                 <li><a href="#tab4default" data-toggle="tab">Create Tasks</a></li>
                                 <li><a href="#tab5default" data-toggle="tab">Create Invoice</a></li>
-                                <li><a href="#tab6default" data-toggle="tab">Appointemnt</a></li>
+                                <li><a href="#tab6default" data-toggle="tab">Appointment</a></li>
 
                             </ul>
                         </div>
@@ -161,16 +161,12 @@
                                             <button class="btn tab-but-2" ng-click="clearField();">Discard</button>
                                         </div>
                                     </div>
-                                    <div class="list-section">
+                                    <div class="list-section" ng-show="noteList.length > 0">
                                         <div class="time-line-main">
                                             <ul class="timeline">
                                                 <li ng-repeat="item in noteList">
                                                     <div class="timeline-badge" ng-click="switchEditMode(item)"><i class="glyphicon glyphicon-edit"></i></div>
                                                     <div class="timeline-panel">
-                                                        <!--<div class="timeline-heading">-->
-                                                            <!--<h4 class="timeline-title">Mussum ipsum cacilds</h4>-->
-                                                            <!--<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11 hours ago via Twitter</small></p>-->
-                                                        <!--</div>-->
                                                         <div class="timeline-body">
                                                             <div ng-hide="item.editMode">
                                                                 <p>{{item.description}}</p>
@@ -193,14 +189,130 @@
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="tab3default">
-                                    <p>Default 3</p>
-                                    <button class="btn tab-but-1">Save Note</button>
-                                    <button class="btn tab-but-2" ng-click="clearField();">Discard</button>
+                                    <div class="input-section">
+                                        <div>
+                                            <textarea ng-model="log" class="form-control"></textarea>
+                                        </div>
+                                        <br>
+                                        <div>
+                                            <button class="btn tab-but-1" ng-click="saveLog(log)">Save Log</button>
+                                            <button class="btn tab-but-2" ng-click="clearField();">Discard</button>
+                                        </div>
+                                    </div>
+                                    <div class="list-section" ng-show="logList.length > 0">
+                                        <div class="time-line-main">
+                                            <ul class="timeline">
+                                                <li ng-repeat="item in logList">
+                                                    <div class="timeline-badge" ng-click="switchEditMode(item)"><i class="glyphicon glyphicon-edit"></i></div>
+                                                    <div class="timeline-panel">
+                                                        <div class="timeline-body">
+                                                            <div ng-hide="item.editMode">
+                                                                <p>{{item.description}}</p>
+                                                            </div>
+                                                            <div ng-show="item.editMode">
+                                                                <textarea ng-model="item.description" class="form-control"></textarea>
+                                                                <br/>
+                                                                <div>
+                                                                    <button class="btn tab-but-1" ng-click="updateLog(item)">Save log</button>
+                                                                    <button class="btn tab-but-2" ng-click="clearField();">Discard</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="timeline-badge-right" ng-click="deleteLog(item)"><i class="glyphicon glyphicon-remove-sign"></i></div>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="tab-pane fade" id="tab4default">
-                                    <p>Default 4</p>
-                                    <button class="btn tab-but-1">Save Note</button>
-                                    <button class="btn tab-but-2" ng-click="clearField();">Discard</button>
+                                    <div class="input-section">
+                                        <div>
+                                            <div class="form-horizontal">
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-2">Task Details:</label>
+                                                    <div class="col-sm-10">
+                                                        <textarea ng-model="task" class="form-control"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-2">End date:</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="date" class="form-control" ng-model="task_end_date">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-2">Status:</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" ng-model="task_status">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-sm-offset-2 col-sm-10">
+                                                        <button class="btn tab-but-1" ng-click="saveTask(task, task_end_date, task_status)">Save Task</button>
+                                                        <button class="btn tab-but-2" ng-click="clearField();">Discard</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="list-section" ng-show="taskList.length > 0">
+                                        <div class="time-line-main">
+                                            <ul class="timeline">
+                                                <li ng-repeat="item in taskList">
+                                                    <div class="timeline-badge" ng-click="switchEditMode(item)"><i class="glyphicon glyphicon-edit"></i></div>
+                                                    <div class="timeline-panel">
+                                                        <div class="timeline-body">
+                                                            <div ng-hide="item.editMode">
+                                                                <p><b>Details: </b>{{item.description}}</p>
+                                                                <p>
+                                                                    <b>End date: </b> {{item.end_date | date}}<br/>
+                                                                    <b>Status: </b> {{item.status}}
+                                                                </p>
+                                                            </div>
+                                                            <div ng-show="item.editMode">
+                                                                <div>
+                                                                    <div class="form-horizontal">
+                                                                        <div class="form-group">
+                                                                            <label class="control-label col-sm-2">Task Details:</label>
+                                                                            <div class="col-sm-10">
+                                                                                <textarea ng-model="item.description" class="form-control"></textarea>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label class="control-label col-sm-2">End date:</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input type="date" class="form-control" ng-model="item.end_date">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label class="control-label col-sm-2">Status:</label>
+                                                                            <div class="col-sm-10">
+                                                                                <!--<input type="text" class="form-control" ng-model="item.status">-->
+                                                                                <select ng-model="item.status">
+                                                                                    <option value="open">Open</option>
+                                                                                    <option value="completed">Completed</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <div class="col-sm-offset-2 col-sm-10">
+                                                                                <button class="btn tab-but-1" ng-click="updateTask(item)">Save Task</button>
+                                                                                <button class="btn tab-but-2" ng-click="clearField();">Discard</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="timeline-badge-right" ng-click="deleteTask(item)"><i class="glyphicon glyphicon-remove-sign"></i></div>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="tab-pane fade" id="tab5default">
                                     <p>Default 5</p>

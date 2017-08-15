@@ -375,6 +375,8 @@ $scope.itemSel = function(){
                         $scope.result = res[i];
                         $scope.result.desc =  $scope.result.description;
                         $scope.getNoteList($scope.result.nric);
+                        $scope.getLogList($scope.result.nric);
+                        $scope.getTaskList($scope.result.nric);
                        // console.log('res',$scope.result.description);
 
 
@@ -603,6 +605,9 @@ $scope.itemSel = function(){
 //Other variables that needs to be initialised
     $scope.tab = 1;
 
+
+
+
 //    patient note, log, task
     $scope.saveNote = function (note) {
         if(!note)
@@ -621,7 +626,7 @@ $scope.itemSel = function(){
         $http.post(baseurl + 'note/'+$scope.result.nric, createObj).success(function (res) {
             console.log("res", res);
             $scope.note = "";
-            $scope.noteList.push(createObj);
+            $scope.noteList.unshift(createObj);
         }).error(function (err) {
             console.log("err", err);
 
@@ -629,21 +634,16 @@ $scope.itemSel = function(){
 
     };
     $scope.updateNote = function (note) {
-
         if(!note)
             return;
-
         $http.put(baseurl + 'note/'+$scope.result.nric+'/'+note.id, note).success(function (res) {
             console.log("res", res);
             $scope.note = "";
             $scope.switchEditMode(note);
         }).error(function (err) {
             console.log("err", err);
-
         })
-
     };
-
     $scope.deleteNote = function(item){
         $http.delete(baseurl + 'note/'+$scope.result.nric+'/'+item.id).success(function (res) {
             console.log("res", res);
@@ -653,6 +653,106 @@ $scope.itemSel = function(){
 
         })
     };
+
+
+
+    $scope.saveLog = function (log) {
+        if(!log)
+            return;
+        console.log("log", log);
+        console.log("result", $scope.result);
+        var createObj = {
+            customer_id: $scope.result.id,
+            first_name: $scope.result.firstName,
+            last_name: $scope.result.lastName,
+            nric: $scope.result.nric,
+            description: log || ""
+        };
+        console.log("createObj", createObj);
+
+        $http.post(baseurl + 'log/'+$scope.result.nric, createObj).success(function (res) {
+            console.log("res", res);
+            $scope.log = "";
+            $scope.logList.unshift(createObj);
+        }).error(function (err) {
+            console.log("err", err);
+
+        })
+
+    };
+    $scope.updateLog = function (log) {
+        if(!log)
+            return;
+        $http.put(baseurl + 'log/'+$scope.result.nric+'/'+log.id, log).success(function (res) {
+            console.log("res", res);
+            $scope.log = "";
+            $scope.switchEditMode(log);
+        }).error(function (err) {
+            console.log("err", err);
+        })
+    };
+    $scope.deleteLog = function(item){
+        $http.delete(baseurl + 'log/'+$scope.result.nric+'/'+item.id).success(function (res) {
+            console.log("res", res);
+            $scope.logList.splice(item, 1)
+        }).error(function (err) {
+            console.log("err", err);
+
+        })
+    };
+
+
+
+
+    $scope.saveTask = function (task, end_date, status) {
+        if(!task)
+            return;
+        console.log("task", task);
+        console.log("result", $scope.result);
+        var createObj = {
+            customer_id: $scope.result.id,
+            first_name: $scope.result.firstName,
+            last_name: $scope.result.lastName,
+            nric: $scope.result.nric,
+            description: task || "",
+            end_date: end_date,
+            status: status
+        };
+        console.log("createObj", createObj);
+
+        $http.post(baseurl + 'task/'+$scope.result.nric, createObj).success(function (res) {
+            console.log("res", res);
+            $scope.task = "";
+            $scope.taskList.unshift(createObj);
+        }).error(function (err) {
+            console.log("err", err);
+
+        })
+
+    };
+    $scope.updateTask = function (task) {
+        if(!task)
+            return;
+        $http.put(baseurl + 'task/'+$scope.result.nric+'/'+task.id, task).success(function (res) {
+            console.log("res", res);
+            $scope.task = "";
+            $scope.switchEditMode(task);
+        }).error(function (err) {
+            console.log("err", err);
+        })
+    };
+    $scope.deleteTask = function(item){
+        $http.delete(baseurl + 'task/'+$scope.result.nric+'/'+item.id).success(function (res) {
+            console.log("res", res);
+            $scope.taskList.splice(item, 1)
+        }).error(function (err) {
+            console.log("err", err);
+
+        })
+    };
+
+
+
     $scope.noteList = [];
     $scope.logList = [];
     $scope.taskList = [];
@@ -689,6 +789,8 @@ $scope.itemSel = function(){
  function initEditObj(arrObj){
      for(var i = 0; i< arrObj.length; i++){
          arrObj[i].editMode = false;
+         if(arrObj[i].end_date)
+             arrObj[i].end_date = new Date(arrObj[i].end_date);
      }
  }
 
