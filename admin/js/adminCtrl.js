@@ -805,16 +805,16 @@ $scope.itemSel = function(){
         {name: "Feedback 5", rating: 4}
     ];
     $scope.feedback = {
-        "branchName": "Tamanna Plaza",
-        "manager": "Nusrat Jahan",
-        "Email": "nusratjahan@gmail.com",
+        "branchName": "Lucky Plaza",
+        "manager": "Tan Yi Wei",
+        "Email": "tomtan@gmail.com",
         "nirc": "S1355695D",
-        "mobileNo":"0185395685",
-        "officeNo":"9685323455",
-        "gender": "female",
-        "address": "Bishkathali, \n Faridganj, Chandpur",
-        "postalCode": "3600",
-        "country": "Bangladesh",
+        "mobileNo":"90668301",
+        "officeNo":"63882027",
+        "gender": "Male",
+        "address": "391B Orchard Road #23-01 Ngee Ann City Tower B",
+        "postalCode": "238874",
+        "country": "Singapore",
         "rating": 3
     }
 
