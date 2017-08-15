@@ -75,7 +75,7 @@ app.put('/api/task/:nric/:id', customer.updatePatientTask);
 app.delete('/api/task/:nric/:id', customer.deletePatientTask);
 
 
-
+app.get('/api/feedback', customer.getFeedback);
 
 
 var customer = connect();

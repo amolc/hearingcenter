@@ -797,13 +797,7 @@ $scope.itemSel = function(){
      }
  }
 
-    $scope.feedbackList = [
-        {name: "Feedback 1", rating: 5},
-        {name: "Feedback 2", rating: 5},
-        {name: "Feedback 3", rating: 3},
-        {name: "Feedback 4", rating: 5},
-        {name: "Feedback 5", rating: 4}
-    ];
+
     $scope.feedback = {
         "branchName": "Lucky Plaza",
         "manager": "Tan Yi Wei",
@@ -816,6 +810,31 @@ $scope.itemSel = function(){
         "postalCode": "238874",
         "country": "Singapore",
         "rating": 3
+    };
+
+    $scope.getFeedbackList = function () {
+        var url_string = $location.absUrl();
+        var url = new URL(url_string);
+        var clinic = url.searchParams.get("clinic");
+        console.log(clinic);
+        $http.get(baseurl + 'feedback?clinic='+clinic)
+            .success(function (data) {
+                console.log("data", data);
+                $scope.feedbackList = data;
+
+                var clinic3Score = 0;
+                var clinic3Counter = 0;
+                for(var i=0; i<data.length; i++){
+                        clinic3Score = clinic3Score + data[i].feedback_value;
+                        clinic3Counter += 1;
+                }
+                $scope.feedbackAvg = Math.trunc(clinic3Score/clinic3Counter);
+                $scope.feedbackAvgName = $scope.getDesc($scope.feedbackAvg);
+
+            })
+            .error(function (err) {
+                console.log("err", err);
+            })
     }
 
 })

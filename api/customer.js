@@ -33,7 +33,20 @@ exports.getAllFeedback = function(req, res){
 		res.jsonp(rows);
 	});
 
-} 
+};
+exports.getFeedback = function (req, res) {
+	if(!req.params && !req.params.clinic){
+		res.json(false);
+		return;
+	}
+	var query = "select * from feedback where clinic = '" + req.query.clinic +"'";
+
+	db.query(query, function(err, rows){
+		//console.log(rows);
+		res.jsonp(rows);
+	});
+
+};
 
 /******************************************************
 Get all patient appointment from DB
