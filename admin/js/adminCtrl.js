@@ -1,6 +1,9 @@
 app.controller('admincontroller', function ($scope, $http, $window, $location, $rootScope, $filter) {
 
 
+
+    $scope.Date = new Date();
+
 //********************************************************************************* */
 //Schedule Appointment box
 $scope.feedbackScore = function(req, res){
