@@ -322,9 +322,35 @@
                                     <button class="btn tab-but-2" ng-click="clearField();">Discard</button>
                                 </div>
                                 <div class="tab-pane fade" id="tab6default">
-                                    <p>Default 6</p>
-                                    <button class="btn tab-but-1">Save Note</button>
-                                    <button class="btn tab-but-2" ng-click="clearField();">Discard</button>
+                                    <div class="input-section">
+                                        <div>
+                                            <div class="form-horizontal">
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-2">Date:</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="date" class="form-control" ng-model="task_end_date">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-2">Start Time:</label>
+                                                    <div class="col-sm-4" ng-init="task_end_date = Date">
+                                                        <input type="time" class="form-control">
+                                                    </div>
+
+                                                    <label class="control-label col-sm-2">End Time:</label>
+                                                    <div class="col-sm-4" ng-init="task_status = 'open'">
+                                                        <input type="time" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-sm-offset-2 col-sm-10">
+                                                        <button class="btn tab-but-1" ng-click="saveTask(task, task_end_date, task_status)">Save Appointment</button>
+                                                        <button class="btn tab-but-2" ng-click="clearField();">Discard</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

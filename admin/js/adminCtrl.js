@@ -576,6 +576,10 @@ $scope.itemSel = function(){
             else 
             {
 
+                res.forEach(function(row){
+                    if(row.lastVisit)
+                        row.lastVisit = new Date(row.lastVisit);
+                });
                 $scope.customerList = res;
                 console.log('customerList: ',$scope.customerList);
 
