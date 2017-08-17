@@ -15,6 +15,7 @@ var db = mysql.createPool({
  var patientLogCRUD = CRUD(db, 'patientLog');
  var logsCRUD = CRUD(db, 'patient_logs');
  var appointmentCRUD = CRUD(db, 'appointment');
+ var appointmentsCRUD = CRUD(db, 'appointments');
  var feedbackCRUD = CRUD(db, 'feedback');
  var redeemCRUD = CRUD(db, 'redeems');
  var customerRedeemsCRUD = CRUD(db, 'customer_redeems');
@@ -628,6 +629,64 @@ exports.updatePatientTask = function (req, res) {
 
 exports.deletePatientTask = function (req, res) {
 	logsCRUD.destroy({id: req.params.id}, function (err, data) {
+		res.json(data);
+	});
+};
+
+
+
+exports.getPatientAppointmentAll = function (req, res) {
+	var nric = req.params.nric;
+	var type = 'task';
+	var sql = "SELECT * FROM `appointments` WHERE `nric` = "+"'"+nric + "'" + " ORDER BY `created_at` DESC";
+	db.query(sql, function (err, data) {
+		res.json(data);
+	})
+};
+
+exports.getPatientAppointment = function (req, res) {
+	var nric = req.params.nric;
+	var id = req.params.id;
+	var type = 'task';
+	appointmentsCRUD.load({id: id, nric: nric}, function (err, data) {
+		res.json(data);
+	});
+};
+
+exports.createPatientAppointment = function (req, res) {
+	var createObj = {
+		customer_id: req.body.customer_id,
+		first_name: req.body.first_name,
+		last_name: req.body.last_name,
+		nric: req.params.nric,
+		date: new Date(req.body.date),
+		start_time: req.body.start_time,
+		end_time: req.body.end_time,
+		created_at: new Date(),
+		updated_at: new Date()
+	};
+	appointmentsCRUD.create(createObj, function (err, data) {
+		if(err)
+			console.log(err);
+
+		res.json(data);
+	});
+};
+
+exports.updatePatientAppointment = function (req, res) {
+	var updateObj = {
+		date: new Date(req.body.date),
+		start_time: req.body.start_time,
+		end_time: req.body.end_time,
+		updated_at: new Date()
+	};
+	appointmentsCRUD.update({id: req.params.id}, updateObj, function (err, data) {
+		res.json(data);
+	});
+};
+
+exports.deletePatientAppointment = function (req, res) {
+	appointmentsCRUD.destroy({id: req.params.id}, function (err, data) {
 		res.json(data);
 	});
 };

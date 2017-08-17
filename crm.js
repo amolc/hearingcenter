@@ -74,6 +74,13 @@ app.post('/api/task/:nric', customer.createPatientTask);
 app.put('/api/task/:nric/:id', customer.updatePatientTask);
 app.delete('/api/task/:nric/:id', customer.deletePatientTask);
 
+//patient task api
+app.get('/api/appointment/:nric', customer.getPatientAppointmentAll);
+app.get('/api/appointment/:nric/:id', customer.getPatientAppointment);
+app.post('/api/appointment/:nric', customer.createPatientAppointment);
+app.put('/api/appointment/:nric/:id', customer.updatePatientAppointment);
+app.delete('/api/appointment/:nric/:id', customer.deletePatientAppointment);
+
 
 app.get('/api/feedback', customer.getFeedback);
 
