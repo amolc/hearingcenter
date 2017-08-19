@@ -263,11 +263,28 @@ button.btn.tab-but-2 {
 }
 
 
-.OTOSCOPIC {
+.hearing {
     padding-top: 20px;
 }
 
 
 .form-oto label {
     margin-top: 15px;
+}
+
+.otoscop-1 label, .otoscop-1 input {
+    margin-left: 30px;
+}
+
+.otoscop-2 label, .otoscop-2 input {
+    margin-left: 30px;
+ 
+}
+
+.otoscop-2{
+    margin-top: 20px;
+}
+
+.otoscop-3 {
+    margin-top: 50px;
 }
