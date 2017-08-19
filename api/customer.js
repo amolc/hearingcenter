@@ -390,7 +390,7 @@ exports.customerType = function(req, res) {
 /******************************************************
 Retrieve customer using NRIC/FIN number
 */
-exports.findByIc = function(req, res) { console.log("in find by ic");
+	exports.findByIc = function(req, res) { console.log("in find by ic");
 
 
 	var ic = req.params.ic ;
@@ -398,7 +398,7 @@ exports.findByIc = function(req, res) { console.log("in find by ic");
 	var query = 'SELECT customer.*, b.description, b.color FROM customer LEFT JOIN custType b ON b.custypeID = customer.custypeID WHERE `nric`="' + ic +'";';
 
 	db.query(query, function(err, rows){
-		if(rows && rows[0] && rows[0].id){
+		if(rows && rows[0] && rows[0].id && req.query.login){
 			customerCRUD.update({id: rows[0].id}, {lastVisit: new Date()}, function (err, val) {
 				console.log("new update");
 			});
