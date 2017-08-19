@@ -299,3 +299,8 @@ button.btn.tab-but-2 {
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
+.com-top ul li {
+    list-style: none;
+    padding-top: 5px;
+}
