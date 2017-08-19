@@ -218,6 +218,11 @@ button.btn.tab-but-2 {
 }
 
 
+.new-side-nav ul.nav.nav-pills.nav-stacked{
+    padding-right: 0;
+}
+
+
 .new-side-nav ul.nav.nav-pills.nav-stacked {
     border-right: 3px solid #15A4FA;
 }
@@ -287,4 +292,10 @@ button.btn.tab-but-2 {
 
 .otoscop-3 {
     margin-top: 50px;
+}
+
+
+.com-top {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
