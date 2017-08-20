@@ -279,7 +279,7 @@ app.controller('crmcontroller', function ($scope, $http, $window, $location, $ti
             $scope.loginErrorMsg = "Please input NRIC";
             return;
         }
-        $http.get(baseurl + 'findByIc/' + ic).success(function (res) {
+        $http.get(baseurl + 'findByIc/' + ic+"?login=true").success(function (res) {
             if (res.status == 'false') {
 
             } else {
