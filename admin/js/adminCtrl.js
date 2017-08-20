@@ -380,6 +380,7 @@ $scope.itemSel = function(){
                         $scope.getNoteList($scope.result.nric);
                         $scope.getLogList($scope.result.nric);
                         $scope.getTaskList($scope.result.nric);
+                        $scope.getAppointmentList($scope.result.nric);
                        // console.log('res',$scope.result.description);
 
 
@@ -758,11 +759,56 @@ $scope.itemSel = function(){
         })
     };
 
+    $scope.saveAppointment = function (date, start, end) {
 
+        console.log("result", $scope.result);
+        var createObj = {
+            customer_id: $scope.result.id,
+            first_name: $scope.result.firstName,
+            last_name: $scope.result.lastName,
+            nric: $scope.result.nric,
+            date: date,
+            start_time: start,
+            end_time: end
+        };
+        console.log("createObj", createObj);
+
+        $http.post(baseurl + 'appointment/'+$scope.result.nric, createObj).success(function (res) {
+            console.log("res", res);
+            $scope.task = "";
+            $scope.appointmentList.unshift(createObj);
+        }).error(function (err) {
+            console.log("err", err);
+
+        })
+
+    };
+    $scope.updateAppointment = function (task) {console.log(task);
+    
+        if(!task)
+            return;
+        $http.put(baseurl + 'appointment/'+$scope.result.nric+'/'+task.id, task).success(function (res) {
+            console.log("res", res);
+            $scope.task = "";
+            $scope.switchEditMode(task);
+        }).error(function (err) {
+            console.log("err", err);
+        })
+    };
+    $scope.deleteAppointment = function(item){
+        $http.delete(baseurl + 'appointment/'+$scope.result.nric+'/'+item.id).success(function (res) {
+            console.log("res", res);
+            $scope.appointmentList.splice(item, 1)
+        }).error(function (err) {
+            console.log("err", err);
+
+        })
+    };
 
     $scope.noteList = [];
     $scope.logList = [];
     $scope.taskList = [];
+    $scope.appointmentList = [];
     $scope.getNoteList = function (nric) {
         $http.get(baseurl + 'note/'+$scope.result.nric).success(function (res) {
             initEditObj(res);
@@ -790,6 +836,15 @@ $scope.itemSel = function(){
 
         })
     };
+    $scope.getAppointmentList = function (nric) {
+        $http.get(baseurl + 'appointment/'+$scope.result.nric).success(function (res) {
+            initEditObj(res);
+            $scope.appointmentList = res;
+        }).error(function (err) {
+            console.log("err", err);
+
+        })
+    };
     $scope.switchEditMode = function (item) {
         item.editMode = !item.editMode;
     };
@@ -798,6 +853,14 @@ $scope.itemSel = function(){
          arrObj[i].editMode = false;
          if(arrObj[i].end_date)
              arrObj[i].end_date = new Date(arrObj[i].end_date);
+
+         if(arrObj[i].date)
+             arrObj[i].date = new Date(arrObj[i].date);
+         if(arrObj[i].start_time)
+             arrObj[i].start_time = new Date(arrObj[i].start_time);
+         if(arrObj[i].end_time)
+             arrObj[i].end_time = new Date(arrObj[i].end_time);
+
      }
  }
 

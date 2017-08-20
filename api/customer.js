@@ -660,8 +660,8 @@ exports.createPatientAppointment = function (req, res) {
 		last_name: req.body.last_name,
 		nric: req.params.nric,
 		date: new Date(req.body.date),
-		start_time: req.body.start_time,
-		end_time: req.body.end_time,
+		start_time: new Date(req.body.start_time),
+		end_time: new Date(req.body.end_time),
 		created_at: new Date(),
 		updated_at: new Date()
 	};
@@ -676,8 +676,8 @@ exports.createPatientAppointment = function (req, res) {
 exports.updatePatientAppointment = function (req, res) {
 	var updateObj = {
 		date: new Date(req.body.date),
-		start_time: req.body.start_time,
-		end_time: req.body.end_time,
+		start_time: new Date(req.body.start_time),
+		end_time: new Date(req.body.end_time),
 		updated_at: new Date()
 	};
 	appointmentsCRUD.update({id: req.params.id}, updateObj, function (err, data) {
