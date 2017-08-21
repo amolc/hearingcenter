@@ -809,35 +809,86 @@
                                             <div class="form-horizontal">
                                                 <div class="form-group">
                                                     <label class="control-label col-sm-2">Date:</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="date" class="form-control" ng-model="task_end_date">
+                                                    <div class="col-sm-10" ng-init="apt_date = Date">
+                                                        <input type="date" class="form-control" ng-model="apt_date">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="control-label col-sm-2">Start Time:</label>
-                                                    <div class="col-sm-4" ng-init="task_end_date = Date">
-                                                        <input type="time" class="form-control">
+                                                    <div class="col-sm-4">
+                                                        <input type="time" class="form-control" ng-model="apt_start_time">
                                                     </div>
 
                                                     <label class="control-label col-sm-2">End Time:</label>
-                                                    <div class="col-sm-4" ng-init="task_status = 'open'">
-                                                        <input type="time" class="form-control">
+                                                    <div class="col-sm-4">
+                                                        <input type="time" class="form-control" ng-model="apt_end_time">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="col-sm-offset-2 col-sm-10">
-                                                        <button class="btn tab-but-1" ng-click="saveTask(task, task_end_date, task_status)">Save Appointment</button>
+                                                        <button class="btn tab-but-1" ng-click="saveAppointment(apt_date, apt_start_time, apt_end_time)">Save Appointment</button>
                                                         <button class="btn tab-but-2" ng-click="clearField();">Discard</button>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="list-section" ng-show="appointmentList.length > 0">
+                                        <div class="time-line-main">
+                                            <ul class="timeline">
+                                                <li ng-repeat="item in appointmentList">
+                                                    <div class="timeline-badge" ng-click="switchEditMode(item)"><i class="glyphicon glyphicon-edit"></i></div>
+                                                    <div class="timeline-panel">
+                                                        <div class="timeline-body">
+                                                            <div ng-hide="item.editMode">
+                                                                <p>
+                                                                    <b>Start Time: </b>{{item.start_time | date:'h:mma'}}<br/>
+                                                                    <b>End Time: </b>{{item.end_time | date:'h:mma'}}<br/>
+                                                                    <b>Date: </b>{{item.date | date}}<br/>
+                                                                </p>
+                                                            </div>
+                                                            <div ng-show="item.editMode">
+                                                                <div>
+                                                                    <div class="form-horizontal">
+                                                                        <div class="form-group">
+                                                                            <label class="control-label col-sm-2">Date:</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input type="date" class="form-control" ng-model="item.date">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label class="control-label col-sm-2">Start Time:</label>
+                                                                            <div class="col-sm-4">
+                                                                                <input type="time" class="form-control" ng-model="item.start_time">
+                                                                            </div>
+
+                                                                            <label class="control-label col-sm-2">End Time:</label>
+                                                                            <div class="col-sm-4">
+                                                                                <input type="time" class="form-control" ng-model="item.end_time">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <div class="col-sm-offset-2 col-sm-10">
+                                                                                <button class="btn tab-but-1" ng-click="updateAppointment(item)">Save Appointment</button>
+                                                                                <button class="btn tab-but-2" ng-click="clearField();">Discard</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="timeline-badge-right" ng-click="deleteAppointment(item)"><i class="glyphicon glyphicon-remove-sign"></i></div>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                  </div>
                 
                 <!--SECTION TIMELINE-->
                 <div class="time-line-main" ng-hide="true">
