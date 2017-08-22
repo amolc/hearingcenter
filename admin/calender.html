@@ -1,10 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+<html>
 
+<head>
+
+    <!-- your webpage info goes here -->
+
+    <title>The Hearing Centre</title>
+
+    <meta name="author" content="Ama" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed -->
+    <!-- <link rel="stylesheet" href="css/admin.css" type="text/css" /> -->
+    <link rel="stylesheet" href="css/patient2.css">
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css
+">
+
+    <!--         <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css" type="text/css" /> -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script type="text/javascript" src="js/angular-storage.min.js"></script>
+    <script src="js/bootstrap.js" type="text/javascript"></script>
+    <script src="js/index.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/adminCtrl.js"></script>
+    <link rel="stylesheet" href="css/calender.css">
+    
+
+</head>
+
+<body data-ng-app="crm" data-ng-controller="admincontroller" ng-init=getID()>
+    
+    
+    
+    <!--START NEW CODE-->
+    <section id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <input class="form-control" type="text" placeholder="Search...">
+                </div>
+                <div class="col-md-6">
+                    <div class="menu">
+                        <ul class="nav nav-pills">
+                            <li><a href="#">Dashboard</a></li>
+                            <li class="active"><a onclick="location.href='patient.html';">Patient</a></li>
+                            <li><a href="account.html?nric={{result.nric}}">Accounts</a></li>
+                            <li><a href="#">Clinic</a></li>
+                            <li><a href="feedback.html">Feedback</a></li>
+                            <li><a href="#" ng-click="logout()">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2 date">
+                    <p id="demo"></p>
+                </div>
+                <div class="col-md-1 text-right">
+                    <img src="images/logo_2.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <scetion class="context-calander">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div id='calendar'></div>
+                </div>
+            </div>
+        </div>
+    </scetion>
+
+
+
+   
+    <script src="js/jquery.min.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            // page is now ready, initialize the calendar...
+
+            $('#calendar').fullCalendar({
+                // put your options and callbacks here
+            })
+
+        });
+    </script>
 </body>
+
 </html>
