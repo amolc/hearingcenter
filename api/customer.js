@@ -690,3 +690,76 @@ exports.deletePatientAppointment = function (req, res) {
 		res.json(data);
 	});
 };
+
+
+exports.getNewPatientLog = function (req, res) {
+	var nric = req.params.nric;
+	var type = 'new_log';
+	logsCRUD.load({ nric: nric, type: type}, function (err, data) {
+		if(err)
+			return res.json(null);
+
+		if(data && data[0]){
+			if(IsJsonString(data[0].description)){
+				res.json(JSON.parse(data[0].description));
+			}else{
+				res.json({})
+			}
+		}else{
+			res.json({})
+		}
+	})
+};
+exports.setNewPatientLog = function (req, res) {
+
+	var nric = req.params.nric;
+	var type = 'new_log';
+	logsCRUD.load({ nric: nric, type: type}, function (err, data) {
+		if(err)
+			return res.json(null);
+
+		if(data && data[0]){
+			var updateObj = {
+				description: req.body.description
+			};
+			logsCRUD.update({id: data[0].id}, updateObj, function (err, data) {
+				res.json(data);
+			});
+
+		}else{
+
+			var createObj = {
+				customer_id: req.body.customer_id,
+				first_name: req.body.first_name,
+				last_name: req.body.last_name,
+				nric: req.params.nric,
+				description: req.body.description,
+				type: type
+			};
+			logsCRUD.create(createObj, function (err, data) {
+				if(err)
+					console.log(err);
+				res.json(data);
+			})
+		}
+	})
+
+
+
+
+
+
+
+
+
+
+
+};
+function IsJsonString(str) {
+	try {
+		JSON.parse(str);
+	} catch (e) {
+		return false;
+	}
+	return true;
+}

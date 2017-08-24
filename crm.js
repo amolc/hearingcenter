@@ -81,6 +81,9 @@ app.post('/api/appointment/:nric', customer.createPatientAppointment);
 app.put('/api/appointment/:nric/:id', customer.updatePatientAppointment);
 app.delete('/api/appointment/:nric/:id', customer.deletePatientAppointment);
 
+//new patient log api
+app.get('/api/new-log/:nric', customer.getNewPatientLog);
+app.put('/api/new-log/:nric', customer.setNewPatientLog);
 
 app.get('/api/feedback', customer.getFeedback);
 

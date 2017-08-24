@@ -1,8 +1,8 @@
-<div class="new-side-nav" ng-controller="NewPLogCtrl">
+<div class="new-side-nav">
     <ul class="nav nav-pills nav-stacked col-md-3">
         <li class="active" ><a href="#tab_a" data-toggle="pill">COMPLAINT OF</a></li>
         <li ><a href="#tab_b" data-toggle="pill">AREA OF DIFFICULITY</a></li>
-        <li><a href="#tab_c" data-toggle="pill">HEARING AIDS</a></li>
+        <li><a href="#tab_c" data-toggle="pill">HEARING AIDS <br/><small>(PREVIOUS AMPLIFICATION)</small></a></li>
         <li><a href="#tab_d" data-toggle="pill">OTOSCOPIC EXAMINATION</a></li>
         <li><a href="#tab_e" data-toggle="pill">ACOUSTIC RELEX THRESHODLS</a></li>
         <li><a href="#tab_f" data-toggle="pill">PURE TONE AUDIOMETRY</a></li>
@@ -16,7 +16,7 @@
             <div class="col-md-7 com-top">
 
                 <label for="">COMPLAINT</label>
-                <textarea class="form-control" id="" cols="30" rows="3"></textarea>
+                <textarea class="form-control" id="" cols="30" rows="3" ng-model="npLog.complaint"></textarea>
 
             </div>
 
@@ -24,22 +24,23 @@
             <div class="col-md-5 com-top">
 
                 <label for="">Onset</label>
-                <textarea class="form-control" id="" cols="30" rows="3"></textarea>
+                <textarea class="form-control" id="" cols="30" rows="3" ng-model="npLog.onset"></textarea>
 
             </div>
 
             <div class="col-md-4 com-top">
+                <div class="col-md-6" ng-repeat="item in complaint_of_two">
+                    <div class="checkbox big-checkbox">
+                        <label for="{{item.model}}"><input id="{{item.model}}" type="checkbox" ng-model="npLog.three[item.model]">{{item.name}}</label>
 
-                <label for="">R</label>
-                <input type="checkbox">
-                <label for="">L</label>
-                <input type="checkbox">
+                    </div>
+                </div>
             </div>
 
             <div class="col-md-3 com-top">
                 <div class="col-md-12 " ng-repeat="item in complaint_of_three">
                     <div class="checkbox">
-                        <label for=""><input type="checkbox">{{item.name}}</label>
+                        <label for="{{item.model}}"><input id="{{item.model}}" type="checkbox" ng-model="npLog.two[item.model]">{{item.name}}</label>
 
                     </div>
                 </div>
@@ -47,12 +48,12 @@
 
             <div class="col-md-5 com-top">
                 <label for="">Others</label>
-                <textarea class="form-control" id="" cols="30" rows="3"></textarea>
+                <textarea class="form-control" id="" cols="30" rows="3" ng-model="npLog.other"></textarea>
             </div>
             <div class="col-md-12">
-                <div class="col-md-4 " ng-repeat="item in complaint_of">
+                <div class="col-md-4 " ng-repeat="item in complaint_of_multi">
                     <div class="checkbox">
-                        <label for=""><input type="checkbox">{{item.name}}</label>
+                        <label for="{{item.model}}"><input id="{{item.model}}" type="checkbox" ng-model="npLog.multi[item.model]">{{item.name}}</label>
 
                     </div>
                 </div>
@@ -69,36 +70,23 @@
         <div class="tab-pane" id="tab_b">
             <!-- AREA OF DIFFICULITY -->
             <div class="row">
-                <div class="col-md-6 new-checked">
-                    <label for="">1 to 1</label>
-                    <input type="checkbox">
+                <div class="col-md-12">
+                    <div class="col-md-4 " ng-repeat="item in areaOfDifficulty_six">
+                        <div class="checkbox">
+                            <label for="{{item.model}}"><input type="checkbox" ng-model="npLog.areaOfDifficulty.six[item.model]" id="{{item.model}}">{{item.name}}</label>
 
-                    <label for="">Meeting</label>
-                    <input type="checkbox">
-
-                    <label for="">Television</label>
-                    <input type="checkbox">
-                </div>
-                <div class="col-md-6 new-checked">
-
-                    <label for="">Group</label>
-                    <input type="checkbox">
-
-                    <label for="">Church</label>
-                    <input type="checkbox">
-
-                    <label for="">Telephone</label>
-                    <input type="checkbox">
+                        </div>
+                    </div>
 
                 </div>
 
                 <div class="col-md-6 new-textara">
                     <label for="">Others</label>
-                    <textarea name="" id="" cols="30" rows="5"></textarea>
+                    <textarea name="" id="" cols="30" rows="5" ng-model="npLog.areaOfDifficulty.others" class="form-control"></textarea>
                 </div>
                 <div class="col-md-6 new-textara">
                     <label for="">Remarks</label>
-                    <textarea name="" id="" cols="30" rows="5"></textarea>
+                    <textarea name="" id="" cols="30" rows="5" ng-model="npLog.areaOfDifficulty.remarks" class="form-control"></textarea>
                 </div>
 
             </div>
@@ -107,50 +95,59 @@
         <!-- HEARING EXAMINATION -->
         <div class="tab-pane" id="tab_c">
             <div class="row hearing">
-                <form action="" class="form-inline">
-                    <div class="col-md-12 form-group form-oto">
+                <form action="" class="">
+                    <div class="col-md-12 form-group">
                         <div class="col-md-6">
-                            <label for="">Brand</label>
-                            <input class=" form-control" type="text">
+                            <div class="form-group">
+                                <label for="brand" class="control-label">Brand</label>
+                                <input id="brand" class="form-control" type="text" ng-model="npLog.hearingAid.brand">
+                            </div>
                         </div>
                         <div class="col-md-6">
-                            <label for="">Model</label>
-                            <input class=" form-control" type="text">
+                            <div class="form-group">
+                                <label for="model" class="control-label">Model</label>
+                                <input id="model" class="form-control" type="text" ng-model="npLog.hearingAid.model">
+                            </div>
                         </div>
+                        <div class="form-group">
+                            <div class="col-md-4 " ng-repeat="item in hearingAid_three">
+                                <div class="checkbox">
+                                    <label for="{{item.model + $index}}">
+                                        <input type="checkbox" ng-model="npLog.hearingAid.three[item.model]" id="{{item.model + $index}}">{{item.name}}
+                                    </label>
 
-                        <div class="new-checked">
-                            <label class="">Both Ear</label>
-                            <input type="checkbox" value="">
+                                </div>
+                            </div>
 
-                            <label class="">Right</label>
-                            <input type="checkbox" value="">
-
-                            <label class="">Left</label>
-                            <input type="checkbox" value="">
-
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="" class="control-label">Currently</label>
+                                <input class=" form-control" type="text" ng-model="npLog.hearingAid.currently">
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="control-label">No of years</label>
+                                <input class=" form-control" type="text" ng-model="npLog.hearingAid.noOfYears">
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="control-label">Conditions of HI</label>
+                                <input class=" form-control" type="text" ng-model="npLog.hearingAid.conditionOfHI">
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="control-label">Amount Paid for Previous PI</label>
+                                <input class=" form-control" type="text" ng-model="npLog.hearingAid.amountPaidForPreviousPI">
+                            </div>
                         </div>
 
                         <div class="col-md-6">
-                            <label for="">Currently</label>
-                            <input class=" form-control" type="text">
-
-                            <label for="">No of years</label>
-                            <input class=" form-control" type="text">
-
-                            <label for="">Conditions of HI</label>
-                            <input class=" form-control" type="text">
-
-                            <label for="">Amount Paid for Previous PI</label>
-                            <input class=" form-control" type="text">
-
-                        </div>
-
-                        <div class="col-md-6">
-                            <label for="">Previously</label>
-                            <input class=" form-control" type="text">
-
-                            <label for="">Remakes</label>
-                            <textarea class=" form-control" name="" id="" cols="30" rows="5"></textarea>
+                            <div class="form-group">
+                                <label for="">Previously</label>
+                                <input class=" form-control" type="text" ng-model="npLog.hearingAid.previously">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Remakes</label>
+                                <textarea class=" form-control" name="" id="" cols="30" rows="5" ng-model="npLog.hearingAid.remarks"></textarea>
+                            </div>
                         </div>
                     </div>
                 </form>
@@ -162,255 +159,137 @@
 
         <!--    OTOSCOPIC EXAMINATION -->
         <div class="tab-pane" id="tab_d">
-            <form action="">
-                <div class="otoscop-1">
-                    <p>Right</p>
-                    <label for="">Clear</label>
-                    <input type="checkbox">
-                    <label for="">Wax</label>
-                    <input type="checkbox">
-                    <label for="">Discharge</label>
-                    <input type="checkbox">
+                <div >
+                    <label for="">Right</label>
+                    <div class="form-group">
+                        <div class="col-md-4 " ng-repeat="item in otoscopicExamination_right">
+                            <div class="checkbox">
+                                <label for="{{item.model + 'left'}}">
+                                    <input type="checkbox" ng-model="npLog.otoscopicExamination.right[item.model]" id="{{item.model + 'left'}}">{{item.name}}
+                                </label>
+
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
-                <div class="otoscop-2">
-                    <p>Left</p>
-                    <label for="">Clear</label>
-                    <input type="checkbox">
-                    <label for="">Wax</label>
-                    <input type="checkbox">
-                    <label for="">Discharge</label>
-                    <input type="checkbox">
+                <div >
+                    <label for="">Left</label>
+                    <div class="form-group">
+                        <div class="col-md-4 " ng-repeat="item in otoscopicExamination_left">
+                            <div class="checkbox">
+                                <label for="{{item.model + 'right'}}">
+                                    <input type="checkbox" ng-model="npLog.otoscopicExamination.left[item.model]" id="{{item.model + 'right'}}">{{item.name}}
+                                </label>
+
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
-                <div class="otoscop-3">
+                <div class="otoscop-3 excel excel">
+                    <label for="">Tympanometry</label>
                     <table class="table table-bordered">
-                        <thead>
-                        <tr>
-                            <th></th>
-                            <th>Type</th>
-                            <th>ECV</th>
-                            <th>SC</th>
-                            <th>Peak Pressure</th>
+                        <tr ng-repeat="tr in otoscopicExamination_table">
+                            <td ng-repeat="td in tr">
+                                <span ng-show="td.type == 'label'">{{td.value}}</span>
+                                <input type="text" ng-show="td.type == 'input'" ng-model="npLog.otoscopicExamination.table[td.model]">
+                            </td>
+
                         </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>Right</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Left</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        </tbody>
                     </table>
                 </div>
-            </form>
         </div>
 
         <!--  ACOUSTIC RELEX THRESHODLS -->
         <div class="tab-pane" id="tab_e">
-            <form action="">
-                <div class="otoscop-3">
-                    <table class="table table-bordered">
-                        <thead>
-                        <tr>
-                            <th></th>
-                            <th>500</th>
-                            <th>1000</th>
-                            <th>2000</th>
-                            <th>4000</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>Right</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Left</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div class="otoscop-3 excel excel">
 
-                <div class="otoscop-3">
-                    <table class="table table-bordered">
-                        <thead>
-                        <tr>
-                            <th></th>
-                            <th>500</th>
-                            <th>1000</th>
-                            <th>2000</th>
-                            <th>4000</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>Right</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Left</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </form>
+                <table class="table table-bordered">
+                    <tr ng-repeat="tr in acousticRelexThresholds_first">
+                        <td ng-repeat="td in tr">
+                            <span ng-show="td.type == 'label'">{{td.value}}</span>
+                            <input type="text" ng-show="td.type == 'input'" ng-model="npLog.acousticRelexThresholds.first[td.model]">
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+            <div class="otoscop-3 excel excel">
+
+                <table class="table table-bordered">
+                    <tr ng-repeat="tr in acousticRelexThresholds_second">
+                        <td ng-repeat="td in tr">
+                            <span ng-show="td.type == 'label'">{{td.value}}</span>
+                            <input type="text" ng-show="td.type == 'input'" ng-model="npLog.acousticRelexThresholds.second[td.model]">
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
         </div>
 
         <div class="tab-pane" id="tab_f">
-            <div class="otoscop-3">
+            <div class="excel">
+                <label for="">Right</label>
                 <table class="table table-bordered">
-                    <thead>
-                    <tr>
-                        <th>Right</th>
-                        <th>250</th>
-                        <th>500</th>
-                        <th>1000</th>
-                        <th>2000</th>
-                        <th>3000</th>
-                        <th>4000</th>
-                        <th>6000</th>
-                        <th>8000</th>
+                    <tr ng-repeat="tr in pureToneAudiometry_first">
+                        <td ng-repeat="td in tr">
+                            <span ng-show="td.type == 'label'">{{td.value}}</span>
+                            <input type="text" ng-show="td.type == 'input'" ng-model="npLog.pureToneAudiometry.first[td.model]">
+                        </td>
+
                     </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>AC</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>BC</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>MAC</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>MBC</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    </tbody>
                 </table>
             </div>
-            <div class="otoscop-3">
+            <div class="excel">
+                <label for="">Left</label>
                 <table class="table table-bordered">
-                    <thead>
-                    <tr>
-                        <th>Left</th>
-                        <th>250</th>
-                        <th>500</th>
-                        <th>1000</th>
-                        <th>2000</th>
-                        <th>3000</th>
-                        <th>4000</th>
-                        <th>6000</th>
-                        <th>8000</th>
+                    <tr ng-repeat="tr in pureToneAudiometry_second">
+                        <td ng-repeat="td in tr">
+                            <span ng-show="td.type == 'label'">{{td.value}}</span>
+                            <input type="text" ng-show="td.type == 'input'" ng-model="npLog.pureToneAudiometry.second[td.model]">
+                        </td>
+
                     </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>AC</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>BC</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>MAC</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>MBC</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    </tbody>
                 </table>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="excel">
+
+                        <table class="table table-bordered">
+                            <tr ng-repeat="tr in pureToneAudiometry_third">
+                                <td ng-repeat="td in tr">
+                                    <span ng-show="td.type == 'label'">{{td.value}}</span>
+                                    <input type="text" ng-show="td.type == 'input'" ng-model="npLog.pureToneAudiometry.third[td.model]">
+                                </td>
+
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group row">
+                        <div class="col-md-12 " ng-repeat="item in pureToneAudiometry_four">
+                            <div class="checkbox">
+                                <label for="{{item.model + 'right'}}">
+                                    <input type="checkbox" ng-model="npLog.pureToneAudiometry.four[item.model]" id="{{item.model + 'right'}}">{{item.name}}
+                                </label>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
 
         <!--  PROVISIONAL DIAGNOSIS -->
         <div class="tab-pane" id="tab_g">
             <form action="">
-                <label for="">Remarks</label>                                   <textarea class="form-control" id="" cols="30" rows="10"></textarea>
+                <label for="pdremarks">Remarks</label>
+                <textarea class="form-control" id="pdremarks" cols="30" rows="10" ng-model="npLog.provisionalDiagnosis.remarks" ></textarea>
             </form>
         </div>
 
@@ -421,12 +300,12 @@
             <form action="">
                 <div class="new-right">
                     <label for="">Right</label>
-                    <textarea class="form-control" id="" cols="30" rows="7"></textarea>
+                    <textarea class="form-control" id="" cols="30" rows="7"  ng-model="npLog.amplification.right"></textarea>
                 </div>
                 <br> <br>
                 <div class="new-right">
                     <label for="">Left</label>
-                    <textarea class="form-control" id="" cols="30" rows="7"></textarea>
+                    <textarea class="form-control" id="" cols="30" rows="7" ng-model="npLog.amplification.left"></textarea>
                 </div>
 
 

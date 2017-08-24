@@ -1,37 +1,62 @@
 /*
 * multi-line comment
 */
-p{ line-height: 1em; }
-h1, h2, h3, h4{
+p {
+    line-height: 1em;
+}
+
+h1, h2, h3, h4 {
     color: black;
-	font-weight: normal;
-	line-height: 1.1em;
-	margin: 0 0 .5em 0;
+    font-weight: normal;
+    line-height: 1.1em;
+    margin: 0 0 .5em 0;
     /*text-align: left;*/
 }
-h1{ font-size: 1.5em; }
-h2{ font-size: 1.5em; }
-h4{ text-align: center; }
-h5{ 
-text-align: -webkit-center; 
 
-display: inline-flex;
-/*padding-left: 70px;*/
+h1 {
+    font-size: 1.5em;
 }
-a{
-	color: green;
-	text-decoration: none;
+
+h2 {
+    font-size: 1.5em;
 }
-	a:hover,
-	a:active{ text-decoration: underline; }
+
+h4 {
+    text-align: center;
+}
+
+h5 {
+    text-align: -webkit-center;
+
+    display: inline-flex;
+    /*padding-left: 70px;*/
+}
+
+a {
+    color: green;
+    text-decoration: none;
+}
+
+a:hover,
+a:active {
+    text-decoration: underline;
+}
 
 /* you can structure your code's white space so that it is as readable for when you come back in the future or for other people to read and edit quickly */
 
-body{
-    font-family: arial; font-size: 80%; line-height: 1.2em; width: 100%; margin: 0; background: white;
+body {
+    font-family: arial;
+    font-size: 80%;
+    line-height: 1.2em;
+    width: 100%;
+    margin: 0;
+    background: white;
 }
+
 /* you can put your code all in one line like above */
-#page{ margin: 20px; }
+#page {
+    margin: 20px;
+}
 
 header {
     padding: 1em;
@@ -65,19 +90,17 @@ article {
 
 }
 
-.header_cont
-{
- display: inline-block;
+.header_cont {
+    display: inline-block;
 }
 
-.header_cont img
-{
+.header_cont img {
     position: absolute;
     top: 0px;
     right: 0px;
 }
-.header_cont button
-{
+
+.header_cont button {
     /*background-color: darkseagreen;*/
     /*border: black;*/
     color: black;
@@ -90,8 +113,8 @@ article {
     cursor: pointer;
     border-radius: 12px;
 }
-.header_cont button:hover
-{
+
+.header_cont button:hover {
     background-color: darkseagreen;
     /*border: black;*/
     color: black;
@@ -104,29 +127,32 @@ article {
     cursor: pointer;
     border-radius: 12px;
 }
-.button1{
-    border-radius: 12px;
-    background-color: white;
-    border: 1px solid grey;
-}
-.button2{
-    border-radius: 12px;
-     background-color: darkseagreen;
-     border: 1px solid grey;
-}
-.button3{
-    border-radius: 12px;
-    background-color: white;
-    border: 1px solid grey;
-}
-.button4{
+
+.button1 {
     border-radius: 12px;
     background-color: white;
     border: 1px solid grey;
 }
 
-.button5
-{
+.button2 {
+    border-radius: 12px;
+    background-color: darkseagreen;
+    border: 1px solid grey;
+}
+
+.button3 {
+    border-radius: 12px;
+    background-color: white;
+    border: 1px solid grey;
+}
+
+.button4 {
+    border-radius: 12px;
+    background-color: white;
+    border: 1px solid grey;
+}
+
+.button5 {
     /*background-color: darkseagreen;*/
     /*border: black;*/
     color: black;
@@ -146,8 +172,7 @@ article {
     right: 10px;
 }
 
-.button5:hover
-{
+.button5:hover {
     background-color: darkseagreen;
     /*border: black;*/
     color: black;
@@ -161,8 +186,7 @@ article {
     border-radius: 12px;
 }
 
-.button6
-{
+.button6 {
     /*background-color: darkseagreen;*/
     /*border: black;*/
     color: black;
@@ -183,8 +207,7 @@ article {
     transition: 0.3s;
 }
 
-.button6:hover
-{
+.button6:hover {
     background-color: darkseagreen;
     /*border: black;*/
     color: black;
@@ -198,8 +221,7 @@ article {
     border-radius: 12px;
 }
 
-.button7
-{
+.button7 {
     /*background-color: darkseagreen;*/
     /*border: black;*/
     color: white;
@@ -217,8 +239,7 @@ article {
 
 }
 
-.button6:hover
-{
+.button6:hover {
     background-color: darkseagreen;
     /*border: black;*/
     color: black;
@@ -232,9 +253,6 @@ article {
     border-radius: 12px;
 }
 
-
-
-
 .header_cont input[type=text] {
     width: 230px;
     -webkit-transition: width 0.4s ease-in-out;
@@ -245,39 +263,44 @@ article {
     border-radius: 12px;
     height: 20px;
     text-align: center;
-} 
+}
 
-.patient nav{
+.patient nav {
     position: absolute;
     top: 65px;
     left: 35px;
 }
+
 .patient nav ul {
     list-style-type: none;
     padding: 0;
 }
-   
+
 .patient nav ul a {
     text-decoration: none;
 }
-.patient nav ul img{
+
+.patient nav ul img {
     width: 5%;
     height: auto;
     margin-left: -25px;
     display: flex;
     margin-top: -20px;
 }
-.patient nav ul p{
+
+.patient nav ul p {
     color: green;
     text-decoration: none;
     text-align: left;
 }
-.header_cont h3{
+
+.header_cont h3 {
     color: black;
     margin-left: -290px;
     font-size: x-large;
 }
-.header_cont h6{
+
+.header_cont h6 {
     color: black;
     position: absolute;
     top: -20px;
@@ -290,10 +313,10 @@ table {
     border-collapse: collapse;
     width: 90%;
     margin-right: 504px;
-    border-bottom:2px solid #8eb2c3;
+    border-bottom: 2px solid #8eb2c3;
 }
 
-td{
+td {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
@@ -315,10 +338,11 @@ th {
 }*/
 .blue_box {
     display: block;
-    clear:both;
+    clear: both;
     border: 2px border-style black;
     padding-top: 49px;
 }
+
 .blue_box span {
     background-color: white;
     color: black;
@@ -333,19 +357,22 @@ th {
     border-right: 1px solid #cccccc;
     border-bottom: 3px solid #15A4FA;
 }
-.blue_box h1{
-font-size: 1.3em;
-font-weight: 700;
-background-color: blue;
-padding: 5px;
-color: white;
+
+.blue_box h1 {
+    font-size: 1.3em;
+    font-weight: 700;
+    background-color: blue;
+    padding: 5px;
+    color: white;
 }
-.blue_box h2{
+
+.blue_box h2 {
     font-size: 1.2em;
     text-align: left;
     font-weight: 400;
 }
-.blue_box table{
+
+.blue_box table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     /* text-align: center; */
@@ -353,6 +380,7 @@ color: white;
     margin-right: 150px;
     margin-left: -40px;
 }
+
 .blue_box th {
     border: 1px solid #15A4FA;
     text-align: left;
@@ -366,29 +394,33 @@ color: white;
     width: 130px;
 
 }
-.box1{
+
+.box1 {
     display: block;
-    clear:both;
+    clear: both;
     position: absolute;
     top: 85px;
     left: 30px;
 }
-.box1 span{
+
+.box1 span {
     background-color: white;
     color: black;
     padding: 10px 5px;
     display: block;
     float: right;
 }
-.box2{
+
+.box2 {
     display: block;
-    clear:both;
+    clear: both;
     position: absolute;
     top: 150px;
     left: 30px;
 
 }
-.box2 span{
+
+.box2 span {
     background-color: white;
     color: black;
     padding: 10px 5px;
@@ -396,7 +428,8 @@ color: white;
     float: right;
     margin-top: 10px;
 }
-.box3{
+
+.box3 {
     display: block;
     clear: both;
     margin-right: -10px;
@@ -404,14 +437,16 @@ color: white;
     margin-left: -10px;
 
 }
-.box3 span{
+
+.box3 span {
     background-color: white;
     color: black;
     padding: 10px;
     display: block;
     float: right;
 }
-.box3 table{
+
+.box3 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
@@ -428,17 +463,18 @@ color: white;
     font-weight: 700;
     background-color: blue;
 }
-.patient2 article{
+
+.patient2 article {
     overflow: hidden;
     position: absolute;
     top: 85px;
     left: 235px;
     height: 100%;
     width: 100%;
-    border:0px solid black;
+    border: 0px solid black;
 }
-.box3 button
-{
+
+.box3 button {
     background-color: white;
     /* border: black; */
     color: black;
@@ -454,8 +490,8 @@ color: white;
     /*background-color: darkseagreen;*/
     border: 1px solid grey;
 }
-.box3 button:hover
-{
+
+.box3 button:hover {
     background-color: blue;
     /* border: black; */
     color: white;
@@ -471,23 +507,26 @@ color: white;
 }
 
 .headerSortDown:after,
-.headerSortUp:after{
-  content: ' ';
-  position: relative;
-  left: 2px;
-  border: 8px solid transparent;
+.headerSortUp:after {
+    content: ' ';
+    position: relative;
+    left: 2px;
+    border: 8px solid transparent;
 }
-.headerSortDown:after{
-  top: 10px;
-  border-top-color: silver;
+
+.headerSortDown:after {
+    top: 10px;
+    border-top-color: silver;
 }
-.headerSortUp:after{
-  bottom: 15px;
-  border-bottom-color: silver;
+
+.headerSortUp:after {
+    bottom: 15px;
+    border-bottom-color: silver;
 }
+
 .headerSortDown,
-.headerSortUp{
-  padding-right: 10px;
+.headerSortUp {
+    padding-right: 10px;
 }
 
 .box3 input[type=text] {
@@ -511,12 +550,12 @@ color: white;
     left: 0px;
 }
 
-.page2 td{
+.page2 td {
     text-align: center;
     background-color: white;
 }
 
- .page2 textarea{
+.page2 textarea {
     -webkit-appearance: textarea;
     height: 150px;
     background-color: white;
@@ -537,9 +576,9 @@ color: white;
     left: 0px;
     top: 65px;
     width: 49.5%;
- }
-.page2 button
-{
+}
+
+.page2 button {
 
     background-color: white;
     /* border: black; */
@@ -555,8 +594,8 @@ color: white;
     /* background-color: darkseagreen; */
     border: 1px solid white
 }
-.page2-2 button
-{
+
+.page2-2 button {
 
     background-color: white;
     /* border: black; */
@@ -572,6 +611,7 @@ color: white;
     /* background-color: darkseagreen; */
     border: 1px solid white
 }
+
 .page2-2 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -582,10 +622,11 @@ color: white;
     border-bottom-color: blue;
 }
 
-.page2-2 td{
+.page2-2 td {
     text-align: center;
     background-color: white;
 }
+
 .msg table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -596,11 +637,12 @@ color: white;
     border-bottom-color: blue;
 }
 
-.msg td{
+.msg td {
     text-align: left;
     background-color: white;
 }
-.form-style-9{
+
+.form-style-9 {
     max-width: 900px;
     background: #FAFAFA;
     padding: 50px;
@@ -610,20 +652,23 @@ color: white;
     border: 6px solid #8eb2c3; /*#3CB371*/
     float: inherit;
 }
-.form-style-9 ul{
-    padding:0;
-    margin:0;
-    list-style:none;
+
+.form-style-9 ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
-.form-style-9 ul li{
+
+.form-style-9 ul li {
     display: block;
     margin-bottom: 10px;
     min-height: 35px;
 }
-.form-style-9 ul li  .field-style{
-    box-sizing: border-box; 
+
+.form-style-9 ul li .field-style {
+    box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box; 
+    -moz-box-sizing: border-box;
     padding: 8px;
     outline: none;
     border: 1px solid #B0CFE0;
@@ -633,28 +678,35 @@ color: white;
     -o-transition: all 0.30s ease-in-out;
 
 }
-.form-style-9 ul li  .field-style:focus{
+
+.form-style-9 ul li .field-style:focus {
     box-shadow: 0 0 5px #B0CFE0;
-    border:1px solid #B0CFE0;
+    border: 1px solid #B0CFE0;
 }
-.form-style-9 ul li .field-split{
+
+.form-style-9 ul li .field-split {
     width: 30%;
     margin-right: 30px;
 }
-.form-style-9 ul li .field-full{
+
+.form-style-9 ul li .field-full {
     width: 100%;
 }
-.form-style-9 ul li input.align-left{
-    float:left;
+
+.form-style-9 ul li input.align-left {
+    float: left;
 }
-.form-style-9 ul li input.align-right{
-    float:left;
+
+.form-style-9 ul li input.align-right {
+    float: left;
 }
-.form-style-9 ul li textarea{
+
+.form-style-9 ul li textarea {
     width: 100%;
     height: 100px;
 }
-.form-style-9 ul li input[type="button"], 
+
+.form-style-9 ul li input[type="button"],
 .form-style-9 ul li input[type="submit"] {
     -moz-box-shadow: inset 0px 1px 0px 0px #8eb2c3;
     -webkit-box-shadow: inset 0px 1px 0px 0px #8eb2c3;
@@ -668,40 +720,45 @@ color: white;
     text-decoration: none;
     font: 12px Arial, Helvetica, sans-serif;
 }
-.form-style-9 ul li input[type="button"]:hover, 
+
+.form-style-9 ul li input[type="button"]:hover,
 .form-style-9 ul li input[type="submit"]:hover {
     background: linear-gradient(to bottom, #8eb2c3 5%, #8eb2c3 100%);
     background-color: #3CB371;
 }
-.boxbox{
+
+.boxbox {
     display: block2;
-    clear:both;
+    clear: both;
     position: absolute;
     top: 85px;
     left: 30px;
     width: 16%;
 }
-.boxbox span{
+
+.boxbox span {
     background-color: white;
     color: black;
     padding: 10px 2px;
     display: block;
     float: right;
 }
-.boxbox2{
+
+.boxbox2 {
     display: block;
-    clear:both;
+    clear: both;
     position: absolute;
     top: 245px;
     left: 30px;
     width: 16%;
 }
-.boxbox2 span{
-  /*  background-color: white;
-    color: black;
-    padding: 10px 5px;
-    display: block;
-    float: right;*/
+
+.boxbox2 span {
+    /*  background-color: white;
+      color: black;
+      padding: 10px 5px;
+      display: block;
+      float: right;*/
 }
 
 /* .boxbox2 a{
@@ -709,13 +766,13 @@ color: white;
     text-decoration: underline;
     text-align: right;
 } */
-.patient2 a{
-/*    color: red;
-    text-align: right;
-    padding-left: 150px;
-    position: absolute;
-    bottom: 35px;
-    left: -16px;*/
+.patient2 a {
+    /*    color: red;
+        text-align: right;
+        padding-left: 150px;
+        position: absolute;
+        bottom: 35px;
+        left: -16px;*/
 }
 
 /* The Modal (background) */
@@ -729,8 +786,8 @@ color: white;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
     padding-left: 250px;
 }
 
@@ -743,8 +800,7 @@ color: white;
     width: 80%;
 }
 
-.edit button
-{
+.edit button {
     background-color: white;
     /* border: black; */
     color: red;
@@ -759,6 +815,7 @@ color: white;
     /* background-color: darkseagreen; */
     border: 1px solid white
 }
+
 .edit table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -769,19 +826,19 @@ color: white;
     border-bottom-color: blue;
 }
 
-.edit td{
+.edit td {
     text-align: right;
     background-color: white;
 }
 
-.apptDate select.month{
+.apptDate select.month {
     padding: 2px;
     position: absolute;
     position: absolute;
     left: 790px;
     top: 70px;
     width: 10%;
- 
+
 }
 
 .apptDate select.day {
@@ -802,24 +859,24 @@ color: white;
     width: 6%;
 }
 
-.apptDate select.clinic{
+.apptDate select.clinic {
     padding: 2px;
     position: absolute;
     position: absolute;
     left: 550px;
     top: 70px;
     width: 10%;
- 
+
 }
 
-.apptDate button.scheduleSubmit{
+.apptDate button.scheduleSubmit {
     padding: 2px;
     position: absolute;
     position: absolute;
     left: 1155px;
     top: 70px;
     width: 10%;
- 
+
 }
 
 .appointment {
@@ -829,55 +886,54 @@ color: white;
     left: 550px;
     top: 200px;
     width: 10%;
- 
+
 }
 
-.feedback {  
+.feedback {
     float: left;
     width: 350px;
     height: 350px;
     margin-top: 100px;
     margin-left: 100px;
-    border: 15px solid rgb(0,128,0); 
+    border: 15px solid rgb(0, 128, 0);
 }
 
-.feedback h1 { 
-    color: black; 
-    font-family: 'Arial Black',sans-serif; 
-    font-size: 62px; 
-    font-weight: 800; 
-    line-height: 72px; 
-    margin: 0 0 24px; 
-    text-align: center; 
-    text-transform: uppercase; 
+.feedback h1 {
+    color: black;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 62px;
+    font-weight: 800;
+    line-height: 72px;
+    margin: 0 0 24px;
+    text-align: center;
+    text-transform: uppercase;
 }
 
-.feedback h2 { 
-    color: black; 
-    font-family: 'Arial Black',sans-serif; 
-    font-size: 80px; 
-    font-weight: 800; 
-    line-height: 72px; 
-    margin: 0 0 24px; 
-    text-align: center; 
-    text-transform: uppercase; 
+.feedback h2 {
+    color: black;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 80px;
+    font-weight: 800;
+    line-height: 72px;
+    margin: 0 0 24px;
+    text-align: center;
+    text-transform: uppercase;
 }
 
-.feedback h3 { 
-    color: black; 
-    font-family: 'Georgia',sans-serif; 
-    font-size: 50px; 
-    font-weight: 800; 
-    line-height: 72px; 
-    margin: 0 0 24px; 
-    text-align: center; 
-    text-transform: uppercase; 
+.feedback h3 {
+    color: black;
+    font-family: 'Georgia', sans-serif;
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 72px;
+    margin: 0 0 24px;
+    text-align: center;
+    text-transform: uppercase;
 }
-
 
 /*----------------------------------------  */
-.patient-title{
-     margin: 5px 10px;
+.patient-title {
+    margin: 5px 10px;
 }
 
 button.filter-button {
@@ -935,8 +991,8 @@ div.tab {
     width: 80%;
 }
 
-.green{
-    color:green;
+.green {
+    color: green;
 }
 
 .color-head {
@@ -944,18 +1000,15 @@ div.tab {
     color: #fff;
 }
 
-
 .button6:hover {
     background-color: #25965E;
     border: 1px solid #25965E;
     color: #fff;
 }
 
-
-body
-{
+body {
     font-family: 'Helvetica', 'Arial', sans-serif;
-  }
+}
 
 button.button2.button-active {
     background: #25965E;
@@ -968,7 +1021,6 @@ button:hover.button1 {
     border: 1px solid #25965E;
     color: #fff;
 }
-
 
 button:hover.button1 {
     background: #25965E;
@@ -993,4 +1045,3 @@ button:hover.button4 {
     border: 1px solid #25965E;
     color: #fff;
 }
-

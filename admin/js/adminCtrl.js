@@ -362,6 +362,7 @@ app.controller('admincontroller', function ($scope, $http, $window, $location, $
                         $scope.getLogList($scope.result.nric);
                         $scope.getTaskList($scope.result.nric);
                         $scope.getAppointmentList($scope.result.nric);
+                        $scope.getNpLog($scope.result.nric);
                         // console.log('res',$scope.result.description);
 
 
@@ -778,6 +779,7 @@ app.controller('admincontroller', function ($scope, $http, $window, $location, $
     $scope.logList = [];
     $scope.taskList = [];
     $scope.appointmentList = [];
+    $scope.npLog = {};
     $scope.getNoteList = function (nric) {
         $http.get(baseurl + 'note/' + $scope.result.nric).success(function (res) {
             initEditObj(res);
@@ -809,6 +811,14 @@ app.controller('admincontroller', function ($scope, $http, $window, $location, $
         $http.get(baseurl + 'appointment/' + $scope.result.nric).success(function (res) {
             initEditObj(res);
             $scope.appointmentList = res;
+        }).error(function (err) {
+            console.log("err", err);
+
+        })
+    };
+    $scope.getNpLog = function (nric) {
+        $http.get(baseurl + 'new-log/' + $scope.result.nric).success(function (res) {
+            $scope.npLog = res;
         }).error(function (err) {
             console.log("err", err);
 
@@ -871,36 +881,148 @@ app.controller('admincontroller', function ($scope, $http, $window, $location, $
             .error(function (err) {
                 console.log("err", err);
             })
-    }
+    };
 
+    $scope.saveNewLog = function () {
+        var createObj = {
+            customer_id: $scope.result.id,
+            first_name: $scope.result.firstName,
+            last_name: $scope.result.lastName,
+            nric: $scope.result.nric,
+            description: JSON.stringify($scope.npLog)
+        };
+        console.log("createObj", createObj);
+
+        $http.put(baseurl + 'new-log/' + $scope.result.nric, createObj).success(function (res) {
+            console.log("res", res);
+        }).error(function (err) {
+            console.log("err", err);
+
+        })
+
+    };
+    $scope.complaint_of_multi = [
+        {name: 'Eir Pain', model:'EirPain'},
+        {name: 'Head Injury', model:'HeadInjury'},
+        {name: 'Medical Condition', model:'MedicalCondition'},
+        {name: 'Discharge', model:'Discharge'},
+        {name: 'Surgery', model:'Surgery'},
+        {name: 'Current Medication', model:'CurrentMedication'},
+        {name: 'Headache', model:'Headache'},
+        {name: 'Vomiting', model:'Vomiting'},
+        {name: 'Noise Exposer', model:'NoiseExposer'},
+        {name: 'Sinusitus', model:'Sinusitus'},
+        {name: 'Pain Swallowing', model:'PainSwallowing'},
+        {name: 'Family History', model:'FamilyHistory'},
+        {name: 'Vertigo', model:'Vertigo'},
+        {name: 'Fullness of Ear', model:'FullnessofEar'},
+        {name: 'Tinnnis', model:'Tinnnis'}
+    ];
+    $scope.complaint_of_three = [
+        {name: 'Gradual', model:'gradual'},
+        {name: 'Student', model:'student'},
+        {name: 'Birth', model:'birth'}
+    ];
+    $scope.complaint_of_two = [
+        {name: 'R', model:'right'},
+        {name: 'L', model:'left'}
+    ];
+    $scope.areaOfDifficulty_six =[
+        {name: '1 to 1', model:'1to1'},
+        {name: 'Meeting', model:'Meeting'},
+        {name: 'Television', model:'Television'},
+        {name: 'Group', model:'Group'},
+        {name: 'Church', model:'Church'},
+        {name: 'Telephone', model:'Telephone'}
+    ];
+    $scope.hearingAid_three = [
+        {name: 'Both Ears', model:'BothEars'},
+        {name: 'Right', model:'Right'},
+        {name: 'Left', model:'Left'}
+    ];
+    $scope.otoscopicExamination_right = [
+        {name: 'Clear', model:'clear'},
+        {name: 'Wax', model:'wax'},
+        {name: 'Discharge', model:'discharge'}
+    ];
+    $scope.otoscopicExamination_left = [
+        {name: 'Clear', model:'clear'},
+        {name: 'Wax', model:'wax'},
+        {name: 'Discharge', model:'discharge'}
+    ];
+    $scope.otoscopicExamination_table = generateTable(
+        {
+            row:["Right", "Left"],
+            column:["Type", "ECV",	"SC", "Peak Pressure"]
+        }
+    );
+    $scope.acousticRelexThresholds_first = generateTable(
+        {
+            row:["Right", "Left"],
+            column:["500", "1000", "2000", "4000"]
+        }
+    );
+    $scope.acousticRelexThresholds_second = generateTable(
+        {
+            row:["Right", "Left"],
+            column:["500", "1000", "2000", "4000"]
+        }
+    );
+    $scope.pureToneAudiometry_first = generateTable(
+        {
+            row:["AC", "BC", "MAC", "MBC"],
+            column:["250", "500", "1000", "2000", "3000", "4000", "6000", "8000"]
+        }
+    );$scope.pureToneAudiometry_second = generateTable(
+        {
+            row:["AC", "BC", "MAC", "MBC"],
+            column:["250", "500", "1000", "2000", "3000", "4000", "6000", "8000"]
+        }
+    ); $scope.pureToneAudiometry_third = generateTable(
+        {
+            row:["Right", "Left"],
+            column:["PTA", "SRT", "PbMAX", "UCL"]
+        }
+    );
+    $scope.pureToneAudiometry_four = [
+        {name: 'Pure Tome Audimometry', model:'PureTomeAudimometry'},
+        {name: 'Aided Test', model:'AidedTest'},
+        {name: 'Play Audiometry', model:'PlayAudiometry'},
+        {name: 'Unaided Test', model:'UnaidedTest'}
+    ];
+
+    function generateTable(data) {
+        var rowList = data.row;
+        var columnList = data.column;
+        var table = [];
+
+        for(var i = 0; i < rowList.length; i++){
+            table[i+1] = [];
+            for(var j = 0; j < columnList.length; j++){
+                table[i+1][j+1] = {
+                    model: i+'_'+j,
+                    type: 'input'
+                }
+            }
+        }
+        table[0] = [];
+        for(var i = 0; i < rowList.length; i++){
+            table[i+1][0] = {
+                type: 'label',
+                value: rowList[i]
+            }
+        }
+        for(var i = 0; i < columnList.length; i++){
+            table[0][i+1] = {
+                type: 'label',
+                value: columnList[i]
+            }
+        }
+        return table;
+    }
 })
     .controller('NewPLogCtrl', function ($scope, $http, $window, $location, $rootScope, $filter) {
-        $scope.complaint_of = [
-            {name: 'Eir Pain', model:'eir_pain'},
-            {name: 'Head Injury', model:'head_injury'},
-            {name: 'Medical Condition', model:'head_injury'},
-            {name: 'Discharge', model:'head_injury'},
-            {name: 'Surgery', model:'head_injury'},
-            {name: 'Current Medication', model:'head_injury'},
-            {name: 'Headache', model:'head_injury'},
-            {name: 'Vomiting', model:'head_injury'},
-            {name: 'Noise Exposer', model:'head_injury'},
-            {name: 'Sinusitus', model:'head_injury'},
-            {name: 'Pain Swallowing', model:'head_injury'},
-            {name: 'Family History', model:'head_injury'},
-            {name: 'Vertigo', model:'head_injury'},
-            {name: 'Fullness of Ear', model:'head_injury'},
-            {name: 'Tinnnis', model:'head_injury'},
-        ];
-        $scope.complaint_of_three = [
-            {name: 'Gradual', model:'eir_pain'},
-            {name: 'Student', model:'head_injury'},
-            {name: 'Birth', model:'head_injury'}
-        ];
-        $scope.complaint_of_two = [
-            {name: 'R', model:'eir_pain'},
-            {name: 'L', model:'head_injury'}
-        ]
+
     })
 
     .directive('rating', function () {
