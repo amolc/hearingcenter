@@ -1,0 +1,73 @@
+section#context-account {
+    padding-top: 30px;
+}
+
+.account-overview ul li {
+    list-style: none;
+   
+}
+
+.account-overview ul li a {
+    margin-left: 15px;
+    color: #111111;
+}
+
+.input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+    width: 400px;
+    float: left;
+}
+
+section#account-overview {
+    padding-top: 50px;
+}
+
+
+.overview-box {
+    background: #38A672;
+    color: #fff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.box-22{
+	background: #15A4FA;
+}
+
+.box-3{
+	background: #F5A623;
+}
+.box-4{
+	background: #D0021B;
+}
+
+section#account-table {
+    padding-top: 50px;
+}
+
+
+td.overdue p {
+    background: #D0021B;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+}
+
+
+td.paid p {
+    background: #38A672;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.account-btn{
+	border: 0;
+    color: #fff;
+    margin-left:20px;
+    background: -webkit-linear-gradient(top, #b4e391 0%,#61c419 50%,#b4e391 100%);
+    background: -o-linear-gradient(top, #b4e391 0%,#61c419 50%,#b4e391 100%);
+    background: -moz-linear-gradient(top, #b4e391 0%,#61c419 50%,#b4e391 100%);
+  }

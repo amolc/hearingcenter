@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<div data-ng-app="crm" data-ng-controller="admincontroller" ng-init=getID()>
+<head>
+
+  <!-- your webpage info goes here -->
+
+  <title>The Hearing Centre</title>
+
+  <meta name="author" content="Ama" />
+  <meta name="description" content="" />
+
+  <!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed -->
+  <link rel="stylesheet" href="css/admin.css" type="text/css" />
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script type="text/javascript" src="js/angular-storage.min.js"></script>
+  <script src="js/bootstrap.js" type="text/javascript"></script>
+  <script src="js/index.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/adminCtrl.js"></script>
+
+</head>
+<header>
+    <div class = "header_cont" >
+    <input type="text" name="search" placeholder="Search..">
+    <button class = "button1" >Dashboard</button>
+    <button class = "button3" onclick="location.href='patient.html';" >Patient</button> 
+    <button class = "button2" >Accounts</button>
+    <button class = "button4" >Clinic</button>
+    <button class="button4"><a href="feedback.html">Feedback</a></button>
+    <button class="button4" ng-click="logout()">Logout</button>
+    <h6 id="demo"></h6>
+    <img src="images/logo_2.png"><br><br>
+    </div> 
+</header>
+<body>
+  <!-- <div data-ng-app="crm" data-ng-controller="admincontroller" ng-init=getID()> -->
+    <!-- ng-init=getID() -->
+    <div class="tab">
+        <h5>
+            <button class = "button3" ng-click="setTab(1)" >Overview</button>
+            <button class = "button3" ng-click="setTab(2)" >Invoices</button><br><br>
+        </h5>
+    </div>
+
+    <div class="tab">
+        <div ng-show="isSet(1)">
+            
+             <button class = "button3">01 CUSTOMER INFO</button> 
+             <button class = "button3">02 ITEM SELECTION</button> 
+             <button class = "button3">03 PAYMENT SELECTION</button> 
+
+
+<!--CUSTOMER INFO PAGE  -->
+<div id = "custinfo">
+<br> Customer Information<br><br>
+        <form class="form-style-9" name="custInfo" ng-controller="admincontroller" ng-submit=updateCustInfo()>
+          <ul>
+            <li>
+              <input type="text" name="field1" class="field-style field-split align-left" required ng-model="result.firstName"/>
+              <input type="text" name="field2" class="field-style field-split align-right" required ng-model="result.lastName"/>
+            </li>
+            <li>
+              <input type="text" name="field3" class="field-style field-split align-left" required ng-model="result.mobile_number"/>
+              <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.home_number"/>
+            </li>
+            <li>
+              <input type="hidden" name="field4" class="field-style field-split align-left" required ng-model="result.id"/>
+              <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.gender"/>
+            </li>
+            <li>
+              <input type="text" name="field3" class="field-style field-full align-none" required ng-model="result.residential_address"/>
+            </li>
+            <li>
+              <input type="text" name="field3" class="field-style field-split align-left" required ng-model="result.postal"/>
+              <input type="text" name="field4" class="field-style field-split align-right" required ng-model="result.country"/>
+            </li>
+
+            <li>
+              <!-- <input type="submit" value="CONTINUE TO ITEM SLECTION" /> -->
+              <input value="Submit" class="button3" name="submit" type="submit">
+              <!-- <button class = "button3" ng-click="custInfo()" >SUBMIT</button> -->
+            </li>
+          </ul>
+        </form>   
+</div>
+<!--ITEM SELECTION PAGE  -->
+<div id="itemSel" >
+<br>ITEM SELECTION<br><br>
+      <form class="form-style-9"  >
+          <ul>
+            <li>
+              <input type="text" name="field1" class="field-style field-split align-left" required placeholder="ITEM 1 NAME" ng-model="item1"/>
+              <input type="text" name="field2" class="field-style field-split align-right" required placeholder="ITEM 2 NAME" ng-model="item2"/>
+            </li>
+            <li>
+              <!-- <input type="submit" value="CONTINUE TO PAYMENT SELECTION" /> -->
+              <button class = "button3" ng-click="itemSel()" >SUBMIT</button>
+            </li>
+          </ul>
+        </form>
+</div>          
+<!--END OF ITEM SELECTION PAGE  -->        
+ <!--PAYMENT PAGE  -->
+<div id="pay" >
+<br>PAYMENT SELECTION<br><br>
+        <form class="form-style-9" >
+          <ul>
+            <li>
+              <input type="text" name="field1" class="field-style field-split align-left" required placeholder="PAYMENT METHOD" ng-model="paymethod"/>
+            </li>
+            <li>
+              <button class = "button3" ng-click="pay()" >SUBMIT</button>
+            </li>
+          </ul>
+        </form>
+</div>            
+<!--END OF PAYMENT  -->       
+
+       </div>
+    </div>
+<!--END OF CUSTOMER INFO PAGE  -->
+
+<!--  INVOICE  -->
+        <div ng-show="isSet(2)">
+        </div>
+    </div>
+</div>
+
+<script>
+
+var d = new Date();
+document.getElementById("demo").innerHTML = d.toDateString();
+
+</script>
+
+</body>
+
+</html>

@@ -15,8 +15,7 @@
     <!-- <link rel="stylesheet" href="css/admin.css" type="text/css" /> -->
     <link rel="stylesheet" href="css/patient2.css">
     <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css" type="text/css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css
-">
+    <link rel="stylesheet" href="css/account.css">
 
     <!--         <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css" type="text/css" /> -->
     <script type="text/javascript" src="js/jquery.js"></script>
@@ -26,8 +25,13 @@
     <script src="js/index.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/adminCtrl.js"></script>
-    <link rel="stylesheet" href="css/calender.css">
-    
+    <style>
+        .new-button {
+            position: absolute;
+            bottom: -35px;
+            left: 33px;
+        }
+    </style>
 
 </head>
 
@@ -46,8 +50,8 @@
                     <div class="menu">
                         <ul class="nav nav-pills">
                             <li><a href="#">Dashboard</a></li>
-                            <li class="active"><a onclick="location.href='patient.html';">Patient</a></li>
-                            <li><a href="account.html?nric={{result.nric}}">Accounts</a></li>
+                            <li ><a onclick="location.href='patient.html';">Patient</a></li>
+                            <li class="active"><a href="account.html?nric={{result.nric}}">Accounts</a></li>
                             <li><a href="#">Clinic</a></li>
                             <li><a href="feedback.html">Feedback</a></li>
                             <li><a href="#" ng-click="logout()">Logout</a></li>
@@ -63,66 +67,48 @@
             </div>
         </div>
     </section>
-    
-    <scetion class="context-calander">
+
+    <section id="context-account">
         <div class="container">
             <div class="row">
-                <div class="col-md-3">
-                    <div id='calendar'></div>
+                <div class="col-md-6 text-left">
+                    <div class="account-overview">
+                        <ul class="nav-pills">
+                            <li><a href="account.html"><b>Overview</b></a></li>
+                            <li><a href="invoice.html"><b>Invoice</b></a></li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-9">
-                <div id='calendar-2'></div>
+                <div class="col-md-6">
+                    <div class="account-overview-2 input-group">
+                       <input type="text" class="form-control" placeholder="Search by Invoice ID">
+                         <span class="input-group-addon" id="basic-addon2"><i class="fa fa-search"></i></span> 
+                    </div>
+                    
+                    <button style="margin-left:20px;" class="btn"><i class="fa fa-plus"></i> New Invoice</button>
+                </div>  
             </div>
         </div>
-    </scetion>
+    </section>
 
 
 
-   
-    <script src="js/jquery.min.js"></script>
-    <script src="js/moment.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
-    <script>
-        $(document).ready(function() {
 
-            // page is now ready, initialize the calendar...
 
-            $('#calendar').fullCalendar({
-                // put your options and callbacks here
-            })
 
-        });
-    </script>
+
+
+
+
+
     
     
     <script>
-    
-    
-    $('#calendar-2').fullCalendar({
-    defaultView: 'timelineMonth',
-    events: [
-        // events go here
-    ],
-    resources: [
-        // resources go here
-    ]
-    // other options go here...
-});
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+        var d = new Date();
+        document.getElementById("demo").innerHTML = d.toDateString();
     </script>
+    
+    
 </body>
 
 </html>
