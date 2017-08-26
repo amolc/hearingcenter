@@ -71,3 +71,13 @@ td.paid p {
     background: -o-linear-gradient(top, #b4e391 0%,#61c419 50%,#b4e391 100%);
     background: -moz-linear-gradient(top, #b4e391 0%,#61c419 50%,#b4e391 100%);
   }
+
+i.fa.fa-star {
+    color: #F0CF3A;
+}
+
+.clinic-header{
+
+    background: #15A4FA;
+    color: #fff;
+}
