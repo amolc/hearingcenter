@@ -25,6 +25,7 @@ section#header {
     color: #fff;
     background-color: #45A77A;
     border-radius: 30px;
+    border:0;
 }
 #header .nav-pills>li>a {
     color: #676767;
@@ -238,7 +239,7 @@ button.btn.tab-but-2 {
 
 ..new-side-nav #header .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
     background-color: #15A4FA;
-        border-radius: 0;
+    border-radius: 0;
     color:#fff;
 
 }
@@ -322,4 +323,11 @@ button.btn.tab-but-2 {
 .big-checkbox input{
     height: 35px;
     width: 16px;
+}
+
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 5px 10px;
+    margin-top: 5px;
 }
